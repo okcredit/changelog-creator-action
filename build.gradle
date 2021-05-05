@@ -1,0 +1,35 @@
+
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.5.0'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.0'
+}
+
+group = 'me.mohiteshaeron'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation(npm('decamelize', '4.0.0', true))
+    implementation(npm('@actions/core', '1.2.7'))
+
+    implementation "io.ktor:ktor-client-js:1.5.4"
+    implementation "io.ktor:ktor-client-serialization:1.5.4"
+
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-js'
+    implementation 'org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3'
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.0")
+}
+
+kotlin {
+    js {
+        nodejs {
+        }
+        useCommonJs()
+        binaries.executable()
+    }
+}
