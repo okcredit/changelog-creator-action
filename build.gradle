@@ -35,7 +35,7 @@ kotlin {
 task copyJsToDistFolder(type: Copy) {
     def gitHooksDirectory = new File("$project.rootDir/dist")
     if (!gitHooksDirectory.exists()) gitHooksDirectory.mkdirs()
-    from "$project.buildDir/js/packages/changelog-creator/kotlin/changelog-creator.js"
+    from "$project.buildDir/js/packages/changelog-creator/kotlin"
     into "$project.rootDir/dist"
 }
 
