@@ -1,6 +1,5 @@
 plugins {
     id 'org.jetbrains.kotlin.js' version '1.5.0'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.0'
 }
 
 group = 'me.mohiteshaeron'
@@ -12,7 +11,6 @@ repositories {
 }
 
 dependencies {
-    implementation(npm('decamelize', '4.0.0', true))
     implementation(npm('@actions/core', '1.2.7'))
 
     implementation "io.ktor:ktor-client-js:1.5.4"
@@ -25,7 +23,7 @@ dependencies {
 }
 
 kotlin {
-    js {
+    js(IR) {
         nodejs {
 
         }
@@ -37,7 +35,7 @@ kotlin {
 task copyJsToDistFolder(type: Copy) {
     def gitHooksDirectory = new File("$project.rootDir/dist")
     if (!gitHooksDirectory.exists()) gitHooksDirectory.mkdirs()
-    from "$project.buildDir/js/packages/changelog-creator/kotlin"
+    from "$project.buildDir/compileSync/main/productionExecutable/kotlin"
     into "$project.rootDir/dist"
 }
 
