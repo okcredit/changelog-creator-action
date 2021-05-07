@@ -24,25 +24,25 @@ class GetPRsForMilestone(private val githubClient: GithubClient) {
                 )
             )
 
-            pullRequests.filter { it.milestone?.number == milestone && it.closed_at.toInstant() < milestoneClosedAt }
+            pullRequests.filter { it.milestone?.number == milestone }
                 .forEach { pr ->
                     mergedPRList.add(
                         PullRequestInfo(
                             number = pr.number,
-                            title = pr.title,
-                            htmlURL = pr.html_url,
-                            mergedAt = pr.closed_at.toInstant(),
-                            mergeCommitSha = pr.merge_commit_sha,
+                            title = pr.title ?: "",
+                            htmlURL = pr.htmlUrl ?: "",
+                            mergedAt = pr.mergedAt?.toInstant(),
+                            mergeCommitSha = pr.mergeCommitSha ?: "",
                             author = pr.user?.login ?: "",
-                            labels = pr.labels?.map { it.name },
-                            body = pr.body,
-                            assignees = pr.assignees?.map { it.login },
-                            requestedReviewers = pr.requested_reviewers.map { it.login }
+                            labels = pr.labels?.map { it?.name ?: "" },
+                            body = pr.body ?: "",
+                            assignees = pr.assignees?.map { it?.login ?: "" },
+                            requestedReviewers = pr.requestedReviewers?.map { it?.login ?: "" }
                         )
                     )
 
                     if (mergedPRList.size == closedPRs) {
-                        mergedPRList.sortByDescending { it.mergedAt.epochSeconds }
+                        mergedPRList.sortByDescending { it.mergedAt?.epochSeconds }
                         // early return if we have reached the number of PRs closed
                         return@supervisorScope mergedPRList
                     }
@@ -59,7 +59,7 @@ class GetPRsForMilestone(private val githubClient: GithubClient) {
             throw IllegalStateException("Found no Pull Requests for milestone")
         }
 
-        mergedPRList.sortByDescending { it.mergedAt.epochSeconds }
+        mergedPRList.sortByDescending { it.mergedAt?.epochSeconds }
         return@supervisorScope mergedPRList.toList()
     }
 }

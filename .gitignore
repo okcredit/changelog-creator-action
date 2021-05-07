@@ -6,3 +6,6 @@
 /externals/
 /*/externals/
 /*/*/externals/
+
+# os files
+.DS_Store

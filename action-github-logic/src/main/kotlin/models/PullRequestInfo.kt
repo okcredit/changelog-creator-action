@@ -6,7 +6,7 @@ data class PullRequestInfo(
     val number: Int,
     val title: String,
     val htmlURL: String,
-    val mergedAt: Instant,
+    val mergedAt: Instant?,
     val mergeCommitSha: String,
     val author: String,
     val labels: List<String>?,

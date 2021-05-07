@@ -21,10 +21,10 @@ class FetchLastClosedMilestone(private val githubClient: GithubClient) {
                     MilestoneInfo(
                         number = element.number,
                         title = element.title ?: "",
-                        created_at = (element.created_at)?.toInstant(),
-                        updated_at = (element.updated_at)?.toInstant(),
-                        closedPRs = element.closed_issues ?: 0,
-                        closedAt = (element.closed_at)?.toInstant(),
+                        created_at = (element.createdAt)?.toInstant(),
+                        updated_at = (element.updatedAt)?.toInstant(),
+                        closedPRs = element.closedIssues,
+                        closedAt = (element.closedAt)?.toInstant(),
                     )
                 )
             }
