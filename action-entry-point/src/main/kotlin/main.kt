@@ -24,7 +24,7 @@ fun resolveInputs() = group("Reading input values") {
     val tempRepoString = ActionsEnvironment.GITHUB_REPOSITORY.split("/")
 
     return@group Inputs(
-        token = getInput("token"),
+        token = getInput("token").ifEmpty { ActionsEnvironment.GITHUB_TOKEN },
         owner = getInput("owner").ifEmpty { tempRepoString.first() },
         repo = getInput("repo").ifEmpty { tempRepoString[1] },
         providedPath = getInput("path"),

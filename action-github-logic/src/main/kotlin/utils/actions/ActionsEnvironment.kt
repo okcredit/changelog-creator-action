@@ -26,6 +26,7 @@ object ActionsEnvironment {
     val GITHUB_API_URL by Environment
     val GITHUB_GRAPHQL_URL by Environment
     val RUNNER_OS by Environment
+    val GITHUB_TOKEN by Environment
 }
 
 private object Environment {
