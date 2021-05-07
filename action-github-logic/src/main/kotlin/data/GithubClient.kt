@@ -38,7 +38,8 @@ class GithubClient(token: String, private val owner: String,private val repo: St
     }
 
     suspend fun milestones(request: MilestoneRequest): List<Milestone> {
-        return client.get {
+        info("milestones MilestoneRequest - $request")
+        val response = client.get<List<Milestone>> {
             url {
                 encodedPath = "/repos/$owner/$repo/milestones"
             }
@@ -48,6 +49,9 @@ class GithubClient(token: String, private val owner: String,private val repo: St
             parameter("per_page", request.per_page)
             parameter("page", request.page)
         }
+
+        info("milestones response - $response")
+        return response
     }
 
 

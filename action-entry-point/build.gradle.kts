@@ -5,8 +5,9 @@ dependencies {
 
 tasks.register<Copy>("CopyGeneratedJSToDistribution") {
     val file = File("${rootDir}/distributions")
-    if(!file.exists()) file.mkdir()
+    if(file.exists()) file.deleteRecursively()
 
+    file.mkdir()
     from("${rootDir}/action-entry-point/build/distributions")
     into("${rootDir}/distributions")
 }

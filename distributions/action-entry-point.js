@@ -38940,6 +38940,7 @@
     for (;;) try {
      switch (this.state_0) {
      case 0:
+      info("milestones MilestoneRequest - " + this.local$request);
       var body, $receiver_0 = this.$this.client_0;
       "localhost", body = utils.EmptyContent;
       var $receiver_1 = new HttpRequestBuilder_init;
@@ -39003,7 +39004,9 @@
       continue;
 
      case 9:
-      return this.result_0, this.result_0;
+      this.result_0;
+      var response = this.result_0;
+      return info("milestones response - " + response), response;
 
      default:
       throw this.state_0 = 6, new Error("State Machine Unreachable execution");
