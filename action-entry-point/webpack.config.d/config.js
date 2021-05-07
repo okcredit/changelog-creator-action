@@ -14,31 +14,4 @@
  * limitations under the License.
  */
 
-config.output = config.output || {}
-config.output.globalObject = "this"
 config.target = "node"
-
-config.resolve.modules.unshift("src/test/resources")
-
-const TerserPlugin = require('terser-webpack-plugin');
-
-// keep_classnames is required to workaround node-fetch Expected signal to be an instanceof AbortSignal
-config.optimization = {
-  minimizer: [
-    new TerserPlugin({
-                       parallel: true,
-                       terserOptions: {
-                         // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
-                         mangle: false,
-                         sourceMap: true,
-                         // compress: false,
-                         keep_classnames: true,
-                         keep_fnames: true,
-                         output: {
-                           beautify: true,
-                           indent_level: 1
-                         }
-                       }
-                     }),
-  ],
-};
