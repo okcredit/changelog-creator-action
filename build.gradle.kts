@@ -15,8 +15,8 @@
  */
 
 plugins {
-    kotlin("js") version "1.4.32" apply false
-    kotlin("plugin.serialization") version "1.4.32"
+    kotlin("js") version "1.5.0" apply false
+    kotlin("plugin.serialization") version "1.5.0"
 }
 
 plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin> {
