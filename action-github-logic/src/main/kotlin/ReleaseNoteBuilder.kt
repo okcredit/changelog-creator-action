@@ -1,4 +1,6 @@
 import data.GithubClient
+import kotlinx.datetime.Clock
+import kotlinx.datetime.Instant
 import models.Inputs
 import usecase.FetchLastClosedMilestone
 import usecase.FetchMilestoneByName
@@ -26,7 +28,7 @@ class ReleaseNoteBuilder(private val inputs: Inputs) {
             pRsForMilestone(
                 milestone = milestoneInfo.number,
                 closedPRs = milestoneInfo.closedPRs,
-                milestoneClosedAt = milestoneInfo.closedAt
+                milestoneClosedAt = milestoneInfo.closedAt ?: milestoneInfo.updated_at ?: Clock.System.now()
             )
         }
 

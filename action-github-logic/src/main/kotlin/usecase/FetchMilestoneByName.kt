@@ -17,11 +17,11 @@ class FetchMilestoneByName(private val githubClient: GithubClient) {
                 if (element.title == name) {
                     return@supervisorScope MilestoneInfo(
                         number = element.number,
-                        title = element.title,
-                        created_at = (element.created_at).toInstant(),
-                        updated_at = (element.updated_at).toInstant(),
-                        closedPRs = element.closed_issues,
-                        closedAt = (element.closed_at).toInstant(),
+                        title = element.title ?: "",
+                        created_at = (element.created_at)?.toInstant(),
+                        updated_at = (element.updated_at)?.toInstant(),
+                        closedPRs = element.closed_issues ?: 0,
+                        closedAt = (element.closed_at)?.toInstant(),
                     )
                 }
             }

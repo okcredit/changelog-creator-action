@@ -20,11 +20,11 @@ class FetchLastClosedMilestone(private val githubClient: GithubClient) {
                 mergedMilestoneList.add(
                     MilestoneInfo(
                         number = element.number,
-                        title = element.title,
-                        created_at = (element.created_at).toInstant(),
-                        updated_at = (element.updated_at).toInstant(),
-                        closedPRs = element.closed_issues,
-                        closedAt = (element.closed_at).toInstant(),
+                        title = element.title ?: "",
+                        created_at = (element.created_at)?.toInstant(),
+                        updated_at = (element.updated_at)?.toInstant(),
+                        closedPRs = element.closed_issues ?: 0,
+                        closedAt = (element.closed_at)?.toInstant(),
                     )
                 )
             }
@@ -39,12 +39,12 @@ class FetchLastClosedMilestone(private val githubClient: GithubClient) {
             throw IllegalStateException("No closed milestones found")
         }
 
-        mergedMilestoneList.sortByDescending { it.updated_at.epochSeconds }
+        mergedMilestoneList.sortByDescending { it.updated_at?.epochSeconds }
 
         val firstMilestone = mergedMilestoneList.first()
         val now = Clock.System.now()
         val systemTZ = TimeZone.currentSystemDefault()
-        if(firstMilestone.closedAt < now.plus(-1, DateTimeUnit.DAY, systemTZ)) {
+        if(firstMilestone.closedAt != null && firstMilestone.closedAt < now.plus(-1, DateTimeUnit.DAY, systemTZ)) {
             // if no milestone closed in last 24 hours then throw error
             throw IllegalStateException("No milestone closed in last 24 hours")
         }
