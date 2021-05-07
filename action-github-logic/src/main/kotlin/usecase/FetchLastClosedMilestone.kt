@@ -10,6 +10,7 @@ import utils.actions.info
 class FetchLastClosedMilestone(private val githubClient: GithubClient) {
 
     suspend operator fun invoke() = supervisorScope {
+        info("FetchLastClosedMilestone invoke")
         var page = 1
         var moreMilestoneExist = true
         val mergedMilestoneList = mutableListOf<MilestoneInfo>()
