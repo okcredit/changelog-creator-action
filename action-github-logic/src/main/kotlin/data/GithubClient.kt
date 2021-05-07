@@ -8,12 +8,18 @@ import io.ktor.http.*
 import data.response.Milestone
 import data.response.PullRequest
 import data.request.MilestoneRequest
+import io.ktor.client.features.logging.*
+import utils.actions.info
 
 class GithubClient(token: String, private val owner: String,private val repo: String){
 
     private val client by lazy {
         HttpClient {
             install(JsonFeature)
+            install(Logging){
+                logger = CustomerLogger()
+                level = LogLevel.ALL
+            }
             defaultRequest {
                 host = "api.github.com"
                 url {
@@ -22,6 +28,12 @@ class GithubClient(token: String, private val owner: String,private val repo: St
                 header(HttpHeaders.Authorization, "token $token")
                 header(HttpHeaders.Accept, "application/vnd.github.v3+json")
             }
+        }
+    }
+
+    class CustomerLogger : Logger {
+        override fun log(message: String) {
+            info(message)
         }
     }
 

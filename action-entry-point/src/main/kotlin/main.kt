@@ -1,8 +1,5 @@
 import models.Inputs
-import utils.actions.ActionsEnvironment
-import utils.actions.getInput
-import utils.actions.group
-import utils.actions.setOutput
+import utils.actions.*
 import utils.failOrError
 
 suspend fun main() {
@@ -10,13 +7,14 @@ suspend fun main() {
     setOutput("failed", false)
 
     val inputs = resolveInputs()
-
+    info("$inputs")
     setOutput("owner", inputs.owner)
     setOutput("repo", inputs.repo)
     try {
         val releaseNoteBuilder = ReleaseNoteBuilder(inputs)
         val changelog = releaseNoteBuilder.build()
         setOutput("changelog", changelog)
+        info(changelog)
     } catch (ex: Exception) {
         failOrError(ex.message ?: "Error while generating changelog", inputs.failOnError)
     }

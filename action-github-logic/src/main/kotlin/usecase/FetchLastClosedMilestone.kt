@@ -5,6 +5,7 @@ import data.request.MilestoneRequest
 import kotlinx.coroutines.supervisorScope
 import kotlinx.datetime.*
 import models.MilestoneInfo
+import utils.actions.info
 
 class FetchLastClosedMilestone(private val githubClient: GithubClient) {
 
