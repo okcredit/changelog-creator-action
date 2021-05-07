@@ -1,48 +1,39 @@
 package data
 
+import data.request.MilestoneRequest
+import data.response.Milestone
+import data.response.PullRequest
 import io.ktor.client.*
 import io.ktor.client.features.*
 import io.ktor.client.features.json.*
 import io.ktor.client.request.*
 import io.ktor.http.*
-import data.response.Milestone
-import data.response.PullRequest
-import data.request.MilestoneRequest
-import io.ktor.client.features.logging.*
 import utils.actions.info
 
-class GithubClient(token: String, private val owner: String,private val repo: String){
+class GithubClient(private val token: String, private val owner: String,private val repo: String){
 
     private val client by lazy {
         HttpClient {
             install(JsonFeature)
-            install(Logging){
-                logger = CustomerLogger()
-                level = LogLevel.ALL
-            }
-            defaultRequest {
-                host = "api.github.com"
-                url {
-                    protocol = URLProtocol.HTTPS
-                }
-                header(HttpHeaders.Authorization, "token $token")
-                header(HttpHeaders.Accept, "application/vnd.github.v3+json")
-            }
-        }
-    }
+            HttpResponseValidator {
+                validateResponse {
+                    when (it.status) {
+                        HttpStatusCode.BadRequest -> error("Bad request")
+                        HttpStatusCode.Unauthorized -> error("Unauthorized error")
+                    }
 
-    class CustomerLogger : Logger {
-        override fun log(message: String) {
-            info(message)
+                    if (!it.status.isSuccess()) {
+                        error("Bad status: ${it.status}")
+                    }
+                }
+            }
         }
     }
 
     suspend fun milestones(request: MilestoneRequest): List<Milestone> {
         info("milestones MilestoneRequest - $request")
         val response = client.get<List<Milestone>> {
-            url {
-                encodedPath = "/repos/$owner/$repo/milestones"
-            }
+            apiUrl("/repos/$owner/$repo/pulls")
             parameter("state", request.state)
             parameter("direction", request.direction)
             parameter("sort", request.sort)
@@ -57,14 +48,22 @@ class GithubClient(token: String, private val owner: String,private val repo: St
 
     suspend fun pullRequests(request: MilestoneRequest): List<PullRequest> {
         return client.get {
-            url {
-                encodedPath = "/repos/$owner/$repo/pulls"
-            }
+            apiUrl("/repos/$owner/$repo/pulls")
             parameter("state", request.state)
             parameter("direction", request.direction)
             parameter("sort", request.sort)
             parameter("per_page", request.per_page)
             parameter("page", request.page)
+        }
+    }
+
+    private fun HttpRequestBuilder.apiUrl(path: String) {
+        header(HttpHeaders.Authorization, "token $token")
+        header(HttpHeaders.Accept, "application/vnd.github.v3+json")
+        header(HttpHeaders.CacheControl, "no-cache")
+        url {
+            takeFrom("https://api.github.com")
+            encodedPath = path
         }
     }
 

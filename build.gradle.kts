@@ -16,6 +16,7 @@
 
 plugins {
     kotlin("js") version "1.4.32" apply false
+    kotlin("plugin.serialization") version "1.4.32"
 }
 
 plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin> {
@@ -26,6 +27,7 @@ plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin>
 
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.js")
+    apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 }
 
 allprojects {
