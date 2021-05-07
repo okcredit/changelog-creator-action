@@ -53,7 +53,12 @@ allprojects {
         configure<org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension> {
             js {
                 if (project.name.endsWith("-entry-point")) {
-                    browser()
+                    browser {
+                        commonWebpackConfig {
+                            sourceMaps = true
+                            showProgress = true
+                        }
+                    }
                     binaries.executable()
                 } else {
                     nodejs()
