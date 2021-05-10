@@ -18,15 +18,15 @@ data class Milestone(
     @SerialName("due_on")
     val dueOn: String?, // null
     @SerialName("html_url")
-    val htmlUrl: String?, // https://github.com/okcredit/merchant-android/milestone/148
+    val htmlUrl: String?, // https://github.com/{owner}{repo}/milestone/148
     @SerialName("id")
     val id: Int, // 6735696
     @SerialName("labels_url")
-    val labelsUrl: String?, // https://api.github.com/repos/okcredit/merchant-android/milestones/148/labels
+    val labelsUrl: String?, // https://api.github.com/repos/{owner}{repo}/milestones/{milestone_number}/labels
     @SerialName("node_id")
-    val nodeId: String?, // MDk6TWlsZXN0b25lNjczNTY5Ng==
+    val nodeId: String?, // {id}
     @SerialName("number")
-    val number: Int, // 148
+    val number: Int, // {milestone_number}
     @SerialName("open_issues")
     val openIssues: Int, // 1
     @SerialName("state")
@@ -36,5 +36,5 @@ data class Milestone(
     @SerialName("updated_at")
     val updatedAt: String?, // 2021-05-07T05:00:40Z
     @SerialName("url")
-    val url: String? // https://api.github.com/repos/okcredit/merchant-android/milestones/148
+    val url: String? // https://api.github.com/repos/{owner}{repo}/milestones/{milestone_number}
 )

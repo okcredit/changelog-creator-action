@@ -7,10 +7,12 @@ import io.ktor.client.*
 import io.ktor.client.features.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
-import io.ktor.client.features.logging.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 
+/**
+ * Central client to make all the API calls to Github.
+ */
 class GithubClient(private val token: String, private val owner: String, private val repo: String) {
 
     private val client by lazy {
@@ -21,10 +23,6 @@ class GithubClient(private val token: String, private val owner: String, private
                     coerceInputValues = false
                     isLenient = true
                 })
-            }
-            install(Logging) {
-                logger = Logger.DEFAULT
-                level = LogLevel.INFO
             }
             HttpResponseValidator {
                 validateResponse {

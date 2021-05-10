@@ -4,14 +4,20 @@ import kotlinx.coroutines.supervisorScope
 import models.Configuration
 import models.Inputs
 import models.PullRequestInfo
-import utils.actions.info
+import utils.resolveConfiguration
 
+/**
+ * Use case responsible to generate the changelog from the list of PRs provided. It performs following operations:-
+ * 1. Resolves configuration from the path provided in the inputs.
+ * 2. Sort the PRs in the order of configuration or ASC(Default)
+ * 3. Convert the PRs into their text representation taken from PR template in config.
+ * 4. Order the PRs into categories or as uncategorized
+ * 5. Construct final changelog by replacing the placeholders.
+ */
 class BuildChangelog(private val inputs: Inputs) {
 
     suspend operator fun invoke(prs: List<PullRequestInfo>) = supervisorScope {
-        val config = inputs.resolveConfiguration()
-        println("ℹ️ config categories: ${config.categories?.map { it.labels.joinToString() }?.joinToString(" | ")}")
-
+        val config = resolveConfiguration(inputs.configPath)
         // sort to target order
         val sort = config.sort?.ifEmpty { Configuration.DEFAULT_CONFIG.sort } ?: Configuration.DEFAULT_CONFIG.sort
         val sortAsc = sort?.uppercase() == "ASC"
@@ -20,7 +26,7 @@ class BuildChangelog(private val inputs: Inputs) {
         } else {
             prs.sortedByDescending { it.mergedAt }
         }
-        println("ℹ️ Sorted all pull requests ascending: $sort")
+        println("ℹ️ Sorted all pull requests: $sort")
 
         val transformedMap = mutableMapOf<PullRequestInfo, String>()
         // convert PRs to their text representation
@@ -112,21 +118,26 @@ class BuildChangelog(private val inputs: Inputs) {
 
         // fill template
         var transformedChangelog = config.template ?: Configuration.DEFAULT_CONFIG.template!!
-        transformedChangelog = transformedChangelog.replace("\${{CHANGELOG}}",
+        transformedChangelog = transformedChangelog.replace(
+            "\${{CHANGELOG}}",
             changelog
         )
-        transformedChangelog = transformedChangelog.replace("\${{UNCATEGORIZED}}",
+        transformedChangelog = transformedChangelog.replace(
+            "\${{UNCATEGORIZED}}",
             changelogUncategorized
         )
-        transformedChangelog = transformedChangelog.replace("\${{IGNORED}}",
+        transformedChangelog = transformedChangelog.replace(
+            "\${{IGNORED}}",
             changelogIgnored
         )
 
         // fill other placeholders
-        transformedChangelog = transformedChangelog.replace("\${{CATEGORIZED_COUNT}}",
+        transformedChangelog = transformedChangelog.replace(
+            "\${{CATEGORIZED_COUNT}}",
             categorizedPrs.size.toString()
         )
-        transformedChangelog = transformedChangelog.replace("\${{UNCATEGORIZED_COUNT}}",
+        transformedChangelog = transformedChangelog.replace(
+            "\${{UNCATEGORIZED_COUNT}}",
             uncategorizedPrs.size.toString()
         )
         transformedChangelog = transformedChangelog.replace("\${{IGNORED_COUNT}}", ignoredPrs.size.toString())
@@ -136,7 +147,6 @@ class BuildChangelog(private val inputs: Inputs) {
     }
 
     private fun haveCommonElements(arr1: List<String>?, arr2: List<String>?): Boolean {
-        println("haveCommonElements - ${arr1?.joinToString()} ${arr2?.joinToString()}")
         arr1?.forEach {
             return arr2?.contains(it) ?: false
         }
@@ -150,16 +160,20 @@ class BuildChangelog(private val inputs: Inputs) {
         transformed = transformed.replace("\${{NUMBER}}", pr.number.toString())
         transformed = transformed.replace("\${{TITLE}}", pr.title)
         transformed = transformed.replace("\${{URL}}", pr.htmlURL)
-        transformed = transformed.replace("\${{MERGED_AT}}", pr.mergedAt.toString()
+        transformed = transformed.replace(
+            "\${{MERGED_AT}}", pr.mergedAt.toString()
         )
         transformed = transformed.replace("\${{AUTHOR}}", pr.author)
-        transformed = transformed.replace("\${{LABELS}}", pr.labels?.joinToString() ?: ""
+        transformed = transformed.replace(
+            "\${{LABELS}}", pr.labels?.joinToString() ?: ""
         )
         transformed = transformed.replace("\${{BODY}}", pr.body)
-        transformed = transformed.replace("\${{ASSIGNEES}}",
+        transformed = transformed.replace(
+            "\${{ASSIGNEES}}",
             pr.assignees?.joinToString() ?: ""
         )
-        transformed = transformed.replace("\${{REVIEWERS}}",
+        transformed = transformed.replace(
+            "\${{REVIEWERS}}",
             pr.requestedReviewers?.joinToString() ?: ""
         )
 
