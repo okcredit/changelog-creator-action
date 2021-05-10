@@ -38,4 +38,4 @@ outputs:
     description: 'Defines if there was an issue with the action run, and the changelog may not have been generated correctly. [true, false]'
 runs:
   using: 'node12'
-  main: 'distributions/action-entry-point.js'
+  main: 'dist/index.js'
