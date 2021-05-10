@@ -6,11 +6,11 @@
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd)
-    define(['exports', 'process', 'stream', 'events', 'net', 'tty', '@js-joda/core', '@actions/core', 'fs'], factory);
+    define(['exports', 'process', 'path', 'stream', 'events', 'net', 'tty', '@js-joda/core', '@actions/core', 'fs'], factory);
   else if (true)
-    factory(module.exports, __nccwpck_require__(765), __nccwpck_require__(413), __nccwpck_require__(614), __nccwpck_require__(631), __nccwpck_require__(867), __nccwpck_require__(112), __nccwpck_require__(127), __nccwpck_require__(747));
+    factory(module.exports, __nccwpck_require__(765), __nccwpck_require__(622), __nccwpck_require__(413), __nccwpck_require__(614), __nccwpck_require__(631), __nccwpck_require__(867), __nccwpck_require__(112), __nccwpck_require__(127), __nccwpck_require__(747));
   else {}
-}(this, function (_, process_0, internal, $module$events, $module$net, $module$tty, $module$_js_joda_core, $module$_actions_core, $module$fs) {
+}(this, function (_, process_0, path, internal, $module$events, $module$net, $module$tty, $module$_js_joda_core, $module$_actions_core, $module$fs) {
   var EventEmitter_1 = $module$events.EventEmitter;
   var Socket_1 = $module$net.Socket;
   var WriteStream_1 = $module$tty.WriteStream;
@@ -39393,16 +39393,16 @@
     kind: 'interface',
     interfaces: [HttpMessage, CoroutineScope]
   };
-  function url(_this_, scheme, host, port, path, block) {
+  function url(_this_, scheme, host, port, path_0, block) {
     var tmp0_apply_0 = _this_._url_0;
     tmp0_apply_0._protocol = Companion_getInstance_39().createOrDefault(scheme);
     tmp0_apply_0._host = host;
     tmp0_apply_0._port = port;
-    tmp0_apply_0._encodedPath = path;
+    tmp0_apply_0._encodedPath = path_0;
     block(_this_._url_0);
     Unit_getInstance();
   }
-  function url$default(_this_, scheme, host, port, path, block, $mask0, $handler) {
+  function url$default(_this_, scheme, host, port, path_0, block, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
       scheme = 'http';
     if (!(($mask0 & 2) === 0))
@@ -39410,10 +39410,10 @@
     if (!(($mask0 & 4) === 0))
       port = 0;
     if (!(($mask0 & 8) === 0))
-      path = '/';
+      path_0 = '/';
     if (!(($mask0 & 16) === 0)) {
       block = _no_name_provided_$factory_130();
-    }return url(_this_, scheme, host, port, path, block);
+    }return url(_this_, scheme, host, port, path_0, block);
   }
   function isUpgradeRequest(_this_) {
     var tmp = _this_._body_1;
@@ -41796,13 +41796,13 @@
     kind: 'class',
     interfaces: []
   };
-  function LogLevel_ALL_getInstance() {
-    LogLevel_initEntries();
-    return LogLevel_ALL_instance;
-  }
   function LogLevel_HEADERS_getInstance() {
     LogLevel_initEntries();
     return LogLevel_HEADERS_instance;
+  }
+  function LogLevel_INFO_getInstance() {
+    LogLevel_initEntries();
+    return LogLevel_INFO_instance;
   }
   function LoggedContent(originalContent, channel) {
     ReadChannelContent.call(this);
@@ -53355,7 +53355,7 @@
   }
   _no_name_provided__239.prototype.invoke_383 = function ($this$install) {
     $this$install._logger = _get_DEFAULT_(Companion_getInstance_49());
-    $this$install._level = LogLevel_ALL_getInstance();
+    $this$install._level = LogLevel_INFO_getInstance();
   };
   _no_name_provided__239.prototype.invoke_412 = function (p1) {
     this.invoke_383(p1 instanceof Config_2 ? p1 : THROW_CCE());
@@ -53400,11 +53400,11 @@
     var tmp1_getValue_0 = client$factory_0();
     return tmp0_getValue_0._get_value__27();
   }
-  function apiUrl(_this_, $this, path) {
+  function apiUrl(_this_, $this, path_0) {
     header(_this_, HttpHeaders_getInstance()._Authorization, '' + 'token ' + $this._token);
     header(_this_, HttpHeaders_getInstance()._Accept, 'application/vnd.github.v3+json');
     header(_this_, HttpHeaders_getInstance()._CacheControl, 'no-cache');
-    _this_.url_0(_no_name_provided_$factory_199(path));
+    _this_.url_0(_no_name_provided_$factory_199(path_0));
   }
   function _no_name_provided__242() {
   }
@@ -53445,7 +53445,6 @@
         switch (tmp) {
           case 0:
             this._exceptionState = 8;
-            print('' + 'milestones MilestoneRequest - ' + this._request_2);
             var tmp_0 = this;
             tmp_0._tmp0_get_00 = _get_client_(this.__this__44);
             var tmp_1 = this;
@@ -53549,9 +53548,7 @@
             this._state_0 = 7;
             continue $sm;
           case 7:
-            var response = this._WHEN_RESULT9;
-            print('' + 'milestones response - ' + response);
-            return response;
+            return this._WHEN_RESULT9;
           case 8:
             throw this._exception_0;
         }
@@ -58819,7 +58816,10 @@
             }
 
             this._repoPath2 = repositoryPath(this.__this__46._providedPath);
-            this._resolvedConfigPath3 = this._repoPath2 + this.__this__46._configPath;
+            this._resolvedConfigPath3 = function () {
+              var $externalVarargReceiverTmp = path;
+              return $externalVarargReceiverTmp.resolve.apply($externalVarargReceiverTmp, [].concat([this._repoPath2, this.__this__46._configPath]));
+            }.call(this);
             debug_1('' + 'config path = ' + this._resolvedConfigPath3);
             this._state_0 = 1;
             suspendResult = readJsonFile(this.__this__46, this._resolvedConfigPath3, this);
@@ -59983,6 +59983,10 @@
   }
   function repositoryPath(providedPath) {
     var githubWorkspacePath = ActionsEnvironment_getInstance()._get_GITHUB_WORKSPACE_();
+    githubWorkspacePath = function () {
+      var $externalVarargReceiverTmp = path;
+      return $externalVarargReceiverTmp.resolve.apply($externalVarargReceiverTmp, [].concat([githubWorkspacePath]));
+    }.call(this);
     debug_1('' + "GITHUB_WORKSPACE = '" + githubWorkspacePath + "'");
     var tmp;
     if (charSequenceLength(providedPath) === 0) {
@@ -59992,7 +59996,11 @@
         tmp = providedPath;
       }
     }
-    var repositoryPath_0 = githubWorkspacePath + tmp;
+    var repositoryPath_0 = tmp;
+    repositoryPath_0 = function () {
+      var $externalVarargReceiverTmp = path;
+      return $externalVarargReceiverTmp.resolve.apply($externalVarargReceiverTmp, [].concat([githubWorkspacePath, repositoryPath_0]));
+    }.call(this);
     debug_1('' + "repositoryPath = '" + repositoryPath_0 + "'");
     return repositoryPath_0;
   }
@@ -60105,8 +60113,8 @@
       return receiver._get_GITHUB_TOKEN_();
     }, null);
   }
-  function readFile_0(path, encoding, $cont) {
-    return await_0(readFileAsync_0(path, encoding), $cont);
+  function readFile_0(path_0, encoding, $cont) {
+    return await_0(readFileAsync_0(path_0, encoding), $cont);
   }
   function main($cont) {
     var tmp = new $mainCOROUTINE$0($cont);

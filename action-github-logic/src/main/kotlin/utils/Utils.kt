@@ -1,5 +1,6 @@
 package utils
 
+import path.path
 import utils.actions.ActionsEnvironment
 import utils.actions.debug
 import utils.actions.setFailed
@@ -24,10 +25,12 @@ fun failOrError(
 
 fun repositoryPath(providedPath: String): String {
     // this only returns path if we have used action/checkout else empty string
-    val githubWorkspacePath = ActionsEnvironment.GITHUB_WORKSPACE
+    var githubWorkspacePath = ActionsEnvironment.GITHUB_WORKSPACE
+    githubWorkspacePath = path.resolve(githubWorkspacePath)
     debug("GITHUB_WORKSPACE = '${githubWorkspacePath}'")
 
-    val repositoryPath = githubWorkspacePath + providedPath.ifEmpty { "." }
+    var repositoryPath = providedPath.ifEmpty { "." }
+    repositoryPath = path.resolve(githubWorkspacePath, repositoryPath)
     debug("repositoryPath = '${repositoryPath}'")
 
     return repositoryPath

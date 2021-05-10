@@ -10,7 +10,6 @@ import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import io.ktor.client.request.*
 import io.ktor.http.*
-import utils.actions.info
 
 class GithubClient(private val token: String, private val owner: String, private val repo: String) {
 
@@ -25,7 +24,7 @@ class GithubClient(private val token: String, private val owner: String, private
             }
             install(Logging) {
                 logger = Logger.DEFAULT
-                level = LogLevel.ALL
+                level = LogLevel.INFO
             }
             HttpResponseValidator {
                 validateResponse {
@@ -43,8 +42,7 @@ class GithubClient(private val token: String, private val owner: String, private
     }
 
     suspend fun milestones(request: MilestoneRequest): List<Milestone> {
-        print("milestones MilestoneRequest - $request")
-        val response = client.get<List<Milestone>> {
+        return client.get {
             apiUrl("/repos/$owner/$repo/milestones")
             parameter("state", request.state)
             parameter("direction", request.direction)
@@ -52,9 +50,6 @@ class GithubClient(private val token: String, private val owner: String, private
             parameter("per_page", request.per_page)
             parameter("page", request.page)
         }
-
-        print("milestones response - $response")
-        return response
     }
 
 

@@ -1,7 +1,7 @@
 package models
 
+import path.path
 import utils.actions.debug
-import utils.actions.info
 import utils.node_fs.readFile
 import utils.repositoryPath
 
@@ -22,7 +22,7 @@ data class Inputs(
         }
 
         val repoPath = repositoryPath(providedPath)
-        val resolvedConfigPath = repoPath + configPath
+        val resolvedConfigPath = path.resolve(repoPath, configPath)
         debug("config path = $resolvedConfigPath")
 
         configuration = readJsonFile(resolvedConfigPath) ?: Configuration.DEFAULT_CONFIG
