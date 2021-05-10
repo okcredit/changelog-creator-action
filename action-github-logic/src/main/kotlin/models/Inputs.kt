@@ -26,6 +26,7 @@ data class Inputs(
         debug("config path = $resolvedConfigPath")
 
         configuration = readJsonFile(resolvedConfigPath) ?: Configuration.DEFAULT_CONFIG
+        println(configuration)
         return configuration
     }
 

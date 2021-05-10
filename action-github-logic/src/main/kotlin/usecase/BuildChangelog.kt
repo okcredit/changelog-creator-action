@@ -10,6 +10,7 @@ class BuildChangelog(private val inputs: Inputs) {
 
     suspend operator fun invoke(prs: List<PullRequestInfo>) = supervisorScope {
         val config = inputs.resolveConfiguration()
+        println("ℹ️ config: $config")
 
         // sort to target order
         val sort = config.sort?.ifEmpty { Configuration.DEFAULT_CONFIG.sort } ?: Configuration.DEFAULT_CONFIG.sort
@@ -19,7 +20,7 @@ class BuildChangelog(private val inputs: Inputs) {
         } else {
             prs.sortedByDescending { it.mergedAt }
         }
-        print("ℹ️ Sorted all pull requests ascending: $sort")
+        println("ℹ️ Sorted all pull requests ascending: $sort")
 
         val transformedMap = mutableMapOf<PullRequestInfo, String>()
         // convert PRs to their text representation
@@ -162,7 +163,7 @@ class BuildChangelog(private val inputs: Inputs) {
             pr.requestedReviewers?.joinToString() ?: ""
         )
 
-        println("transformed - $transformed")
+        println("transformed $transformed")
         return transformed
     }
 

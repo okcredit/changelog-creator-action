@@ -58830,6 +58830,7 @@
           case 1:
             var tmp0_elvis_lhs = suspendResult;
             this._configuration0 = tmp0_elvis_lhs == null ? Companion_getInstance_67()._DEFAULT_CONFIG : tmp0_elvis_lhs;
+            println(this._configuration0);
             return this._configuration0;
           case 2:
             throw this._exception_0;
@@ -59210,7 +59211,7 @@
     var tmp5_elvis_lhs = tmp_14;
     var tmp_15 = tmp5_elvis_lhs == null ? '' : tmp5_elvis_lhs;
     transformed = replace$default_0(tmp_13, '${{REVIEWERS}}', tmp_15, false, 4, null);
-    println('' + 'transformed - ' + transformed);
+    println('' + 'transformed ' + transformed);
     return transformed;
   }
   function sam$kotlin_Comparator$0_1(function_0) {
@@ -59257,6 +59258,7 @@
             continue $sm;
           case 1:
             var config = suspendResult;
+            println('' + '\u2139\uFE0F config: ' + config);
             var tmp0_safe_receiver = config._sort_0;
             var tmp_0;
             if (tmp0_safe_receiver == null) {
@@ -59294,7 +59296,7 @@
               Unit_getInstance();
             }
 
-            print('' + '\u2139\uFE0F Sorted all pull requests ascending: ' + sort);
+            println('' + '\u2139\uFE0F Sorted all pull requests ascending: ' + sort);
             var transformedMap = LinkedHashMap_init_$Create$();
             var tmp0_iterator_1 = this._$prs.iterator_62();
             while (tmp0_iterator_1.hasNext_29()) {
