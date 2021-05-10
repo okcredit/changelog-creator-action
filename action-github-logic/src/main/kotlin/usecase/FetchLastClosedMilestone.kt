@@ -45,7 +45,7 @@ class FetchLastClosedMilestone(private val githubClient: GithubClient) {
         val now = Clock.System.now()
         val systemTZ = TimeZone.currentSystemDefault()
         if(firstMilestone.closedAt != null && firstMilestone.closedAt < now.plus(-1, DateTimeUnit.DAY, systemTZ)) {
-            // if no milestone closed in last 24 hours then throw error
+            // if no milestone closed in last 24 hours then throw utils.actions.error
             throw IllegalStateException("No milestone closed in last 24 hours")
         }
         return@supervisorScope firstMilestone

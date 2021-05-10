@@ -34,13 +34,13 @@ data class Inputs(
         try {
             rawData = readFile(filename, "utf8")
         } catch (error: Exception) {
-            info("⚠️ Configuration provided, but it couldn't be found. Fallback to Defaults.")
+            print("⚠️ Configuration provided, but it couldn't be found. Fallback to Defaults.")
             return null
         }
         return try {
             JSON.parse<Configuration>(rawData)
         } catch (error: Exception) {
-            info(
+            print(
                 "⚠️ Configuration provided, but it couldn't be parsed. Fallback to Defaults."
             )
             null

@@ -31,7 +31,7 @@ class GithubClient(private val token: String, private val owner: String, private
                 validateResponse {
                     when (it.status) {
                         HttpStatusCode.BadRequest -> error("Bad request")
-                        HttpStatusCode.Unauthorized -> error("Unauthorized error")
+                        HttpStatusCode.Unauthorized -> error("Unauthorized utils.actions.error")
                     }
 
                     if (!it.status.isSuccess()) {
@@ -43,7 +43,7 @@ class GithubClient(private val token: String, private val owner: String, private
     }
 
     suspend fun milestones(request: MilestoneRequest): List<Milestone> {
-        info("milestones MilestoneRequest - $request")
+        print("milestones MilestoneRequest - $request")
         val response = client.get<List<Milestone>> {
             apiUrl("/repos/$owner/$repo/milestones")
             parameter("state", request.state)
@@ -53,7 +53,7 @@ class GithubClient(private val token: String, private val owner: String, private
             parameter("page", request.page)
         }
 
-        info("milestones response - $response")
+        print("milestones response - $response")
         return response
     }
 

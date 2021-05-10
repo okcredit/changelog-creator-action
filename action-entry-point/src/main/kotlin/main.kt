@@ -7,14 +7,14 @@ suspend fun main() {
     setOutput("failed", false)
 
     val inputs = resolveInputs()
-    info("$inputs")
+    print("$inputs")
     setOutput("owner", inputs.owner)
     setOutput("repo", inputs.repo)
     try {
         val releaseNoteBuilder = ReleaseNoteBuilder(inputs)
         val changelog = releaseNoteBuilder.build()
         setOutput("changelog", changelog)
-        info(changelog)
+        print(changelog)
     } catch (ex: Exception) {
         failOrError(ex.message ?: "Error while generating changelog", inputs.failOnError)
     }

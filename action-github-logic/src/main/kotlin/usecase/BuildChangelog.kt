@@ -19,7 +19,7 @@ class BuildChangelog(private val inputs: Inputs) {
         } else {
             prs.sortedByDescending { it.mergedAt }
         }
-        info("ℹ️ Sorted all pull requests ascending: $sort")
+        print("ℹ️ Sorted all pull requests ascending: $sort")
 
         val transformedMap = mutableMapOf<PullRequestInfo, String>()
         // convert PRs to their text representation
@@ -30,7 +30,7 @@ class BuildChangelog(private val inputs: Inputs) {
             )
         }
 
-        info("Wrote messages for ${prs.size} pull requests")
+        print("Wrote messages for ${prs.size} pull requests")
 
         // bring PRs into the order of categories
         val categorized = mutableMapOf<Configuration.Category, MutableList<String>>()
@@ -74,7 +74,7 @@ class BuildChangelog(private val inputs: Inputs) {
                 categorizedPrs.add(body)
             }
         }
-        info("ℹ️ Ordered all pull requests into ${categories.size} categories")
+        print("ℹ️ Ordered all pull requests into ${categories.size} categories")
 
         // construct final changelog
         var changelog = ""
@@ -93,13 +93,13 @@ class BuildChangelog(private val inputs: Inputs) {
             }
         }
 
-        info("Wrote ${categorizedPrs.size} categorized pull requests down")
+        print("Wrote ${categorizedPrs.size} categorized pull requests down")
 
         var changelogUncategorized = ""
         for (pr in uncategorizedPrs) {
             changelogUncategorized = "${changelogUncategorized + pr}\n"
         }
-        info(
+        print(
             "Wrote ${uncategorizedPrs.size} non categorized pull requests down"
         )
 
@@ -107,7 +107,7 @@ class BuildChangelog(private val inputs: Inputs) {
         for (pr in ignoredPrs) {
             changelogIgnored = "${changelogIgnored + pr}\n"
         }
-        info("Wrote ${ignoredPrs.size} ignored pull requests down")
+        print("Wrote ${ignoredPrs.size} ignored pull requests down")
 
         // fill template
         var transformedChangelog = config.template ?: Configuration.DEFAULT_CONFIG.template!!
@@ -130,7 +130,7 @@ class BuildChangelog(private val inputs: Inputs) {
         )
         transformedChangelog = transformedChangelog.replace("\${{IGNORED_COUNT}}", ignoredPrs.size.toString())
 
-        info("ℹ️ Filled template")
+        print("ℹ️ Filled template")
         return@supervisorScope transformedChangelog
     }
 

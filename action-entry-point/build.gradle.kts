@@ -13,7 +13,9 @@ tasks.register<Copy>("CopyGeneratedJSToDistribution") {
 }
 
 tasks.register<Copy>("CopyGeneratedNodeModuleToRoot") {
-    from("${rootDir}/build/js/node_modules")
+    from("${buildDir}/js/node_modules") {
+        exclude("**/.bin")
+    }
     into("$rootDir/node_modules")
 }
 

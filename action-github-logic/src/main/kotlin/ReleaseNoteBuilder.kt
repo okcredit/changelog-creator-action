@@ -1,6 +1,5 @@
 import data.GithubClient
 import kotlinx.datetime.Clock
-import kotlinx.datetime.Instant
 import models.Inputs
 import usecase.FetchLastClosedMilestone
 import usecase.FetchMilestoneByName
@@ -22,7 +21,7 @@ class ReleaseNoteBuilder(private val inputs: Inputs) {
     suspend fun build(): String {
         val milestoneInfo = fetchMilestone()
 
-        info("ℹ️ Milestone found with name ${milestoneInfo.title}, closed on ${milestoneInfo.closedAt}")
+        print("ℹ️ Milestone found with name ${milestoneInfo.title}, closed on ${milestoneInfo.closedAt}")
         setOutput("milestone", milestoneInfo.title)
         val pullRequestList = utils.actions.group("ℹ️ Fetching PRs for milestone ${milestoneInfo.title}") {
             pRsForMilestone(
@@ -32,7 +31,7 @@ class ReleaseNoteBuilder(private val inputs: Inputs) {
             )
         }
 
-        info("ℹ️ Retrieved ${pullRequestList.size} merged PRs")
+        print("ℹ️ Retrieved ${pullRequestList.size} merged PRs")
         return utils.actions.group("ℹ️ Building changelog") {
             buildChangelog(pullRequestList)
         }
