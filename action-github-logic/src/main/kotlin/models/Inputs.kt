@@ -39,10 +39,14 @@ data class Inputs(
             print("⚠️ Configuration provided, but it couldn't be found. Fallback to Defaults.")
             return null
         }
-        println(rawData)
         return try {
-            Json{isLenient = true}.decodeFromString<Configuration>(rawData)
+            Json {
+                coerceInputValues = false
+                isLenient = true
+                ignoreUnknownKeys = true
+            }.decodeFromString<Configuration>(rawData)
         } catch (error: Exception) {
+            error.printStackTrace()
             print(
                 "⚠️ Configuration provided, but it couldn't be parsed. Fallback to Defaults."
             )

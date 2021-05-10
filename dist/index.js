@@ -1616,6 +1616,13 @@
     }
     return tmp;
   }
+  function dropLast(_this_, n) {
+    var tmp0_require_0 = n >= 0;
+    if (!tmp0_require_0) {
+      var message_2 = '' + 'Requested character count ' + n + ' is less than zero.';
+      throw IllegalArgumentException_init_$Create$_0(toString_1(message_2));
+    }return take(_this_, coerceAtLeast(_this_.length - n | 0, 0));
+  }
   function drop(_this_, n) {
     var tmp0_require_0 = n >= 0;
     if (!tmp0_require_0) {
@@ -9156,6 +9163,195 @@
     if (throwOnMalformed)
       throw new CharacterCodingException('' + 'Malformed sequence starting at ' + (index - 1 | 0));
     return -size_0 | 0;
+  }
+  function printStackTrace(_this_) {
+    (function () {
+      var $externalVarargReceiverTmp = console;
+      return $externalVarargReceiverTmp.error.apply($externalVarargReceiverTmp, [].concat([stackTraceToString(_this_)]));
+    }.call(this));
+  }
+  function stackTraceToString(_this_) {
+    return (new ExceptionTraceBuilder()).buildFor(_this_);
+  }
+  function hasSeen($this, exception) {
+    var tmp$ret$0;
+    l$ret$1: do {
+      var tmp0_any_0 = $this._visited;
+      var indexedObject = tmp0_any_0;
+      var inductionVariable = 0;
+      var last_1 = indexedObject.length;
+      while (inductionVariable < last_1) {
+        var element_2 = indexedObject[inductionVariable];
+        inductionVariable = inductionVariable + 1 | 0;
+        if (element_2 === exception) {
+          tmp$ret$0 = true;
+          break l$ret$1;
+        } else {
+        }
+      }
+      tmp$ret$0 = false;
+    }
+     while (false);
+    return tmp$ret$0;
+  }
+  function dumpFullTrace(_this_, $this, indent, qualifier) {
+    if (dumpSelfTrace(_this_, $this, indent, qualifier))
+      true;
+    else
+      return Unit_getInstance();
+    Unit_getInstance();
+    var cause = _this_.cause;
+    while (!(cause == null)) {
+      if (dumpSelfTrace(cause, $this, indent, 'Caused by: '))
+        true;
+      else
+        return Unit_getInstance();
+      Unit_getInstance();
+      cause = cause.cause;
+    }
+  }
+  function dumpSelfTrace(_this_, $this, indent, qualifier) {
+    $this._target.append_6(indent).append_6(qualifier);
+    Unit_getInstance();
+    var shortInfo = _this_.toString();
+    if (hasSeen($this, _this_)) {
+      $this._target.append_6('[CIRCULAR REFERENCE, SEE ABOVE: ').append_6(shortInfo).append_6(']\n');
+      Unit_getInstance();
+      return false;
+    }var tmp0_asDynamic_0 = $this._visited;
+    tmp0_asDynamic_0.push(_this_);
+    var tmp = _this_.stack;
+    var stack = (tmp == null ? true : typeof tmp === 'string') ? tmp : THROW_CCE();
+    if (!(stack == null)) {
+      var tmp_0 = stack;
+      var tmp1_let_0 = indexOf$default_0(tmp_0, shortInfo, 0, false, 6, null);
+      var stackStart = tmp1_let_0 < 0 ? 0 : tmp1_let_0 + shortInfo.length | 0;
+      if (stackStart === 0) {
+        $this._target.append_6(shortInfo).append_6('\n');
+        Unit_getInstance();
+      }var tmp2_isEmpty_0 = $this._topStack;
+      if (charSequenceLength(tmp2_isEmpty_0) === 0) {
+        $this._topStack = stack;
+        $this._topStackStart = stackStart;
+      } else {
+        {
+          stack = dropCommonFrames($this, stack, stackStart);
+        }
+      }
+      if (charSequenceLength(indent) > 0) {
+        var tmp_1;
+        if (stackStart === 0) {
+          tmp_1 = 0;
+        } else {
+          var count_1 = 0;
+          var indexedObject = shortInfo;
+          var inductionVariable = 0;
+          var last_1 = indexedObject.length;
+          while (inductionVariable < last_1) {
+            var element_3 = charSequenceGet(indexedObject, inductionVariable);
+            inductionVariable = inductionVariable + 1 | 0;
+            if (element_3.equals(new Char(10))) {
+              count_1 = count_1 + 1 | 0;
+              Unit_getInstance();
+            } else {
+            }
+          }
+          tmp_1 = 1 + count_1 | 0;
+        }
+        var messageLines = tmp_1;
+        var tmp3_forEachIndexed_0 = lineSequence(stack);
+        var index_1 = 0;
+        var tmp0_iterator_2 = tmp3_forEachIndexed_0.iterator_62();
+        while (tmp0_iterator_2.hasNext_29()) {
+          var item_3 = tmp0_iterator_2.next_31();
+          var tmp1_4 = index_1;
+          index_1 = tmp1_4 + 1 | 0;
+          var tmp4__anonymous__5 = checkIndexOverflow(tmp1_4);
+          if (tmp4__anonymous__5 >= messageLines) {
+            $this._target.append_6(indent);
+            Unit_getInstance();
+          }$this._target.append_6(item_3).append_6('\n');
+          Unit_getInstance();
+        }
+      } else {
+        {
+          $this._target.append_6(stack).append_6('\n');
+          Unit_getInstance();
+        }
+      }
+    } else {
+      $this._target.append_6(shortInfo).append_6('\n');
+      Unit_getInstance();
+    }
+    var suppressed = _get_suppressedExceptions_(_this_);
+    if (!suppressed.isEmpty_50()) {
+      var suppressedIndent = indent + '    ';
+      var tmp0_iterator = suppressed.iterator_62();
+      while (tmp0_iterator.hasNext_29()) {
+        var s = tmp0_iterator.next_31();
+        dumpFullTrace(s, $this, suppressedIndent, 'Suppressed: ');
+      }
+    } else {
+    }
+    return true;
+  }
+  function dropCommonFrames($this, stack, stackStart) {
+    var commonFrames = 0;
+    var lastBreak = 0;
+    var preLastBreak = 0;
+    var inductionVariable = 0;
+    var tmp0_minOf_0 = $this._topStack.length - $this._topStackStart | 0;
+    var tmp1_minOf_0 = stack.length - stackStart | 0;
+    var last_1 = function () {
+      var $externalVarargReceiverTmp = Math;
+      return $externalVarargReceiverTmp.min.apply($externalVarargReceiverTmp, [].concat([].slice.call(new Int32Array([tmp0_minOf_0, tmp1_minOf_0]))));
+    }.call(this);
+    if (inductionVariable < last_1)
+      $l$break: do {
+        var pos = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var c = charSequenceGet(stack, _get_lastIndex__1(stack) - pos | 0);
+        if (!c.equals(charSequenceGet($this._topStack, _get_lastIndex__1($this._topStack) - pos | 0)))
+          break $l$break;
+        if (c.equals(new Char(10))) {
+          commonFrames = commonFrames + 1 | 0;
+          preLastBreak = lastBreak;
+          lastBreak = pos;
+        }}
+       while (inductionVariable < last_1);
+    if (commonFrames <= 1)
+      return stack;
+    while (preLastBreak > 0 ? charSequenceGet(stack, _get_lastIndex__1(stack) - (preLastBreak - 1 | 0) | 0).equals(new Char(32)) : false)
+      preLastBreak = preLastBreak - 1 | 0;
+    return dropLast(stack, preLastBreak) + ('' + '... and ' + (commonFrames - 1 | 0) + ' more common stack frames skipped');
+  }
+  function ExceptionTraceBuilder() {
+    this._target = StringBuilder_init_$Create$_0();
+    var tmp = this;
+    var tmp0_arrayOf_0 = [];
+    tmp._visited = tmp0_arrayOf_0;
+    this._topStack = '';
+    this._topStackStart = 0;
+  }
+  ExceptionTraceBuilder.prototype.buildFor = function (exception) {
+    dumpFullTrace(exception, this, '', '');
+    return this._target.toString();
+  };
+  ExceptionTraceBuilder.$metadata$ = {
+    simpleName: 'ExceptionTraceBuilder',
+    kind: 'class',
+    interfaces: []
+  };
+  function _get_suppressedExceptions_(_this_) {
+    var tmp0_safe_receiver = _this_._suppressed;
+    var tmp;
+    if (tmp0_safe_receiver == null) {
+      tmp = null;
+    } else {
+      tmp = tmp0_safe_receiver;
+    }
+    var tmp1_elvis_lhs = tmp;
+    return tmp1_elvis_lhs == null ? emptyList() : tmp1_elvis_lhs;
   }
   function addSuppressed(_this_, exception) {
     if (!(_this_ === exception)) {
@@ -58886,7 +59082,7 @@
     var tmp0_desc = this._descriptor_56;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeStringElement_1(tmp0_desc, 0, value._pattern_0);
-    tmp1_output.encodeStringElement_1(tmp0_desc, 1, value._target);
+    tmp1_output.encodeStringElement_1(tmp0_desc, 1, value._target_0);
     tmp1_output.endStructure_11(tmp0_desc);
   };
   $serializer_17.prototype.serialize_129 = function (encoder, value) {
@@ -58911,7 +59107,7 @@
     if (0 === (seen1 & 2))
       throw MissingFieldException_init_$Create$('target');
     else
-      $this._target = target;
+      $this._target_0 = target;
     return $this;
   }
   function Transformer_init_$Create$(seen1, pattern, target, serializationConstructorMarker) {
@@ -58953,11 +59149,11 @@
   function Transformer() {
   }
   Transformer.prototype.toString = function () {
-    return '' + 'Transformer(pattern=' + this._pattern_0 + ', target=' + this._target + ')';
+    return '' + 'Transformer(pattern=' + this._pattern_0 + ', target=' + this._target_0 + ')';
   };
   Transformer.prototype.hashCode = function () {
     var result = getStringHashCode(this._pattern_0);
-    result = imul(result, 31) + getStringHashCode(this._target) | 0;
+    result = imul(result, 31) + getStringHashCode(this._target_0) | 0;
     return result;
   };
   Transformer.prototype.equals = function (other) {
@@ -58970,7 +59166,7 @@
     var tmp0_other_with_cast = other instanceof Transformer ? other : THROW_CCE();
     if (!(this._pattern_0 === tmp0_other_with_cast._pattern_0))
       return false;
-    if (!(this._target === tmp0_other_with_cast._target))
+    if (!(this._target_0 === tmp0_other_with_cast._target_0))
       return false;
     return true;
   };
@@ -59211,7 +59407,9 @@
   function _no_name_provided__247() {
   }
   _no_name_provided__247.prototype.invoke_398 = function ($this$Json) {
+    $this$Json._coerceInputValues = false;
     $this$Json._isLenient = true;
+    $this$Json._ignoreUnknownKeys = true;
   };
   _no_name_provided__247.prototype.invoke_420 = function (p1) {
     this.invoke_398(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
@@ -59288,7 +59486,7 @@
         var tmp = this._state_0;
         switch (tmp) {
           case 0:
-            this._exceptionState = 6;
+            this._exceptionState = 5;
             this._exceptionState = 2;
             this._state_0 = 1;
             suspendResult = readFile_0(this._filename, 'utf8', this);
@@ -59298,11 +59496,11 @@
             continue $sm;
           case 1:
             this._rawData0 = suspendResult;
-            this._exceptionState = 6;
+            this._exceptionState = 5;
             this._state_0 = 3;
             continue $sm;
           case 2:
-            this._exceptionState = 6;
+            this._exceptionState = 5;
             var tmp_0 = this._exception_0;
             if (tmp_0 instanceof Exception) {
               var error_1 = this._exception_0;
@@ -59316,25 +59514,25 @@
 
             break;
           case 3:
-            this._exceptionState = 6;
-            println(this._rawData0);
+            this._exceptionState = 5;
             var TRY_RESULT;
             this._exceptionState = 4;
             var tmp0_decodeFromString_0 = Json$default(null, _no_name_provided_$factory_209(), 1, null);
             var tmp1_serializer_0_1 = tmp0_decodeFromString_0._get_serializersModule__15();
             var tmp0_cast_0_2 = serializer_1(tmp1_serializer_0_1, createKType_0(getKClass_0(Configuration), [], false));
             TRY_RESULT = tmp0_decodeFromString_0.decodeFromString_2(isInterface(tmp0_cast_0_2, KSerializer) ? tmp0_cast_0_2 : THROW_CCE(), this._rawData0);
-            this._exceptionState = 6;
-            this._state_0 = 5;
+            this._exceptionState = 5;
+            this._state_0 = 6;
             continue $sm;
           case 4:
-            this._exceptionState = 6;
+            this._exceptionState = 5;
             var tmp_1 = this._exception_0;
             if (tmp_1 instanceof Exception) {
               var error_2 = this._exception_0;
+              printStackTrace(error_2);
               print("\u26A0\uFE0F Configuration provided, but it couldn't be parsed. Fallback to Defaults.");
               TRY_RESULT = null;
-              this._state_0 = 5;
+              this._state_0 = 6;
               continue $sm;
             } else {
               {
@@ -59344,13 +59542,13 @@
 
             break;
           case 5:
-            this._exceptionState = 6;
-            return TRY_RESULT;
-          case 6:
             throw this._exception_0;
+          case 6:
+            this._exceptionState = 5;
+            return TRY_RESULT;
         }
       } catch ($p) {
-        if (this._exceptionState === 6) {
+        if (this._exceptionState === 5) {
           throw $p;
         } else {
           this._state_0 = this._exceptionState;
