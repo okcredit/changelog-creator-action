@@ -5,6 +5,7 @@ dependencies {
     implementation( "io.ktor:ktor-client-js:1.5.4")
     implementation( "io.ktor:ktor-client-serialization:1.5.4")
     implementation( "io.ktor:ktor-client-logging-js:1.5.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.0")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3")
     api("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
 }

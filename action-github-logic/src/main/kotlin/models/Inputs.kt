@@ -1,7 +1,8 @@
 package models
 
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import path.path
-import utils.actions.debug
 import utils.node_fs.readFile
 import utils.repositoryPath
 
@@ -23,7 +24,7 @@ data class Inputs(
 
         val repoPath = repositoryPath(providedPath)
         val resolvedConfigPath = path.resolve(repoPath, configPath)
-        debug("config path = $resolvedConfigPath")
+        print("config path = $resolvedConfigPath")
 
         configuration = readJsonFile(resolvedConfigPath) ?: Configuration.DEFAULT_CONFIG
         println(configuration)
@@ -38,8 +39,9 @@ data class Inputs(
             print("⚠️ Configuration provided, but it couldn't be found. Fallback to Defaults.")
             return null
         }
+        println(rawData)
         return try {
-            JSON.parse<Configuration>(rawData)
+            Json{isLenient = true}.decodeFromString<Configuration>(rawData)
         } catch (error: Exception) {
             print(
                 "⚠️ Configuration provided, but it couldn't be parsed. Fallback to Defaults."

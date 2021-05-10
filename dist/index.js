@@ -52,8 +52,8 @@
   var ZoneOffsetTransition_1 = $module$_js_joda_core.ZoneOffsetTransition;
   var setOutput_1 = $module$_actions_core.setOutput;
   var getInput_1 = $module$_actions_core.getInput;
-  var debug_1 = $module$_actions_core.debug;
   var setFailed_1 = $module$_actions_core.setFailed;
+  var debug_1 = $module$_actions_core.debug;
   var startGroup_1 = $module$_actions_core.startGroup;
   var endGroup_1 = $module$_actions_core.endGroup;
   var info_1 = $module$_actions_core.info;
@@ -719,6 +719,8 @@
   _no_name_provided__200.prototype.constructor = _no_name_provided__200;
   _no_name_provided__201.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__201.prototype.constructor = _no_name_provided__201;
+  PolymorphicSerializer.prototype = Object.create(AbstractPolymorphicSerializer.prototype);
+  PolymorphicSerializer.prototype.constructor = PolymorphicSerializer;
   SealedClassSerializer.prototype = Object.create(AbstractPolymorphicSerializer.prototype);
   SealedClassSerializer.prototype.constructor = SealedClassSerializer;
   SerializationException.prototype = Object.create(IllegalArgumentException.prototype);
@@ -765,6 +767,8 @@
   PolymorphicKind.prototype.constructor = PolymorphicKind;
   SEALED_0.prototype = Object.create(PolymorphicKind.prototype);
   SEALED_0.prototype.constructor = SEALED_0;
+  OPEN.prototype = Object.create(PolymorphicKind.prototype);
+  OPEN.prototype.constructor = OPEN;
   PrimitiveArrayDescriptor.prototype = Object.create(ListLikeDescriptor.prototype);
   PrimitiveArrayDescriptor.prototype.constructor = PrimitiveArrayDescriptor;
   ArrayListClassDesc.prototype = Object.create(ListLikeDescriptor.prototype);
@@ -839,6 +843,10 @@
   PairSerializer_0.prototype.constructor = PairSerializer_0;
   SerialModuleImpl.prototype = Object.create(SerializersModule.prototype);
   SerialModuleImpl.prototype.constructor = SerialModuleImpl;
+  Argless.prototype = Object.create(ContextualProvider.prototype);
+  Argless.prototype.constructor = Argless;
+  WithTypeArguments.prototype = Object.create(ContextualProvider.prototype);
+  WithTypeArguments.prototype.constructor = WithTypeArguments;
   Default.prototype = Object.create(Json_0.prototype);
   Default.prototype.constructor = Default;
   JsonImpl.prototype = Object.create(Json_0.prototype);
@@ -853,6 +861,8 @@
   JsonLiteral.prototype.constructor = JsonLiteral;
   JsonArray.prototype = Object.create(JsonElement.prototype);
   JsonArray.prototype.constructor = JsonArray;
+  ComposerForUnsignedNumbers.prototype = Object.create(Composer.prototype);
+  ComposerForUnsignedNumbers.prototype.constructor = ComposerForUnsignedNumbers;
   JsonException.prototype = Object.create(SerializationException.prototype);
   JsonException.prototype.constructor = JsonException;
   JsonEncodingException.prototype = Object.create(JsonException.prototype);
@@ -863,8 +873,6 @@
   StreamingJsonDecoder.prototype.constructor = StreamingJsonDecoder;
   JsonDecoderForUnsignedTypes.prototype = Object.create(AbstractDecoder.prototype);
   JsonDecoderForUnsignedTypes.prototype.constructor = JsonDecoderForUnsignedTypes;
-  ComposerForUnsignedNumbers.prototype = Object.create(Composer.prototype);
-  ComposerForUnsignedNumbers.prototype.constructor = ComposerForUnsignedNumbers;
   StreamingJsonEncoder.prototype = Object.create(AbstractEncoder.prototype);
   StreamingJsonEncoder.prototype.constructor = StreamingJsonEncoder;
   AbstractJsonTreeDecoder.prototype = Object.create(NamedValueDecoder.prototype);
@@ -901,8 +909,8 @@
   $buildCOROUTINE$0.prototype.constructor = $buildCOROUTINE$0;
   $fetchMilestoneCOROUTINE$1.prototype = Object.create(CoroutineImpl_0.prototype);
   $fetchMilestoneCOROUTINE$1.prototype.constructor = $fetchMilestoneCOROUTINE$1;
-  _no_name_provided__237.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__237.prototype.constructor = _no_name_provided__237;
+  _no_name_provided__240.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__240.prototype.constructor = _no_name_provided__240;
   $milestonesCOROUTINE$2.prototype = Object.create(CoroutineImpl_0.prototype);
   $milestonesCOROUTINE$2.prototype.constructor = $milestonesCOROUTINE$2;
   $pullRequestsCOROUTINE$3.prototype = Object.create(CoroutineImpl_0.prototype);
@@ -911,14 +919,14 @@
   $resolveConfigurationCOROUTINE$4.prototype.constructor = $resolveConfigurationCOROUTINE$4;
   $readJsonFileCOROUTINE$5.prototype = Object.create(CoroutineImpl_0.prototype);
   $readJsonFileCOROUTINE$5.prototype.constructor = $readJsonFileCOROUTINE$5;
-  _no_name_provided__246.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__246.prototype.constructor = _no_name_provided__246;
-  _no_name_provided__248.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__248.prototype.constructor = _no_name_provided__248;
-  _no_name_provided__249.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__249.prototype.constructor = _no_name_provided__249;
+  _no_name_provided__250.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__250.prototype.constructor = _no_name_provided__250;
   _no_name_provided__252.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__252.prototype.constructor = _no_name_provided__252;
+  _no_name_provided__253.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__253.prototype.constructor = _no_name_provided__253;
+  _no_name_provided__256.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__256.prototype.constructor = _no_name_provided__256;
   ActionFailedException.prototype = Object.create(Error.prototype);
   ActionFailedException.prototype.constructor = ActionFailedException;
   $mainCOROUTINE$0.prototype = Object.create(CoroutineImpl_0.prototype);
@@ -1039,7 +1047,7 @@
     return indexOf(_this_, element) >= 0;
   }
   function joinTo(_this_, buffer, separator, prefix, postfix, limit, truncated, transform) {
-    buffer.append_23(prefix);
+    buffer.append_22(prefix);
     Unit_getInstance();
     var count_0 = 0;
     var indexedObject = _this_;
@@ -1050,7 +1058,7 @@
       inductionVariable = inductionVariable + 1 | 0;
       count_0 = count_0 + 1 | 0;
       if (count_0 > 1) {
-        buffer.append_23(separator);
+        buffer.append_22(separator);
         Unit_getInstance();
       } else {
       }
@@ -1060,9 +1068,9 @@
         break $l$break;
     }
     if (limit >= 0 ? count_0 > limit : false) {
-      buffer.append_23(truncated);
+      buffer.append_22(truncated);
       Unit_getInstance();
-    }buffer.append_23(postfix);
+    }buffer.append_22(postfix);
     Unit_getInstance();
     return buffer;
   }
@@ -1090,7 +1098,7 @@
   function _no_name_provided_($this_withIndex) {
     this._$this_withIndex = $this_withIndex;
   }
-  _no_name_provided_.prototype.invoke_403 = function () {
+  _no_name_provided_.prototype.invoke_411 = function () {
     return arrayIterator(this._$this_withIndex);
   };
   _no_name_provided_.$metadata$ = {
@@ -1100,7 +1108,7 @@
   function _no_name_provided_$factory($this_withIndex) {
     var i = new _no_name_provided_($this_withIndex);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function plus(_this_, elements) {
@@ -1143,7 +1151,7 @@
         case 1:
           var tmp_0;
           if (isInterface(_this_, List)) {
-            tmp_0 = _this_.get_76(0);
+            tmp_0 = _this_.get_77(0);
           } else {
             {
               tmp_0 = _this_.iterator_62().next_31();
@@ -1164,7 +1172,7 @@
     return new _no_name_provided__1(_this_);
   }
   function firstOrNull_0(_this_) {
-    return _this_.isEmpty_50() ? null : _this_.get_76(0);
+    return _this_.isEmpty_50() ? null : _this_.get_77(0);
   }
   function plus_1(_this_, element) {
     var result = ArrayList_init_$Create$_0(_this_._get_size__48() + 1 | 0);
@@ -1199,7 +1207,7 @@
       case 0:
         throw NoSuchElementException_init_$Create$_0('List is empty.');
       case 1:
-        tmp = _this_.get_76(0);
+        tmp = _this_.get_77(0);
         break;
       default:throw IllegalArgumentException_init_$Create$_0('List has more than one element.');
     }
@@ -1265,12 +1273,12 @@
     return filterNotNullTo(_this_, ArrayList_init_$Create$());
   }
   function singleOrNull(_this_) {
-    return _this_._get_size__48() === 1 ? _this_.get_76(0) : null;
+    return _this_._get_size__48() === 1 ? _this_.get_77(0) : null;
   }
   function first(_this_) {
     if (_this_.isEmpty_50())
       throw NoSuchElementException_init_$Create$_0('List is empty.');
-    return _this_.get_76(0);
+    return _this_.get_77(0);
   }
   function toCollection_0(_this_, destination) {
     var tmp0_iterator = _this_.iterator_62();
@@ -1282,7 +1290,7 @@
     return destination;
   }
   function joinTo_0(_this_, buffer, separator, prefix, postfix, limit, truncated, transform) {
-    buffer.append_23(prefix);
+    buffer.append_22(prefix);
     Unit_getInstance();
     var count_0 = 0;
     var tmp0_iterator = _this_.iterator_62();
@@ -1290,7 +1298,7 @@
       var element = tmp0_iterator.next_31();
       count_0 = count_0 + 1 | 0;
       if (count_0 > 1) {
-        buffer.append_23(separator);
+        buffer.append_22(separator);
         Unit_getInstance();
       } else {
       }
@@ -1300,9 +1308,9 @@
         break $l$break;
     }
     if (limit >= 0 ? count_0 > limit : false) {
-      buffer.append_23(truncated);
+      buffer.append_22(truncated);
       Unit_getInstance();
-    }buffer.append_23(postfix);
+    }buffer.append_22(postfix);
     Unit_getInstance();
     return buffer;
   }
@@ -1347,7 +1355,7 @@
         case 1:
           var tmp_0;
           if (isInterface(_this_, List)) {
-            tmp_0 = _this_.get_76(0);
+            tmp_0 = _this_.get_77(0);
           } else {
             {
               tmp_0 = _this_.iterator_62().next_31();
@@ -1403,10 +1411,10 @@
   function last(_this_) {
     if (_this_.isEmpty_50())
       throw NoSuchElementException_init_$Create$_0('List is empty.');
-    return _this_.get_76(_get_lastIndex__0(_this_));
+    return _this_.get_77(_get_lastIndex__0(_this_));
   }
   function lastOrNull(_this_) {
-    return _this_.isEmpty_50() ? null : _this_.get_76(_this_._get_size__48() - 1 | 0);
+    return _this_.isEmpty_50() ? null : _this_.get_77(_this_._get_size__48() - 1 | 0);
   }
   function minOrNull(_this_) {
     var iterator = _this_.iterator_62();
@@ -1543,7 +1551,7 @@
   _no_name_provided__0.prototype.invoke_1 = function (it) {
     return it == null;
   };
-  _no_name_provided__0.prototype.invoke_412 = function (p1) {
+  _no_name_provided__0.prototype.invoke_420 = function (p1) {
     return this.invoke_1((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__0.$metadata$ = {
@@ -1622,7 +1630,7 @@
   _no_name_provided__2.prototype.invoke_3 = function (it) {
     return it === this._this$0 ? '(this Collection)' : toString_0(it);
   };
-  _no_name_provided__2.prototype.invoke_412 = function (p1) {
+  _no_name_provided__2.prototype.invoke_420 = function (p1) {
     return this.invoke_3((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__2.$metadata$ = {
@@ -1880,7 +1888,7 @@
   _no_name_provided__6.prototype.invoke_5 = function (it) {
     return this._this$0_1.toString_0(it);
   };
-  _no_name_provided__6.prototype.invoke_412 = function (p1) {
+  _no_name_provided__6.prototype.invoke_420 = function (p1) {
     return this.invoke_5((!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__6.$metadata$ = {
@@ -2119,7 +2127,7 @@
       case 0:
         return emptyList();
       case 1:
-        return listOf_0(_this_.get_76(0));
+        return listOf_0(_this_.get_77(0));
       default:return _this_;
     }
   }
@@ -2194,7 +2202,7 @@
   EmptyList.prototype.containsAll_37 = function (elements) {
     return this.containsAll_7(elements);
   };
-  EmptyList.prototype.get_76 = function (index) {
+  EmptyList.prototype.get_77 = function (index) {
     throw IndexOutOfBoundsException_init_$Create$_0('' + "Empty list doesn't contain element at index " + index + '.');
   };
   EmptyList.prototype.iterator_62 = function () {
@@ -2410,7 +2418,7 @@
         case 1:
           var tmp_0;
           if (isInterface(_this_, List)) {
-            tmp_0 = _this_.get_76(0);
+            tmp_0 = _this_.get_77(0);
           } else {
             {
               tmp_0 = _this_.iterator_62().next_31();
@@ -2869,7 +2877,7 @@
     }
     return tmp;
   };
-  _no_name_provided__10.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__10.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, CoroutineContext) : false) ? p1 : THROW_CCE();
     return this.invoke_7(tmp, (!(p2 == null) ? isInterface(p2, Element_0) : false) ? p2 : THROW_CCE());
   };
@@ -2981,7 +2989,7 @@
     }
     return tmp;
   };
-  _no_name_provided__11.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__11.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     return this.invoke_9(tmp, (!(p2 == null) ? isInterface(p2, Element_0) : false) ? p2 : THROW_CCE());
   };
@@ -3318,19 +3326,19 @@
   }
   function appendElement(_this_, element, transform) {
     if (!(transform == null)) {
-      _this_.append_23(transform(element));
+      _this_.append_22(transform(element));
       Unit_getInstance();
     } else {
       if (element == null ? true : isCharSequence(element)) {
-        _this_.append_23(element);
+        _this_.append_22(element);
         Unit_getInstance();
       } else {
         if (element instanceof Char) {
-          _this_.append_24(element);
+          _this_.append_23(element);
           Unit_getInstance();
         } else {
           {
-            _this_.append_23(toString_0(element));
+            _this_.append_22(toString_0(element));
             Unit_getInstance();
           }
         }
@@ -3551,11 +3559,11 @@
   }
   function _no_name_provided__12() {
   }
-  _no_name_provided__12.prototype.invoke_406 = function (line) {
+  _no_name_provided__12.prototype.invoke_414 = function (line) {
     return line;
   };
-  _no_name_provided__12.prototype.invoke_412 = function (p1) {
-    return this.invoke_406((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
+  _no_name_provided__12.prototype.invoke_420 = function (p1) {
+    return this.invoke_414((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__12.$metadata$ = {
     kind: 'class',
@@ -3564,11 +3572,11 @@
   function _no_name_provided__13($indent) {
     this._$indent = $indent;
   }
-  _no_name_provided__13.prototype.invoke_406 = function (line) {
+  _no_name_provided__13.prototype.invoke_414 = function (line) {
     return this._$indent + line;
   };
-  _no_name_provided__13.prototype.invoke_412 = function (p1) {
-    return this.invoke_406((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
+  _no_name_provided__13.prototype.invoke_420 = function (p1) {
+    return this.invoke_414((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__13.$metadata$ = {
     kind: 'class',
@@ -3577,13 +3585,13 @@
   function _no_name_provided_$factory_5() {
     var i = new _no_name_provided__12();
     return function (p1) {
-      return i.invoke_406(p1);
+      return i.invoke_414(p1);
     };
   }
   function _no_name_provided_$factory_6($indent) {
     var i = new _no_name_provided__13($indent);
     return function (p1) {
-      return i.invoke_406(p1);
+      return i.invoke_414(p1);
     };
   }
   function toLongOrNull(_this_) {
@@ -3713,38 +3721,6 @@
   }
   function numberFormatError(input) {
     throw NumberFormatException_init_$Create$('' + "Invalid number format: '" + input + "'");
-  }
-  function toByteOrNull(_this_) {
-    return toByteOrNull_0(_this_, 10);
-  }
-  function toShortOrNull(_this_) {
-    return toShortOrNull_0(_this_, 10);
-  }
-  function toByteOrNull_0(_this_, radix) {
-    var tmp0_elvis_lhs = toIntOrNull_0(_this_, radix);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      return null;
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    var int = tmp;
-    if (int < ByteCompanionObject_getInstance()._MIN_VALUE_3 ? true : int > ByteCompanionObject_getInstance()._MAX_VALUE_3)
-      return null;
-    return toByte_0(int);
-  }
-  function toShortOrNull_0(_this_, radix) {
-    var tmp0_elvis_lhs = toIntOrNull_0(_this_, radix);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      return null;
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    var int = tmp;
-    if (int < ShortCompanionObject_getInstance()._MIN_VALUE_4 ? true : int > ShortCompanionObject_getInstance()._MAX_VALUE_4)
-      return null;
-    return toShort_0(int);
   }
   function indexOf_0(_this_, char, startIndex, ignoreCase) {
     var tmp;
@@ -4330,7 +4306,7 @@
   _no_name_provided__15.prototype.invoke_15 = function (it) {
     return substring(this._$this_splitToSequence, it);
   };
-  _no_name_provided__15.prototype.invoke_412 = function (p1) {
+  _no_name_provided__15.prototype.invoke_420 = function (p1) {
     return this.invoke_15(p1 instanceof IntRange ? p1 : THROW_CCE());
   };
   _no_name_provided__15.$metadata$ = {
@@ -4351,7 +4327,7 @@
     }
     return tmp;
   };
-  _no_name_provided__16.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__16.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? isCharSequence(p1) : false) ? p1 : THROW_CCE();
     return this.invoke_17(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
   };
@@ -5075,7 +5051,7 @@
     else {
     }
     var tmp0_toUByte_0_1 = _UInt___get_data__impl_(int);
-    return _UByte___init__impl_(toByte_0(tmp0_toUByte_0_1));
+    return _UByte___init__impl_(toByte(tmp0_toUByte_0_1));
   }
   function toUShortOrNull_0(_this_, radix) {
     var tmp0_elvis_lhs = toUIntOrNull_0(_this_, radix);
@@ -5097,7 +5073,7 @@
     else {
     }
     var tmp0_toUShort_0_1 = _UInt___get_data__impl_(int);
-    return _UShort___init__impl_(toShort_0(tmp0_toUShort_0_1));
+    return _UShort___init__impl_(toShort(tmp0_toUShort_0_1));
   }
   function uintCompare(v1, v2) {
     return compareTo(v1 ^ IntCompanionObject_getInstance()._MIN_VALUE_5, v2 ^ IntCompanionObject_getInstance()._MIN_VALUE_5);
@@ -6025,7 +6001,7 @@
     var tmp1 = tmp0_this._index_1;
     tmp0_this._index_1 = tmp1 + 1 | 0;
     tmp._last_1 = tmp1;
-    return this._$this.get_76(this._last_1);
+    return this._$this.get_77(this._last_1);
   };
   IteratorImpl.prototype.remove_51 = function () {
     var tmp0_check_0 = !(this._last_1 === -1);
@@ -6085,7 +6061,7 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        if (equals_1(this.get_76(index), element)) {
+        if (equals_1(this.get_77(index), element)) {
           return index;
         }}
        while (!(index === last_1));
@@ -6392,7 +6368,7 @@
   ArrayList.prototype._get_size__48 = function () {
     return this._array.length;
   };
-  ArrayList.prototype.get_76 = function (index) {
+  ArrayList.prototype.get_77 = function (index) {
     var tmp = this._array[rangeCheck(this, index)];
     return (tmp == null ? true : isObject(tmp)) ? tmp : THROW_CCE();
   };
@@ -6606,7 +6582,7 @@
   _no_name_provided__21.prototype.invoke_19 = function (a, b) {
     return this._$comparator.compare(a, b);
   };
-  _no_name_provided__21.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__21.prototype.invoke_418 = function (p1, p2) {
     var tmp = (p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE();
     return this.invoke_19(tmp, (p2 == null ? true : isObject(p2)) ? p2 : THROW_CCE());
   };
@@ -6619,7 +6595,7 @@
   _no_name_provided__22.prototype.invoke_21 = function (a, b) {
     return (a & 3) - (b & 3) | 0;
   };
-  _no_name_provided__22.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__22.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE();
     return this.invoke_21(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
   };
@@ -7736,6 +7712,13 @@
     kind: 'class',
     interfaces: []
   };
+  function KFunction() {
+  }
+  KFunction.$metadata$ = {
+    simpleName: 'KFunction',
+    kind: 'interface',
+    interfaces: [KCallable]
+  };
   function KMutableProperty1() {
   }
   KMutableProperty1.$metadata$ = {
@@ -7795,7 +7778,7 @@
   _no_name_provided__24.prototype.invoke_23 = function (it) {
     return asString(it, this._this$0_9);
   };
-  _no_name_provided__24.prototype.invoke_412 = function (p1) {
+  _no_name_provided__24.prototype.invoke_420 = function (p1) {
     return this.invoke_23(p1 instanceof KTypeProjection ? p1 : THROW_CCE());
   };
   _no_name_provided__24.$metadata$ = {
@@ -7891,7 +7874,7 @@
   _no_name_provided__25.prototype.invoke_67 = function (it) {
     return isObject(it);
   };
-  _no_name_provided__25.prototype.invoke_412 = function (p1) {
+  _no_name_provided__25.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__25.$metadata$ = {
@@ -7903,7 +7886,7 @@
   _no_name_provided__26.prototype.invoke_67 = function (it) {
     return isNumber(it);
   };
-  _no_name_provided__26.prototype.invoke_412 = function (p1) {
+  _no_name_provided__26.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__26.$metadata$ = {
@@ -7915,7 +7898,7 @@
   _no_name_provided__27.prototype.invoke_67 = function (it) {
     return !(it == null) ? typeof it === 'boolean' : false;
   };
-  _no_name_provided__27.prototype.invoke_412 = function (p1) {
+  _no_name_provided__27.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__27.$metadata$ = {
@@ -7927,7 +7910,7 @@
   _no_name_provided__28.prototype.invoke_67 = function (it) {
     return !(it == null) ? typeof it === 'number' : false;
   };
-  _no_name_provided__28.prototype.invoke_412 = function (p1) {
+  _no_name_provided__28.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__28.$metadata$ = {
@@ -7939,7 +7922,7 @@
   _no_name_provided__29.prototype.invoke_67 = function (it) {
     return !(it == null) ? typeof it === 'number' : false;
   };
-  _no_name_provided__29.prototype.invoke_412 = function (p1) {
+  _no_name_provided__29.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__29.$metadata$ = {
@@ -7951,7 +7934,7 @@
   _no_name_provided__30.prototype.invoke_67 = function (it) {
     return !(it == null) ? typeof it === 'number' : false;
   };
-  _no_name_provided__30.prototype.invoke_412 = function (p1) {
+  _no_name_provided__30.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__30.$metadata$ = {
@@ -7963,7 +7946,7 @@
   _no_name_provided__31.prototype.invoke_67 = function (it) {
     return !(it == null) ? typeof it === 'number' : false;
   };
-  _no_name_provided__31.prototype.invoke_412 = function (p1) {
+  _no_name_provided__31.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__31.$metadata$ = {
@@ -7975,7 +7958,7 @@
   _no_name_provided__32.prototype.invoke_67 = function (it) {
     return !(it == null) ? typeof it === 'number' : false;
   };
-  _no_name_provided__32.prototype.invoke_412 = function (p1) {
+  _no_name_provided__32.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__32.$metadata$ = {
@@ -7987,7 +7970,7 @@
   _no_name_provided__33.prototype.invoke_67 = function (it) {
     return !(it == null) ? isArray(it) : false;
   };
-  _no_name_provided__33.prototype.invoke_412 = function (p1) {
+  _no_name_provided__33.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__33.$metadata$ = {
@@ -7999,7 +7982,7 @@
   _no_name_provided__34.prototype.invoke_67 = function (it) {
     return !(it == null) ? typeof it === 'string' : false;
   };
-  _no_name_provided__34.prototype.invoke_412 = function (p1) {
+  _no_name_provided__34.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__34.$metadata$ = {
@@ -8011,7 +7994,7 @@
   _no_name_provided__35.prototype.invoke_67 = function (it) {
     return it instanceof Error;
   };
-  _no_name_provided__35.prototype.invoke_412 = function (p1) {
+  _no_name_provided__35.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__35.$metadata$ = {
@@ -8023,7 +8006,7 @@
   _no_name_provided__36.prototype.invoke_67 = function (it) {
     return !(it == null) ? isBooleanArray(it) : false;
   };
-  _no_name_provided__36.prototype.invoke_412 = function (p1) {
+  _no_name_provided__36.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__36.$metadata$ = {
@@ -8035,7 +8018,7 @@
   _no_name_provided__37.prototype.invoke_67 = function (it) {
     return !(it == null) ? isCharArray(it) : false;
   };
-  _no_name_provided__37.prototype.invoke_412 = function (p1) {
+  _no_name_provided__37.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__37.$metadata$ = {
@@ -8047,7 +8030,7 @@
   _no_name_provided__38.prototype.invoke_67 = function (it) {
     return !(it == null) ? isByteArray(it) : false;
   };
-  _no_name_provided__38.prototype.invoke_412 = function (p1) {
+  _no_name_provided__38.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__38.$metadata$ = {
@@ -8059,7 +8042,7 @@
   _no_name_provided__39.prototype.invoke_67 = function (it) {
     return !(it == null) ? isShortArray(it) : false;
   };
-  _no_name_provided__39.prototype.invoke_412 = function (p1) {
+  _no_name_provided__39.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__39.$metadata$ = {
@@ -8071,7 +8054,7 @@
   _no_name_provided__40.prototype.invoke_67 = function (it) {
     return !(it == null) ? isIntArray(it) : false;
   };
-  _no_name_provided__40.prototype.invoke_412 = function (p1) {
+  _no_name_provided__40.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__40.$metadata$ = {
@@ -8083,7 +8066,7 @@
   _no_name_provided__41.prototype.invoke_67 = function (it) {
     return !(it == null) ? isLongArray(it) : false;
   };
-  _no_name_provided__41.prototype.invoke_412 = function (p1) {
+  _no_name_provided__41.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__41.$metadata$ = {
@@ -8095,7 +8078,7 @@
   _no_name_provided__42.prototype.invoke_67 = function (it) {
     return !(it == null) ? isFloatArray(it) : false;
   };
-  _no_name_provided__42.prototype.invoke_412 = function (p1) {
+  _no_name_provided__42.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__42.$metadata$ = {
@@ -8107,7 +8090,7 @@
   _no_name_provided__43.prototype.invoke_67 = function (it) {
     return !(it == null) ? isDoubleArray(it) : false;
   };
-  _no_name_provided__43.prototype.invoke_412 = function (p1) {
+  _no_name_provided__43.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__43.$metadata$ = {
@@ -8126,7 +8109,7 @@
     }
     return tmp;
   };
-  _no_name_provided__44.prototype.invoke_412 = function (p1) {
+  _no_name_provided__44.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__44.$metadata$ = {
@@ -8676,7 +8659,7 @@
     var tmp0_asDynamic_0 = this._string;
     return tmp0_asDynamic_0.length;
   };
-  StringBuilder.prototype.get_76 = function (index) {
+  StringBuilder.prototype.get_77 = function (index) {
     var tmp0_getOrElse_0 = this._string;
     var tmp;
     if (index >= 0 ? index <= _get_lastIndex__1(tmp0_getOrElse_0) : false) {
@@ -8690,17 +8673,17 @@
     var tmp0_substring_0 = this._string;
     return tmp0_substring_0.substring(startIndex, endIndex);
   };
-  StringBuilder.prototype.append_24 = function (value) {
+  StringBuilder.prototype.append_23 = function (value) {
     var tmp0_this = this;
     tmp0_this._string = tmp0_this._string + value;
     return this;
   };
-  StringBuilder.prototype.append_23 = function (value) {
+  StringBuilder.prototype.append_22 = function (value) {
     var tmp0_this = this;
     tmp0_this._string = tmp0_this._string + toString_0(value);
     return this;
   };
-  StringBuilder.prototype.append_22 = function (value, startIndex, endIndex) {
+  StringBuilder.prototype.append_21 = function (value, startIndex, endIndex) {
     var tmp0_elvis_lhs = value;
     return this.appendRange(tmp0_elvis_lhs == null ? 'null' : tmp0_elvis_lhs, startIndex, endIndex);
   };
@@ -8711,16 +8694,31 @@
   };
   StringBuilder.prototype.append_6 = function (value) {
     var tmp0_this = this;
-    tmp0_this._string = tmp0_this._string + value;
-    return this;
-  };
-  StringBuilder.prototype.append_7 = function (value) {
-    var tmp0_this = this;
     var tmp = tmp0_this;
     var tmp_0 = tmp0_this._string;
     var tmp1_elvis_lhs = value;
     tmp._string = tmp_0 + (tmp1_elvis_lhs == null ? 'null' : tmp1_elvis_lhs);
     return this;
+  };
+  StringBuilder.prototype.setLength = function (newLength) {
+    if (newLength < 0) {
+      throw IllegalArgumentException_init_$Create$_0('' + 'Negative new length: ' + newLength + '.');
+    }if (newLength <= this._get_length__41()) {
+      var tmp = this;
+      var tmp0_substring_0 = this._string;
+      var tmp1_substring_0 = 0;
+      tmp._string = tmp0_substring_0.substring(tmp1_substring_0, newLength);
+    } else {
+      var inductionVariable = this._get_length__41();
+      if (inductionVariable < newLength)
+        do {
+          var i = inductionVariable;
+          inductionVariable = inductionVariable + 1 | 0;
+          var tmp1_this = this;
+          tmp1_this._string = tmp1_this._string + new Char(0);
+        }
+         while (inductionVariable < newLength);
+    }
   };
   StringBuilder.prototype.toString = function () {
     return this._string;
@@ -8841,26 +8839,6 @@
       default:return false;
     }
   }
-  function toByte(_this_) {
-    var tmp0_elvis_lhs = toByteOrNull(_this_);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      numberFormatError(_this_);
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    return tmp;
-  }
-  function toShort(_this_) {
-    var tmp0_elvis_lhs = toShortOrNull(_this_);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      numberFormatError(_this_);
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    return tmp;
-  }
   function toDouble(_this_) {
     var tmp0_unsafeCast_0 = +_this_;
     var tmp1_also_0 = tmp0_unsafeCast_0;
@@ -8906,7 +8884,7 @@
   _no_name_provided__45.prototype.invoke_65 = function (it) {
     return it._value_0;
   };
-  _no_name_provided__45.prototype.invoke_412 = function (p1) {
+  _no_name_provided__45.prototype.invoke_420 = function (p1) {
     return this.invoke_65(p1 instanceof RegexOption ? p1 : THROW_CCE());
   };
   _no_name_provided__45.$metadata$ = {
@@ -8943,19 +8921,6 @@
   }
   function decodeToString(_this_) {
     return decodeUtf8(_this_, 0, _this_.length, false);
-  }
-  function concatToString(_this_, startIndex, endIndex) {
-    Companion_getInstance().checkBoundsIndexes(startIndex, endIndex, _this_.length);
-    var result = '';
-    var inductionVariable = startIndex;
-    if (inductionVariable < endIndex)
-      do {
-        var index = inductionVariable;
-        inductionVariable = inductionVariable + 1 | 0;
-        result = result + _this_[index];
-      }
-       while (inductionVariable < endIndex);
-    return result;
   }
   function replace(_this_, oldChar, newChar, ignoreCase) {
     var tmp0_nativeReplace_0 = new RegExp(Companion_getInstance_12().escape(oldChar.toString()), ignoreCase ? 'gui' : 'gu');
@@ -9085,49 +9050,49 @@
       byteIndex = tmp0 + 1 | 0;
       var byte = bytes[tmp0];
       if (byte >= 0) {
-        stringBuilder.append_24(numberToChar(byte));
+        stringBuilder.append_23(numberToChar(byte));
         Unit_getInstance();
       } else if (byte >> 5 === -2) {
         var code = codePointFrom2(bytes, byte, byteIndex, endIndex, throwOnMalformed);
         if (code <= 0) {
-          stringBuilder.append_24(new Char(65533));
+          stringBuilder.append_23(new Char(65533));
           Unit_getInstance();
           byteIndex = byteIndex + (-code | 0) | 0;
         } else {
-          stringBuilder.append_24(numberToChar(code));
+          stringBuilder.append_23(numberToChar(code));
           Unit_getInstance();
           byteIndex = byteIndex + 1 | 0;
         }
       } else if (byte >> 4 === -2) {
         var code_0 = codePointFrom3(bytes, byte, byteIndex, endIndex, throwOnMalformed);
         if (code_0 <= 0) {
-          stringBuilder.append_24(new Char(65533));
+          stringBuilder.append_23(new Char(65533));
           Unit_getInstance();
           byteIndex = byteIndex + (-code_0 | 0) | 0;
         } else {
-          stringBuilder.append_24(numberToChar(code_0));
+          stringBuilder.append_23(numberToChar(code_0));
           Unit_getInstance();
           byteIndex = byteIndex + 2 | 0;
         }
       } else if (byte >> 3 === -2) {
         var code_1 = codePointFrom4(bytes, byte, byteIndex, endIndex, throwOnMalformed);
         if (code_1 <= 0) {
-          stringBuilder.append_24(new Char(65533));
+          stringBuilder.append_23(new Char(65533));
           Unit_getInstance();
           byteIndex = byteIndex + (-code_1 | 0) | 0;
         } else {
           var high = (code_1 - 65536 | 0) >> 10 | 55296;
           var low = code_1 & 1023 | 56320;
-          stringBuilder.append_24(numberToChar(high));
+          stringBuilder.append_23(numberToChar(high));
           Unit_getInstance();
-          stringBuilder.append_24(numberToChar(low));
+          stringBuilder.append_23(numberToChar(low));
           Unit_getInstance();
           byteIndex = byteIndex + 3 | 0;
         }
       } else {
         malformed(0, byteIndex, throwOnMalformed);
         Unit_getInstance();
-        stringBuilder.append_24(new Char(65533));
+        stringBuilder.append_23(new Char(65533));
         Unit_getInstance();
       }
     }
@@ -9250,8 +9215,8 @@
   Char.prototype.rangeTo = function (other) {
     return new CharRange(this, other);
   };
-  Char.prototype.toByte_4 = function () {
-    return toByte_0(this._value_1);
+  Char.prototype.toByte_5 = function () {
+    return toByte(this._value_1);
   };
   Char.prototype.toInt_5 = function () {
     return this._value_1;
@@ -9458,7 +9423,7 @@
       throw IllegalArgumentException_init_$Create$_0('' + 'Invalid Char code: ' + tmp0_Char_0);
     } else {
     }
-    var tmp2_withType_0 = fillArrayVal(tmp, new Char(_UShort___init__impl_(toShort_0(tmp0_Char_0))));
+    var tmp2_withType_0 = fillArrayVal(tmp, new Char(_UShort___init__impl_(toShort(tmp0_Char_0))));
     tmp2_withType_0.$type$ = tmp1_withType_0;
     var tmp3_unsafeCast_0 = tmp2_withType_0;
     return tmp3_unsafeCast_0;
@@ -9547,9 +9512,9 @@
         throw IllegalArgumentException_init_$Create$_0('' + 'Invalid Char code: ' + tmp1_Char_0);
       } else {
       }
-      tmp = new Char(_UShort___init__impl_(toShort_0(tmp1_Char_0)));
+      tmp = new Char(_UShort___init__impl_(toShort(tmp1_Char_0)));
     } else {
-      tmp = a.get_76(index);
+      tmp = a.get_77(index);
     }
     return tmp;
   }
@@ -9619,7 +9584,7 @@
   _no_name_provided__47.prototype.invoke_67 = function (it) {
     return toString_1(it);
   };
-  _no_name_provided__47.prototype.invoke_412 = function (p1) {
+  _no_name_provided__47.prototype.invoke_420 = function (p1) {
     return this.invoke_67((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
   };
   _no_name_provided__47.$metadata$ = {
@@ -9986,6 +9951,12 @@
   Long.prototype.inv_0 = function () {
     return new Long(~this._low, ~this._high);
   };
+  Long.prototype.toByte_5 = function () {
+    return toByte(this._low);
+  };
+  Long.prototype.toShort_4 = function () {
+    return toShort(this._low);
+  };
   Long.prototype.toInt_5 = function () {
     return this._low;
   };
@@ -10305,7 +10276,7 @@
     var rhs = jsBitwiseAnd(a_local, 65535) * b_local;
     return jsBitwiseOr(lhs + rhs, 0);
   }
-  function toByte_0(a) {
+  function toByte(a) {
     var tmp0_unsafeCast_0 = toByte$outlinedJsCode$(a);
     return tmp0_unsafeCast_0;
   }
@@ -10327,7 +10298,7 @@
     var tmp0_unsafeCast_0 = numberToDouble$outlinedJsCode$_0(a);
     return tmp0_unsafeCast_0;
   }
-  function toShort_0(a) {
+  function toShort(a) {
     var tmp0_unsafeCast_0 = toShort$outlinedJsCode$_1(a);
     return tmp0_unsafeCast_0;
   }
@@ -10360,7 +10331,7 @@
       throw IllegalArgumentException_init_$Create$_0('' + 'Invalid Char code: ' + tmp0_Char_0);
     } else {
     }
-    return new Char(_UShort___init__impl_(toShort_0(tmp0_Char_0)));
+    return new Char(_UShort___init__impl_(toShort(tmp0_Char_0)));
   }
   function toLong_0(a) {
     return fromInt(a);
@@ -10642,8 +10613,8 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var tmp = _this_.get_76(index);
-        _this_.set_6(index, _this_.get_76(reverseIndex));
+        var tmp = _this_.get_77(index);
+        _this_.set_6(index, _this_.get_77(reverseIndex));
         Unit_getInstance();
         _this_.set_6(reverseIndex, tmp);
         Unit_getInstance();
@@ -12984,7 +12955,7 @@
   _no_name_provided__48.prototype.invoke_74 = function (it) {
     return it instanceof CoroutineDispatcher ? it : null;
   };
-  _no_name_provided__48.prototype.invoke_412 = function (p1) {
+  _no_name_provided__48.prototype.invoke_420 = function (p1) {
     return this.invoke_74((!(p1 == null) ? isInterface(p1, Element_0) : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__48.$metadata$ = {
@@ -13545,11 +13516,11 @@
   };
   NodeList_0.prototype.getString = function (state) {
     var tmp0_apply_0_1 = StringBuilder_init_$Create$_0();
-    tmp0_apply_0_1.append_7('List{');
+    tmp0_apply_0_1.append_6('List{');
     Unit_getInstance();
-    tmp0_apply_0_1.append_7(state);
+    tmp0_apply_0_1.append_6(state);
     Unit_getInstance();
-    tmp0_apply_0_1.append_7('}[');
+    tmp0_apply_0_1.append_6('}[');
     Unit_getInstance();
     var first_3 = true;
     var cur_1_4 = this._get__next__2();
@@ -13559,7 +13530,7 @@
         if (first_3)
           first_3 = false;
         else {
-          tmp0_apply_0_1.append_7(', ');
+          tmp0_apply_0_1.append_6(', ');
           Unit_getInstance();
         }
         tmp0_apply_0_1.append_5(tmp0__anonymous__2_5);
@@ -13568,7 +13539,7 @@
       }
       cur_1_4 = cur_1_4.__next;
     }
-    tmp0_apply_0_1.append_7(']');
+    tmp0_apply_0_1.append_6(']');
     Unit_getInstance();
     return tmp0_apply_0_1.toString();
   };
@@ -13673,7 +13644,7 @@
     var firstNonCancellation = tmp$ret$0;
     if (!(firstNonCancellation == null))
       return firstNonCancellation;
-    var first_1 = exceptions.get_76(0);
+    var first_1 = exceptions.get_77(0);
     if (first_1 instanceof TimeoutCancellationException) {
       var tmp$ret$2;
       l$ret$3: do {
@@ -15509,7 +15480,7 @@
               do {
                 var i_4 = inductionVariable;
                 inductionVariable = inductionVariable + -1 | 0;
-                var tmp1__anonymous__5 = list_2.get_76(i_4);
+                var tmp1__anonymous__5 = list_2.get_77(i_4);
                 tmp1__anonymous__5.resumeSendClosed_3(closed);
               }
                while (0 <= inductionVariable);
@@ -15689,7 +15660,7 @@
               do {
                 var i_4 = inductionVariable;
                 inductionVariable = inductionVariable + -1 | 0;
-                var tmp2__anonymous__5 = list_2.get_76(i_4);
+                var tmp2__anonymous__5 = list_2.get_77(i_4);
                 tmp2__anonymous__5.resumeReceiveClosed_0(closed);
               }
                while (0 <= inductionVariable);
@@ -16772,7 +16743,7 @@
               do {
                 var i_4 = inductionVariable;
                 inductionVariable = inductionVariable + -1 | 0;
-                var tmp1__anonymous__5 = list_2.get_76(i_4);
+                var tmp1__anonymous__5 = list_2.get_77(i_4);
                 var tmp0_subject_6_0 = tmp1__anonymous__5;
                 if (tmp0_subject_6_0 instanceof SendBuffered) {
                   var tmp1_safe_receiver_7_0 = this._get_onUndeliveredElement__4();
@@ -17436,7 +17407,7 @@
   _no_name_provided__49.prototype.invoke_289 = function (_anonymous_parameter_0_) {
     callUndeliveredElement(this._$this_bindCancellationFun, this._$element, this._$context);
   };
-  _no_name_provided__49.prototype.invoke_412 = function (p1) {
+  _no_name_provided__49.prototype.invoke_420 = function (p1) {
     this.invoke_289(p1 instanceof Error ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -17715,7 +17686,7 @@
   _no_name_provided__50.prototype.invoke_289 = function (it) {
     this._this$0_10.unlock_0(this._this$1._get_owner__0());
   };
-  _no_name_provided__50.prototype.invoke_412 = function (p1) {
+  _no_name_provided__50.prototype.invoke_420 = function (p1) {
     this.invoke_289(p1 instanceof Error ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -17865,7 +17836,7 @@
   _no_name_provided__51.prototype.invoke_289 = function (it) {
     this._this$0_11.unlock_0(this._$owner);
   };
-  _no_name_provided__51.prototype.invoke_412 = function (p1) {
+  _no_name_provided__51.prototype.invoke_420 = function (p1) {
     this.invoke_289(p1 instanceof Error ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -18283,7 +18254,7 @@
   _no_name_provided__52.prototype.invoke_147 = function () {
     this._this$0_12.process_1();
   };
-  _no_name_provided__52.prototype.invoke_403 = function () {
+  _no_name_provided__52.prototype.invoke_411 = function () {
     this.invoke_147();
     return Unit_getInstance();
   };
@@ -18316,7 +18287,7 @@
   _no_name_provided__53.prototype.invoke_147 = function () {
     this._$continuation.resumeUndispatched_1(this._this$0_13, Unit_getInstance());
   };
-  _no_name_provided__53.prototype.invoke_403 = function () {
+  _no_name_provided__53.prototype.invoke_411 = function () {
     this.invoke_147();
     return Unit_getInstance();
   };
@@ -18418,7 +18389,7 @@
   _no_name_provided__54.prototype.invoke_147 = function () {
     this._$continuation_0.resumeUndispatched_1(this._this$0_14, Unit_getInstance());
   };
-  _no_name_provided__54.prototype.invoke_403 = function () {
+  _no_name_provided__54.prototype.invoke_411 = function () {
     this.invoke_147();
     return Unit_getInstance();
   };
@@ -18454,7 +18425,7 @@
       event.stopPropagation();
       this._this$0_15.process_1();
     }};
-  _no_name_provided__55.prototype.invoke_412 = function (p1) {
+  _no_name_provided__55.prototype.invoke_420 = function (p1) {
     this.invoke_306((p1 == null ? true : p1) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -18468,7 +18439,7 @@
   _no_name_provided__56.prototype.invoke_100 = function (it) {
     this._this$0_16.process_1();
   };
-  _no_name_provided__56.prototype.invoke_412 = function (p1) {
+  _no_name_provided__56.prototype.invoke_420 = function (p1) {
     this.invoke_100(p1 instanceof Unit ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -18546,7 +18517,7 @@
     var tmp0_success_0_1_5 = Companion_getInstance_3();
     this._$cancellable_2_2.resumeWith_46(_Result___init__impl_(it));
   };
-  _no_name_provided__57.prototype.invoke_412 = function (p1) {
+  _no_name_provided__57.prototype.invoke_420 = function (p1) {
     this.invoke_186((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -18561,7 +18532,7 @@
     var tmp0_failure_0_1_7 = Companion_getInstance_3();
     this._$cancellable_2_2_0.resumeWith_46(_Result___init__impl_(createFailure(it)));
   };
-  _no_name_provided__58.prototype.invoke_412 = function (p1) {
+  _no_name_provided__58.prototype.invoke_420 = function (p1) {
     this.invoke_289(p1 instanceof Error ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -18786,7 +18757,7 @@
     if (tmp0_safe_receiver == null)
       null;
     else {
-      closeable.release_5();
+      closeable.release_10();
       throw tmp0_safe_receiver;
     }
     Unit_getInstance();
@@ -19777,9 +19748,9 @@
     _set_closedCause_(this, cause);
     this._set_closed__0(true);
     if (!(cause == null)) {
-      this._readable.release_5();
-      this._writable.release_5();
-      this._flushBuffer.release_5();
+      this._readable.release_10();
+      this._writable.release_10();
+      this._flushBuffer.release_10();
     } else {
       this.flush_10();
     }
@@ -19804,7 +19775,7 @@
     var tmp0_plus_0 = _get__totalBytesWritten_(tmp0_this);
     _set__totalBytesWritten_(tmp0_this, tmp0_plus_0.plus_59(toLong_0(count_0)));
     if (this._get_closed__5()) {
-      this._writable.release_5();
+      this._writable.release_10();
       ensureNotClosed(this);
     }if (this._get_autoFlush__0() ? true : this._get_availableForWrite__0() === 0) {
       this.flush_10();
@@ -19967,7 +19938,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__59.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__59.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -20048,7 +20019,7 @@
     this._$channel_0.close_27(cause);
     Unit_getInstance();
   };
-  _no_name_provided__60.prototype.invoke_412 = function (p1) {
+  _no_name_provided__60.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -20203,7 +20174,7 @@
           break l$ret$1;
         } catch ($p) {
           if ($p instanceof Error) {
-            builder_2.release_5();
+            builder_2.release_10();
             throw $p;
           } else {
             {
@@ -20249,7 +20220,7 @@
         break l$ret$1;
       } catch ($p) {
         if ($p instanceof Error) {
-          builder_2.release_5();
+          builder_2.release_10();
           throw $p;
         } else {
           {
@@ -20359,7 +20330,7 @@
                   if (copied === max) {
                     tmp_1 = false;
                   } else {
-                    out.append_24(tmp3__anonymous__5_15);
+                    out.append_23(tmp3__anonymous__5_15);
                     Unit_getInstance();
                     var tmp0_6_16 = copied;
                     copied = tmp0_6_16 + 1 | 0;
@@ -20476,7 +20447,7 @@
                       if (copied === max) {
                         tmp_0 = false;
                       } else {
-                        out.append_24(tmp3__anonymous__14_20);
+                        out.append_23(tmp3__anonymous__14_20);
                         Unit_getInstance();
                         var tmp0_15_21 = copied;
                         copied = tmp0_15_21 + 1 | 0;
@@ -20528,7 +20499,7 @@
                           if (copied === max) {
                             tmp_1 = false;
                           } else {
-                            out.append_24(tmp4__anonymous__14_28);
+                            out.append_23(tmp4__anonymous__14_28);
                             Unit_getInstance();
                             var tmp0_15_29 = copied;
                             copied = tmp0_15_29 + 1 | 0;
@@ -20550,7 +20521,7 @@
                           if (copied === max) {
                             tmp_3 = false;
                           } else {
-                            out.append_24(tmp5__anonymous__14_30);
+                            out.append_23(tmp5__anonymous__14_30);
                             Unit_getInstance();
                             var tmp0_15_31 = copied;
                             copied = tmp0_15_31 + 1 | 0;
@@ -20566,7 +20537,7 @@
                               if (copied === max) {
                                 tmp_4 = false;
                               } else {
-                                out.append_24(tmp6__anonymous__14_32);
+                                out.append_23(tmp6__anonymous__14_32);
                                 Unit_getInstance();
                                 var tmp0_15_33 = copied;
                                 copied = tmp0_15_33 + 1 | 0;
@@ -21026,7 +20997,7 @@
     }
     return tmp;
   };
-  AbstractInput.prototype.release_5 = function () {
+  AbstractInput.prototype.release_10 = function () {
     var head = this._get_head__9();
     var empty = Companion_getInstance_20()._get_Empty__1();
     if (!(head === empty)) {
@@ -21035,7 +21006,7 @@
       releaseAll(head, this._pool);
     }};
   AbstractInput.prototype.close_40 = function () {
-    this.release_5();
+    this.release_10();
     if (!this._noMoreChunksAvailable) {
       this._noMoreChunksAvailable = true;
     }this.closeSource_2();
@@ -21068,7 +21039,7 @@
     head._set_next__0(null);
     return head;
   };
-  AbstractInput.prototype.append_21 = function (chain) {
+  AbstractInput.prototype.append_20 = function (chain) {
     if (chain === Companion_getInstance_20()._get_Empty__1())
       return Unit_getInstance();
     var size_0 = remainingAll(chain);
@@ -21348,37 +21319,37 @@
         var tmp18_putUtf8Char_0_8 = c.toInt_5();
         var tmp;
         if (0 <= tmp18_putUtf8Char_0_8 ? tmp18_putUtf8Char_0_8 <= 127 : false) {
-          var tmp0_storeAt_0_9 = toByte_0(tmp18_putUtf8Char_0_8);
+          var tmp0_storeAt_0_9 = toByte(tmp18_putUtf8Char_0_8);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp17_putUtf8Char_0_7, tmp0_storeAt_0_9);
           tmp = 1;
         } else if (128 <= tmp18_putUtf8Char_0_8 ? tmp18_putUtf8Char_0_8 <= 2047 : false) {
-          var tmp1_set_0_10 = toByte_0(192 | tmp18_putUtf8Char_0_8 >> 6 & 31);
+          var tmp1_set_0_10 = toByte(192 | tmp18_putUtf8Char_0_8 >> 6 & 31);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp17_putUtf8Char_0_7, tmp1_set_0_10);
           var tmp2_set_0_11 = tmp17_putUtf8Char_0_7 + 1 | 0;
-          var tmp3_set_0_12 = toByte_0(128 | tmp18_putUtf8Char_0_8 & 63);
+          var tmp3_set_0_12 = toByte(128 | tmp18_putUtf8Char_0_8 & 63);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp2_set_0_11, tmp3_set_0_12);
           tmp = 2;
         } else if (2048 <= tmp18_putUtf8Char_0_8 ? tmp18_putUtf8Char_0_8 <= 65535 : false) {
-          var tmp4_set_0_13 = toByte_0(224 | tmp18_putUtf8Char_0_8 >> 12 & 15);
+          var tmp4_set_0_13 = toByte(224 | tmp18_putUtf8Char_0_8 >> 12 & 15);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp17_putUtf8Char_0_7, tmp4_set_0_13);
           var tmp5_set_0_14 = tmp17_putUtf8Char_0_7 + 1 | 0;
-          var tmp6_set_0_15 = toByte_0(128 | tmp18_putUtf8Char_0_8 >> 6 & 63);
+          var tmp6_set_0_15 = toByte(128 | tmp18_putUtf8Char_0_8 >> 6 & 63);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp5_set_0_14, tmp6_set_0_15);
           var tmp7_set_0_16 = tmp17_putUtf8Char_0_7 + 2 | 0;
-          var tmp8_set_0_17 = toByte_0(128 | tmp18_putUtf8Char_0_8 & 63);
+          var tmp8_set_0_17 = toByte(128 | tmp18_putUtf8Char_0_8 & 63);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp7_set_0_16, tmp8_set_0_17);
           tmp = 3;
         } else if (65536 <= tmp18_putUtf8Char_0_8 ? tmp18_putUtf8Char_0_8 <= 1114111 : false) {
-          var tmp9_set_0_18 = toByte_0(240 | tmp18_putUtf8Char_0_8 >> 18 & 7);
+          var tmp9_set_0_18 = toByte(240 | tmp18_putUtf8Char_0_8 >> 18 & 7);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp17_putUtf8Char_0_7, tmp9_set_0_18);
           var tmp10_set_0_19 = tmp17_putUtf8Char_0_7 + 1 | 0;
-          var tmp11_set_0_20 = toByte_0(128 | tmp18_putUtf8Char_0_8 >> 12 & 63);
+          var tmp11_set_0_20 = toByte(128 | tmp18_putUtf8Char_0_8 >> 12 & 63);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp10_set_0_19, tmp11_set_0_20);
           var tmp12_set_0_21 = tmp17_putUtf8Char_0_7 + 2 | 0;
-          var tmp13_set_0_22 = toByte_0(128 | tmp18_putUtf8Char_0_8 >> 6 & 63);
+          var tmp13_set_0_22 = toByte(128 | tmp18_putUtf8Char_0_8 >> 6 & 63);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp12_set_0_21, tmp13_set_0_22);
           var tmp14_set_0_23 = tmp17_putUtf8Char_0_7 + 3 | 0;
-          var tmp15_set_0_24 = toByte_0(128 | tmp18_putUtf8Char_0_8 & 63);
+          var tmp15_set_0_24 = toByte(128 | tmp18_putUtf8Char_0_8 & 63);
           tmp16_putUtf8Char_0_6._view.setInt8(tmp14_set_0_23, tmp15_set_0_24);
           tmp = 4;
         } else {
@@ -21585,44 +21556,44 @@
       this.closeDestination_2();
     }
   };
-  AbstractOutput.prototype.append_24 = function (c) {
+  AbstractOutput.prototype.append_23 = function (c) {
     var tailPosition = this._get_tailPosition__2();
     if ((this._get_tailEndExclusive__2() - tailPosition | 0) >= 3) {
       var tmp16_putUtf8Char_0 = this._get_tailMemory__2();
       var tmp17_putUtf8Char_0 = c.toInt_5();
       var tmp;
       if (0 <= tmp17_putUtf8Char_0 ? tmp17_putUtf8Char_0 <= 127 : false) {
-        var tmp0_storeAt_0 = toByte_0(tmp17_putUtf8Char_0);
+        var tmp0_storeAt_0 = toByte(tmp17_putUtf8Char_0);
         tmp16_putUtf8Char_0._view.setInt8(tailPosition, tmp0_storeAt_0);
         tmp = 1;
       } else if (128 <= tmp17_putUtf8Char_0 ? tmp17_putUtf8Char_0 <= 2047 : false) {
-        var tmp1_set_0 = toByte_0(192 | tmp17_putUtf8Char_0 >> 6 & 31);
+        var tmp1_set_0 = toByte(192 | tmp17_putUtf8Char_0 >> 6 & 31);
         tmp16_putUtf8Char_0._view.setInt8(tailPosition, tmp1_set_0);
         var tmp2_set_0 = tailPosition + 1 | 0;
-        var tmp3_set_0 = toByte_0(128 | tmp17_putUtf8Char_0 & 63);
+        var tmp3_set_0 = toByte(128 | tmp17_putUtf8Char_0 & 63);
         tmp16_putUtf8Char_0._view.setInt8(tmp2_set_0, tmp3_set_0);
         tmp = 2;
       } else if (2048 <= tmp17_putUtf8Char_0 ? tmp17_putUtf8Char_0 <= 65535 : false) {
-        var tmp4_set_0 = toByte_0(224 | tmp17_putUtf8Char_0 >> 12 & 15);
+        var tmp4_set_0 = toByte(224 | tmp17_putUtf8Char_0 >> 12 & 15);
         tmp16_putUtf8Char_0._view.setInt8(tailPosition, tmp4_set_0);
         var tmp5_set_0 = tailPosition + 1 | 0;
-        var tmp6_set_0 = toByte_0(128 | tmp17_putUtf8Char_0 >> 6 & 63);
+        var tmp6_set_0 = toByte(128 | tmp17_putUtf8Char_0 >> 6 & 63);
         tmp16_putUtf8Char_0._view.setInt8(tmp5_set_0, tmp6_set_0);
         var tmp7_set_0 = tailPosition + 2 | 0;
-        var tmp8_set_0 = toByte_0(128 | tmp17_putUtf8Char_0 & 63);
+        var tmp8_set_0 = toByte(128 | tmp17_putUtf8Char_0 & 63);
         tmp16_putUtf8Char_0._view.setInt8(tmp7_set_0, tmp8_set_0);
         tmp = 3;
       } else if (65536 <= tmp17_putUtf8Char_0 ? tmp17_putUtf8Char_0 <= 1114111 : false) {
-        var tmp9_set_0 = toByte_0(240 | tmp17_putUtf8Char_0 >> 18 & 7);
+        var tmp9_set_0 = toByte(240 | tmp17_putUtf8Char_0 >> 18 & 7);
         tmp16_putUtf8Char_0._view.setInt8(tailPosition, tmp9_set_0);
         var tmp10_set_0 = tailPosition + 1 | 0;
-        var tmp11_set_0 = toByte_0(128 | tmp17_putUtf8Char_0 >> 12 & 63);
+        var tmp11_set_0 = toByte(128 | tmp17_putUtf8Char_0 >> 12 & 63);
         tmp16_putUtf8Char_0._view.setInt8(tmp10_set_0, tmp11_set_0);
         var tmp12_set_0 = tailPosition + 2 | 0;
-        var tmp13_set_0 = toByte_0(128 | tmp17_putUtf8Char_0 >> 6 & 63);
+        var tmp13_set_0 = toByte(128 | tmp17_putUtf8Char_0 >> 6 & 63);
         tmp16_putUtf8Char_0._view.setInt8(tmp12_set_0, tmp13_set_0);
         var tmp14_set_0 = tailPosition + 3 | 0;
-        var tmp15_set_0 = toByte_0(128 | tmp17_putUtf8Char_0 & 63);
+        var tmp15_set_0 = toByte(128 | tmp17_putUtf8Char_0 & 63);
         tmp16_putUtf8Char_0._view.setInt8(tmp14_set_0, tmp15_set_0);
         tmp = 4;
       } else {
@@ -21634,26 +21605,26 @@
     }appendCharFallback(this, c);
     return this;
   };
-  AbstractOutput.prototype.append_23 = function (csq) {
+  AbstractOutput.prototype.append_22 = function (csq) {
     if (csq == null) {
-      this.append_22('null', 0, 4);
+      this.append_21('null', 0, 4);
       Unit_getInstance();
     } else {
-      this.append_22(csq, 0, charSequenceLength(csq));
+      this.append_21(csq, 0, charSequenceLength(csq));
       Unit_getInstance();
     }
     return this;
   };
-  AbstractOutput.prototype.append_22 = function (csq, start, end) {
+  AbstractOutput.prototype.append_21 = function (csq, start, end) {
     if (csq == null) {
-      return this.append_22('null', start, end);
+      return this.append_21('null', start, end);
     }writeText(this, csq, start, end, Charsets_getInstance()._UTF_8);
     return this;
   };
   AbstractOutput.prototype.writePacket_6 = function (p) {
     var foreignStolen = p.stealAll_4();
     if (foreignStolen == null) {
-      p.release_5();
+      p.release_10();
       return Unit_getInstance();
     }var _tail = _get__tail_(this);
     if (_tail == null) {
@@ -21710,7 +21681,7 @@
       }
     }
   };
-  AbstractOutput.prototype.release_5 = function () {
+  AbstractOutput.prototype.release_10 = function () {
     this.close_40();
   };
   AbstractOutput.prototype.prepareWriteHead_2 = function (n) {
@@ -22110,11 +22081,11 @@
     var tmp2__anonymous__2 = _this_._get_limit__1();
     var result_3 = encodeUTF8(tmp0__anonymous__2, csq, start, end, tmp1__anonymous__2, tmp2__anonymous__2);
     var tmp0__get_highShort__0_6 = _EncodeResult___get_value__impl_(result_3);
-    var tmp1_toUShort_0_5 = toShort_0(tmp0__get_highShort__0_6 >>> 16);
+    var tmp1_toUShort_0_5 = toShort(tmp0__get_highShort__0_6 >>> 16);
     var tmp2_toInt_0_4 = _UShort___init__impl_(tmp1_toUShort_0_5);
     charactersWritten = _UShort___get_data__impl_(tmp2_toInt_0_4) & 65535;
     var tmp3__get_lowShort__0_9 = _EncodeResult___get_value__impl_(result_3);
-    var tmp4_toUShort_0_8 = toShort_0(tmp3__get_lowShort__0_9 & 65535);
+    var tmp4_toUShort_0_8 = toShort(tmp3__get_lowShort__0_9 & 65535);
     var tmp5_toInt_0_7 = _UShort___init__impl_(tmp4_toUShort_0_8);
     var rc_1 = _UShort___get_data__impl_(tmp5_toInt_0_7) & 65535;
     _this_.commitWritten_1(rc_1);
@@ -22128,37 +22099,37 @@
     var tmp16_putUtf8Char_0_4 = c.toInt_5();
     var tmp;
     if (0 <= tmp16_putUtf8Char_0_4 ? tmp16_putUtf8Char_0_4 <= 127 : false) {
-      var tmp0_storeAt_0_5 = toByte_0(tmp16_putUtf8Char_0_4);
+      var tmp0_storeAt_0_5 = toByte(tmp16_putUtf8Char_0_4);
       tmp0__anonymous__2._view.setInt8(tmp1__anonymous__2, tmp0_storeAt_0_5);
       tmp = 1;
     } else if (128 <= tmp16_putUtf8Char_0_4 ? tmp16_putUtf8Char_0_4 <= 2047 : false) {
-      var tmp1_set_0_6 = toByte_0(192 | tmp16_putUtf8Char_0_4 >> 6 & 31);
+      var tmp1_set_0_6 = toByte(192 | tmp16_putUtf8Char_0_4 >> 6 & 31);
       tmp0__anonymous__2._view.setInt8(tmp1__anonymous__2, tmp1_set_0_6);
       var tmp2_set_0_7 = tmp1__anonymous__2 + 1 | 0;
-      var tmp3_set_0_8 = toByte_0(128 | tmp16_putUtf8Char_0_4 & 63);
+      var tmp3_set_0_8 = toByte(128 | tmp16_putUtf8Char_0_4 & 63);
       tmp0__anonymous__2._view.setInt8(tmp2_set_0_7, tmp3_set_0_8);
       tmp = 2;
     } else if (2048 <= tmp16_putUtf8Char_0_4 ? tmp16_putUtf8Char_0_4 <= 65535 : false) {
-      var tmp4_set_0_9 = toByte_0(224 | tmp16_putUtf8Char_0_4 >> 12 & 15);
+      var tmp4_set_0_9 = toByte(224 | tmp16_putUtf8Char_0_4 >> 12 & 15);
       tmp0__anonymous__2._view.setInt8(tmp1__anonymous__2, tmp4_set_0_9);
       var tmp5_set_0_10 = tmp1__anonymous__2 + 1 | 0;
-      var tmp6_set_0_11 = toByte_0(128 | tmp16_putUtf8Char_0_4 >> 6 & 63);
+      var tmp6_set_0_11 = toByte(128 | tmp16_putUtf8Char_0_4 >> 6 & 63);
       tmp0__anonymous__2._view.setInt8(tmp5_set_0_10, tmp6_set_0_11);
       var tmp7_set_0_12 = tmp1__anonymous__2 + 2 | 0;
-      var tmp8_set_0_13 = toByte_0(128 | tmp16_putUtf8Char_0_4 & 63);
+      var tmp8_set_0_13 = toByte(128 | tmp16_putUtf8Char_0_4 & 63);
       tmp0__anonymous__2._view.setInt8(tmp7_set_0_12, tmp8_set_0_13);
       tmp = 3;
     } else if (65536 <= tmp16_putUtf8Char_0_4 ? tmp16_putUtf8Char_0_4 <= 1114111 : false) {
-      var tmp9_set_0_14 = toByte_0(240 | tmp16_putUtf8Char_0_4 >> 18 & 7);
+      var tmp9_set_0_14 = toByte(240 | tmp16_putUtf8Char_0_4 >> 18 & 7);
       tmp0__anonymous__2._view.setInt8(tmp1__anonymous__2, tmp9_set_0_14);
       var tmp10_set_0_15 = tmp1__anonymous__2 + 1 | 0;
-      var tmp11_set_0_16 = toByte_0(128 | tmp16_putUtf8Char_0_4 >> 12 & 63);
+      var tmp11_set_0_16 = toByte(128 | tmp16_putUtf8Char_0_4 >> 12 & 63);
       tmp0__anonymous__2._view.setInt8(tmp10_set_0_15, tmp11_set_0_16);
       var tmp12_set_0_17 = tmp1__anonymous__2 + 2 | 0;
-      var tmp13_set_0_18 = toByte_0(128 | tmp16_putUtf8Char_0_4 >> 6 & 63);
+      var tmp13_set_0_18 = toByte(128 | tmp16_putUtf8Char_0_4 >> 6 & 63);
       tmp0__anonymous__2._view.setInt8(tmp12_set_0_17, tmp13_set_0_18);
       var tmp14_set_0_19 = tmp1__anonymous__2 + 3 | 0;
-      var tmp15_set_0_20 = toByte_0(128 | tmp16_putUtf8Char_0_4 & 63);
+      var tmp15_set_0_20 = toByte(128 | tmp16_putUtf8Char_0_4 & 63);
       tmp0__anonymous__2._view.setInt8(tmp14_set_0_19, tmp15_set_0_20);
       tmp = 4;
     } else {
@@ -22615,16 +22586,16 @@
   };
   BytePacketBuilder.prototype.flush_8 = function (source, offset, length) {
   };
-  BytePacketBuilder.prototype.append_24 = function (c) {
-    var tmp = BytePacketBuilderPlatformBase.prototype.append_24.call(this, c);
+  BytePacketBuilder.prototype.append_23 = function (c) {
+    var tmp = BytePacketBuilderPlatformBase.prototype.append_23.call(this, c);
     return tmp instanceof BytePacketBuilder ? tmp : THROW_CCE();
   };
-  BytePacketBuilder.prototype.append_23 = function (csq) {
-    var tmp = BytePacketBuilderPlatformBase.prototype.append_23.call(this, csq);
+  BytePacketBuilder.prototype.append_22 = function (csq) {
+    var tmp = BytePacketBuilderPlatformBase.prototype.append_22.call(this, csq);
     return tmp instanceof BytePacketBuilder ? tmp : THROW_CCE();
   };
-  BytePacketBuilder.prototype.append_22 = function (csq, start, end) {
-    var tmp = BytePacketBuilderPlatformBase.prototype.append_22.call(this, csq, start, end);
+  BytePacketBuilder.prototype.append_21 = function (csq, start, end) {
+    var tmp = BytePacketBuilderPlatformBase.prototype.append_21.call(this, csq, start, end);
     return tmp instanceof BytePacketBuilder ? tmp : THROW_CCE();
   };
   BytePacketBuilder.prototype.build_17 = function () {
@@ -22978,8 +22949,8 @@
     }
      while (false);
     if (!tmp$ret$0) {
-      _this_.writeByte_6(toByte_0(value >>> 8));
-      _this_.writeByte_6(toByte_0(value & 255));
+      _this_.writeByte_6(toByte(value >>> 8));
+      _this_.writeByte_6(toByte(value & 255));
     } else {
     }
   }
@@ -23045,10 +23016,10 @@
         var dstLimit_6 = tmp1__anonymous__3._get_limit__1();
         var tmp0_container_7 = encodeUTF8(memory_4, text, index, toIndex, dstOffset_5, dstLimit_6);
         var tmp0__get_highShort__0_10 = _EncodeResult___get_value__impl_(tmp0_container_7);
-        var tmp1_toUShort_0_9 = toShort_0(tmp0__get_highShort__0_10 >>> 16);
+        var tmp1_toUShort_0_9 = toShort(tmp0__get_highShort__0_10 >>> 16);
         var characters_8 = _UShort___init__impl_(tmp1_toUShort_0_9);
         var tmp2__get_lowShort__0_13 = _EncodeResult___get_value__impl_(tmp0_container_7);
-        var tmp3_toUShort_0_12 = toShort_0(tmp2__get_lowShort__0_13 & 65535);
+        var tmp3_toUShort_0_12 = toShort(tmp2__get_lowShort__0_13 & 65535);
         var bytes_11 = _UShort___init__impl_(tmp3_toUShort_0_12);
         var tmp = index;
         index = tmp + (_UShort___get_data__impl_(characters_8) & 65535) | 0;
@@ -23434,9 +23405,9 @@
     $l$break: do {
       if (resultPosition >= resultLimit ? true : index >= lastCharIndex) {
         var tmp3_toUShort_0 = index - from | 0;
-        var tmp = _UShort___init__impl_(toShort_0(tmp3_toUShort_0));
+        var tmp = _UShort___init__impl_(toShort(tmp3_toUShort_0));
         var tmp4_toUShort_0 = resultPosition - dstOffset | 0;
-        return _EncodeResult___init__impl__0(tmp, _UShort___init__impl_(toShort_0(tmp4_toUShort_0)));
+        return _EncodeResult___init__impl__0(tmp, _UShort___init__impl_(toShort(tmp4_toUShort_0)));
       }var tmp0 = index;
       index = tmp0 + 1 | 0;
       var character = charSequenceGet(text, tmp0).toInt_5() & 65535;
@@ -23444,7 +23415,7 @@
         var tmp1 = resultPosition;
         resultPosition = tmp1 + 1 | 0;
         var tmp5_storeAt_0 = tmp1;
-        var tmp6_storeAt_0 = toByte_0(character);
+        var tmp6_storeAt_0 = toByte(character);
         _this_._view.setInt8(tmp5_storeAt_0, tmp6_storeAt_0);
       } else {
         break $l$break;
@@ -23485,37 +23456,37 @@
       var tmp0_putUtf8Char_0 = resultPosition;
       var tmp_1;
       if (0 <= codepoint ? codepoint <= 127 : false) {
-        var tmp0_storeAt_0_1 = toByte_0(codepoint);
+        var tmp0_storeAt_0_1 = toByte(codepoint);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp0_storeAt_0_1);
         tmp_1 = 1;
       } else if (128 <= codepoint ? codepoint <= 2047 : false) {
-        var tmp1_set_0_2 = toByte_0(192 | codepoint >> 6 & 31);
+        var tmp1_set_0_2 = toByte(192 | codepoint >> 6 & 31);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp1_set_0_2);
         var tmp2_set_0_3 = tmp0_putUtf8Char_0 + 1 | 0;
-        var tmp3_set_0_4 = toByte_0(128 | codepoint & 63);
+        var tmp3_set_0_4 = toByte(128 | codepoint & 63);
         _this_._view.setInt8(tmp2_set_0_3, tmp3_set_0_4);
         tmp_1 = 2;
       } else if (2048 <= codepoint ? codepoint <= 65535 : false) {
-        var tmp4_set_0_5 = toByte_0(224 | codepoint >> 12 & 15);
+        var tmp4_set_0_5 = toByte(224 | codepoint >> 12 & 15);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp4_set_0_5);
         var tmp5_set_0_6 = tmp0_putUtf8Char_0 + 1 | 0;
-        var tmp6_set_0_7 = toByte_0(128 | codepoint >> 6 & 63);
+        var tmp6_set_0_7 = toByte(128 | codepoint >> 6 & 63);
         _this_._view.setInt8(tmp5_set_0_6, tmp6_set_0_7);
         var tmp7_set_0_8 = tmp0_putUtf8Char_0 + 2 | 0;
-        var tmp8_set_0_9 = toByte_0(128 | codepoint & 63);
+        var tmp8_set_0_9 = toByte(128 | codepoint & 63);
         _this_._view.setInt8(tmp7_set_0_8, tmp8_set_0_9);
         tmp_1 = 3;
       } else if (65536 <= codepoint ? codepoint <= 1114111 : false) {
-        var tmp9_set_0_10 = toByte_0(240 | codepoint >> 18 & 7);
+        var tmp9_set_0_10 = toByte(240 | codepoint >> 18 & 7);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp9_set_0_10);
         var tmp10_set_0_11 = tmp0_putUtf8Char_0 + 1 | 0;
-        var tmp11_set_0_12 = toByte_0(128 | codepoint >> 12 & 63);
+        var tmp11_set_0_12 = toByte(128 | codepoint >> 12 & 63);
         _this_._view.setInt8(tmp10_set_0_11, tmp11_set_0_12);
         var tmp12_set_0_13 = tmp0_putUtf8Char_0 + 2 | 0;
-        var tmp13_set_0_14 = toByte_0(128 | codepoint >> 6 & 63);
+        var tmp13_set_0_14 = toByte(128 | codepoint >> 6 & 63);
         _this_._view.setInt8(tmp12_set_0_13, tmp13_set_0_14);
         var tmp14_set_0_15 = tmp0_putUtf8Char_0 + 3 | 0;
-        var tmp15_set_0_16 = toByte_0(128 | codepoint & 63);
+        var tmp15_set_0_16 = toByte(128 | codepoint & 63);
         _this_._view.setInt8(tmp14_set_0_15, tmp15_set_0_16);
         tmp_1 = 4;
       } else {
@@ -23528,9 +23499,9 @@
     if (resultPosition === stage1Limit) {
       return encodeUTF8Stage2(_this_, text, index, lastCharIndex, from, resultPosition, resultLimit, dstOffset);
     }var tmp1_toUShort_0 = index - from | 0;
-    var tmp_2 = _UShort___init__impl_(toShort_0(tmp1_toUShort_0));
+    var tmp_2 = _UShort___init__impl_(toShort(tmp1_toUShort_0));
     var tmp2_toUShort_0 = resultPosition - dstOffset | 0;
-    return _EncodeResult___init__impl__0(tmp_2, _UShort___init__impl_(toShort_0(tmp2_toUShort_0)));
+    return _EncodeResult___init__impl__0(tmp_2, _UShort___init__impl_(toShort(tmp2_toUShort_0)));
   }
   function malformedCodePoint(value) {
     throw IllegalArgumentException_init_$Create$_0('' + 'Malformed code-point ' + value + ' found');
@@ -23587,37 +23558,37 @@
       var tmp0_putUtf8Char_0 = resultPosition;
       var tmp_2;
       if (0 <= codepoint ? codepoint <= 127 : false) {
-        var tmp0_storeAt_0_1 = toByte_0(codepoint);
+        var tmp0_storeAt_0_1 = toByte(codepoint);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp0_storeAt_0_1);
         tmp_2 = 1;
       } else if (128 <= codepoint ? codepoint <= 2047 : false) {
-        var tmp1_set_0_2 = toByte_0(192 | codepoint >> 6 & 31);
+        var tmp1_set_0_2 = toByte(192 | codepoint >> 6 & 31);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp1_set_0_2);
         var tmp2_set_0_3 = tmp0_putUtf8Char_0 + 1 | 0;
-        var tmp3_set_0_4 = toByte_0(128 | codepoint & 63);
+        var tmp3_set_0_4 = toByte(128 | codepoint & 63);
         _this_._view.setInt8(tmp2_set_0_3, tmp3_set_0_4);
         tmp_2 = 2;
       } else if (2048 <= codepoint ? codepoint <= 65535 : false) {
-        var tmp4_set_0_5 = toByte_0(224 | codepoint >> 12 & 15);
+        var tmp4_set_0_5 = toByte(224 | codepoint >> 12 & 15);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp4_set_0_5);
         var tmp5_set_0_6 = tmp0_putUtf8Char_0 + 1 | 0;
-        var tmp6_set_0_7 = toByte_0(128 | codepoint >> 6 & 63);
+        var tmp6_set_0_7 = toByte(128 | codepoint >> 6 & 63);
         _this_._view.setInt8(tmp5_set_0_6, tmp6_set_0_7);
         var tmp7_set_0_8 = tmp0_putUtf8Char_0 + 2 | 0;
-        var tmp8_set_0_9 = toByte_0(128 | codepoint & 63);
+        var tmp8_set_0_9 = toByte(128 | codepoint & 63);
         _this_._view.setInt8(tmp7_set_0_8, tmp8_set_0_9);
         tmp_2 = 3;
       } else if (65536 <= codepoint ? codepoint <= 1114111 : false) {
-        var tmp9_set_0_10 = toByte_0(240 | codepoint >> 18 & 7);
+        var tmp9_set_0_10 = toByte(240 | codepoint >> 18 & 7);
         _this_._view.setInt8(tmp0_putUtf8Char_0, tmp9_set_0_10);
         var tmp10_set_0_11 = tmp0_putUtf8Char_0 + 1 | 0;
-        var tmp11_set_0_12 = toByte_0(128 | codepoint >> 12 & 63);
+        var tmp11_set_0_12 = toByte(128 | codepoint >> 12 & 63);
         _this_._view.setInt8(tmp10_set_0_11, tmp11_set_0_12);
         var tmp12_set_0_13 = tmp0_putUtf8Char_0 + 2 | 0;
-        var tmp13_set_0_14 = toByte_0(128 | codepoint >> 6 & 63);
+        var tmp13_set_0_14 = toByte(128 | codepoint >> 6 & 63);
         _this_._view.setInt8(tmp12_set_0_13, tmp13_set_0_14);
         var tmp14_set_0_15 = tmp0_putUtf8Char_0 + 3 | 0;
-        var tmp15_set_0_16 = toByte_0(128 | codepoint & 63);
+        var tmp15_set_0_16 = toByte(128 | codepoint & 63);
         _this_._view.setInt8(tmp14_set_0_15, tmp15_set_0_16);
         tmp_2 = 4;
       } else {
@@ -23628,9 +23599,9 @@
     }
      while (true);
     var tmp1_toUShort_0 = index - from | 0;
-    var tmp_3 = _UShort___init__impl_(toShort_0(tmp1_toUShort_0));
+    var tmp_3 = _UShort___init__impl_(toShort(tmp1_toUShort_0));
     var tmp2_toUShort_0 = resultPosition - dstOffset | 0;
-    return _EncodeResult___init__impl__0(tmp_3, _UShort___init__impl_(toShort_0(tmp2_toUShort_0)));
+    return _EncodeResult___init__impl__0(tmp_3, _UShort___init__impl_(toShort(tmp2_toUShort_0)));
   }
   function MalformedUTF8InputException(message) {
     Exception_init_$Init$_0(message, this);
@@ -23798,7 +23769,7 @@
     if ((builderSize <= PACKET_MAX_COPY_SIZE ? builderHead._get_next__1() == null : false) ? _this_.tryWriteAppend_0(builderHead) : false) {
       builder.afterBytesStolen_0();
       return builderSize;
-    }_this_.append_21(builderHead);
+    }_this_.append_20(builderHead);
     return builderSize;
   }
   function checkPeekTo(destination, offset, min, max) {
@@ -24269,7 +24240,7 @@
       this._this$0_19.cancel_25(cause);
       Unit_getInstance();
     }};
-  _no_name_provided__65.prototype.invoke_412 = function (p1) {
+  _no_name_provided__65.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -24365,7 +24336,7 @@
   };
   function _no_name_provided__66() {
   }
-  _no_name_provided__66.prototype.invoke_403 = function () {
+  _no_name_provided__66.prototype.invoke_411 = function () {
     var tmp0_apply_0 = new ByteChannelJS(Companion_getInstance_25()._Empty_1, false);
     tmp0_apply_0.close_27(null);
     Unit_getInstance();
@@ -24411,7 +24382,7 @@
   function _no_name_provided_$factory_48() {
     var i = new _no_name_provided__66();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function ByteWriteChannel() {
@@ -24795,7 +24766,7 @@
                     tmp_0 = tmp$ret$6;
                   }
                   var text_15_16 = tmp_0;
-                  sb.append_7(text_15_16);
+                  sb.append_6(text_15_16);
                   Unit_getInstance();
                   tmp1__anonymous__11_12.discardExact_5(size_13_14);
                   inputRemaining = inputRemaining - size_13_14 | 0;
@@ -24895,7 +24866,7 @@
                   tmp_5 = tmp$ret$12;
                 }
                 var text_10_35 = tmp_5;
-                sb.append_7(text_10_35);
+                sb.append_6(text_10_35);
                 Unit_getInstance();
                 tmp2__anonymous__6_31.discardExact_5(size_8_33);
                 inputRemaining = inputRemaining - size_8_33 | 0;
@@ -24920,7 +24891,7 @@
               }}
           }
            while (false);
-        }tmp$ret$16 = sb.append_7(decoder.decode_6());
+        }tmp$ret$16 = sb.append_6(decoder.decode_6());
         break l$ret$17;
       } catch ($p_2) {
         if ($p_2 instanceof Error) {
@@ -25123,7 +25094,7 @@
                 }
                  while (false);
                 var decodedText_4_19 = tmp$ret$8;
-                dst.append_23(decodedText_4_19);
+                dst.append_22(decodedText_4_19);
                 Unit_getInstance();
                 charactersCopied = charactersCopied + decodedText_4_19.length | 0;
                 var rc_1_14 = tmp3__anonymous__3_18.byteLength;
@@ -25228,7 +25199,7 @@
                 var tmp2__anonymous__2_2_16 = tmp3__anonymous__11._get_writePosition__1();
                 var tmp3__anonymous__3_17 = new Int8Array(tmp0__anonymous__2_2_14._view.buffer, tmp0__anonymous__2_2_14._view.byteOffset + tmp1__anonymous__2_2_15 | 0, tmp2__anonymous__2_2_16 - tmp1__anonymous__2_2_15 | 0);
                 var result_4_18 = decodeBufferImpl(tmp3__anonymous__3_17, decoder, max - charactersCopied | 0);
-                dst.append_23(result_4_18._charactersDecoded);
+                dst.append_22(result_4_18._charactersDecoded);
                 Unit_getInstance();
                 charactersCopied = charactersCopied + result_4_18._charactersDecoded.length | 0;
                 var rc_1_13 = result_4_18._bytesConsumed;
@@ -25396,7 +25367,7 @@
         }var tmp1_10 = writeIndex_5;
         writeIndex_5 = tmp1_10 + 1 | 0;
         var tmp0_set_0_9 = tmp1_10;
-        var tmp1_set_0_11 = toByte_0(character_8);
+        var tmp1_set_0_11 = toByte(character_8);
         i8_4[tmp0_set_0_9] = tmp1_set_0_11;
       }
        while (inductionVariable < toIndex);
@@ -25450,7 +25421,7 @@
   _no_name_provided__68.prototype.invoke_113 = function (thisRef, property) {
     return this._$value_0;
   };
-  _no_name_provided__68.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__68.prototype.invoke_418 = function (p1, p2) {
     var tmp = isObject(p1) ? p1 : THROW_CCE();
     return this.invoke_113(tmp, (!(p2 == null) ? isInterface(p2, KProperty) : false) ? p2 : THROW_CCE());
   };
@@ -25680,17 +25651,17 @@
   IoBuffer.prototype.peekTo_4 = function (destination, destinationOffset, offset, min, max) {
     return peekTo(this instanceof Buffer_0 ? this : THROW_CCE(), destination, destinationOffset, offset, min, max);
   };
-  IoBuffer.prototype.append_22 = function (csq, start, end) {
+  IoBuffer.prototype.append_21 = function (csq, start, end) {
     var tmp0_elvis_lhs = csq;
     var idx = appendChars(this, tmp0_elvis_lhs == null ? 'null' : tmp0_elvis_lhs, start, end);
     if (!(idx === end))
       throw IllegalStateException_init_$Create$('Not enough free space to append char sequence');
     return this;
   };
-  IoBuffer.prototype.append_23 = function (csq) {
-    return csq == null ? this.append_23('null') : this.append_22(csq, 0, charSequenceLength(csq));
+  IoBuffer.prototype.append_22 = function (csq) {
+    return csq == null ? this.append_22('null') : this.append_21(csq, 0, charSequenceLength(csq));
   };
-  IoBuffer.prototype.append_24 = function (c) {
+  IoBuffer.prototype.append_23 = function (c) {
     append(this instanceof Buffer_0 ? this : THROW_CCE(), c);
     Unit_getInstance();
     return this;
@@ -25890,15 +25861,15 @@
               }writeFully$default(builder_1, REPLACEMENT, 0, 0, 6, null);
               continue;
             }if (point_8 > 255) {
-              builder_1.writeByte_6(toByte_0(point_8 >> 8));
-            }builder_1.writeByte_6(toByte_0(point_8 & 255));
+              builder_1.writeByte_6(toByte(point_8 >> 8));
+            }builder_1.writeByte_6(toByte(point_8 & 255));
           }
            while (inductionVariable < last_1);
         tmp$ret$0 = builder_1.build_17();
         break l$ret$1;
       } catch ($p) {
         if ($p instanceof Error) {
-          builder_1.release_5();
+          builder_1.release_10();
           throw $p;
         } else {
           {
@@ -26076,7 +26047,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__72.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__72.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -26262,7 +26233,7 @@
     this._$second_0.close_27(it);
     Unit_getInstance();
   };
-  _no_name_provided__73.prototype.invoke_412 = function (p1) {
+  _no_name_provided__73.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -26281,7 +26252,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__74.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__74.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -26336,7 +26307,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__75.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__75.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -26392,7 +26363,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__76.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__76.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -26544,7 +26515,7 @@
     this._$second_3.cancel_25(it);
     Unit_getInstance();
   };
-  _no_name_provided__77.prototype.invoke_412 = function (p1) {
+  _no_name_provided__77.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -26642,7 +26613,7 @@
   _no_name_provided__78.prototype.invoke_127 = function ($this$$receiver) {
     return $this$$receiver._content;
   };
-  _no_name_provided__78.prototype.invoke_412 = function (p1) {
+  _no_name_provided__78.prototype.invoke_420 = function (p1) {
     return this.invoke_127(p1 instanceof CaseInsensitiveString ? p1 : THROW_CCE());
   };
   _no_name_provided__78.$metadata$ = {
@@ -26651,11 +26622,11 @@
   };
   function _no_name_provided__79() {
   }
-  _no_name_provided__79.prototype.invoke_406 = function ($this$$receiver) {
+  _no_name_provided__79.prototype.invoke_414 = function ($this$$receiver) {
     return caseInsensitive($this$$receiver);
   };
-  _no_name_provided__79.prototype.invoke_412 = function (p1) {
-    return this.invoke_406((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
+  _no_name_provided__79.prototype.invoke_420 = function (p1) {
+    return this.invoke_414((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__79.$metadata$ = {
     kind: 'class',
@@ -26666,7 +26637,7 @@
   _no_name_provided__80.prototype.invoke_131 = function ($this$$receiver) {
     return new Entry_0($this$$receiver._get_key__52()._content, $this$$receiver._get_value__27());
   };
-  _no_name_provided__80.prototype.invoke_412 = function (p1) {
+  _no_name_provided__80.prototype.invoke_420 = function (p1) {
     return this.invoke_131((!(p1 == null) ? isInterface(p1, MutableEntry) : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__80.$metadata$ = {
@@ -26678,7 +26649,7 @@
   _no_name_provided__81.prototype.invoke_133 = function ($this$$receiver) {
     return new Entry_0(caseInsensitive($this$$receiver._get_key__52()), $this$$receiver._get_value__27());
   };
-  _no_name_provided__81.prototype.invoke_412 = function (p1) {
+  _no_name_provided__81.prototype.invoke_420 = function (p1) {
     return this.invoke_133((!(p1 == null) ? isInterface(p1, MutableEntry) : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__81.$metadata$ = {
@@ -26832,7 +26803,7 @@
   function _no_name_provided_$factory_57() {
     var i = new _no_name_provided__79();
     return function (p1) {
-      return i.invoke_406(p1);
+      return i.invoke_414(p1);
     };
   }
   function _no_name_provided_$factory_58() {
@@ -27045,7 +27016,7 @@
   _no_name_provided__83.prototype.invoke_205 = function (name, values_4) {
     this._this$0_21.appendAll_3(name, values_4);
   };
-  _no_name_provided__83.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__83.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     this.invoke_205(tmp, (!(p2 == null) ? isInterface(p2, List) : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
@@ -27088,7 +27059,7 @@
     var tmp0_safe_receiver = this.getAll_8(name);
     return tmp0_safe_receiver == null ? null : firstOrNull_0(tmp0_safe_receiver);
   };
-  StringValuesBuilder.prototype.append_27 = function (name, value) {
+  StringValuesBuilder.prototype.append_26 = function (name, value) {
     this.validateValue_1(value);
     ensureListForKey(this, name, 1).add_32(value);
     Unit_getInstance();
@@ -27184,7 +27155,7 @@
     this._this$0_22 = this$0;
     this._$values = $values;
   }
-  _no_name_provided__84.prototype.invoke_403 = function () {
+  _no_name_provided__84.prototype.invoke_411 = function () {
     var tmp;
     if (this._this$0_22._get_caseInsensitiveName__4()) {
       var tmp0_apply_0 = caseInsensitiveMap();
@@ -27281,7 +27252,7 @@
   function _no_name_provided_$factory_61(this$0, $values) {
     var i = new _no_name_provided__84(this$0, $values);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function toLowerCasePreservingASCIIRules(_this_) {
@@ -27310,7 +27281,7 @@
     }var original = _this_;
     var tmp1_buildString_0 = _this_.length;
     var tmp0_apply_0_1 = StringBuilder_init_$Create$(tmp1_buildString_0);
-    tmp0_apply_0_1.append_22(original, 0, firstIndex);
+    tmp0_apply_0_1.append_21(original, 0, firstIndex);
     Unit_getInstance();
     var inductionVariable_0 = firstIndex;
     var last_2 = _get_lastIndex__1(original);
@@ -27318,7 +27289,7 @@
       do {
         var index_4 = inductionVariable_0;
         inductionVariable_0 = inductionVariable_0 + 1 | 0;
-        tmp0_apply_0_1.append_24(toLowerCasePreservingASCII(charSequenceGet(original, index_4)));
+        tmp0_apply_0_1.append_23(toLowerCasePreservingASCII(charSequenceGet(original, index_4)));
         Unit_getInstance();
       }
        while (!(index_4 === last_2));
@@ -27402,7 +27373,7 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        newData.set_7(index, _get_data_($this).get_76(index));
+        newData.set_7(index, _get_data_($this).get_77(index));
       }
        while (inductionVariable < last_1);
     _set_data_($this, newData);
@@ -27420,9 +27391,9 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        if (_get_data_($this).get_76(index) == null) {
+        if (_get_data_($this).get_77(index) == null) {
           continue;
-        }_get_data_($this).set_7(writePosition, _get_data_($this).get_76(index));
+        }_get_data_($this).set_7(writePosition, _get_data_($this).get_77(index));
         writePosition = writePosition + 1 | 0;
       }
        while (inductionVariable < last_1);
@@ -27444,7 +27415,7 @@
     }
     var readPosition = $this._get_size__48() - 1 | 0;
     while (readPosition >= index) {
-      _get_data_($this).set_7(readPosition + gapSize | 0, _get_data_($this).get_76(readPosition));
+      _get_data_($this).set_7(readPosition + gapSize | 0, _get_data_($this).get_77(readPosition));
       readPosition = readPosition - 1 | 0;
     }
     var inductionVariable = index;
@@ -27478,7 +27449,7 @@
     var tmp0_this = this;
     var tmp1 = tmp0_this._get_current__0();
     tmp0_this._set_current_(tmp1 + 1 | 0);
-    return this._this$0_23.get_76(tmp1);
+    return this._this$0_23.get_77(tmp1);
   };
   _no_name_provided__85.prototype.remove_51 = function () {
     this._this$0_23.removeAt_2(this._get_current__0() - 1 | 0);
@@ -27550,7 +27521,7 @@
         var tmp1_4_6 = index_1_2;
         index_1_2 = tmp1_4_6 + 1 | 0;
         var tmp0__anonymous__5_5 = checkIndexOverflow(tmp1_4_6);
-        if (!equals_1(other.get_76(tmp0__anonymous__5_5), item_3_4)) {
+        if (!equals_1(other.get_77(tmp0__anonymous__5_5), item_3_4)) {
           tmp$ret$0 = false;
           break l$ret$1;
         }}
@@ -27562,7 +27533,7 @@
   ConcurrentList.prototype.toString = function () {
     var tmp0_synchronized_0 = this._lock_1;
     var tmp0_apply_0_1_2 = StringBuilder_init_$Create$_0();
-    tmp0_apply_0_1_2.append_24(new Char(91));
+    tmp0_apply_0_1_2.append_23(new Char(91));
     Unit_getInstance();
     var index_1_3_3 = 0;
     var tmp0_iterator_2_4_4 = this.iterator_62();
@@ -27571,13 +27542,13 @@
       var tmp1_4_7_7 = index_1_3_3;
       index_1_3_3 = tmp1_4_7_7 + 1 | 0;
       var tmp0__anonymous__5_6_6 = checkIndexOverflow(tmp1_4_7_7);
-      tmp0_apply_0_1_2.append_7('' + item_3_5_5);
+      tmp0_apply_0_1_2.append_6('' + item_3_5_5);
       Unit_getInstance();
       if ((tmp0__anonymous__5_6_6 + 1 | 0) < this._get_size__48()) {
-        tmp0_apply_0_1_2.append_7(', ');
+        tmp0_apply_0_1_2.append_6(', ');
         Unit_getInstance();
       }}
-    tmp0_apply_0_1_2.append_24(new Char(93));
+    tmp0_apply_0_1_2.append_23(new Char(93));
     Unit_getInstance();
     return tmp0_apply_0_1_2.toString();
   };
@@ -27624,11 +27595,11 @@
   ConcurrentList.prototype.containsAll_37 = function (elements) {
     return this.containsAll_26(elements);
   };
-  ConcurrentList.prototype.get_76 = function (index) {
+  ConcurrentList.prototype.get_77 = function (index) {
     var tmp0_synchronized_0 = this._lock_1;
     if (index >= this._get_size__48()) {
       throw NoSuchElementException_init_$Create$();
-    }return ensureNotNull(_get_data_(this).get_76(index));
+    }return ensureNotNull(_get_data_(this).get_77(index));
   };
   ConcurrentList.prototype.indexOf_2 = function (element) {
     var tmp0_synchronized_0 = this._lock_1;
@@ -27638,7 +27609,7 @@
       do {
         var index_3 = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        if (equals_1(_get_data_(this).get_76(index_3), element)) {
+        if (equals_1(_get_data_(this).get_77(index_3), element)) {
           return index_3;
         }}
        while (inductionVariable < last_1);
@@ -27717,7 +27688,7 @@
   ConcurrentList.prototype.removeAt_2 = function (index) {
     var tmp0_synchronized_0 = this._lock_1;
     checkIndex(this, index);
-    var old_2 = _get_data_(this).get_76(index);
+    var old_2 = _get_data_(this).get_77(index);
     _get_data_(this).set_7(index, null);
     sweep(this, index);
     return ensureNotNull(old_2);
@@ -27725,7 +27696,7 @@
   ConcurrentList.prototype.set_5 = function (index, element) {
     var tmp0_synchronized_0 = this._lock_1;
     checkIndex(this, index);
-    var old_2 = _get_data_(this).get_76(index);
+    var old_2 = _get_data_(this).get_77(index);
     _get_data_(this).set_7(index, element);
     var tmp0_elvis_lhs_3 = old_2;
     return tmp0_elvis_lhs_3 == null ? element : tmp0_elvis_lhs_3;
@@ -27818,11 +27789,11 @@
   }
   function findBucket($this, key) {
     var bucketId = hashCode(key) & (_get_table_($this)._size_4 - 1 | 0);
-    return _get_table_($this).get_76(bucketId);
+    return _get_table_($this).get_77(bucketId);
   }
   function findOrCreateBucket($this, key) {
     var bucketId = hashCode(key) & (_get_table_($this)._size_4 - 1 | 0);
-    var result = _get_table_($this).get_76(bucketId);
+    var result = _get_table_($this).get_77(bucketId);
     if (result == null) {
       var bucket = new SharedForwardList();
       _get_table_($this).set_7(bucketId, bucket);
@@ -27853,7 +27824,7 @@
     this._this$0_24 = this$0;
     this._$value_1 = $value;
   }
-  _no_name_provided__86.prototype.invoke_403 = function () {
+  _no_name_provided__86.prototype.invoke_411 = function () {
     var tmp0_iterator = _get_table_(this._this$0_24).iterator_62();
     while (tmp0_iterator.hasNext_29()) {
       var bucket = tmp0_iterator.next_31();
@@ -27880,7 +27851,7 @@
     this._this$0_25 = this$0;
     this._$key = $key;
   }
-  _no_name_provided__87.prototype.invoke_403 = function () {
+  _no_name_provided__87.prototype.invoke_411 = function () {
     var tmp0_elvis_lhs = findBucket(this._this$0_25, this._$key);
     var tmp;
     if (tmp0_elvis_lhs == null) {
@@ -27918,7 +27889,7 @@
     _set_table_(this._this$0_26, new SharedList(32));
     _set_insertionOrder_(this._this$0_26, new SharedForwardList());
   };
-  _no_name_provided__88.prototype.invoke_403 = function () {
+  _no_name_provided__88.prototype.invoke_411 = function () {
     this.invoke_147();
     return Unit_getInstance();
   };
@@ -27931,7 +27902,7 @@
     this._$key_0 = $key;
     this._$value_2 = $value;
   }
-  _no_name_provided__89.prototype.invoke_403 = function () {
+  _no_name_provided__89.prototype.invoke_411 = function () {
     if (_get_loadFactor_(this._this$0_27) > 0.5) {
       upsize(this._this$0_27);
     }var bucket = findOrCreateBucket(this._this$0_27, this._$key_0);
@@ -27971,7 +27942,7 @@
     this._this$0_28 = this$0;
     this._$key_1 = $key;
   }
-  _no_name_provided__90.prototype.invoke_403 = function () {
+  _no_name_provided__90.prototype.invoke_411 = function () {
     var tmp0_elvis_lhs = findBucket(this._this$0_28, this._$key_1);
     var tmp;
     if (tmp0_elvis_lhs == null) {
@@ -28001,7 +27972,7 @@
     this._$other = $other;
     this._this$0_29 = this$0;
   }
-  _no_name_provided__91.prototype.invoke_403 = function () {
+  _no_name_provided__91.prototype.invoke_411 = function () {
     var tmp;
     var tmp_0;
     if (this._$other == null) {
@@ -28041,7 +28012,7 @@
   function _no_name_provided__92(this$0) {
     this._this$0_30 = this$0;
   }
-  _no_name_provided__92.prototype.invoke_403 = function () {
+  _no_name_provided__92.prototype.invoke_411 = function () {
     var current = 7;
     var tmp0_iterator = this._this$0_30._get_entries__8().iterator_62();
     while (tmp0_iterator.hasNext_29()) {
@@ -28059,9 +28030,9 @@
   function _no_name_provided__93(this$0) {
     this._this$0_31 = this$0;
   }
-  _no_name_provided__93.prototype.invoke_403 = function () {
+  _no_name_provided__93.prototype.invoke_411 = function () {
     var tmp0_apply_0_1 = StringBuilder_init_$Create$_0();
-    tmp0_apply_0_1.append_7('{');
+    tmp0_apply_0_1.append_6('{');
     Unit_getInstance();
     var tmp0_forEachIndexed_0_3 = this._this$0_31._get_entries__8();
     var index_1_4 = 0;
@@ -28073,13 +28044,13 @@
       var tmp1__anonymous__5_7 = checkIndexOverflow(tmp1_4_8);
       var key_6_9 = item_3_6._get_key__52();
       var value_7_10 = item_3_6._get_value__27();
-      tmp0_apply_0_1.append_7('' + key_6_9 + '=' + value_7_10);
+      tmp0_apply_0_1.append_6('' + key_6_9 + '=' + value_7_10);
       Unit_getInstance();
       if (!(tmp1__anonymous__5_7 === (this._this$0_31._get_size__48() - 1 | 0))) {
-        tmp0_apply_0_1.append_7(', ');
+        tmp0_apply_0_1.append_6(', ');
         Unit_getInstance();
       }}
-    tmp0_apply_0_1.append_7('}');
+    tmp0_apply_0_1.append_6('}');
     Unit_getInstance();
     return tmp0_apply_0_1.toString();
   };
@@ -28256,13 +28227,13 @@
   function _no_name_provided_$factory_62(this$0, $value) {
     var i = new _no_name_provided__86(this$0, $value);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_63(this$0, $key) {
     var i = new _no_name_provided__87(this$0, $key);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_64(this$0) {
@@ -28275,31 +28246,31 @@
   function _no_name_provided_$factory_65(this$0, $key, $value) {
     var i = new _no_name_provided__89(this$0, $key, $value);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_66(this$0, $key) {
     var i = new _no_name_provided__90(this$0, $key);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_67($other, this$0) {
     var i = new _no_name_provided__91($other, this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_68(this$0) {
     var i = new _no_name_provided__92(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_69(this$0) {
     var i = new _no_name_provided__93(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided__95(this$0) {
@@ -28958,7 +28929,7 @@
   SharedList.prototype.containsAll_37 = function (elements) {
     return this.containsAll_34(elements);
   };
-  SharedList.prototype.get_76 = function (index) {
+  SharedList.prototype.get_77 = function (index) {
     return this._data_3.atomicfu$get(index)._value_2;
   };
   SharedList.prototype.isEmpty_50 = function () {
@@ -29286,7 +29257,7 @@
 
             break;
           case 3:
-            this._executeInterceptor2 = this._interceptors1.get_76(this._index0);
+            this._executeInterceptor2 = this._interceptors1.get_77(this._index0);
             this.__this__20._index_3 = this._index0 + 1 | 0;
             this._state_0 = 4;
             suspendResult = this._executeInterceptor2(this.__this__20, this.__this__20._subject, this);
@@ -29445,7 +29416,7 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        destination.add_32(interceptors.get_76(index));
+        destination.add_32(interceptors.get_77(index));
         Unit_getInstance();
       }
        while (inductionVariable < last_1);
@@ -29531,7 +29502,7 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var current = phasesList.get_76(index);
+        var current = phasesList.get_77(index);
         if (current === phase) {
           var content = PhaseContent_init_$Create$(phase, Last_getInstance());
           phasesList.set_6(index, content);
@@ -29561,7 +29532,7 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var current = phasesList.get_76(index);
+        var current = phasesList.get_77(index);
         var tmp;
         if (current === phase) {
           tmp = true;
@@ -29592,7 +29563,7 @@
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var current = phasesList.get_76(index);
+        var current = phasesList.get_77(index);
         var tmp;
         if (current === phase) {
           tmp = true;
@@ -29628,7 +29599,7 @@
         do {
           var phaseIndex = inductionVariable;
           inductionVariable = inductionVariable + 1 | 0;
-          var tmp = phases.get_76(phaseIndex);
+          var tmp = phases.get_77(phaseIndex);
           var tmp1_elvis_lhs = tmp instanceof PhaseContent ? tmp : null;
           var tmp_0;
           if (tmp1_elvis_lhs == null) {
@@ -29650,7 +29621,7 @@
       do {
         var phaseIndex_0 = inductionVariable_0;
         inductionVariable_0 = inductionVariable_0 + 1 | 0;
-        var tmp_1 = phases.get_76(phaseIndex_0);
+        var tmp_1 = phases.get_77(phaseIndex_0);
         var tmp3_elvis_lhs = tmp_1 instanceof PhaseContent ? tmp_1 : null;
         var tmp_2;
         if (tmp3_elvis_lhs == null) {
@@ -29915,7 +29886,7 @@
           return false;
         }return true;
       }$this._index_4 = index + 1 | 0;
-      var next = $this._blocks.get_76(index);
+      var next = $this._blocks.get_77(index);
       try {
         var me = $this;
         var tmp2_startCoroutineUninterceptedOrReturn3_0 = me._subject_0;
@@ -30329,18 +30300,18 @@
     while (index_4 < _this_.length) {
       var current_5 = charSequenceGet(_this_, index_4);
       if ((current_5.equals(new Char(47)) ? true : URL_ALPHABET_CHARS.contains_48(current_5)) ? true : VALID_PATH_PART.contains_48(current_5)) {
-        tmp0_apply_0_1.append_24(current_5);
+        tmp0_apply_0_1.append_23(current_5);
         Unit_getInstance();
         var tmp0_6 = index_4;
         index_4 = tmp0_6 + 1 | 0;
         Unit_getInstance();
         continue;
       }if (((current_5.equals(new Char(37)) ? (index_4 + 2 | 0) < _this_.length : false) ? HEX_ALPHABET.contains_48(charSequenceGet(_this_, index_4 + 1 | 0)) : false) ? HEX_ALPHABET.contains_48(charSequenceGet(_this_, index_4 + 2 | 0)) : false) {
-        tmp0_apply_0_1.append_24(current_5);
+        tmp0_apply_0_1.append_23(current_5);
         Unit_getInstance();
-        tmp0_apply_0_1.append_24(charSequenceGet(_this_, index_4 + 1 | 0));
+        tmp0_apply_0_1.append_23(charSequenceGet(_this_, index_4 + 1 | 0));
         Unit_getInstance();
-        tmp0_apply_0_1.append_24(charSequenceGet(_this_, index_4 + 2 | 0));
+        tmp0_apply_0_1.append_23(charSequenceGet(_this_, index_4 + 2 | 0));
         Unit_getInstance();
         index_4 = index_4 + 3 | 0;
         continue;
@@ -30438,11 +30409,11 @@
     var tmp0_buildString_0 = 3;
     var tmp0_apply_0_1 = StringBuilder_init_$Create$(tmp0_buildString_0);
     var code_3 = _this_ & 255;
-    tmp0_apply_0_1.append_24(new Char(37));
+    tmp0_apply_0_1.append_23(new Char(37));
     Unit_getInstance();
-    tmp0_apply_0_1.append_24(hexDigitToChar(code_3 >> 4));
+    tmp0_apply_0_1.append_23(hexDigitToChar(code_3 >> 4));
     Unit_getInstance();
-    tmp0_apply_0_1.append_24(hexDigitToChar(code_3 & 15));
+    tmp0_apply_0_1.append_23(hexDigitToChar(code_3 & 15));
     Unit_getInstance();
     return tmp0_apply_0_1.toString();
   }
@@ -30474,14 +30445,14 @@
     var sbSize = length > 255 ? length / 3 | 0 : length;
     var sb = StringBuilder_init_$Create$(sbSize);
     if (prefixEnd > start) {
-      sb.append_22(_this_, start, prefixEnd);
+      sb.append_21(_this_, start, prefixEnd);
       Unit_getInstance();
     }var index = prefixEnd;
     var bytes = null;
     while (index < end) {
       var c = charSequenceGet(_this_, index);
       if (plusIsSpace ? c.equals(new Char(43)) : false) {
-        sb.append_24(new Char(32));
+        sb.append_23(new Char(32));
         Unit_getInstance();
         var tmp0 = index;
         index = tmp0 + 1 | 0;
@@ -30502,13 +30473,13 @@
           }var tmp = bytes;
           var tmp1 = count_0;
           count_0 = tmp1 + 1 | 0;
-          tmp[tmp1] = toByte_0(imul(digit1, 16) + digit2 | 0);
+          tmp[tmp1] = toByte(imul(digit1, 16) + digit2 | 0);
           index = index + 3 | 0;
         }
-        sb.append_7(String_0(bytes, 0, count_0, charset_1));
+        sb.append_6(String_0(bytes, 0, count_0, charset_1));
         Unit_getInstance();
       } else {
-        sb.append_24(c);
+        sb.append_23(c);
         Unit_getInstance();
         var tmp2 = index;
         index = tmp2 + 1 | 0;
@@ -30555,10 +30526,10 @@
     this._$tmp0_apply_0_1 = $tmp0_apply_0_1;
   }
   _no_name_provided__101.prototype.invoke_154 = function (it) {
-    this._$tmp0_apply_0_1.append_7(percentEncode(it));
+    this._$tmp0_apply_0_1.append_6(percentEncode(it));
     Unit_getInstance();
   };
-  _no_name_provided__101.prototype.invoke_412 = function (p1) {
+  _no_name_provided__101.prototype.invoke_420 = function (p1) {
     this.invoke_154((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -30574,21 +30545,21 @@
   _no_name_provided__102.prototype.invoke_154 = function (it) {
     if (it === 32)
       if (this._$spaceToPlus) {
-        this._$tmp0_apply_0_1_0.append_24(new Char(43));
+        this._$tmp0_apply_0_1_0.append_23(new Char(43));
         Unit_getInstance();
       } else {
-        this._$tmp0_apply_0_1_0.append_7('%20');
+        this._$tmp0_apply_0_1_0.append_6('%20');
         Unit_getInstance();
       }
      else if (URL_ALPHABET.contains_48(it) ? true : !this._$encodeFull ? URL_PROTOCOL_PART.contains_48(it) : false) {
-      this._$tmp0_apply_0_1_0.append_24(numberToChar(it));
+      this._$tmp0_apply_0_1_0.append_23(numberToChar(it));
       Unit_getInstance();
     } else {
-      this._$tmp0_apply_0_1_0.append_7(percentEncode(it));
+      this._$tmp0_apply_0_1_0.append_6(percentEncode(it));
       Unit_getInstance();
     }
   };
-  _no_name_provided__102.prototype.invoke_412 = function (p1) {
+  _no_name_provided__102.prototype.invoke_420 = function (p1) {
     this.invoke_154((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -30602,17 +30573,17 @@
   }
   _no_name_provided__103.prototype.invoke_154 = function (it) {
     if (URL_ALPHABET.contains_48(it) ? true : OAUTH_SYMBOLS.contains_48(it)) {
-      this._$tmp0_apply_0_1_1.append_24(numberToChar(it));
+      this._$tmp0_apply_0_1_1.append_23(numberToChar(it));
       Unit_getInstance();
     } else if (this._$spaceToPlus_0 ? it === 32 : false) {
-      this._$tmp0_apply_0_1_1.append_24(new Char(43));
+      this._$tmp0_apply_0_1_1.append_23(new Char(43));
       Unit_getInstance();
     } else {
-      this._$tmp0_apply_0_1_1.append_7(percentEncode(it));
+      this._$tmp0_apply_0_1_1.append_6(percentEncode(it));
       Unit_getInstance();
     }
   };
-  _no_name_provided__103.prototype.invoke_412 = function (p1) {
+  _no_name_provided__103.prototype.invoke_420 = function (p1) {
     this.invoke_154((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -30625,17 +30596,17 @@
   }
   _no_name_provided__104.prototype.invoke_154 = function (it) {
     if ((URL_ALPHABET.contains_48(it) ? true : OAUTH_SYMBOLS.contains_48(it)) ? true : it === 61) {
-      this._$tmp0_apply_0_1_2.append_24(numberToChar(it));
+      this._$tmp0_apply_0_1_2.append_23(numberToChar(it));
       Unit_getInstance();
     } else if (it === 32) {
-      this._$tmp0_apply_0_1_2.append_24(new Char(43));
+      this._$tmp0_apply_0_1_2.append_23(new Char(43));
       Unit_getInstance();
     } else {
-      this._$tmp0_apply_0_1_2.append_7(percentEncode(it));
+      this._$tmp0_apply_0_1_2.append_6(percentEncode(it));
       Unit_getInstance();
     }
   };
-  _no_name_provided__104.prototype.invoke_412 = function (p1) {
+  _no_name_provided__104.prototype.invoke_420 = function (p1) {
     this.invoke_154((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -30677,7 +30648,7 @@
     var tmp0_iterator_1_2 = tmp0_map_0.iterator_62();
     while (tmp0_iterator_1_2.hasNext_29()) {
       var item_2_3 = tmp0_iterator_1_2.next_31();
-      tmp0_mapTo_0_1.add_32(item_2_3.toByte_4());
+      tmp0_mapTo_0_1.add_32(item_2_3.toByte_5());
       Unit_getInstance();
     }
     return tmp0_mapTo_0_1;
@@ -30688,7 +30659,7 @@
     var tmp0_iterator_1_2 = tmp0_map_0.iterator_62();
     while (tmp0_iterator_1_2.hasNext_29()) {
       var item_2_3 = tmp0_iterator_1_2.next_31();
-      tmp0_mapTo_0_1.add_32(item_2_3.toByte_4());
+      tmp0_mapTo_0_1.add_32(item_2_3.toByte_5());
       Unit_getInstance();
     }
     return tmp0_mapTo_0_1;
@@ -30699,7 +30670,7 @@
     var tmp0_iterator_1_2 = tmp0_map_0.iterator_62();
     while (tmp0_iterator_1_2.hasNext_29()) {
       var item_2_3 = tmp0_iterator_1_2.next_31();
-      tmp0_mapTo_0_1.add_32(item_2_3.toByte_4());
+      tmp0_mapTo_0_1.add_32(item_2_3.toByte_5());
       Unit_getInstance();
     }
     return tmp0_mapTo_0_1;
@@ -30735,7 +30706,7 @@
         tmp = false;
         break;
       case 1:
-        var tmp0_let_0 = $this._get_parameters__0().get_76(0);
+        var tmp0_let_0 = $this._get_parameters__0().get_77(0);
         tmp = equals_0(tmp0_let_0._name_4, name, true) ? equals_0(tmp0_let_0._value_12, value, true) : false;
         break;
       default:var tmp$ret$0;
@@ -31124,7 +31095,7 @@
   }
   function _no_name_provided__105() {
   }
-  _no_name_provided__105.prototype.invoke_403 = function () {
+  _no_name_provided__105.prototype.invoke_411 = function () {
     var tmp0_apply_0 = caseInsensitiveMap();
     tmp0_apply_0.putAll_6(groupByPairs(asSequence(_get_mimes_())));
     return tmp0_apply_0;
@@ -31140,7 +31111,7 @@
     var second = _name_for_destructuring_parameter_0_.component2_2();
     return to(second, first_1);
   };
-  _no_name_provided__106.prototype.invoke_412 = function (p1) {
+  _no_name_provided__106.prototype.invoke_420 = function (p1) {
     return this.invoke_157(p1 instanceof Pair ? p1 : THROW_CCE());
   };
   _no_name_provided__106.$metadata$ = {
@@ -31149,7 +31120,7 @@
   };
   function _no_name_provided__107() {
   }
-  _no_name_provided__107.prototype.invoke_403 = function () {
+  _no_name_provided__107.prototype.invoke_411 = function () {
     var tmp = asSequence(_get_mimes_());
     return groupByPairs(map(tmp, _no_name_provided_$factory_77()));
   };
@@ -31160,13 +31131,13 @@
   function _no_name_provided_$factory_75() {
     var i = new _no_name_provided__105();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_76() {
     var i = new _no_name_provided__107();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_77() {
@@ -31236,7 +31207,7 @@
       }
       var size_0 = tmp_0 + sum_1 | 0;
       var tmp1_apply_0 = StringBuilder_init_$Create$(size_0);
-      tmp1_apply_0.append_7(this._content_0);
+      tmp1_apply_0.append_6(this._content_0);
       Unit_getInstance();
       var inductionVariable = 0;
       var last_1 = this._parameters._get_size__48();
@@ -31244,20 +31215,20 @@
         do {
           var index_3 = inductionVariable;
           inductionVariable = inductionVariable + 1 | 0;
-          var tmp1_container_4 = this._parameters.get_76(index_3);
+          var tmp1_container_4 = this._parameters.get_77(index_3);
           var name_5 = tmp1_container_4.component1_2();
           var value_6 = tmp1_container_4.component2_2();
-          tmp1_apply_0.append_7('; ');
+          tmp1_apply_0.append_6('; ');
           Unit_getInstance();
-          tmp1_apply_0.append_7(name_5);
+          tmp1_apply_0.append_6(name_5);
           Unit_getInstance();
-          tmp1_apply_0.append_7('=');
+          tmp1_apply_0.append_6('=');
           Unit_getInstance();
           if (checkNeedEscape(value_6)) {
-            tmp1_apply_0.append_7(quote(value_6));
+            tmp1_apply_0.append_6(quote(value_6));
             Unit_getInstance();
           } else {
-            tmp1_apply_0.append_7(value_6);
+            tmp1_apply_0.append_6(value_6);
             Unit_getInstance();
           }
         }
@@ -31325,7 +31296,7 @@
     return true;
   }
   function quoteTo(_this_, out) {
-    out.append_7('"');
+    out.append_6('"');
     Unit_getInstance();
     var inductionVariable = 0;
     var last_1 = _this_.length;
@@ -31336,27 +31307,27 @@
         var ch = charSequenceGet(_this_, i);
         var tmp1_subject = ch;
         if (tmp1_subject.equals(new Char(92))) {
-          out.append_7('\\\\');
+          out.append_6('\\\\');
           Unit_getInstance();
         } else if (tmp1_subject.equals(new Char(10))) {
-          out.append_7('\\n');
+          out.append_6('\\n');
           Unit_getInstance();
         } else if (tmp1_subject.equals(new Char(13))) {
-          out.append_7('\\r');
+          out.append_6('\\r');
           Unit_getInstance();
         } else if (tmp1_subject.equals(new Char(9))) {
-          out.append_7('\\t');
+          out.append_6('\\t');
           Unit_getInstance();
         } else if (tmp1_subject.equals(new Char(34))) {
-          out.append_7('\\"');
+          out.append_6('\\"');
           Unit_getInstance();
         } else {
-          out.append_24(ch);
+          out.append_23(ch);
           Unit_getInstance();
         }
       }
        while (inductionVariable < last_1);
-    out.append_7('"');
+    out.append_6('"');
     Unit_getInstance();
   }
   function HeadersBuilder_init_$Init$(size_0, $mask0, $marker, $this) {
@@ -31668,11 +31639,11 @@
       if (currentChar.equals(new Char(34)) ? nextIsSemicolonOrEnd(value, position) : false) {
         return to(position + 1 | 0, builder.toString());
       } else if (currentChar.equals(new Char(92)) ? position < (_get_lastIndex__1(value) - 2 | 0) : false) {
-        builder.append_24(charSequenceGet(value, position + 1 | 0));
+        builder.append_23(charSequenceGet(value, position + 1 | 0));
         Unit_getInstance();
         position = position + 2 | 0;
         continue loop;
-      }builder.append_24(currentChar);
+      }builder.append_23(currentChar);
       Unit_getInstance();
       var tmp0 = position;
       position = tmp0 + 1 | 0;
@@ -31701,7 +31672,7 @@
   }
   function _no_name_provided__108() {
   }
-  _no_name_provided__108.prototype.invoke_403 = function () {
+  _no_name_provided__108.prototype.invoke_411 = function () {
     return ArrayList_init_$Create$();
   };
   _no_name_provided__108.$metadata$ = {
@@ -31710,7 +31681,7 @@
   };
   function _no_name_provided__109() {
   }
-  _no_name_provided__109.prototype.invoke_403 = function () {
+  _no_name_provided__109.prototype.invoke_411 = function () {
     return ArrayList_init_$Create$();
   };
   _no_name_provided__109.$metadata$ = {
@@ -31720,13 +31691,13 @@
   function _no_name_provided_$factory_78() {
     var i = new _no_name_provided__108();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_79() {
     var i = new _no_name_provided__109();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function HttpHeaders() {
@@ -32232,7 +32203,7 @@
     }
     return tmp;
   };
-  _no_name_provided__110.prototype.invoke_412 = function (p1) {
+  _no_name_provided__110.prototype.invoke_420 = function (p1) {
     return this.invoke_162(p1 instanceof Pair ? p1 : THROW_CCE());
   };
   _no_name_provided__110.$metadata$ = {
@@ -32264,7 +32235,7 @@
   }
   function _no_name_provided__111() {
   }
-  _no_name_provided__111.prototype.invoke_403 = function () {
+  _no_name_provided__111.prototype.invoke_411 = function () {
     return loadMimes();
   };
   _no_name_provided__111.$metadata$ = {
@@ -32273,7 +32244,7 @@
   };
   function _no_name_provided__112() {
   }
-  _no_name_provided__112.prototype.invoke_406 = function (it) {
+  _no_name_provided__112.prototype.invoke_414 = function (it) {
     var line = toString_1(trim(isCharSequence(it) ? it : THROW_CCE()));
     if (charSequenceLength(line) === 0)
       return null;
@@ -32287,8 +32258,8 @@
     var mime = line.substring(tmp1_substring_0);
     return to(toLowerCasePreservingASCIIRules(removePrefix(extension, '.')), toContentType(mime));
   };
-  _no_name_provided__112.prototype.invoke_412 = function (p1) {
-    return this.invoke_406((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
+  _no_name_provided__112.prototype.invoke_420 = function (p1) {
+    return this.invoke_414((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__112.$metadata$ = {
     kind: 'class',
@@ -32302,13 +32273,13 @@
   function _no_name_provided_$factory_81() {
     var i = new _no_name_provided__111();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_82() {
     var i = new _no_name_provided__112();
     return function (p1) {
-      return i.invoke_406(p1);
+      return i.invoke_414(p1);
     };
   }
   function ParametersBuilder_init_$Init$(size_0, $mask0, $marker, $this) {
@@ -32472,7 +32443,7 @@
         var spaceValueIndex = trimStart(equalIndex + 1 | 0, endIndex, query);
         var spaceEndIndex_0 = trimEnd(spaceValueIndex, endIndex, query);
         var value = decodeURLQueryComponent$default(query, spaceValueIndex, spaceEndIndex_0, true, null, 8, null);
-        _this_.append_27(name_0, value);
+        _this_.append_26(name_0, value);
       }}
   }
   function trimStart(start, end, query) {
@@ -32519,7 +32490,7 @@
     return URLBuilder_init_$Init$(protocol, host, port, user, password, encodedPath, parameters, fragment, trailingQuery, $mask0, $marker, Object.create(URLBuilder.prototype));
   }
   function appendTo($this, out) {
-    out.append_23($this._protocol._name_6);
+    out.append_22($this._protocol._name_6);
     Unit_getInstance();
     var tmp0_subject = $this._protocol._name_6;
     if (tmp0_subject === 'file') {
@@ -32528,17 +32499,17 @@
     } else if (tmp0_subject === 'mailto') {
       appendMailto(out, _get_userAndPassword_($this), $this._encodedPath);
       return out;
-    }out.append_23('://');
+    }out.append_22('://');
     Unit_getInstance();
-    out.append_23(_get_authority__0($this));
+    out.append_22(_get_authority__0($this));
     Unit_getInstance();
     appendUrlFullPath(out, $this._encodedPath, $this._parameters_0, $this._trailingQuery);
     var tmp0_isNotEmpty_0 = $this._fragment;
     if (charSequenceLength(tmp0_isNotEmpty_0) > 0) {
-      out.append_24(new Char(35));
+      out.append_23(new Char(35));
       Unit_getInstance();
       var tmp = $this._fragment;
-      out.append_23(encodeURLQueryComponent$default(tmp, false, false, null, 7, null));
+      out.append_22(encodeURLQueryComponent$default(tmp, false, false, null, 7, null));
       Unit_getInstance();
     } else {
     }
@@ -32649,7 +32620,7 @@
     var tmp0_apply_0_1 = StringBuilder_init_$Create$_0();
     var tmp$ret$0;
     l$ret$1: do {
-      tmp0_apply_0_1.append_7(this._protocol_0._name_6);
+      tmp0_apply_0_1.append_6(this._protocol_0._name_6);
       Unit_getInstance();
       var tmp0_subject_3 = this._protocol_0._name_6;
       if (tmp0_subject_3 === 'file') {
@@ -32669,17 +32640,17 @@
         appendMailto(tmp0_apply_0_1, userValue_4, this._host_0);
         tmp$ret$0 = Unit_getInstance();
         break l$ret$1;
-      }tmp0_apply_0_1.append_7('://');
+      }tmp0_apply_0_1.append_6('://');
       Unit_getInstance();
-      tmp0_apply_0_1.append_7(_get_authority_(this));
+      tmp0_apply_0_1.append_6(_get_authority_(this));
       Unit_getInstance();
-      tmp0_apply_0_1.append_7(_get_fullPath_(this));
+      tmp0_apply_0_1.append_6(_get_fullPath_(this));
       Unit_getInstance();
       var tmp1_isNotEmpty_0_7 = this._fragment_0;
       if (charSequenceLength(tmp1_isNotEmpty_0_7) > 0) {
-        tmp0_apply_0_1.append_24(new Char(35));
+        tmp0_apply_0_1.append_23(new Char(35));
         Unit_getInstance();
-        tmp0_apply_0_1.append_7(this._fragment_0);
+        tmp0_apply_0_1.append_6(this._fragment_0);
         Unit_getInstance();
       } else {
       }
@@ -32734,46 +32705,46 @@
   };
   function _get_authority_(_this_) {
     var tmp0_apply_0_1 = StringBuilder_init_$Create$_0();
-    tmp0_apply_0_1.append_7(_get_userAndPassword__0(_this_));
+    tmp0_apply_0_1.append_6(_get_userAndPassword__0(_this_));
     Unit_getInstance();
     if (_this_._specifiedPort === 0) {
-      tmp0_apply_0_1.append_7(_this_._host_0);
+      tmp0_apply_0_1.append_6(_this_._host_0);
       Unit_getInstance();
     } else {
-      tmp0_apply_0_1.append_7(_get_hostWithPort_(_this_));
+      tmp0_apply_0_1.append_6(_get_hostWithPort_(_this_));
       Unit_getInstance();
     }
     return tmp0_apply_0_1.toString();
   }
   function _get_authority__0(_this_) {
     var tmp0_apply_0_1 = StringBuilder_init_$Create$_0();
-    tmp0_apply_0_1.append_7(_get_userAndPassword_(_this_));
+    tmp0_apply_0_1.append_6(_get_userAndPassword_(_this_));
     Unit_getInstance();
-    tmp0_apply_0_1.append_7(_this_._host);
+    tmp0_apply_0_1.append_6(_this_._host);
     Unit_getInstance();
     if (!(_this_._port === 0) ? !(_this_._port === _this_._protocol._defaultPort) : false) {
-      tmp0_apply_0_1.append_7(':');
+      tmp0_apply_0_1.append_6(':');
       Unit_getInstance();
-      tmp0_apply_0_1.append_7(_this_._port.toString());
+      tmp0_apply_0_1.append_6(_this_._port.toString());
       Unit_getInstance();
     }return tmp0_apply_0_1.toString();
   }
   function appendFile(_this_, host, encodedPath) {
-    _this_.append_23('://');
+    _this_.append_22('://');
     Unit_getInstance();
-    _this_.append_23(host);
+    _this_.append_22(host);
     Unit_getInstance();
-    _this_.append_23(encodedPath);
+    _this_.append_22(encodedPath);
     Unit_getInstance();
   }
   function appendMailto(_this_, user, host) {
-    _this_.append_23(':');
+    _this_.append_22(':');
     Unit_getInstance();
-    _this_.append_23(encodeURLParameter$default(user, false, 1, null));
+    _this_.append_22(encodeURLParameter$default(user, false, 1, null));
     Unit_getInstance();
-    _this_.append_24(new Char(64));
+    _this_.append_23(new Char(64));
     Unit_getInstance();
-    _this_.append_23(host);
+    _this_.append_22(host);
     Unit_getInstance();
   }
   function _get_userAndPassword_(_this_) {
@@ -32793,14 +32764,14 @@
     else
       tmp0_elvis_lhs;
     Unit_getInstance();
-    _this_.append_7(encodeURLParameter$default(user, false, 1, null));
+    _this_.append_6(encodeURLParameter$default(user, false, 1, null));
     Unit_getInstance();
     if (!(password == null)) {
-      _this_.append_24(new Char(58));
+      _this_.append_23(new Char(58));
       Unit_getInstance();
-      _this_.append_7(encodeURLParameter$default(password, false, 1, null));
+      _this_.append_6(encodeURLParameter$default(password, false, 1, null));
       Unit_getInstance();
-    }_this_.append_7('@');
+    }_this_.append_6('@');
     Unit_getInstance();
   }
   function takeFrom(_this_, urlString) {
@@ -33122,7 +33093,7 @@
   _no_name_provided__113.prototype.invoke_205 = function (key, values_4) {
     this._$this_parseQuery._parameters_0.appendAll_3(key, values_4);
   };
-  _no_name_provided__113.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__113.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     this.invoke_205(tmp, (!(p2 == null) ? isInterface(p2, List) : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
@@ -33253,14 +33224,14 @@
       }
     }
     if (tmp) {
-      _this_.append_24(new Char(47));
+      _this_.append_23(new Char(47));
       Unit_getInstance();
     } else {
     }
-    _this_.append_23(encodedPath);
+    _this_.append_22(encodedPath);
     Unit_getInstance();
     if (!queryParameters.isEmpty_50() ? true : trailingQuery) {
-      _this_.append_23('?');
+      _this_.append_22('?');
       Unit_getInstance();
     }formUrlEncodeTo(queryParameters, _this_);
   }
@@ -33282,14 +33253,14 @@
       }
     }
     if (tmp) {
-      _this_.append_24(new Char(47));
+      _this_.append_23(new Char(47));
       Unit_getInstance();
     } else {
     }
-    _this_.append_23(encodedPath);
+    _this_.append_22(encodedPath);
     Unit_getInstance();
     if (!queryParameters.isEmpty_50() ? true : trailingQuery) {
-      _this_.append_23('?');
+      _this_.append_22('?');
       Unit_getInstance();
     }formUrlEncodeTo_0(queryParameters, _this_);
   }
@@ -33661,11 +33632,11 @@
                 tmp_4 = false;
               }
               if (tmp_4) {
-                expression.append_7('|');
+                expression.append_6('|');
                 Unit_getInstance();
               } else {
               }
-              expression.append_7(current_6._regex);
+              expression.append_6(current_6._regex);
               Unit_getInstance();
               currentOffset = currentOffset + current_6._groupsCount | 0;
             }
@@ -33854,7 +33825,7 @@
   _no_name_provided__116.prototype.invoke_169 = function (it) {
     return charSequenceLength(it);
   };
-  _no_name_provided__116.prototype.invoke_412 = function (p1) {
+  _no_name_provided__116.prototype.invoke_420 = function (p1) {
     return this.invoke_169((!(p1 == null) ? isCharSequence(p1) : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__116.$metadata$ = {
@@ -33866,7 +33837,7 @@
   _no_name_provided__117.prototype.invoke_171 = function (s, idx) {
     return charSequenceGet(s, idx);
   };
-  _no_name_provided__117.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__117.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? isCharSequence(p1) : false) ? p1 : THROW_CCE();
     return this.invoke_171(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
   };
@@ -34052,7 +34023,7 @@
   _no_name_provided__119.prototype.invoke_173 = function (it) {
     return it._value_14.length;
   };
-  _no_name_provided__119.prototype.invoke_412 = function (p1) {
+  _no_name_provided__119.prototype.invoke_420 = function (p1) {
     return this.invoke_173(p1 instanceof HttpMethod ? p1 : THROW_CCE());
   };
   _no_name_provided__119.$metadata$ = {
@@ -34064,7 +34035,7 @@
   _no_name_provided__120.prototype.invoke_175 = function (m, idx) {
     return charSequenceGet(m._value_14, idx);
   };
-  _no_name_provided__120.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__120.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof HttpMethod ? p1 : THROW_CCE();
     return this.invoke_175(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
   };
@@ -34128,7 +34099,7 @@
       do {
         var item_2_3 = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        tmp0_mapTo_0_1.add_32(item_2_3 < 10 ? toByte_0(48 + item_2_3 | 0) : toByte_0((new Char(97)).plus_58(item_2_3).minus_29(10).toInt_5()));
+        tmp0_mapTo_0_1.add_32(item_2_3 < 10 ? toByte(48 + item_2_3 | 0) : toByte((new Char(97)).plus_58(item_2_3).minus_29(10).toInt_5()));
         Unit_getInstance();
       }
        while (!(item_2_3 === last_1));
@@ -34481,7 +34452,7 @@
         break l$ret$1;
       } catch ($p) {
         if ($p instanceof Error) {
-          builder_1.release_5();
+          builder_1.release_10();
           throw $p;
         } else {
           {
@@ -34586,7 +34557,7 @@
     if (!(it == null)) {
       cancel$default(this._this$0_38._engine, null, 1, null);
     }};
-  _no_name_provided__121.prototype.invoke_412 = function (p1) {
+  _no_name_provided__121.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -34604,7 +34575,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__122.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__122.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -34672,7 +34643,7 @@
   _no_name_provided__123.prototype.invoke_192 = function ($this$install) {
     defaultTransformers($this$install);
   };
-  _no_name_provided__123.prototype.invoke_412 = function (p1) {
+  _no_name_provided__123.prototype.invoke_420 = function (p1) {
     this.invoke_192(p1 instanceof HttpClient ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -34814,7 +34785,7 @@
   _no_name_provided__124.prototype.invoke_310 = function (it) {
     this._$engine.close_40();
   };
-  _no_name_provided__124.prototype.invoke_412 = function (p1) {
+  _no_name_provided__124.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -34867,7 +34838,7 @@
   }
   function _no_name_provided__125() {
   }
-  _no_name_provided__125.prototype.invoke_403 = function () {
+  _no_name_provided__125.prototype.invoke_411 = function () {
     return Attributes_1(true);
   };
   _no_name_provided__125.$metadata$ = {
@@ -34879,7 +34850,7 @@
   _no_name_provided__126.prototype.invoke_186 = function ($this$shared) {
     return Unit_getInstance();
   };
-  _no_name_provided__126.prototype.invoke_412 = function (p1) {
+  _no_name_provided__126.prototype.invoke_420 = function (p1) {
     this.invoke_186(p1 instanceof HttpClientEngineConfig ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -34892,7 +34863,7 @@
   _no_name_provided__127.prototype.invoke_188 = function ($this$null) {
     return Unit_getInstance();
   };
-  _no_name_provided__127.prototype.invoke_412 = function (p1) {
+  _no_name_provided__127.prototype.invoke_420 = function (p1) {
     this.invoke_188(isObject(p1) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -34913,7 +34884,7 @@
     Unit_getInstance();
     this._$configure(isObject($this$null) ? $this$null : THROW_CCE());
   };
-  _no_name_provided__128.prototype.invoke_412 = function (p1) {
+  _no_name_provided__128.prototype.invoke_420 = function (p1) {
     this.invoke_190(isObject(p1) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -34931,7 +34902,7 @@
     this._$feature.install_23(featureData_5, scope);
     attributes_2.put_11(this._$feature._get_key__52(), featureData_5);
   };
-  _no_name_provided__129.prototype.invoke_412 = function (p1) {
+  _no_name_provided__129.prototype.invoke_420 = function (p1) {
     this.invoke_192(p1 instanceof HttpClient ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -35150,7 +35121,7 @@
   function _no_name_provided_$factory_96() {
     var i = new _no_name_provided__125();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function Companion_45() {
@@ -35392,7 +35363,7 @@
     var value = _name_for_destructuring_parameter_0_.component2_2();
     return '' + key + ': ' + value + '\n';
   };
-  _no_name_provided__130.prototype.invoke_412 = function (p1) {
+  _no_name_provided__130.prototype.invoke_420 = function (p1) {
     return this.invoke_194(p1 instanceof Pair ? p1 : THROW_CCE());
   };
   _no_name_provided__130.$metadata$ = {
@@ -35700,7 +35671,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__131.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__131.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -35770,14 +35741,14 @@
     this._$requestData = $requestData;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__132.prototype.invoke_411 = function ($this$async, $cont) {
+  _no_name_provided__132.prototype.invoke_419 = function ($this$async, $cont) {
     var tmp = this.create_47($this$async, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__132.prototype.invoke_412 = function (p1, $cont) {
-    return this.invoke_411((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__132.prototype.invoke_420 = function (p1, $cont) {
+    return this.invoke_419((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
   };
   _no_name_provided__132.prototype.doResume_95 = function () {
     var suspendResult = this._result;
@@ -35921,7 +35892,7 @@
   function _no_name_provided_$factory_99(this$0, $requestData, resultContinuation) {
     var i = new _no_name_provided__132(this$0, $requestData, resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_411(p1, $cont);
+      return i.invoke_419(p1, $cont);
     };
     l.$arity = 1;
     return l;
@@ -35957,7 +35928,7 @@
   function _no_name_provided__133(this$0) {
     this._this$0_42 = this$0;
   }
-  _no_name_provided__133.prototype.invoke_403 = function () {
+  _no_name_provided__133.prototype.invoke_411 = function () {
     return SilentSupervisor$default(null, 1, null).plus_31(this._this$0_42._get_dispatcher__0()).plus_31(new CoroutineName('' + this._this$0_42._engineName + '-context'));
   };
   _no_name_provided__133.$metadata$ = {
@@ -35971,7 +35942,7 @@
     close_0(this._this$0_43._get_dispatcher__0());
     Unit_getInstance();
   };
-  _no_name_provided__134.prototype.invoke_412 = function (p1) {
+  _no_name_provided__134.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -36045,7 +36016,7 @@
   function _no_name_provided_$factory_100(this$0) {
     var i = new _no_name_provided__133(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_101(this$0) {
@@ -36144,7 +36115,7 @@
     $this$buildHeaders.appendAll_1(this._$requestHeaders);
     $this$buildHeaders.appendAll_1(this._$content._get_headers__24());
   };
-  _no_name_provided__135.prototype.invoke_412 = function (p1) {
+  _no_name_provided__135.prototype.invoke_420 = function (p1) {
     this.invoke_267(p1 instanceof HeadersBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -36162,7 +36133,7 @@
       return Unit_getInstance();
     this._$block_0(key, joinToString$default_0(values_4, ',', null, null, 0, null, null, 62, null));
   };
-  _no_name_provided__136.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__136.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     this.invoke_205(tmp, (!(p2 == null) ? isInterface(p2, List) : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
@@ -36253,14 +36224,14 @@
   function _no_name_provided__137(resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__137.prototype.invoke_379 = function (response, $cont) {
+  _no_name_provided__137.prototype.invoke_385 = function (response, $cont) {
     var tmp = this.create_43(response, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__137.prototype.invoke_412 = function (p1, $cont) {
-    this.invoke_379(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__137.prototype.invoke_420 = function (p1, $cont) {
+    this.invoke_385(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
   _no_name_provided__137.prototype.doResume_95 = function () {
@@ -36335,12 +36306,12 @@
   function _no_name_provided__138($this_addDefaultResponseValidation) {
     this._$this_addDefaultResponseValidation = $this_addDefaultResponseValidation;
   }
-  _no_name_provided__138.prototype.invoke_385 = function ($this$HttpResponseValidator) {
+  _no_name_provided__138.prototype.invoke_391 = function ($this$HttpResponseValidator) {
     $this$HttpResponseValidator._expectSuccess = this._$this_addDefaultResponseValidation._get_expectSuccess_();
     $this$HttpResponseValidator.validateResponse(_no_name_provided_$factory_105(null));
   };
-  _no_name_provided__138.prototype.invoke_412 = function (p1) {
-    this.invoke_385(p1 instanceof Config ? p1 : THROW_CCE());
+  _no_name_provided__138.prototype.invoke_420 = function (p1) {
+    this.invoke_391(p1 instanceof Config ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__138.$metadata$ = {
@@ -36350,14 +36321,14 @@
   function _no_name_provided_$factory_104($this_addDefaultResponseValidation) {
     var i = new _no_name_provided__138($this_addDefaultResponseValidation);
     return function (p1) {
-      i.invoke_385(p1);
+      i.invoke_391(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_105(resultContinuation) {
     var i = new _no_name_provided__137(resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_379(p1, $cont);
+      return i.invoke_385(p1, $cont);
     };
     l.$arity = 1;
     return l;
@@ -36419,7 +36390,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__141.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__141.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -36433,7 +36404,7 @@
           case 0:
             this._exceptionState = 3;
             if (this._$this$intercept_1._get_context__113()._headers_1.get_64(HttpHeaders_getInstance()._Accept) == null) {
-              this._$this$intercept_1._get_context__113()._headers_1.append_27(HttpHeaders_getInstance()._Accept, '*/*');
+              this._$this$intercept_1._get_context__113()._headers_1.append_26(HttpHeaders_getInstance()._Accept, '*/*');
             }
             var tmp_0 = this;
             var tmp0_safe_receiver = this._$this$intercept_1._get_context__113()._headers_1.get_64(HttpHeaders_getInstance()._ContentType);
@@ -36523,7 +36494,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__142.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__142.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_324((!(p1 == null) ? isInterface(p1, WriterScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -36619,7 +36590,7 @@
     this._$responseJobHolder.complete_3();
     Unit_getInstance();
   };
-  _no_name_provided__143.prototype.invoke_412 = function (p1) {
+  _no_name_provided__143.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -36637,7 +36608,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__144.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__144.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_328(tmp, p2 instanceof HttpResponseContainer ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -36867,7 +36838,7 @@
   function _no_name_provided__145($feature) {
     this._$feature_0 = $feature;
   }
-  _no_name_provided__145.prototype.invoke_403 = function () {
+  _no_name_provided__145.prototype.invoke_411 = function () {
     return this._$feature_0._expectSuccess_0;
   };
   _no_name_provided__145.$metadata$ = {
@@ -36884,7 +36855,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__146.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__146.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -36971,7 +36942,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__147.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__147.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_328(tmp, p2 instanceof HttpResponseContainer ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -37317,7 +37288,7 @@
   function _no_name_provided_$factory_113($feature) {
     var i = new _no_name_provided__145($feature);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   var FEATURE_INSTALLED_LIST;
@@ -37349,7 +37320,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__149.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__149.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -37420,7 +37391,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__150.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__150.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_328(tmp, p2 instanceof HttpResponseContainer ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -37567,7 +37538,7 @@
     var tmp = b._second;
     return compareValues(tmp, a._second);
   };
-  _no_name_provided__151.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__151.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof Pair ? p1 : THROW_CCE();
     return this.invoke_230(tmp, p2 instanceof Pair ? p2 : THROW_CCE());
   };
@@ -37581,7 +37552,7 @@
     var tmp = _get_name_(a);
     return compareValues(tmp, _get_name_(b));
   };
-  _no_name_provided__152.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__152.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof Charset ? p1 : THROW_CCE();
     return this.invoke_232(tmp, p2 instanceof Charset ? p2 : THROW_CCE());
   };
@@ -37614,9 +37585,9 @@
     while (tmp0_iterator_1_3.hasNext_29()) {
       var element_2_4 = tmp0_iterator_1_3.next_31();
       if (tmp0_apply_0_1._get_length__41() > 0) {
-        tmp0_apply_0_1.append_7(',');
+        tmp0_apply_0_1.append_6(',');
         Unit_getInstance();
-      }tmp0_apply_0_1.append_7(_get_name_(element_2_4));
+      }tmp0_apply_0_1.append_6(_get_name_(element_2_4));
       Unit_getInstance();
     }
     var tmp0_iterator_1_5 = withQuality.iterator_62();
@@ -37625,7 +37596,7 @@
       var charset_4_7 = element_2_6.component1_2();
       var quality_5_8 = element_2_6.component2_2();
       if (tmp0_apply_0_1._get_length__41() > 0) {
-        tmp0_apply_0_1.append_7(',');
+        tmp0_apply_0_1.append_6(',');
         Unit_getInstance();
       }var containsArg = quality_5_8;
       var tmp0_check_0_6_9 = 0.0 <= containsArg ? containsArg <= 1.0 : false;
@@ -37634,11 +37605,11 @@
         throw IllegalStateException_init_$Create$(toString_1(message_2_1_7_10));
       }var tmp1_roundToInt_0_9_12 = 100 * quality_5_8;
       var truncatedQuality_8_11 = roundToInt(tmp1_roundToInt_0_9_12) / 100.0;
-      tmp0_apply_0_1.append_7('' + _get_name_(charset_4_7) + ';q=' + truncatedQuality_8_11);
+      tmp0_apply_0_1.append_6('' + _get_name_(charset_4_7) + ';q=' + truncatedQuality_8_11);
       Unit_getInstance();
     }
     if (charSequenceLength(tmp0_apply_0_1) === 0) {
-      tmp0_apply_0_1.append_7(_get_name_(this._responseCharsetFallback_0));
+      tmp0_apply_0_1.append_6(_get_name_(this._responseCharsetFallback_0));
       Unit_getInstance();
     } else {
     }
@@ -37916,7 +37887,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__154.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__154.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -38060,7 +38031,7 @@
       Unit_getInstance();
     }
   };
-  _no_name_provided__155.prototype.invoke_412 = function (p1) {
+  _no_name_provided__155.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -38074,7 +38045,7 @@
   _no_name_provided__156.prototype.invoke_310 = function (it) {
     this._$handler.dispose_29();
   };
-  _no_name_provided__156.prototype.invoke_412 = function (p1) {
+  _no_name_provided__156.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -38115,7 +38086,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__157.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__157.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -38483,7 +38454,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__158.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__158.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -38534,7 +38505,7 @@
   _no_name_provided__159.prototype.invoke_310 = function (it) {
     this._$killer_8.cancel$default_17(null, 1, null);
   };
-  _no_name_provided__159.prototype.invoke_412 = function (p1) {
+  _no_name_provided__159.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -38553,7 +38524,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__160.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__160.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -38906,14 +38877,14 @@
   function _no_name_provided__161(resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__161.prototype.invoke_379 = function (it, $cont) {
+  _no_name_provided__161.prototype.invoke_385 = function (it, $cont) {
     var tmp = this.create_43(it, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__161.prototype.invoke_412 = function (p1, $cont) {
-    this.invoke_379(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__161.prototype.invoke_420 = function (p1, $cont) {
+    this.invoke_385(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
   _no_name_provided__161.prototype.doResume_95 = function () {
@@ -38952,7 +38923,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__162.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__162.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -39046,7 +39017,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__163.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__163.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_314(tmp, p2 instanceof HttpResponse ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -39159,7 +39130,7 @@
   function _no_name_provided_$factory_126(resultContinuation) {
     var i = new _no_name_provided__161(resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_379(p1, $cont);
+      return i.invoke_385(p1, $cont);
     };
     l.$arity = 1;
     return l;
@@ -39261,7 +39232,7 @@
   }
   function _no_name_provided__164() {
   }
-  _no_name_provided__164.prototype.invoke_403 = function () {
+  _no_name_provided__164.prototype.invoke_411 = function () {
     return sharedMap();
   };
   _no_name_provided__164.$metadata$ = {
@@ -39424,7 +39395,7 @@
   _no_name_provided__165.prototype.invoke_257 = function ($this$null) {
     return Unit_getInstance();
   };
-  _no_name_provided__165.prototype.invoke_412 = function (p1) {
+  _no_name_provided__165.prototype.invoke_420 = function (p1) {
     this.invoke_257(p1 instanceof URLBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -39435,7 +39406,7 @@
   function _no_name_provided_$factory_129() {
     var i = new _no_name_provided__164();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_130() {
@@ -39521,7 +39492,7 @@
     if (tmp0_safe_receiver == null) {
       tmp = null;
     } else {
-      _this_._url_0._parameters_0.append_27(key, toString_1(tmp0_safe_receiver));
+      _this_._url_0._parameters_0.append_26(key, toString_1(tmp0_safe_receiver));
       tmp = Unit_getInstance();
     }
     var tmp1_elvis_lhs = tmp;
@@ -39539,7 +39510,7 @@
     if (tmp0_safe_receiver == null) {
       tmp = null;
     } else {
-      _this_._headers_1.append_27(key, toString_1(tmp0_safe_receiver));
+      _this_._headers_1.append_26(key, toString_1(tmp0_safe_receiver));
       tmp = Unit_getInstance();
     }
     var tmp1_elvis_lhs = tmp;
@@ -39552,7 +39523,7 @@
     return tmp_0;
   }
   function accept(_this_, contentType_1) {
-    return _this_._headers_1.append_27(HttpHeaders_getInstance()._Accept, contentType_1.toString());
+    return _this_._headers_1.append_26(HttpHeaders_getInstance()._Accept, contentType_1.toString());
   }
   function DefaultHttpResponse(call, responseData) {
     HttpResponse.call(this);
@@ -39779,7 +39750,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__166.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__166.prototype.invoke_420 = function (p1, $cont) {
     return this.invoke_259(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
   };
   _no_name_provided__166.prototype.doResume_95 = function () {
@@ -40220,7 +40191,7 @@
     Unit_getInstance();
     this._$callJob.cancel_22(CancellationException_init_$Create$(cause.message));
   };
-  _no_name_provided__167.prototype.invoke_412 = function (p1) {
+  _no_name_provided__167.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40234,7 +40205,7 @@
   _no_name_provided__168.prototype.invoke_310 = function (it) {
     this._$cleanupHandler_3.dispose_29();
   };
-  _no_name_provided__168.prototype.invoke_412 = function (p1) {
+  _no_name_provided__168.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40511,9 +40482,9 @@
     this._$this_buildHeaders = $this_buildHeaders;
   }
   _no_name_provided__169.prototype.invoke_273 = function (value, key) {
-    this._$this_buildHeaders.append_27(key, value);
+    this._$this_buildHeaders.append_26(key, value);
   };
-  _no_name_provided__169.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__169.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     this.invoke_273(tmp, (!(p2 == null) ? typeof p2 === 'string' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
@@ -40529,7 +40500,7 @@
     this._$this_mapToKtor.forEach(_no_name_provided_$factory_137($this$buildHeaders));
     Unit_getInstance();
   };
-  _no_name_provided__170.prototype.invoke_412 = function (p1) {
+  _no_name_provided__170.prototype.invoke_420 = function (p1) {
     this.invoke_267(p1 instanceof HeadersBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40551,7 +40522,7 @@
       var tmp0_failure_0_1_9 = Companion_getInstance_3();
       this._$cancellable_2_2_1.resumeWith_46(_Result___init__impl_(createFailure(tmp0_resumeWithException_0_8)));
     }};
-  _no_name_provided__171.prototype.invoke_412 = function (p1) {
+  _no_name_provided__171.prototype.invoke_420 = function (p1) {
     this.invoke_304(p1 instanceof Event ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40569,7 +40540,7 @@
     if (!(it == null)) {
       this._$this_awaitConnection_0.close();
     }};
-  _no_name_provided__172.prototype.invoke_412 = function (p1) {
+  _no_name_provided__172.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40623,7 +40594,7 @@
   _no_name_provided__173.prototype.invoke_273 = function (key, value) {
     this._$jsHeaders[key] = value;
   };
-  _no_name_provided__173.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__173.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     this.invoke_273(tmp, (!(p2 == null) ? typeof p2 === 'string' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
@@ -40642,7 +40613,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__174.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__174.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_324((!(p1 == null) ? isInterface(p1, WriterScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -40707,7 +40678,7 @@
     }
     Unit_getInstance();
   };
-  _no_name_provided__175.prototype.invoke_412 = function (p1) {
+  _no_name_provided__175.prototype.invoke_420 = function (p1) {
     this.invoke_277((!(p1 == null) ? isObject(p1) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40848,7 +40819,7 @@
     var tmp0_success_0_7 = Companion_getInstance_3();
     this._$cancellable_2_2_2.resumeWith_46(_Result___init__impl_(result_6));
   };
-  _no_name_provided__176.prototype.invoke_412 = function (p1) {
+  _no_name_provided__176.prototype.invoke_420 = function (p1) {
     this.invoke_279((!(p1 == null) ? isObject(p1) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40863,7 +40834,7 @@
     var tmp0_failure_0_1_9 = Companion_getInstance_3();
     this._$cancellable_2_2_3.resumeWith_46(_Result___init__impl_(createFailure(cause)));
   };
-  _no_name_provided__177.prototype.invoke_412 = function (p1) {
+  _no_name_provided__177.prototype.invoke_420 = function (p1) {
     this.invoke_289(p1 instanceof Error ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -40911,7 +40882,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__178.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__178.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_324((!(p1 == null) ? isInterface(p1, WriterScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -41074,7 +41045,7 @@
   _no_name_provided__179.prototype.invoke_310 = function (it) {
     this._$controller_4.abort();
   };
-  _no_name_provided__179.prototype.invoke_412 = function (p1) {
+  _no_name_provided__179.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -41089,7 +41060,7 @@
     var tmp0_success_0_8 = Companion_getInstance_3();
     this._$cancellable_2_2_4.resumeWith_46(_Result___init__impl_(it));
   };
-  _no_name_provided__180.prototype.invoke_412 = function (p1) {
+  _no_name_provided__180.prototype.invoke_420 = function (p1) {
     this.invoke_287((!(p1 == null) ? isObject(p1) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -41105,7 +41076,7 @@
     var tmp1_failure_0_11 = Error_init_$Create$_0('Fail to fetch', it);
     this._$cancellable_2_2_5.resumeWith_46(_Result___init__impl_(createFailure(tmp1_failure_0_11)));
   };
-  _no_name_provided__181.prototype.invoke_412 = function (p1) {
+  _no_name_provided__181.prototype.invoke_420 = function (p1) {
     this.invoke_289(p1 instanceof Error ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -41145,7 +41116,7 @@
     var result = this._$responseData.offer_5(asByteArray(new Uint8Array(chunk)));
     return this._$body_2.pause();
   };
-  _no_name_provided__182.prototype.invoke_412 = function (p1) {
+  _no_name_provided__182.prototype.invoke_420 = function (p1) {
     return this.invoke_291(p1 instanceof ArrayBuffer ? p1 : THROW_CCE());
   };
   _no_name_provided__182.$metadata$ = {
@@ -41162,7 +41133,7 @@
     Unit_getInstance();
     return this._$this_writer._get_channel__2().close_27(cause);
   };
-  _no_name_provided__183.prototype.invoke_412 = function (p1) {
+  _no_name_provided__183.prototype.invoke_420 = function (p1) {
     return this.invoke_293((p1 == null ? true : p1) ? p1 : THROW_CCE());
   };
   _no_name_provided__183.$metadata$ = {
@@ -41172,7 +41143,7 @@
   function _no_name_provided__184($responseData) {
     this._$responseData_1 = $responseData;
   }
-  _no_name_provided__184.prototype.invoke_403 = function () {
+  _no_name_provided__184.prototype.invoke_411 = function () {
     return this._$responseData_1.close$default_5(null, 1, null);
   };
   _no_name_provided__184.$metadata$ = {
@@ -41189,7 +41160,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__185.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__185.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_324((!(p1 == null) ? isInterface(p1, WriterScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -41313,7 +41284,7 @@
   function _no_name_provided_$factory_150($responseData) {
     var i = new _no_name_provided__184($responseData);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function platformDefaultTransformers(_this_) {
@@ -41329,7 +41300,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__186.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__186.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -41390,7 +41361,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__187.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__187.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -41456,7 +41427,7 @@
     launch$default(this._this$0_46, null, null, _no_name_provided_$factory_156(event, this._this$0_46, null), 3, null);
     Unit_getInstance();
   };
-  _no_name_provided__188.prototype.invoke_412 = function (p1) {
+  _no_name_provided__188.prototype.invoke_420 = function (p1) {
     this.invoke_304(p1 instanceof Event ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -41475,7 +41446,7 @@
     Unit_getInstance();
     this._this$0_47.__outgoing.cancel$default_17(null, 1, null);
   };
-  _no_name_provided__189.prototype.invoke_412 = function (p1) {
+  _no_name_provided__189.prototype.invoke_420 = function (p1) {
     this.invoke_304(p1 instanceof Event ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -41490,7 +41461,7 @@
     launch$default(this._this$0_48, null, null, _no_name_provided_$factory_157(event, this._this$0_48, null), 3, null);
     Unit_getInstance();
   };
-  _no_name_provided__190.prototype.invoke_412 = function (p1) {
+  _no_name_provided__190.prototype.invoke_420 = function (p1) {
     this.invoke_306((p1 == null ? true : p1) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -41508,7 +41479,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__191.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__191.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -41570,7 +41541,7 @@
                   break l$ret$1;
                 } catch ($p) {
                   if ($p instanceof Error) {
-                    builder_1_12.release_5();
+                    builder_1_12.release_10();
                     throw $p;
                   } else {
                     {
@@ -41665,7 +41636,7 @@
       this._this$0_50._websocket.close(Codes_INTERNAL_ERROR_getInstance()._code, 'Client failed');
     }
   };
-  _no_name_provided__192.prototype.invoke_412 = function (p1) {
+  _no_name_provided__192.prototype.invoke_420 = function (p1) {
     this.invoke_310((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
@@ -41877,7 +41848,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__193.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__193.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -42062,7 +42033,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__194.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__194.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_314(tmp, p2 instanceof HttpResponse ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -42163,7 +42134,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__195.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__195.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_328(tmp, p2 instanceof HttpResponseContainer ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -42234,14 +42205,14 @@
     this._$feature_14 = $feature;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__196.prototype.invoke_379 = function (it, $cont) {
+  _no_name_provided__196.prototype.invoke_385 = function (it, $cont) {
     var tmp = this.create_43(it, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__196.prototype.invoke_412 = function (p1, $cont) {
-    this.invoke_379(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__196.prototype.invoke_420 = function (p1, $cont) {
+    this.invoke_385(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
   _no_name_provided__196.prototype.doResume_95 = function () {
@@ -42451,7 +42422,7 @@
     var tmp = a._get_key__52();
     return compareValues(tmp, b._get_key__52());
   };
-  _no_name_provided__197.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__197.prototype.invoke_418 = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE();
     return this.invoke_320(tmp, (!(p2 == null) ? isInterface(p2, Entry) : false) ? p2 : THROW_CCE());
   };
@@ -42471,7 +42442,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__198.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__198.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_322((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -42754,7 +42725,7 @@
   function _no_name_provided_$factory_163($feature, resultContinuation) {
     var i = new _no_name_provided__196($feature, resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_379(p1, $cont);
+      return i.invoke_385(p1, $cont);
     };
     l.$arity = 1;
     return l;
@@ -42780,7 +42751,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__199.prototype.invoke_412 = function (p1, $cont) {
+  _no_name_provided__199.prototype.invoke_420 = function (p1, $cont) {
     this.invoke_324((!(p1 == null) ? isInterface(p1, WriterScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
@@ -42954,7 +42925,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__200.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__200.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_326(tmp, isObject(p2) ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -43048,7 +43019,7 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__201.prototype.invoke_410 = function (p1, p2, $cont) {
+  _no_name_provided__201.prototype.invoke_418 = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, PipelineContext) : false) ? p1 : THROW_CCE();
     this.invoke_328(tmp, p2 instanceof HttpResponseContainer ? p2 : THROW_CCE(), $cont);
     return Unit_getInstance();
@@ -43310,67 +43281,116 @@
     kind: 'interface',
     interfaces: []
   };
-  function findPolymorphicSerializer(_this_, encoder, value) {
-    var tmp0_elvis_lhs = _this_.findPolymorphicSerializerOrNull_8(encoder, value);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      throwSubtypeNotRegistered(getKClassFromExpression_0(value), _this_._get_baseClass__2());
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    return tmp;
+  function _no_name_provided__202(this$0) {
+    this._this$0_52 = this$0;
   }
-  function findPolymorphicSerializer_0(_this_, decoder, klassName) {
-    var tmp0_elvis_lhs = _this_.findPolymorphicSerializerOrNull_6(decoder, klassName);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      throwSubtypeNotRegistered_0(klassName, _this_._get_baseClass__2());
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    return tmp;
-  }
-  function _no_name_provided__202($subclassSerializers) {
-    this._$subclassSerializers = $subclassSerializers;
-  }
-  _no_name_provided__202.prototype.invoke_372 = function ($this$buildSerialDescriptor) {
-    var indexedObject = this._$subclassSerializers;
-    var inductionVariable = 0;
-    var last_1 = indexedObject.length;
-    while (inductionVariable < last_1) {
-      var element_2 = indexedObject[inductionVariable];
-      inductionVariable = inductionVariable + 1 | 0;
-      var d_4 = element_2._get_descriptor__76();
-      var tmp = d_4._get_serialName__16();
-      $this$buildSerialDescriptor.element$default(tmp, d_4, null, false, 12, null);
-    }
+  _no_name_provided__202.prototype.invoke_378 = function ($this$buildSerialDescriptor) {
+    var tmp = serializer_2(StringCompanionObject_getInstance())._get_descriptor__77();
+    $this$buildSerialDescriptor.element$default('type', tmp, null, false, 12, null);
+    var tmp_0 = '' + 'kotlinx.serialization.Polymorphic<' + this._this$0_52._baseClass._get_simpleName__4() + '>';
+    var tmp_1 = CONTEXTUAL_getInstance();
+    var tmp_2 = [];
+    var tmp_3 = buildSerialDescriptor$default(tmp_0, tmp_1, tmp_2, null, 12, null);
+    $this$buildSerialDescriptor.element$default('value', tmp_3, null, false, 12, null);
   };
-  _no_name_provided__202.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__202.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__202.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__203(this$0, $subclassSerializers) {
-    this._this$0_52 = this$0;
-    this._$subclassSerializers_0 = $subclassSerializers;
+  function PolymorphicSerializer(baseClass) {
+    AbstractPolymorphicSerializer.call(this);
+    this._baseClass = baseClass;
+    var tmp = this;
+    var tmp_0 = OPEN_getInstance();
+    var tmp_1 = [];
+    tmp._descriptor = withContext(buildSerialDescriptor$default('kotlinx.serialization.Polymorphic', tmp_0, tmp_1, _no_name_provided_$factory_167(this), 4, null), this._baseClass);
   }
-  _no_name_provided__203.prototype.invoke_372 = function ($this$buildSerialDescriptor) {
-    var tmp = serializer_2(StringCompanionObject_getInstance())._get_descriptor__76();
-    $this$buildSerialDescriptor.element$default('type', tmp, null, false, 12, null);
-    var tmp_0 = '' + 'kotlinx.serialization.Sealed<' + this._this$0_52._baseClass._get_simpleName__4() + '>';
-    var tmp_1 = CONTEXTUAL_getInstance();
-    var tmp_2 = [];
-    var elementDescriptor = buildSerialDescriptor$default(tmp_0, tmp_1, tmp_2, _no_name_provided_$factory_168(this._$subclassSerializers_0), 4, null);
-    $this$buildSerialDescriptor.element$default('value', elementDescriptor, null, false, 12, null);
+  PolymorphicSerializer.prototype._get_baseClass__3 = function () {
+    return this._baseClass;
   };
-  _no_name_provided__203.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  PolymorphicSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor;
+  };
+  PolymorphicSerializer.prototype.toString = function () {
+    return '' + 'kotlinx.serialization.PolymorphicSerializer(baseClass: ' + this._baseClass + ')';
+  };
+  PolymorphicSerializer.$metadata$ = {
+    simpleName: 'PolymorphicSerializer',
+    kind: 'class',
+    interfaces: []
+  };
+  function findPolymorphicSerializer(_this_, encoder, value) {
+    var tmp0_elvis_lhs = _this_.findPolymorphicSerializerOrNull_10(encoder, value);
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      throwSubtypeNotRegistered(getKClassFromExpression_0(value), _this_._get_baseClass__3());
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    return tmp;
+  }
+  function findPolymorphicSerializer_0(_this_, decoder, klassName) {
+    var tmp0_elvis_lhs = _this_.findPolymorphicSerializerOrNull_8(decoder, klassName);
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      throwSubtypeNotRegistered_0(klassName, _this_._get_baseClass__3());
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    return tmp;
+  }
+  function _no_name_provided_$factory_167(this$0) {
+    var i = new _no_name_provided__202(this$0);
+    return function (p1) {
+      i.invoke_378(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided__203($subclassSerializers) {
+    this._$subclassSerializers = $subclassSerializers;
+  }
+  _no_name_provided__203.prototype.invoke_378 = function ($this$buildSerialDescriptor) {
+    var indexedObject = this._$subclassSerializers;
+    var inductionVariable = 0;
+    var last_1 = indexedObject.length;
+    while (inductionVariable < last_1) {
+      var element_2 = indexedObject[inductionVariable];
+      inductionVariable = inductionVariable + 1 | 0;
+      var d_4 = element_2._get_descriptor__77();
+      var tmp = d_4._get_serialName__17();
+      $this$buildSerialDescriptor.element$default(tmp, d_4, null, false, 12, null);
+    }
+  };
+  _no_name_provided__203.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__203.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__204(this$0, $subclassSerializers) {
+    this._this$0_53 = this$0;
+    this._$subclassSerializers_0 = $subclassSerializers;
+  }
+  _no_name_provided__204.prototype.invoke_378 = function ($this$buildSerialDescriptor) {
+    var tmp = serializer_2(StringCompanionObject_getInstance())._get_descriptor__77();
+    $this$buildSerialDescriptor.element$default('type', tmp, null, false, 12, null);
+    var tmp_0 = '' + 'kotlinx.serialization.Sealed<' + this._this$0_53._baseClass_0._get_simpleName__4() + '>';
+    var tmp_1 = CONTEXTUAL_getInstance();
+    var tmp_2 = [];
+    var elementDescriptor = buildSerialDescriptor$default(tmp_0, tmp_1, tmp_2, _no_name_provided_$factory_169(this._$subclassSerializers_0), 4, null);
+    $this$buildSerialDescriptor.element$default('value', elementDescriptor, null, false, 12, null);
+  };
+  _no_name_provided__204.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__204.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -43384,7 +43404,7 @@
     return this.sourceIterator_2();
   };
   _no_name_provided__1_4.prototype.keyOf_3 = function (element) {
-    return element._get_value__27()._get_descriptor__76()._get_serialName__16();
+    return element._get_value__27()._get_descriptor__77()._get_serialName__17();
   };
   _no_name_provided__1_4.prototype.keyOf_0 = function (element) {
     return this.keyOf_3((!(element == null) ? isInterface(element, Entry) : false) ? element : THROW_CCE());
@@ -43396,13 +43416,13 @@
   };
   function SealedClassSerializer(serialName, baseClass, subclasses, subclassSerializers) {
     AbstractPolymorphicSerializer.call(this);
-    this._baseClass = baseClass;
+    this._baseClass_0 = baseClass;
     var tmp = this;
     var tmp_0 = SEALED_getInstance();
     var tmp_1 = [];
-    tmp._descriptor = buildSerialDescriptor$default(serialName, tmp_0, tmp_1, _no_name_provided_$factory_167(this, subclassSerializers), 4, null);
+    tmp._descriptor_0 = buildSerialDescriptor$default(serialName, tmp_0, tmp_1, _no_name_provided_$factory_168(this, subclassSerializers), 4, null);
     if (!(subclasses.length === subclassSerializers.length)) {
-      throw IllegalArgumentException_init_$Create$_0('' + 'All subclasses of sealed class ' + this._baseClass._get_simpleName__4() + ' should be marked @Serializable');
+      throw IllegalArgumentException_init_$Create$_0('' + 'All subclasses of sealed class ' + this._baseClass_0._get_simpleName__4() + ' should be marked @Serializable');
     }this._class2Serializer = toMap(zip(subclasses, subclassSerializers));
     var tmp_2 = this;
     var tmp0_groupingBy_0 = this._class2Serializer._get_entries__8();
@@ -43416,7 +43436,7 @@
       var accumulator_4_6 = tmp2_aggregateTo_0_1.get_65(key_3_5);
       var tmp2__anonymous__8 = accumulator_4_6 == null ? !tmp2_aggregateTo_0_1.containsKey_12(key_3_5) : false;
       if (!(accumulator_4_6 == null)) {
-        var tmp0_error_0_9 = '' + "Multiple sealed subclasses of '" + this._baseClass + "' have the same serial name '" + key_3_5 + "':" + ('' + " '" + accumulator_4_6._get_key__52() + "', '" + e_2_4._get_key__52() + "'");
+        var tmp0_error_0_9 = '' + "Multiple sealed subclasses of '" + this._baseClass_0 + "' have the same serial name '" + key_3_5 + "':" + ('' + " '" + accumulator_4_6._get_key__52() + "', '" + e_2_4._get_key__52() + "'");
         throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0_9));
       }var tmp1_set_0_7 = e_2_4;
       tmp2_aggregateTo_0_1.put_10(key_3_5, tmp1_set_0_7);
@@ -43434,20 +43454,20 @@
     }
     tmp_2._serialName2Serializer = tmp1_mapValuesTo_0_1;
   }
-  SealedClassSerializer.prototype._get_baseClass__2 = function () {
-    return this._baseClass;
+  SealedClassSerializer.prototype._get_baseClass__3 = function () {
+    return this._baseClass_0;
   };
-  SealedClassSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor;
+  SealedClassSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_0;
   };
-  SealedClassSerializer.prototype.findPolymorphicSerializerOrNull_6 = function (decoder, klassName) {
+  SealedClassSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (decoder, klassName) {
     var tmp0_get_0 = this._serialName2Serializer;
     var tmp0_elvis_lhs = (isInterface(tmp0_get_0, Map_0) ? tmp0_get_0 : THROW_CCE()).get_65(klassName);
-    return tmp0_elvis_lhs == null ? AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_6.call(this, decoder, klassName) : tmp0_elvis_lhs;
+    return tmp0_elvis_lhs == null ? AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_8.call(this, decoder, klassName) : tmp0_elvis_lhs;
   };
-  SealedClassSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (encoder, value) {
+  SealedClassSerializer.prototype.findPolymorphicSerializerOrNull_10 = function (encoder, value) {
     var tmp0_elvis_lhs = this._class2Serializer.get_65(getKClassFromExpression_0(value));
-    var tmp1_safe_receiver = tmp0_elvis_lhs == null ? AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_8.call(this, encoder, value) : tmp0_elvis_lhs;
+    var tmp1_safe_receiver = tmp0_elvis_lhs == null ? AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_10.call(this, encoder, value) : tmp0_elvis_lhs;
     var tmp;
     if (tmp1_safe_receiver == null) {
       tmp = null;
@@ -43461,17 +43481,17 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_167(this$0, $subclassSerializers) {
-    var i = new _no_name_provided__203(this$0, $subclassSerializers);
+  function _no_name_provided_$factory_168(this$0, $subclassSerializers) {
+    var i = new _no_name_provided__204(this$0, $subclassSerializers);
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_168($subclassSerializers) {
-    var i = new _no_name_provided__202($subclassSerializers);
+  function _no_name_provided_$factory_169($subclassSerializers) {
+    var i = new _no_name_provided__203($subclassSerializers);
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
@@ -43602,18 +43622,24 @@
     var tmp;
     if (typeArguments.isEmpty_50()) {
       var tmp0_elvis_lhs = serializerOrNull(rootClass);
-      tmp = tmp0_elvis_lhs == null ? _this_.getContextual_0(rootClass) : tmp0_elvis_lhs;
+      var tmp_0;
+      if (tmp0_elvis_lhs == null) {
+        tmp_0 = _this_.getContextual$default(rootClass, null, 2, null);
+      } else {
+        tmp_0 = tmp0_elvis_lhs;
+      }
+      tmp = tmp_0;
     } else {
       tmp = builtinSerializer(_this_, typeArguments, rootClass, failOnMissingTypeArgSerializer);
     }
     var tmp1_safe_receiver = tmp;
-    var tmp_0;
+    var tmp_1;
     if (tmp1_safe_receiver == null) {
-      tmp_0 = null;
+      tmp_1 = null;
     } else {
-      tmp_0 = (!(tmp1_safe_receiver == null) ? isInterface(tmp1_safe_receiver, KSerializer) : false) ? tmp1_safe_receiver : THROW_CCE();
+      tmp_1 = (!(tmp1_safe_receiver == null) ? isInterface(tmp1_safe_receiver, KSerializer) : false) ? tmp1_safe_receiver : THROW_CCE();
     }
-    var result = tmp_0;
+    var result = tmp_1;
     var tmp2_safe_receiver = result;
     return tmp2_safe_receiver == null ? null : nullable(tmp2_safe_receiver, isNullable);
   }
@@ -43649,27 +43675,29 @@
     var tmp0_subject = rootClass;
     var tmp_1;
     if (((tmp0_subject.equals(getKClass_0(Collection)) ? true : tmp0_subject.equals(getKClass_0(List))) ? true : tmp0_subject.equals(getKClass_0(MutableList))) ? true : tmp0_subject.equals(getKClass_0(ArrayList))) {
-      tmp_1 = new ArrayListSerializer(serializers.get_76(0));
+      tmp_1 = new ArrayListSerializer(serializers.get_77(0));
     } else if (tmp0_subject.equals(getKClass_0(HashSet))) {
-      tmp_1 = new HashSetSerializer(serializers.get_76(0));
+      tmp_1 = new HashSetSerializer(serializers.get_77(0));
     } else if ((tmp0_subject.equals(getKClass_0(Set)) ? true : tmp0_subject.equals(getKClass_0(MutableSet))) ? true : tmp0_subject.equals(getKClass_0(LinkedHashSet))) {
-      tmp_1 = new LinkedHashSetSerializer(serializers.get_76(0));
+      tmp_1 = new LinkedHashSetSerializer(serializers.get_77(0));
     } else if (tmp0_subject.equals(getKClass_0(HashMap))) {
-      tmp_1 = new HashMapSerializer(serializers.get_76(0), serializers.get_76(1));
+      tmp_1 = new HashMapSerializer(serializers.get_77(0), serializers.get_77(1));
     } else if ((tmp0_subject.equals(getKClass_0(Map_0)) ? true : tmp0_subject.equals(getKClass_0(MutableMap))) ? true : tmp0_subject.equals(getKClass_0(LinkedHashMap))) {
-      tmp_1 = new LinkedHashMapSerializer(serializers.get_76(0), serializers.get_76(1));
+      tmp_1 = new LinkedHashMapSerializer(serializers.get_77(0), serializers.get_77(1));
     } else if (tmp0_subject.equals(getKClass_0(Entry))) {
-      tmp_1 = MapEntrySerializer(serializers.get_76(0), serializers.get_76(1));
+      tmp_1 = MapEntrySerializer(serializers.get_77(0), serializers.get_77(1));
     } else if (tmp0_subject.equals(getKClass_0(Pair))) {
-      tmp_1 = PairSerializer(serializers.get_76(0), serializers.get_76(1));
+      tmp_1 = PairSerializer(serializers.get_77(0), serializers.get_77(1));
     } else if (tmp0_subject.equals(getKClass_0(Triple))) {
-      tmp_1 = TripleSerializer(serializers.get_76(0), serializers.get_76(1), serializers.get_76(2));
+      tmp_1 = TripleSerializer(serializers.get_77(0), serializers.get_77(1), serializers.get_77(2));
     } else {
       if (isReferenceArray(rootClass)) {
-        var tmp_2 = typeArguments.get_76(0)._get_classifier__0();
-        var tmp0_cast_0 = ArraySerializer((!(tmp_2 == null) ? isInterface(tmp_2, KClass) : false) ? tmp_2 : THROW_CCE(), serializers.get_76(0));
+        var tmp_2 = typeArguments.get_77(0)._get_classifier__0();
+        var tmp0_cast_0 = ArraySerializer((!(tmp_2 == null) ? isInterface(tmp_2, KClass) : false) ? tmp_2 : THROW_CCE(), serializers.get_77(0));
         return isInterface(tmp0_cast_0, KSerializer) ? tmp0_cast_0 : THROW_CCE();
-      }tmp_1 = constructSerializerForGivenTypeArgs(rootClass, copyToArray_0(serializers).slice());
+      }var args = copyToArray_0(serializers);
+      var tmp1_elvis_lhs = constructSerializerForGivenTypeArgs(rootClass, args.slice());
+      tmp_1 = tmp1_elvis_lhs == null ? reflectiveOrContextual(_this_, rootClass, serializers) : tmp1_elvis_lhs;
     }
     return tmp_1;
   }
@@ -43680,6 +43708,10 @@
   }
   function serializerOrNull_0(_this_, type) {
     return serializerByKTypeImpl(_this_, type, false);
+  }
+  function reflectiveOrContextual(_this_, kClass, typeArgumentsSerializers) {
+    var tmp0_elvis_lhs = serializerOrNull(kClass);
+    return tmp0_elvis_lhs == null ? _this_.getContextual_1(kClass, typeArgumentsSerializers) : tmp0_elvis_lhs;
   }
   function serializer_2(_this_) {
     return StringSerializer_getInstance();
@@ -43758,7 +43790,7 @@
   }
   function _get_nullable_(_this_) {
     var tmp;
-    if (_this_._get_descriptor__76()._get_isNullable__16()) {
+    if (_this_._get_descriptor__77()._get_isNullable__17()) {
       tmp = isInterface(_this_, KSerializer) ? _this_ : THROW_CCE();
     } else {
       tmp = new NullableSerializer(_this_);
@@ -43777,12 +43809,71 @@
   function ArraySerializer(kClass, elementSerializer_0) {
     return new ReferenceArraySerializer(kClass, elementSerializer_0);
   }
+  function withContext(_this_, context) {
+    return new ContextDescriptor(_this_, context);
+  }
+  function ContextDescriptor(original, kClass) {
+    this._original = original;
+    this._kClass = kClass;
+    this._serialName = '' + this._original._get_serialName__17() + '<' + this._kClass._get_simpleName__4() + '>';
+  }
+  ContextDescriptor.prototype.getElementAnnotations_17 = function (index) {
+    return this._original.getElementAnnotations_17(index);
+  };
+  ContextDescriptor.prototype.getElementDescriptor_17 = function (index) {
+    return this._original.getElementDescriptor_17(index);
+  };
+  ContextDescriptor.prototype.getElementIndex_17 = function (name) {
+    return this._original.getElementIndex_17(name);
+  };
+  ContextDescriptor.prototype.getElementName_17 = function (index) {
+    return this._original.getElementName_17(index);
+  };
+  ContextDescriptor.prototype._get_elementsCount__17 = function () {
+    return this._original._get_elementsCount__17();
+  };
+  ContextDescriptor.prototype._get_isInline__17 = function () {
+    return this._original._get_isInline__17();
+  };
+  ContextDescriptor.prototype._get_isNullable__17 = function () {
+    return this._original._get_isNullable__17();
+  };
+  ContextDescriptor.prototype._get_kind__20 = function () {
+    return this._original._get_kind__20();
+  };
+  ContextDescriptor.prototype._get_serialName__17 = function () {
+    return this._serialName;
+  };
+  ContextDescriptor.prototype.equals = function (other) {
+    var tmp0_elvis_lhs = other instanceof ContextDescriptor ? other : null;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return false;
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var another = tmp;
+    return equals_1(this._original, another._original) ? another._kClass.equals(this._kClass) : false;
+  };
+  ContextDescriptor.prototype.hashCode = function () {
+    var result = this._kClass.hashCode();
+    result = imul(31, result) + getStringHashCode(this._serialName) | 0;
+    return result;
+  };
+  ContextDescriptor.prototype.toString = function () {
+    return '' + 'ContextDescriptor(kClass: ' + this._kClass + ', original: ' + this._original + ')';
+  };
+  ContextDescriptor.$metadata$ = {
+    simpleName: 'ContextDescriptor',
+    kind: 'class',
+    interfaces: [SerialDescriptor]
+  };
   function SerialDescriptor() {
   }
-  SerialDescriptor.prototype._get_isNullable__16 = function () {
+  SerialDescriptor.prototype._get_isNullable__17 = function () {
     return false;
   };
-  SerialDescriptor.prototype._get_isInline__16 = function () {
+  SerialDescriptor.prototype._get_isInline__17 = function () {
     return false;
   };
   SerialDescriptor.$metadata$ = {
@@ -43793,21 +43884,21 @@
   function _get_elementDescriptors_(_this_) {
     return new _no_name_provided__1_5(_this_);
   }
-  function _no_name_provided__204($this_elementDescriptors) {
+  function _no_name_provided__205($this_elementDescriptors) {
     this._$this_elementDescriptors = $this_elementDescriptors;
-    this._elementsLeft = this._$this_elementDescriptors._get_elementsCount__16();
+    this._elementsLeft = this._$this_elementDescriptors._get_elementsCount__17();
   }
-  _no_name_provided__204.prototype.hasNext_29 = function () {
+  _no_name_provided__205.prototype.hasNext_29 = function () {
     return this._elementsLeft > 0;
   };
-  _no_name_provided__204.prototype.next_31 = function () {
-    var tmp = this._$this_elementDescriptors._get_elementsCount__16();
+  _no_name_provided__205.prototype.next_31 = function () {
+    var tmp = this._$this_elementDescriptors._get_elementsCount__17();
     var tmp0_this = this;
     var tmp1 = tmp0_this._elementsLeft;
     tmp0_this._elementsLeft = tmp1 - 1 | 0;
-    return this._$this_elementDescriptors.getElementDescriptor_16(tmp - tmp1 | 0);
+    return this._$this_elementDescriptors.getElementDescriptor_17(tmp - tmp1 | 0);
   };
-  _no_name_provided__204.$metadata$ = {
+  _no_name_provided__205.$metadata$ = {
     kind: 'class',
     interfaces: [Iterator_0]
   };
@@ -43815,7 +43906,7 @@
     this._$this_elementDescriptors_0 = $this_elementDescriptors;
   }
   _no_name_provided__1_5.prototype.iterator_2_1 = function () {
-    return new _no_name_provided__204(this._$this_elementDescriptors_0);
+    return new _no_name_provided__205(this._$this_elementDescriptors_0);
   };
   _no_name_provided__1_5.prototype.iterator_62 = function () {
     return this.iterator_2_1();
@@ -43840,11 +43931,11 @@
   }
   function buildSerialDescriptor$default(serialName, kind, typeParameters, builder, $mask0, $handler) {
     if (!(($mask0 & 8) === 0)) {
-      builder = _no_name_provided_$factory_169();
+      builder = _no_name_provided_$factory_170();
     }return buildSerialDescriptor(serialName, kind, typeParameters, builder);
   }
   function ClassSerialDescriptorBuilder(serialName) {
-    this._serialName = serialName;
+    this._serialName_0 = serialName;
     this._isNullable = false;
     this._annotations = emptyList();
     this._elementNames = ArrayList_init_$Create$();
@@ -43892,31 +43983,31 @@
     var tmp1_getValue_0 = _hashCode$factory();
     return tmp0_getValue_0._get_value__27();
   }
-  function _no_name_provided__205(this$0) {
-    this._this$0_53 = this$0;
-  }
-  _no_name_provided__205.prototype.invoke_403 = function () {
-    return hashCodeImpl(this._this$0_53, this._this$0_53._typeParametersDescriptors);
-  };
-  _no_name_provided__205.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function _no_name_provided__206(this$0) {
     this._this$0_54 = this$0;
   }
-  _no_name_provided__206.prototype.invoke_335 = function (it) {
-    return this._this$0_54.getElementName_16(it) + ': ' + this._this$0_54.getElementDescriptor_16(it)._get_serialName__16();
-  };
-  _no_name_provided__206.prototype.invoke_412 = function (p1) {
-    return this.invoke_335((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
+  _no_name_provided__206.prototype.invoke_411 = function () {
+    return hashCodeImpl(this._this$0_54, this._this$0_54._typeParametersDescriptors);
   };
   _no_name_provided__206.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
+  function _no_name_provided__207(this$0) {
+    this._this$0_55 = this$0;
+  }
+  _no_name_provided__207.prototype.invoke_346 = function (it) {
+    return this._this$0_55.getElementName_17(it) + ': ' + this._this$0_55.getElementDescriptor_17(it)._get_serialName__17();
+  };
+  _no_name_provided__207.prototype.invoke_420 = function (p1) {
+    return this.invoke_346((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
+  };
+  _no_name_provided__207.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function SerialDescriptorImpl(serialName, kind, elementsCount, typeParameters, builder) {
-    this._serialName_0 = serialName;
+    this._serialName_1 = serialName;
     this._kind = kind;
     this._elementsCount = elementsCount;
     this._annotations_0 = builder._annotations;
@@ -43941,24 +44032,24 @@
     tmp_1._name2Index = toMap(tmp0_mapTo_0_1);
     this._typeParametersDescriptors = compactArray(typeParameters);
     var tmp_2 = this;
-    tmp_2.__hashCode$delegate = lazy(_no_name_provided_$factory_170(this));
+    tmp_2.__hashCode$delegate = lazy(_no_name_provided_$factory_171(this));
   }
-  SerialDescriptorImpl.prototype._get_serialName__16 = function () {
-    return this._serialName_0;
+  SerialDescriptorImpl.prototype._get_serialName__17 = function () {
+    return this._serialName_1;
   };
-  SerialDescriptorImpl.prototype._get_kind__19 = function () {
+  SerialDescriptorImpl.prototype._get_kind__20 = function () {
     return this._kind;
   };
-  SerialDescriptorImpl.prototype._get_elementsCount__16 = function () {
+  SerialDescriptorImpl.prototype._get_elementsCount__17 = function () {
     return this._elementsCount;
   };
   SerialDescriptorImpl.prototype._get_serialNames__3 = function () {
     return this._serialNames;
   };
-  SerialDescriptorImpl.prototype.getElementName_16 = function (index) {
+  SerialDescriptorImpl.prototype.getElementName_17 = function (index) {
     return getChecked(this._elementNames_0, index);
   };
-  SerialDescriptorImpl.prototype.getElementIndex_16 = function (name) {
+  SerialDescriptorImpl.prototype.getElementIndex_17 = function (name) {
     var tmp0_elvis_lhs = this._name2Index.get_65(name);
     var tmp;
     if (tmp0_elvis_lhs == null) {
@@ -43969,7 +44060,10 @@
     }
     return tmp;
   };
-  SerialDescriptorImpl.prototype.getElementDescriptor_16 = function (index) {
+  SerialDescriptorImpl.prototype.getElementAnnotations_17 = function (index) {
+    return getChecked(this._elementAnnotations_0, index);
+  };
+  SerialDescriptorImpl.prototype.getElementDescriptor_17 = function (index) {
     return getChecked(this._elementDescriptors_0, index);
   };
   SerialDescriptorImpl.prototype.equals = function (other) {
@@ -43983,7 +44077,7 @@
         break l$ret$1;
       } else {
       }
-      if (!(this._get_serialName__16() === other._get_serialName__16())) {
+      if (!(this._get_serialName__17() === other._get_serialName__17())) {
         tmp$ret$0 = false;
         break l$ret$1;
       }var tmp0__anonymous__3 = other;
@@ -43992,19 +44086,19 @@
         break l$ret$1;
       } else {
       }
-      if (!(this._get_elementsCount__16() === other._get_elementsCount__16())) {
+      if (!(this._get_elementsCount__17() === other._get_elementsCount__17())) {
         tmp$ret$0 = false;
         break l$ret$1;
       }var inductionVariable = 0;
-      var last_1 = this._get_elementsCount__16();
+      var last_1 = this._get_elementsCount__17();
       if (inductionVariable < last_1)
         do {
           var index_2 = inductionVariable;
           inductionVariable = inductionVariable + 1 | 0;
-          if (!(this.getElementDescriptor_16(index_2)._get_serialName__16() === other.getElementDescriptor_16(index_2)._get_serialName__16())) {
+          if (!(this.getElementDescriptor_17(index_2)._get_serialName__17() === other.getElementDescriptor_17(index_2)._get_serialName__17())) {
             tmp$ret$0 = false;
             break l$ret$1;
-          }if (!equals_1(this.getElementDescriptor_16(index_2)._get_kind__19(), other.getElementDescriptor_16(index_2)._get_kind__19())) {
+          }if (!equals_1(this.getElementDescriptor_17(index_2)._get_kind__20(), other.getElementDescriptor_17(index_2)._get_kind__20())) {
             tmp$ret$0 = false;
             break l$ret$1;
           }}
@@ -44019,8 +44113,8 @@
   };
   SerialDescriptorImpl.prototype.toString = function () {
     var tmp = until(0, this._elementsCount);
-    var tmp_0 = '' + this._serialName_0 + '(';
-    return joinToString$default_0(tmp, ', ', tmp_0, ')', 0, null, _no_name_provided_$factory_171(this), 24, null);
+    var tmp_0 = '' + this._serialName_1 + '(';
+    return joinToString$default_0(tmp, ', ', tmp_0, ')', 0, null, _no_name_provided_$factory_172(this), 24, null);
   };
   SerialDescriptorImpl.$metadata$ = {
     simpleName: 'SerialDescriptorImpl',
@@ -44038,7 +44132,7 @@
   }
   function buildClassSerialDescriptor$default(serialName, typeParameters, builderAction, $mask0, $handler) {
     if (!(($mask0 & 4) === 0)) {
-      builderAction = _no_name_provided_$factory_172();
+      builderAction = _no_name_provided_$factory_173();
     }return buildClassSerialDescriptor(serialName, typeParameters, builderAction);
   }
   function PrimitiveSerialDescriptor(serialName, kind) {
@@ -44048,29 +44142,29 @@
       throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
     }return PrimitiveDescriptorSafe(serialName, kind);
   }
-  function _no_name_provided__207() {
-  }
-  _no_name_provided__207.prototype.invoke_372 = function ($this$null) {
-    return Unit_getInstance();
-  };
-  _no_name_provided__207.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__207.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function _no_name_provided__208() {
   }
-  _no_name_provided__208.prototype.invoke_372 = function ($this$null) {
+  _no_name_provided__208.prototype.invoke_378 = function ($this$null) {
     return Unit_getInstance();
   };
-  _no_name_provided__208.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__208.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__208.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__209() {
+  }
+  _no_name_provided__209.prototype.invoke_378 = function ($this$null) {
+    return Unit_getInstance();
+  };
+  _no_name_provided__209.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__209.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -44079,29 +44173,29 @@
       return _get__hashCode_(receiver);
     }, null);
   }
-  function _no_name_provided_$factory_169() {
-    var i = new _no_name_provided__207();
+  function _no_name_provided_$factory_170() {
+    var i = new _no_name_provided__208();
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_170(this$0) {
-    var i = new _no_name_provided__205(this$0);
-    return function () {
-      return i.invoke_403();
     };
   }
   function _no_name_provided_$factory_171(this$0) {
     var i = new _no_name_provided__206(this$0);
-    return function (p1) {
-      return i.invoke_335(p1);
+    return function () {
+      return i.invoke_411();
     };
   }
-  function _no_name_provided_$factory_172() {
-    var i = new _no_name_provided__208();
+  function _no_name_provided_$factory_172(this$0) {
+    var i = new _no_name_provided__207(this$0);
     return function (p1) {
-      i.invoke_372(p1);
+      return i.invoke_346(p1);
+    };
+  }
+  function _no_name_provided_$factory_173() {
+    var i = new _no_name_provided__209();
+    return function (p1) {
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
@@ -44374,6 +44468,21 @@
       new SEALED_0();
     return SEALED_instance;
   }
+  function OPEN() {
+    OPEN_instance = this;
+    PolymorphicKind.call(this);
+  }
+  OPEN.$metadata$ = {
+    simpleName: 'OPEN',
+    kind: 'object',
+    interfaces: []
+  };
+  var OPEN_instance;
+  function OPEN_getInstance() {
+    if (OPEN_instance == null)
+      new OPEN();
+    return OPEN_instance;
+  }
   function PolymorphicKind() {
     SerialKind.call(this);
   }
@@ -44471,7 +44580,7 @@
     return this.decodeSerializableValue_17(deserializer, previousValue);
   };
   AbstractDecoder.prototype.decodeNullableSerializableElement_8 = function (descriptor, index, deserializer, previousValue) {
-    var isNullabilitySupported = deserializer._get_descriptor__76()._get_isNullable__16();
+    var isNullabilitySupported = deserializer._get_descriptor__77()._get_isNullable__17();
     return (isNullabilitySupported ? true : this.decodeNotNullMark_8()) ? this.decodeSerializableValue_17(deserializer, previousValue) : this.decodeNull_8();
   };
   AbstractDecoder.$metadata$ = {
@@ -44577,7 +44686,7 @@
   function Decoder_1() {
   }
   Decoder_1.prototype.decodeSerializableValue_16 = function (deserializer) {
-    return deserializer.deserialize_80(this);
+    return deserializer.deserialize_81(this);
   };
   Decoder_1.$metadata$ = {
     simpleName: 'Decoder',
@@ -44626,10 +44735,10 @@
     return this.beginStructure_11(descriptor);
   };
   Encoder.prototype.encodeSerializableValue_1 = function (serializer_16, value) {
-    serializer_16.serialize_128(this, value);
+    serializer_16.serialize_129(this, value);
   };
   Encoder.prototype.encodeNullableSerializableValue_1 = function (serializer_16, value) {
-    var isNullabilitySupported = serializer_16._get_descriptor__76()._get_isNullable__16();
+    var isNullabilitySupported = serializer_16._get_descriptor__77()._get_isNullable__17();
     if (isNullabilitySupported) {
       return this.encodeSerializableValue_1(isInterface(serializer_16, SerializationStrategy) ? serializer_16 : THROW_CCE(), value);
     }if (value == null) {
@@ -44652,21 +44761,21 @@
     interfaces: []
   };
   function decodeSequentially($this, compositeDecoder) {
-    var klassName = compositeDecoder.decodeStringElement_8($this._get_descriptor__76(), 0);
+    var klassName = compositeDecoder.decodeStringElement_8($this._get_descriptor__77(), 0);
     var serializer_16 = findPolymorphicSerializer_0($this, compositeDecoder, klassName);
-    var tmp = $this._get_descriptor__76();
+    var tmp = $this._get_descriptor__77();
     return compositeDecoder.decodeSerializableElement$default_8(tmp, 1, serializer_16, null, 8, null);
   }
   function AbstractPolymorphicSerializer() {
   }
-  AbstractPolymorphicSerializer.prototype.serialize_128 = function (encoder, value) {
+  AbstractPolymorphicSerializer.prototype.serialize_129 = function (encoder, value) {
     var actualSerializer = findPolymorphicSerializer(this, encoder, value);
-    var tmp0_encodeStructure_0 = this._get_descriptor__76();
+    var tmp0_encodeStructure_0 = this._get_descriptor__77();
     var composite_1 = encoder.beginStructure_11(tmp0_encodeStructure_0);
     var ex_2 = null;
     try {
-      composite_1.encodeStringElement_1(this._get_descriptor__76(), 0, actualSerializer._get_descriptor__76()._get_serialName__16());
-      var tmp = this._get_descriptor__76();
+      composite_1.encodeStringElement_1(this._get_descriptor__77(), 0, actualSerializer._get_descriptor__77()._get_serialName__17());
+      var tmp = this._get_descriptor__77();
       composite_1.encodeSerializableElement_1(tmp, 1, isInterface(actualSerializer, SerializationStrategy) ? actualSerializer : THROW_CCE(), value);
     } catch ($p) {
       if ($p instanceof Error) {
@@ -44683,10 +44792,10 @@
         composite_1.endStructure_11(tmp0_encodeStructure_0);
     }
   };
-  AbstractPolymorphicSerializer.prototype.deserialize_80 = function (decoder) {
+  AbstractPolymorphicSerializer.prototype.deserialize_81 = function (decoder) {
     var tmp$ret$4;
     l$ret$5: do {
-      var tmp0_decodeStructure_0 = this._get_descriptor__76();
+      var tmp0_decodeStructure_0 = this._get_descriptor__77();
       var composite_1 = decoder.beginStructure_11(tmp0_decodeStructure_0);
       var ex_2 = null;
       try {
@@ -44695,13 +44804,13 @@
         if (composite_1.decodeSequentially_8()) {
           return decodeSequentially(this, composite_1);
         }mainLoop: while (true) {
-          var index_7 = composite_1.decodeElementIndex_8(this._get_descriptor__76());
+          var index_7 = composite_1.decodeElementIndex_8(this._get_descriptor__77());
           Companion_getInstance_51();
           if (index_7 === -1) {
             break mainLoop;
           } else {
             if (index_7 === 0) {
-              klassName_5 = composite_1.decodeStringElement_8(this._get_descriptor__76(), index_7);
+              klassName_5 = composite_1.decodeStringElement_8(this._get_descriptor__77(), index_7);
             } else {
               if (index_7 === 1) {
                 var tmp$ret$0;
@@ -44718,7 +44827,7 @@
                  while (false);
                 klassName_5 = tmp$ret$0;
                 var serializer_10_0 = findPolymorphicSerializer_0(this, composite_1, klassName_5);
-                var tmp = this._get_descriptor__76();
+                var tmp = this._get_descriptor__77();
                 value_6 = composite_1.decodeSerializableElement$default_8(tmp, index_7, serializer_10_0, null, 8, null);
               } else {
                 {
@@ -44762,11 +44871,11 @@
      while (false);
     return tmp$ret$4;
   };
-  AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_6 = function (decoder, klassName) {
-    return decoder._get_serializersModule__14().getPolymorphic_2(this._get_baseClass__2(), klassName);
+  AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (decoder, klassName) {
+    return decoder._get_serializersModule__15().getPolymorphic_2(this._get_baseClass__3(), klassName);
   };
-  AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (encoder, value) {
-    return encoder._get_serializersModule__14().getPolymorphic_1(this._get_baseClass__2(), value);
+  AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_10 = function (encoder, value) {
+    return encoder._get_serializersModule__15().getPolymorphic_1(this._get_baseClass__3(), value);
   };
   AbstractPolymorphicSerializer.$metadata$ = {
     simpleName: 'AbstractPolymorphicSerializer',
@@ -44790,10 +44899,10 @@
   };
   function PrimitiveArrayDescriptor(primitive) {
     ListLikeDescriptor.call(this, primitive);
-    this._serialName_1 = '' + primitive._get_serialName__16() + 'Array';
+    this._serialName_2 = '' + primitive._get_serialName__17() + 'Array';
   }
-  PrimitiveArrayDescriptor.prototype._get_serialName__16 = function () {
-    return this._serialName_1;
+  PrimitiveArrayDescriptor.prototype._get_serialName__17 = function () {
+    return this._serialName_2;
   };
   PrimitiveArrayDescriptor.$metadata$ = {
     simpleName: 'PrimitiveArrayDescriptor',
@@ -44804,16 +44913,16 @@
     this._elementDescriptor = elementDescriptor;
     this._elementsCount_0 = 1;
   }
-  ListLikeDescriptor.prototype._get_kind__19 = function () {
+  ListLikeDescriptor.prototype._get_kind__20 = function () {
     return LIST_getInstance();
   };
-  ListLikeDescriptor.prototype._get_elementsCount__16 = function () {
+  ListLikeDescriptor.prototype._get_elementsCount__17 = function () {
     return this._elementsCount_0;
   };
-  ListLikeDescriptor.prototype.getElementName_16 = function (index) {
+  ListLikeDescriptor.prototype.getElementName_17 = function (index) {
     return index.toString();
   };
-  ListLikeDescriptor.prototype.getElementIndex_16 = function (name) {
+  ListLikeDescriptor.prototype.getElementIndex_17 = function (name) {
     var tmp0_elvis_lhs = toIntOrNull(name);
     var tmp;
     if (tmp0_elvis_lhs == null) {
@@ -44823,10 +44932,17 @@
     }
     return tmp;
   };
-  ListLikeDescriptor.prototype.getElementDescriptor_16 = function (index) {
+  ListLikeDescriptor.prototype.getElementAnnotations_17 = function (index) {
     var tmp0_require_0 = index >= 0;
     if (!tmp0_require_0) {
-      var message_1 = '' + 'Illegal index ' + index + ', ' + this._get_serialName__16() + ' expects only non-negative indices';
+      var message_1 = '' + 'Illegal index ' + index + ', ' + this._get_serialName__17() + ' expects only non-negative indices';
+      throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
+    }return emptyList();
+  };
+  ListLikeDescriptor.prototype.getElementDescriptor_17 = function (index) {
+    var tmp0_require_0 = index >= 0;
+    if (!tmp0_require_0) {
+      var message_1 = '' + 'Illegal index ' + index + ', ' + this._get_serialName__17() + ' expects only non-negative indices';
       throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
     }return this._elementDescriptor;
   };
@@ -44837,15 +44953,15 @@
       return false;
     else {
     }
-    if (equals_1(this._elementDescriptor, other._elementDescriptor) ? this._get_serialName__16() === other._get_serialName__16() : false)
+    if (equals_1(this._elementDescriptor, other._elementDescriptor) ? this._get_serialName__17() === other._get_serialName__17() : false)
       return true;
     return false;
   };
   ListLikeDescriptor.prototype.hashCode = function () {
-    return imul(hashCode(this._elementDescriptor), 31) + getStringHashCode(this._get_serialName__16()) | 0;
+    return imul(hashCode(this._elementDescriptor), 31) + getStringHashCode(this._get_serialName__17()) | 0;
   };
   ListLikeDescriptor.prototype.toString = function () {
-    return '' + this._get_serialName__16() + '(' + this._elementDescriptor + ')';
+    return '' + this._get_serialName__17() + '(' + this._elementDescriptor + ')';
   };
   ListLikeDescriptor.$metadata$ = {
     simpleName: 'ListLikeDescriptor',
@@ -44855,7 +44971,7 @@
   function ArrayListClassDesc(elementDesc) {
     ListLikeDescriptor.call(this, elementDesc);
   }
-  ArrayListClassDesc.prototype._get_serialName__16 = function () {
+  ArrayListClassDesc.prototype._get_serialName__17 = function () {
     return 'kotlin.collections.ArrayList';
   };
   ArrayListClassDesc.$metadata$ = {
@@ -44866,7 +44982,7 @@
   function LinkedHashSetClassDesc(elementDesc) {
     ListLikeDescriptor.call(this, elementDesc);
   }
-  LinkedHashSetClassDesc.prototype._get_serialName__16 = function () {
+  LinkedHashSetClassDesc.prototype._get_serialName__17 = function () {
     return 'kotlin.collections.LinkedHashSet';
   };
   LinkedHashSetClassDesc.$metadata$ = {
@@ -44885,7 +45001,7 @@
   function HashSetClassDesc(elementDesc) {
     ListLikeDescriptor.call(this, elementDesc);
   }
-  HashSetClassDesc.prototype._get_serialName__16 = function () {
+  HashSetClassDesc.prototype._get_serialName__17 = function () {
     return 'kotlin.collections.HashSet';
   };
   HashSetClassDesc.$metadata$ = {
@@ -44902,24 +45018,24 @@
     interfaces: []
   };
   function MapLikeDescriptor(serialName, keyDescriptor, valueDescriptor) {
-    this._serialName_2 = serialName;
+    this._serialName_3 = serialName;
     this._keyDescriptor = keyDescriptor;
     this._valueDescriptor = valueDescriptor;
     this._elementsCount_1 = 2;
   }
-  MapLikeDescriptor.prototype._get_serialName__16 = function () {
-    return this._serialName_2;
+  MapLikeDescriptor.prototype._get_serialName__17 = function () {
+    return this._serialName_3;
   };
-  MapLikeDescriptor.prototype._get_kind__19 = function () {
+  MapLikeDescriptor.prototype._get_kind__20 = function () {
     return MAP_getInstance();
   };
-  MapLikeDescriptor.prototype._get_elementsCount__16 = function () {
+  MapLikeDescriptor.prototype._get_elementsCount__17 = function () {
     return this._elementsCount_1;
   };
-  MapLikeDescriptor.prototype.getElementName_16 = function (index) {
+  MapLikeDescriptor.prototype.getElementName_17 = function (index) {
     return index.toString();
   };
-  MapLikeDescriptor.prototype.getElementIndex_16 = function (name) {
+  MapLikeDescriptor.prototype.getElementIndex_17 = function (name) {
     var tmp0_elvis_lhs = toIntOrNull(name);
     var tmp;
     if (tmp0_elvis_lhs == null) {
@@ -44929,10 +45045,17 @@
     }
     return tmp;
   };
-  MapLikeDescriptor.prototype.getElementDescriptor_16 = function (index) {
+  MapLikeDescriptor.prototype.getElementAnnotations_17 = function (index) {
     var tmp0_require_0 = index >= 0;
     if (!tmp0_require_0) {
-      var message_1 = '' + 'Illegal index ' + index + ', ' + this._get_serialName__16() + ' expects only non-negative indices';
+      var message_1 = '' + 'Illegal index ' + index + ', ' + this._get_serialName__17() + ' expects only non-negative indices';
+      throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
+    }return emptyList();
+  };
+  MapLikeDescriptor.prototype.getElementDescriptor_17 = function (index) {
+    var tmp0_require_0 = index >= 0;
+    if (!tmp0_require_0) {
+      var message_1 = '' + 'Illegal index ' + index + ', ' + this._get_serialName__17() + ' expects only non-negative indices';
       throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
     }var tmp0_subject = index % 2;
     var tmp;
@@ -44955,7 +45078,7 @@
       return false;
     else {
     }
-    if (!(this._get_serialName__16() === other._get_serialName__16()))
+    if (!(this._get_serialName__17() === other._get_serialName__17()))
       return false;
     if (!equals_1(this._keyDescriptor, other._keyDescriptor))
       return false;
@@ -44964,13 +45087,13 @@
     return true;
   };
   MapLikeDescriptor.prototype.hashCode = function () {
-    var result = getStringHashCode(this._get_serialName__16());
+    var result = getStringHashCode(this._get_serialName__17());
     result = imul(31, result) + hashCode(this._keyDescriptor) | 0;
     result = imul(31, result) + hashCode(this._valueDescriptor) | 0;
     return result;
   };
   MapLikeDescriptor.prototype.toString = function () {
-    return '' + this._get_serialName__16() + '(' + this._keyDescriptor + ', ' + this._valueDescriptor + ')';
+    return '' + this._get_serialName__17() + '(' + this._keyDescriptor + ', ' + this._valueDescriptor + ')';
   };
   MapLikeDescriptor.$metadata$ = {
     simpleName: 'MapLikeDescriptor',
@@ -44980,7 +45103,7 @@
   function ArrayClassDesc(elementDesc) {
     ListLikeDescriptor.call(this, elementDesc);
   }
-  ArrayClassDesc.prototype._get_serialName__16 = function () {
+  ArrayClassDesc.prototype._get_serialName__17 = function () {
     return 'kotlin.Array';
   };
   ArrayClassDesc.$metadata$ = {
@@ -44990,10 +45113,10 @@
   };
   function PrimitiveArraySerializer(primitiveSerializer) {
     ListLikeSerializer.call(this, primitiveSerializer);
-    this._descriptor_0 = new PrimitiveArrayDescriptor(primitiveSerializer._get_descriptor__76());
+    this._descriptor_1 = new PrimitiveArrayDescriptor(primitiveSerializer._get_descriptor__77());
   }
-  PrimitiveArraySerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_0;
+  PrimitiveArraySerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_1;
   };
   PrimitiveArraySerializer.prototype.builderSize_14 = function (_this__0) {
     return _this__0._get_position__8();
@@ -45018,19 +45141,19 @@
   PrimitiveArraySerializer.prototype.builder_16 = function () {
     return this.toBuilder_30(this.empty_7());
   };
-  PrimitiveArraySerializer.prototype.serialize_3 = function (encoder, value) {
+  PrimitiveArraySerializer.prototype.serialize_4 = function (encoder, value) {
     var size_0 = this.collectionSize_29(value);
-    var composite = encoder.beginCollection_1(this._descriptor_0, size_0);
+    var composite = encoder.beginCollection_1(this._descriptor_1, size_0);
     this.writeContent_15(composite, value, size_0);
-    composite.endStructure_11(this._descriptor_0);
+    composite.endStructure_11(this._descriptor_1);
   };
-  PrimitiveArraySerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_3(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  PrimitiveArraySerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_4(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
-  PrimitiveArraySerializer.prototype.serialize_14 = function (encoder, value) {
-    return this.serialize_3(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  PrimitiveArraySerializer.prototype.serialize_15 = function (encoder, value) {
+    return this.serialize_4(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
-  PrimitiveArraySerializer.prototype.deserialize_80 = function (decoder) {
+  PrimitiveArraySerializer.prototype.deserialize_81 = function (decoder) {
     return this.merge_7(decoder, null);
   };
   PrimitiveArraySerializer.$metadata$ = {
@@ -45054,22 +45177,22 @@
     AbstractCollectionSerializer.call(this);
     this._elementSerializer = elementSerializer_0;
   }
-  ListLikeSerializer.prototype.serialize_14 = function (encoder, value) {
+  ListLikeSerializer.prototype.serialize_15 = function (encoder, value) {
     var size_0 = this.collectionSize_29(value);
-    var composite = encoder.beginCollection_1(this._get_descriptor__76(), size_0);
+    var composite = encoder.beginCollection_1(this._get_descriptor__77(), size_0);
     var iterator = this.collectionIterator_14(value);
     var inductionVariable = 0;
     if (inductionVariable < size_0)
       do {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        composite.encodeSerializableElement_1(this._get_descriptor__76(), index, this._elementSerializer, iterator.next_31());
+        composite.encodeSerializableElement_1(this._get_descriptor__77(), index, this._elementSerializer, iterator.next_31());
       }
        while (inductionVariable < size_0);
-    composite.endStructure_11(this._get_descriptor__76());
+    composite.endStructure_11(this._get_descriptor__77());
   };
-  ListLikeSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_14(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  ListLikeSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_15(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
   ListLikeSerializer.prototype.readAll_7 = function (decoder, builder, startIndex, size_0) {
     var tmp0_require_0 = size_0 >= 0;
@@ -45086,7 +45209,7 @@
        while (inductionVariable < size_0);
   };
   ListLikeSerializer.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
-    var tmp = this._get_descriptor__76();
+    var tmp = this._get_descriptor__77();
     this.insert_8(builder, index, decoder.decodeSerializableElement$default_8(tmp, index, this._elementSerializer, null, 8, null));
   };
   ListLikeSerializer.$metadata$ = {
@@ -45095,7 +45218,7 @@
     interfaces: []
   };
   function readSize($this, decoder, builder) {
-    var size_0 = decoder.decodeCollectionSize_8($this._get_descriptor__76());
+    var size_0 = decoder.decodeCollectionSize_8($this._get_descriptor__77());
     $this.checkCapacity_14(builder, size_0);
     return size_0;
   }
@@ -45106,12 +45229,12 @@
     var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : this.toBuilder_30(tmp0_safe_receiver);
     var builder = tmp1_elvis_lhs == null ? this.builder_16() : tmp1_elvis_lhs;
     var startIndex = this.builderSize_14(builder);
-    var compositeDecoder = decoder.beginStructure_11(this._get_descriptor__76());
+    var compositeDecoder = decoder.beginStructure_11(this._get_descriptor__77());
     if (compositeDecoder.decodeSequentially_8()) {
       this.readAll_7(compositeDecoder, builder, startIndex, readSize(this, compositeDecoder, builder));
     } else {
       $l$break: while (true) {
-        var index = compositeDecoder.decodeElementIndex_8(this._get_descriptor__76());
+        var index = compositeDecoder.decodeElementIndex_8(this._get_descriptor__77());
         Companion_getInstance_51();
         if (index === -1)
           break $l$break;
@@ -45121,10 +45244,10 @@
         this.readElement$default_7(compositeDecoder, tmp, builder, false, 8, null);
       }
     }
-    compositeDecoder.endStructure_11(this._get_descriptor__76());
+    compositeDecoder.endStructure_11(this._get_descriptor__77());
     return this.toResult_14(builder);
   };
-  AbstractCollectionSerializer.prototype.deserialize_80 = function (decoder) {
+  AbstractCollectionSerializer.prototype.deserialize_81 = function (decoder) {
     return this.merge_7(decoder, null);
   };
   AbstractCollectionSerializer.prototype.readElement$default_7 = function (decoder, index, builder, checkIndex_0, $mask0, $handler) {
@@ -45139,10 +45262,10 @@
   };
   function ArrayListSerializer(element) {
     ListLikeSerializer.call(this, element);
-    this._descriptor_1 = new ArrayListClassDesc(element._get_descriptor__76());
+    this._descriptor_2 = new ArrayListClassDesc(element._get_descriptor__77());
   }
-  ArrayListSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_1;
+  ArrayListSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_2;
   };
   ArrayListSerializer.prototype.collectionSize_1 = function (_this__0) {
     return _this__0._get_size__48();
@@ -45198,10 +45321,10 @@
   };
   function LinkedHashSetSerializer(eSerializer) {
     ListLikeSerializer.call(this, eSerializer);
-    this._descriptor_2 = new LinkedHashSetClassDesc(eSerializer._get_descriptor__76());
+    this._descriptor_3 = new LinkedHashSetClassDesc(eSerializer._get_descriptor__77());
   }
-  LinkedHashSetSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_2;
+  LinkedHashSetSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_3;
   };
   LinkedHashSetSerializer.prototype.collectionSize_7 = function (_this__0) {
     return _this__0._get_size__48();
@@ -45257,10 +45380,10 @@
   };
   function LinkedHashMapSerializer(kSerializer, vSerializer) {
     MapLikeSerializer.call(this, kSerializer, vSerializer);
-    this._descriptor_3 = new LinkedHashMapClassDesc(kSerializer._get_descriptor__76(), vSerializer._get_descriptor__76());
+    this._descriptor_4 = new LinkedHashMapClassDesc(kSerializer._get_descriptor__77(), vSerializer._get_descriptor__77());
   }
-  LinkedHashMapSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_3;
+  LinkedHashMapSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_4;
   };
   LinkedHashMapSerializer.prototype.collectionSize_9 = function (_this__0) {
     return _this__0._get_size__48();
@@ -45308,10 +45431,10 @@
   };
   function HashSetSerializer(eSerializer) {
     ListLikeSerializer.call(this, eSerializer);
-    this._descriptor_4 = new HashSetClassDesc(eSerializer._get_descriptor__76());
+    this._descriptor_5 = new HashSetClassDesc(eSerializer._get_descriptor__77());
   }
-  HashSetSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_4;
+  HashSetSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_5;
   };
   HashSetSerializer.prototype.collectionSize_7 = function (_this__0) {
     return _this__0._get_size__48();
@@ -45367,10 +45490,10 @@
   };
   function HashMapSerializer(kSerializer, vSerializer) {
     MapLikeSerializer.call(this, kSerializer, vSerializer);
-    this._descriptor_5 = new HashMapClassDesc(kSerializer._get_descriptor__76(), vSerializer._get_descriptor__76());
+    this._descriptor_6 = new HashMapClassDesc(kSerializer._get_descriptor__77(), vSerializer._get_descriptor__77());
   }
-  HashMapSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_5;
+  HashMapSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_6;
   };
   HashMapSerializer.prototype.collectionSize_9 = function (_this__0) {
     return _this__0._get_size__48();
@@ -45439,11 +45562,11 @@
        while (!(index === last_1));
   };
   MapLikeSerializer.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
-    var tmp = this._get_descriptor__76();
+    var tmp = this._get_descriptor__77();
     var key = decoder.decodeSerializableElement$default_8(tmp, index, this._keySerializer, null, 8, null);
     var tmp_0;
     if (checkIndex_0) {
-      var tmp0_also_0 = decoder.decodeElementIndex_8(this._get_descriptor__76());
+      var tmp0_also_0 = decoder.decodeElementIndex_8(this._get_descriptor__77());
       var tmp0_require_0_2 = tmp0_also_0 === (index + 1 | 0);
       if (!tmp0_require_0_2) {
         var message_1_3 = '' + 'Value must follow key in a map, index for key: ' + index + ', returned index for value: ' + tmp0_also_0;
@@ -45456,16 +45579,16 @@
     var tmp_1;
     var tmp_2;
     if (builder.containsKey_12(key)) {
-      var tmp_3 = this._valueSerializer._get_descriptor__76()._get_kind__19();
+      var tmp_3 = this._valueSerializer._get_descriptor__77()._get_kind__20();
       tmp_2 = !(tmp_3 instanceof PrimitiveKind);
     } else {
       tmp_2 = false;
     }
     if (tmp_2) {
-      tmp_1 = decoder.decodeSerializableElement_8(this._get_descriptor__76(), vIndex, this._valueSerializer, getValue(builder, key));
+      tmp_1 = decoder.decodeSerializableElement_8(this._get_descriptor__77(), vIndex, this._valueSerializer, getValue(builder, key));
     } else {
       {
-        var tmp_4 = this._get_descriptor__76();
+        var tmp_4 = this._get_descriptor__77();
         tmp_1 = decoder.decodeSerializableElement$default_8(tmp_4, vIndex, this._valueSerializer, null, 8, null);
       }
     }
@@ -45473,9 +45596,9 @@
     builder.put_10(key, value);
     Unit_getInstance();
   };
-  MapLikeSerializer.prototype.serialize_14 = function (encoder, value) {
+  MapLikeSerializer.prototype.serialize_15 = function (encoder, value) {
     var size_0 = this.collectionSize_29(value);
-    var composite = encoder.beginCollection_1(this._get_descriptor__76(), size_0);
+    var composite = encoder.beginCollection_1(this._get_descriptor__77(), size_0);
     var iterator = this.collectionIterator_14(value);
     var index = 0;
     var tmp0_iterator_1 = iterator;
@@ -45483,19 +45606,19 @@
       var element_2 = tmp0_iterator_1.next_31();
       var k_4 = element_2._get_key__52();
       var v_5 = element_2._get_value__27();
-      var tmp = this._get_descriptor__76();
+      var tmp = this._get_descriptor__77();
       var tmp0_6 = index;
       index = tmp0_6 + 1 | 0;
       composite.encodeSerializableElement_1(tmp, tmp0_6, this._keySerializer, k_4);
-      var tmp_0 = this._get_descriptor__76();
+      var tmp_0 = this._get_descriptor__77();
       var tmp1_7 = index;
       index = tmp1_7 + 1 | 0;
       composite.encodeSerializableElement_1(tmp_0, tmp1_7, this._valueSerializer, v_5);
     }
-    composite.endStructure_11(this._get_descriptor__76());
+    composite.endStructure_11(this._get_descriptor__77());
   };
-  MapLikeSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_14(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  MapLikeSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_15(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
   MapLikeSerializer.$metadata$ = {
     simpleName: 'MapLikeSerializer',
@@ -45504,11 +45627,11 @@
   };
   function ReferenceArraySerializer(kClass, eSerializer) {
     ListLikeSerializer.call(this, eSerializer);
-    this._kClass = kClass;
-    this._descriptor_6 = new ArrayClassDesc(eSerializer._get_descriptor__76());
+    this._kClass_0 = kClass;
+    this._descriptor_7 = new ArrayClassDesc(eSerializer._get_descriptor__77());
   }
-  ReferenceArraySerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_6;
+  ReferenceArraySerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_7;
   };
   ReferenceArraySerializer.prototype.collectionSize_12 = function (_this__0) {
     return _this__0.length;
@@ -45532,7 +45655,7 @@
     return this.builderSize_13(_this__0 instanceof ArrayList ? _this__0 : THROW_CCE());
   };
   ReferenceArraySerializer.prototype.toResult_13 = function (_this__0) {
-    return toNativeArrayImpl(_this__0, this._kClass);
+    return toNativeArrayImpl(_this__0, this._kClass_0);
   };
   ReferenceArraySerializer.prototype.toResult_14 = function (_this__0) {
     return this.toResult_13(_this__0 instanceof ArrayList ? _this__0 : THROW_CCE());
@@ -45562,13 +45685,13 @@
     interfaces: []
   };
   function InlinePrimitiveDescriptor(name, primitiveSerializer) {
-    return new InlineClassDescriptor(name, new _no_name_provided__209(primitiveSerializer));
+    return new InlineClassDescriptor(name, new _no_name_provided__210(primitiveSerializer));
   }
   function InlineClassDescriptor(name, generatedSerializer) {
     PluginGeneratedSerialDescriptor.call(this, name, generatedSerializer, 1);
     this._isInline = true;
   }
-  InlineClassDescriptor.prototype._get_isInline__16 = function () {
+  InlineClassDescriptor.prototype._get_isInline__17 = function () {
     return this._isInline;
   };
   InlineClassDescriptor.prototype.hashCode = function () {
@@ -45585,7 +45708,7 @@
         break l$ret$1;
       } else {
       }
-      if (!(this._get_serialName__16() === other._get_serialName__16())) {
+      if (!(this._get_serialName__17() === other._get_serialName__17())) {
         tmp$ret$0 = false;
         break l$ret$1;
       }var tmp0__anonymous__3 = other;
@@ -45594,19 +45717,19 @@
         break l$ret$1;
       } else {
       }
-      if (!(this._get_elementsCount__16() === other._get_elementsCount__16())) {
+      if (!(this._get_elementsCount__17() === other._get_elementsCount__17())) {
         tmp$ret$0 = false;
         break l$ret$1;
       }var inductionVariable = 0;
-      var last_1 = this._get_elementsCount__16();
+      var last_1 = this._get_elementsCount__17();
       if (inductionVariable < last_1)
         do {
           var index_2 = inductionVariable;
           inductionVariable = inductionVariable + 1 | 0;
-          if (!(this.getElementDescriptor_16(index_2)._get_serialName__16() === other.getElementDescriptor_16(index_2)._get_serialName__16())) {
+          if (!(this.getElementDescriptor_17(index_2)._get_serialName__17() === other.getElementDescriptor_17(index_2)._get_serialName__17())) {
             tmp$ret$0 = false;
             break l$ret$1;
-          }if (!equals_1(this.getElementDescriptor_16(index_2)._get_kind__19(), other.getElementDescriptor_16(index_2)._get_kind__19())) {
+          }if (!equals_1(this.getElementDescriptor_17(index_2)._get_kind__20(), other.getElementDescriptor_17(index_2)._get_kind__20())) {
             tmp$ret$0 = false;
             break l$ret$1;
           }}
@@ -45621,38 +45744,38 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__209($primitiveSerializer) {
+  function _no_name_provided__210($primitiveSerializer) {
     this._$primitiveSerializer = $primitiveSerializer;
   }
-  _no_name_provided__209.prototype.childSerializers_20 = function () {
+  _no_name_provided__210.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [this._$primitiveSerializer];
     return tmp0_arrayOf_0;
   };
-  _no_name_provided__209.prototype._get_descriptor__76 = function () {
+  _no_name_provided__210.prototype._get_descriptor__77 = function () {
     var tmp0_error_0 = 'unsupported';
     throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0));
   };
-  _no_name_provided__209.prototype.serialize_128 = function (encoder, value) {
+  _no_name_provided__210.prototype.serialize_129 = function (encoder, value) {
     var tmp0_error_0 = 'unsupported';
     throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0));
   };
-  _no_name_provided__209.prototype.deserialize_80 = function (decoder) {
+  _no_name_provided__210.prototype.deserialize_81 = function (decoder) {
     var tmp0_error_0 = 'unsupported';
     throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0));
   };
-  _no_name_provided__209.$metadata$ = {
+  _no_name_provided__210.$metadata$ = {
     kind: 'class',
     interfaces: [GeneratedSerializer]
   };
   function UIntSerializer() {
     UIntSerializer_instance = this;
-    this._descriptor_7 = InlinePrimitiveDescriptor('kotlin.UInt', serializer_7(IntCompanionObject_getInstance()));
+    this._descriptor_8 = InlinePrimitiveDescriptor('kotlin.UInt', serializer_7(IntCompanionObject_getInstance()));
   }
-  UIntSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_7;
+  UIntSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_8;
   };
-  UIntSerializer.prototype.serialize_18 = function (encoder, value) {
-    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_7);
+  UIntSerializer.prototype.serialize_19 = function (encoder, value) {
+    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_8);
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -45661,15 +45784,15 @@
     }
     Unit_getInstance();
   };
-  UIntSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_18(encoder, value instanceof UInt ? value._data_0 : THROW_CCE());
+  UIntSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_19(encoder, value instanceof UInt ? value._data_0 : THROW_CCE());
   };
-  UIntSerializer.prototype.deserialize_14 = function (decoder) {
-    var tmp0_toUInt_0 = decoder.decodeInline_8(this._descriptor_7).decodeInt_8();
+  UIntSerializer.prototype.deserialize_15 = function (decoder) {
+    var tmp0_toUInt_0 = decoder.decodeInline_8(this._descriptor_8).decodeInt_8();
     return _UInt___init__impl_(tmp0_toUInt_0);
   };
-  UIntSerializer.prototype.deserialize_80 = function (decoder) {
-    return new UInt(this.deserialize_14(decoder));
+  UIntSerializer.prototype.deserialize_81 = function (decoder) {
+    return new UInt(this.deserialize_15(decoder));
   };
   UIntSerializer.$metadata$ = {
     simpleName: 'UIntSerializer',
@@ -45684,13 +45807,13 @@
   }
   function ULongSerializer() {
     ULongSerializer_instance = this;
-    this._descriptor_8 = InlinePrimitiveDescriptor('kotlin.ULong', serializer_6(Companion_getInstance_15()));
+    this._descriptor_9 = InlinePrimitiveDescriptor('kotlin.ULong', serializer_6(Companion_getInstance_15()));
   }
-  ULongSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_8;
+  ULongSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_9;
   };
-  ULongSerializer.prototype.serialize_20 = function (encoder, value) {
-    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_8);
+  ULongSerializer.prototype.serialize_21 = function (encoder, value) {
+    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_9);
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -45699,15 +45822,15 @@
     }
     Unit_getInstance();
   };
-  ULongSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_20(encoder, value instanceof ULong ? value._data_1 : THROW_CCE());
+  ULongSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_21(encoder, value instanceof ULong ? value._data_1 : THROW_CCE());
   };
-  ULongSerializer.prototype.deserialize_16 = function (decoder) {
-    var tmp0_toULong_0 = decoder.decodeInline_8(this._descriptor_8).decodeLong_8();
+  ULongSerializer.prototype.deserialize_17 = function (decoder) {
+    var tmp0_toULong_0 = decoder.decodeInline_8(this._descriptor_9).decodeLong_8();
     return _ULong___init__impl_(tmp0_toULong_0);
   };
-  ULongSerializer.prototype.deserialize_80 = function (decoder) {
-    return new ULong(this.deserialize_16(decoder));
+  ULongSerializer.prototype.deserialize_81 = function (decoder) {
+    return new ULong(this.deserialize_17(decoder));
   };
   ULongSerializer.$metadata$ = {
     simpleName: 'ULongSerializer',
@@ -45722,13 +45845,13 @@
   }
   function UByteSerializer() {
     UByteSerializer_instance = this;
-    this._descriptor_9 = InlinePrimitiveDescriptor('kotlin.UByte', serializer_9(ByteCompanionObject_getInstance()));
+    this._descriptor_10 = InlinePrimitiveDescriptor('kotlin.UByte', serializer_9(ByteCompanionObject_getInstance()));
   }
-  UByteSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_9;
+  UByteSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_10;
   };
-  UByteSerializer.prototype.serialize_22 = function (encoder, value) {
-    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_9);
+  UByteSerializer.prototype.serialize_23 = function (encoder, value) {
+    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_10);
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -45737,15 +45860,15 @@
     }
     Unit_getInstance();
   };
-  UByteSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_22(encoder, value instanceof UByte ? value._data : THROW_CCE());
+  UByteSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_23(encoder, value instanceof UByte ? value._data : THROW_CCE());
   };
-  UByteSerializer.prototype.deserialize_18 = function (decoder) {
-    var tmp0_toUByte_0 = decoder.decodeInline_8(this._descriptor_9).decodeByte_8();
+  UByteSerializer.prototype.deserialize_19 = function (decoder) {
+    var tmp0_toUByte_0 = decoder.decodeInline_8(this._descriptor_10).decodeByte_8();
     return _UByte___init__impl_(tmp0_toUByte_0);
   };
-  UByteSerializer.prototype.deserialize_80 = function (decoder) {
-    return new UByte(this.deserialize_18(decoder));
+  UByteSerializer.prototype.deserialize_81 = function (decoder) {
+    return new UByte(this.deserialize_19(decoder));
   };
   UByteSerializer.$metadata$ = {
     simpleName: 'UByteSerializer',
@@ -45760,13 +45883,13 @@
   }
   function UShortSerializer() {
     UShortSerializer_instance = this;
-    this._descriptor_10 = InlinePrimitiveDescriptor('kotlin.UShort', serializer_8(ShortCompanionObject_getInstance()));
+    this._descriptor_11 = InlinePrimitiveDescriptor('kotlin.UShort', serializer_8(ShortCompanionObject_getInstance()));
   }
-  UShortSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_10;
+  UShortSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_11;
   };
-  UShortSerializer.prototype.serialize_24 = function (encoder, value) {
-    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_10);
+  UShortSerializer.prototype.serialize_25 = function (encoder, value) {
+    var tmp0_safe_receiver = encoder.encodeInline_1(this._descriptor_11);
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -45775,15 +45898,15 @@
     }
     Unit_getInstance();
   };
-  UShortSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_24(encoder, value instanceof UShort ? value._data_2 : THROW_CCE());
+  UShortSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_25(encoder, value instanceof UShort ? value._data_2 : THROW_CCE());
   };
-  UShortSerializer.prototype.deserialize_20 = function (decoder) {
-    var tmp0_toUShort_0 = decoder.decodeInline_8(this._descriptor_10).decodeShort_8();
+  UShortSerializer.prototype.deserialize_21 = function (decoder) {
+    var tmp0_toUShort_0 = decoder.decodeInline_8(this._descriptor_11).decodeShort_8();
     return _UShort___init__impl_(tmp0_toUShort_0);
   };
-  UShortSerializer.prototype.deserialize_80 = function (decoder) {
-    return new UShort(this.deserialize_20(decoder));
+  UShortSerializer.prototype.deserialize_81 = function (decoder) {
+    return new UShort(this.deserialize_21(decoder));
   };
   UShortSerializer.$metadata$ = {
     simpleName: 'UShortSerializer',
@@ -45801,12 +45924,12 @@
   }
   function NullableSerializer(serializer_16) {
     this._serializer_1 = serializer_16;
-    this._descriptor_11 = new SerialDescriptorForNullable(this._serializer_1._get_descriptor__76());
+    this._descriptor_12 = new SerialDescriptorForNullable(this._serializer_1._get_descriptor__77());
   }
-  NullableSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_11;
+  NullableSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_12;
   };
-  NullableSerializer.prototype.serialize_26 = function (encoder, value) {
+  NullableSerializer.prototype.serialize_27 = function (encoder, value) {
     if (!(value == null)) {
       encoder.encodeNotNullMark_1();
       encoder.encodeSerializableValue_1(this._serializer_1, value);
@@ -45814,10 +45937,10 @@
       encoder.encodeNull_1();
     }
   };
-  NullableSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_26(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  NullableSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_27(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
-  NullableSerializer.prototype.deserialize_80 = function (decoder) {
+  NullableSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeNotNullMark_8() ? decoder.decodeSerializableValue_16(this._serializer_1) : decoder.decodeNull_8();
   };
   NullableSerializer.prototype.equals = function (other) {
@@ -45843,35 +45966,38 @@
     interfaces: [KSerializer]
   };
   function SerialDescriptorForNullable(original) {
-    this._original = original;
-    this._serialName_3 = this._original._get_serialName__16() + '?';
-    this._serialNames_0 = cachedSerialNames(this._original);
+    this._original_0 = original;
+    this._serialName_4 = this._original_0._get_serialName__17() + '?';
+    this._serialNames_0 = cachedSerialNames(this._original_0);
   }
-  SerialDescriptorForNullable.prototype.getElementDescriptor_16 = function (index) {
-    return this._original.getElementDescriptor_16(index);
+  SerialDescriptorForNullable.prototype.getElementAnnotations_17 = function (index) {
+    return this._original_0.getElementAnnotations_17(index);
   };
-  SerialDescriptorForNullable.prototype.getElementIndex_16 = function (name) {
-    return this._original.getElementIndex_16(name);
+  SerialDescriptorForNullable.prototype.getElementDescriptor_17 = function (index) {
+    return this._original_0.getElementDescriptor_17(index);
   };
-  SerialDescriptorForNullable.prototype.getElementName_16 = function (index) {
-    return this._original.getElementName_16(index);
+  SerialDescriptorForNullable.prototype.getElementIndex_17 = function (name) {
+    return this._original_0.getElementIndex_17(name);
   };
-  SerialDescriptorForNullable.prototype._get_elementsCount__16 = function () {
-    return this._original._get_elementsCount__16();
+  SerialDescriptorForNullable.prototype.getElementName_17 = function (index) {
+    return this._original_0.getElementName_17(index);
   };
-  SerialDescriptorForNullable.prototype._get_isInline__16 = function () {
-    return this._original._get_isInline__16();
+  SerialDescriptorForNullable.prototype._get_elementsCount__17 = function () {
+    return this._original_0._get_elementsCount__17();
   };
-  SerialDescriptorForNullable.prototype._get_kind__19 = function () {
-    return this._original._get_kind__19();
+  SerialDescriptorForNullable.prototype._get_isInline__17 = function () {
+    return this._original_0._get_isInline__17();
   };
-  SerialDescriptorForNullable.prototype._get_serialName__16 = function () {
-    return this._serialName_3;
+  SerialDescriptorForNullable.prototype._get_kind__20 = function () {
+    return this._original_0._get_kind__20();
+  };
+  SerialDescriptorForNullable.prototype._get_serialName__17 = function () {
+    return this._serialName_4;
   };
   SerialDescriptorForNullable.prototype._get_serialNames__3 = function () {
     return this._serialNames_0;
   };
-  SerialDescriptorForNullable.prototype._get_isNullable__16 = function () {
+  SerialDescriptorForNullable.prototype._get_isNullable__17 = function () {
     return true;
   };
   SerialDescriptorForNullable.prototype.equals = function (other) {
@@ -45881,15 +46007,15 @@
       return false;
     else {
     }
-    if (!equals_1(this._original, other._original))
+    if (!equals_1(this._original_0, other._original_0))
       return false;
     return true;
   };
   SerialDescriptorForNullable.prototype.toString = function () {
-    return '' + this._original + '?';
+    return '' + this._original_0 + '?';
   };
   SerialDescriptorForNullable.prototype.hashCode = function () {
-    return imul(hashCode(this._original), 31);
+    return imul(hashCode(this._original_0), 31);
   };
   SerialDescriptorForNullable.$metadata$ = {
     simpleName: 'SerialDescriptorForNullable',
@@ -45901,16 +46027,16 @@
     var tmp = this;
     var tmp_0 = OBJECT_getInstance();
     var tmp_1 = [];
-    tmp._descriptor_12 = buildSerialDescriptor$default(serialName, tmp_0, tmp_1, null, 12, null);
+    tmp._descriptor_13 = buildSerialDescriptor$default(serialName, tmp_0, tmp_1, null, 12, null);
   }
-  ObjectSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_12;
+  ObjectSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_13;
   };
-  ObjectSerializer.prototype.serialize_128 = function (encoder, value) {
-    encoder.beginStructure_11(this._descriptor_12).endStructure_11(this._descriptor_12);
+  ObjectSerializer.prototype.serialize_129 = function (encoder, value) {
+    encoder.beginStructure_11(this._descriptor_13).endStructure_11(this._descriptor_13);
   };
-  ObjectSerializer.prototype.deserialize_80 = function (decoder) {
-    decoder.beginStructure_11(this._descriptor_12).endStructure_11(this._descriptor_12);
+  ObjectSerializer.prototype.deserialize_81 = function (decoder) {
+    decoder.beginStructure_11(this._descriptor_13).endStructure_11(this._descriptor_13);
     return this._objectInstance;
   };
   ObjectSerializer.$metadata$ = {
@@ -45960,14 +46086,14 @@
       return _this_._get_serialNames__3();
     else {
     }
-    var result = HashSet_init_$Create$_1(_this_._get_elementsCount__16());
+    var result = HashSet_init_$Create$_1(_this_._get_elementsCount__17());
     var inductionVariable = 0;
-    var last_1 = _this_._get_elementsCount__16();
+    var last_1 = _this_._get_elementsCount__17();
     if (inductionVariable < last_1)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var tmp0_plusAssign_0 = _this_.getElementName_16(i);
+        var tmp0_plusAssign_0 = _this_.getElementName_17(i);
         result.add_32(tmp0_plusAssign_0);
         Unit_getInstance();
       }
@@ -45979,7 +46105,7 @@
     return tmp0_arrayOf_0;
   }
   function hashCodeImpl(_this_, typeParams) {
-    var result = getStringHashCode(_this_._get_serialName__16());
+    var result = getStringHashCode(_this_._get_serialName__17());
     result = imul(31, result) + contentHashCode(typeParams) | 0;
     var elementDescriptors = _get_elementDescriptors_(_this_);
     var tmp0_fold_0_1 = 1;
@@ -45989,7 +46115,7 @@
       var element_3_4 = tmp0_iterator_2_3.next_31();
       var tmp1__anonymous__4_5 = accumulator_1_2;
       var tmp = imul(31, tmp1__anonymous__4_5);
-      var tmp0_hashCode_0_5_6 = element_3_4._get_serialName__16();
+      var tmp0_hashCode_0_5_6 = element_3_4._get_serialName__17();
       var tmp0_safe_receiver_2_7_8 = tmp0_hashCode_0_5_6;
       var tmp1_elvis_lhs_1_6_7 = tmp0_safe_receiver_2_7_8 == null ? null : hashCode(tmp0_safe_receiver_2_7_8);
       accumulator_1_2 = tmp + (tmp1_elvis_lhs_1_6_7 == null ? 0 : tmp1_elvis_lhs_1_6_7) | 0;
@@ -46002,7 +46128,7 @@
       var element_3_4_0 = tmp0_iterator_2_3_0.next_31();
       var tmp1__anonymous__4_5_0 = accumulator_1_2_0;
       var tmp_0 = imul(31, tmp1__anonymous__4_5_0);
-      var tmp0_hashCode_0_5_6_0 = element_3_4_0._get_kind__19();
+      var tmp0_hashCode_0_5_6_0 = element_3_4_0._get_kind__20();
       var tmp0_safe_receiver_2_7_8_0 = tmp0_hashCode_0_5_6_0;
       var tmp1_elvis_lhs_1_6_7_0 = tmp0_safe_receiver_2_7_8_0 == null ? null : hashCode(tmp0_safe_receiver_2_7_8_0);
       accumulator_1_2_0 = tmp_0 + (tmp1_elvis_lhs_1_6_7_0 == null ? 0 : tmp1_elvis_lhs_1_6_7_0) | 0;
@@ -46011,11 +46137,6 @@
     result = imul(31, result) + namesHash | 0;
     result = imul(31, result) + kindHash | 0;
     return result;
-  }
-  function _get_indices__0($this) {
-    var tmp0_getValue_0 = $this._indices$delegate;
-    var tmp1_getValue_0 = indices$factory();
-    return tmp0_getValue_0._get_value__27();
   }
   function _get_childSerializers_($this) {
     var tmp0_getValue_0 = $this._childSerializers$delegate;
@@ -46042,20 +46163,10 @@
        while (inductionVariable <= last_1);
     return indices;
   }
-  function _no_name_provided__210(this$0) {
-    this._this$0_55 = this$0;
-  }
-  _no_name_provided__210.prototype.invoke_403 = function () {
-    return buildIndices(this._this$0_55);
-  };
-  _no_name_provided__210.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function _no_name_provided__211(this$0) {
     this._this$0_56 = this$0;
   }
-  _no_name_provided__211.prototype.invoke_403 = function () {
+  _no_name_provided__211.prototype.invoke_411 = function () {
     var tmp0_safe_receiver = this._this$0_56._generatedSerializer;
     var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.childSerializers_20();
     var tmp;
@@ -46073,7 +46184,7 @@
   function _no_name_provided__212(this$0) {
     this._this$0_57 = this$0;
   }
-  _no_name_provided__212.prototype.invoke_403 = function () {
+  _no_name_provided__212.prototype.invoke_411 = function () {
     var tmp0_safe_receiver = this._this$0_57._generatedSerializer;
     var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.typeParametersSerializers_20();
     var tmp;
@@ -46084,7 +46195,7 @@
       var tmp0_iterator_1_2 = arrayIterator(tmp1_safe_receiver);
       while (tmp0_iterator_1_2.hasNext_29()) {
         var item_2_3 = tmp0_iterator_1_2.next_31();
-        tmp0_mapTo_0_1.add_32(item_2_3._get_descriptor__76());
+        tmp0_mapTo_0_1.add_32(item_2_3._get_descriptor__77());
         Unit_getInstance();
       }
       tmp = tmp0_mapTo_0_1;
@@ -46098,7 +46209,7 @@
   function _no_name_provided__213(this$0) {
     this._this$0_58 = this$0;
   }
-  _no_name_provided__213.prototype.invoke_403 = function () {
+  _no_name_provided__213.prototype.invoke_411 = function () {
     return hashCodeImpl(this._this$0_58, this._this$0_58._get_typeParameterDescriptors__0());
   };
   _no_name_provided__213.$metadata$ = {
@@ -46108,18 +46219,18 @@
   function _no_name_provided__214(this$0) {
     this._this$0_59 = this$0;
   }
-  _no_name_provided__214.prototype.invoke_345 = function (it) {
-    return it._get_key__52() + ': ' + this._this$0_59.getElementDescriptor_16(it._get_value__27())._get_serialName__16();
+  _no_name_provided__214.prototype.invoke_346 = function (i) {
+    return this._this$0_59.getElementName_17(i) + ': ' + this._this$0_59.getElementDescriptor_17(i)._get_serialName__17();
   };
-  _no_name_provided__214.prototype.invoke_412 = function (p1) {
-    return this.invoke_345((!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE());
+  _no_name_provided__214.prototype.invoke_420 = function (p1) {
+    return this.invoke_346((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
   };
   _no_name_provided__214.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function PluginGeneratedSerialDescriptor(serialName, generatedSerializer, elementsCount) {
-    this._serialName_4 = serialName;
+    this._serialName_5 = serialName;
     this._generatedSerializer = generatedSerializer;
     this._elementsCount_2 = elementsCount;
     this._added = -1;
@@ -46138,26 +46249,25 @@
     tmp_4._propertiesAnnotations = fillArrayVal(Array(tmp0_arrayOfNulls_0), null);
     this._classAnnotations = null;
     this._elementsOptionality = booleanArray(this._elementsCount_2);
+    this._indices = emptyMap();
     var tmp_5 = this;
-    tmp_5._indices$delegate = lazy(_no_name_provided_$factory_173(this));
+    tmp_5._childSerializers$delegate = lazy(_no_name_provided_$factory_174(this));
     var tmp_6 = this;
-    tmp_6._childSerializers$delegate = lazy(_no_name_provided_$factory_174(this));
+    tmp_6._typeParameterDescriptors$delegate = lazy(_no_name_provided_$factory_175(this));
     var tmp_7 = this;
-    tmp_7._typeParameterDescriptors$delegate = lazy(_no_name_provided_$factory_175(this));
-    var tmp_8 = this;
-    tmp_8.__hashCode$delegate_0 = lazy(_no_name_provided_$factory_176(this));
+    tmp_7.__hashCode$delegate_0 = lazy(_no_name_provided_$factory_176(this));
   }
-  PluginGeneratedSerialDescriptor.prototype._get_serialName__16 = function () {
-    return this._serialName_4;
+  PluginGeneratedSerialDescriptor.prototype._get_serialName__17 = function () {
+    return this._serialName_5;
   };
-  PluginGeneratedSerialDescriptor.prototype._get_elementsCount__16 = function () {
+  PluginGeneratedSerialDescriptor.prototype._get_elementsCount__17 = function () {
     return this._elementsCount_2;
   };
-  PluginGeneratedSerialDescriptor.prototype._get_kind__19 = function () {
+  PluginGeneratedSerialDescriptor.prototype._get_kind__20 = function () {
     return CLASS_getInstance();
   };
   PluginGeneratedSerialDescriptor.prototype._get_serialNames__3 = function () {
-    return _get_indices__0(this)._get_keys__8();
+    return this._indices._get_keys__8();
   };
   PluginGeneratedSerialDescriptor.prototype._get_typeParameterDescriptors__0 = function () {
     var tmp0_getValue_0 = this._typeParameterDescriptors$delegate;
@@ -46170,15 +46280,21 @@
     this._names[tmp0_this._added] = name;
     this._elementsOptionality[this._added] = isOptional;
     this._propertiesAnnotations[this._added] = null;
+    if (this._added === (this._elementsCount_2 - 1 | 0)) {
+      this._indices = buildIndices(this);
+    }};
+  PluginGeneratedSerialDescriptor.prototype.getElementDescriptor_17 = function (index) {
+    return getChecked(_get_childSerializers_(this), index)._get_descriptor__77();
   };
-  PluginGeneratedSerialDescriptor.prototype.getElementDescriptor_16 = function (index) {
-    return getChecked(_get_childSerializers_(this), index)._get_descriptor__76();
+  PluginGeneratedSerialDescriptor.prototype.getElementAnnotations_17 = function (index) {
+    var tmp0_elvis_lhs = getChecked(this._propertiesAnnotations, index);
+    return tmp0_elvis_lhs == null ? emptyList() : tmp0_elvis_lhs;
   };
-  PluginGeneratedSerialDescriptor.prototype.getElementName_16 = function (index) {
+  PluginGeneratedSerialDescriptor.prototype.getElementName_17 = function (index) {
     return getChecked(this._names, index);
   };
-  PluginGeneratedSerialDescriptor.prototype.getElementIndex_16 = function (name) {
-    var tmp0_elvis_lhs = _get_indices__0(this).get_65(name);
+  PluginGeneratedSerialDescriptor.prototype.getElementIndex_17 = function (name) {
+    var tmp0_elvis_lhs = this._indices.get_65(name);
     var tmp;
     if (tmp0_elvis_lhs == null) {
       Companion_getInstance_51();
@@ -46199,7 +46315,7 @@
         break l$ret$1;
       } else {
       }
-      if (!(this._get_serialName__16() === other._get_serialName__16())) {
+      if (!(this._get_serialName__17() === other._get_serialName__17())) {
         tmp$ret$0 = false;
         break l$ret$1;
       }var tmp0__anonymous__3 = other;
@@ -46208,19 +46324,19 @@
         break l$ret$1;
       } else {
       }
-      if (!(this._get_elementsCount__16() === other._get_elementsCount__16())) {
+      if (!(this._get_elementsCount__17() === other._get_elementsCount__17())) {
         tmp$ret$0 = false;
         break l$ret$1;
       }var inductionVariable = 0;
-      var last_1 = this._get_elementsCount__16();
+      var last_1 = this._get_elementsCount__17();
       if (inductionVariable < last_1)
         do {
           var index_2 = inductionVariable;
           inductionVariable = inductionVariable + 1 | 0;
-          if (!(this.getElementDescriptor_16(index_2)._get_serialName__16() === other.getElementDescriptor_16(index_2)._get_serialName__16())) {
+          if (!(this.getElementDescriptor_17(index_2)._get_serialName__17() === other.getElementDescriptor_17(index_2)._get_serialName__17())) {
             tmp$ret$0 = false;
             break l$ret$1;
-          }if (!equals_1(this.getElementDescriptor_16(index_2)._get_kind__19(), other.getElementDescriptor_16(index_2)._get_kind__19())) {
+          }if (!equals_1(this.getElementDescriptor_17(index_2)._get_kind__20(), other.getElementDescriptor_17(index_2)._get_kind__20())) {
             tmp$ret$0 = false;
             break l$ret$1;
           }}
@@ -46234,8 +46350,8 @@
     return _get__hashCode__0(this);
   };
   PluginGeneratedSerialDescriptor.prototype.toString = function () {
-    var tmp = _get_indices__0(this)._get_entries__8();
-    var tmp_0 = '' + this._get_serialName__16() + '(';
+    var tmp = until(0, this._elementsCount_2);
+    var tmp_0 = '' + this._get_serialName__17() + '(';
     return joinToString$default_0(tmp, ', ', tmp_0, ')', 0, null, _no_name_provided_$factory_177(this), 24, null);
   };
   PluginGeneratedSerialDescriptor.$metadata$ = {
@@ -46243,11 +46359,6 @@
     kind: 'class',
     interfaces: [SerialDescriptor, CachedNames]
   };
-  function indices$factory() {
-    return getPropertyCallableRef('indices', 1, KProperty1, function (receiver) {
-      return _get_indices__0(receiver);
-    }, null);
-  }
   function childSerializers$factory() {
     return getPropertyCallableRef('childSerializers', 1, KProperty1, function (receiver) {
       return _get_childSerializers_(receiver);
@@ -46263,34 +46374,28 @@
       return _get__hashCode__0(receiver);
     }, null);
   }
-  function _no_name_provided_$factory_173(this$0) {
-    var i = new _no_name_provided__210(this$0);
-    return function () {
-      return i.invoke_403();
-    };
-  }
   function _no_name_provided_$factory_174(this$0) {
     var i = new _no_name_provided__211(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_175(this$0) {
     var i = new _no_name_provided__212(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_176(this$0) {
     var i = new _no_name_provided__213(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_177(this$0) {
     var i = new _no_name_provided__214(this$0);
     return function (p1) {
-      return i.invoke_345(p1);
+      return i.invoke_346(p1);
     };
   }
   var EMPTY_SERIALIZER_ARRAY;
@@ -46335,7 +46440,7 @@
     return charArray(0);
   };
   CharArraySerializer_0.prototype.readElement_9 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_28(decoder.decodeCharElement_8(this._get_descriptor__76(), index));
+    builder.append_36(decoder.decodeCharElement_8(this._get_descriptor__77(), index));
   };
   CharArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_9(decoder, index, builder instanceof CharArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46346,7 +46451,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeCharElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeCharElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46384,7 +46489,7 @@
     return new Float64Array(0);
   };
   DoubleArraySerializer_0.prototype.readElement_11 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_29(decoder.decodeDoubleElement_8(this._get_descriptor__76(), index));
+    builder.append_28(decoder.decodeDoubleElement_8(this._get_descriptor__77(), index));
   };
   DoubleArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_11(decoder, index, builder instanceof DoubleArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46395,7 +46500,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeDoubleElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeDoubleElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46433,7 +46538,7 @@
     return new Float32Array(0);
   };
   FloatArraySerializer_0.prototype.readElement_13 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_30(decoder.decodeFloatElement_8(this._get_descriptor__76(), index));
+    builder.append_29(decoder.decodeFloatElement_8(this._get_descriptor__77(), index));
   };
   FloatArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_13(decoder, index, builder instanceof FloatArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46444,7 +46549,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeFloatElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeFloatElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46482,7 +46587,7 @@
     return longArray(0);
   };
   LongArraySerializer_0.prototype.readElement_15 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_31(decoder.decodeLongElement_8(this._get_descriptor__76(), index));
+    builder.append_35(decoder.decodeLongElement_8(this._get_descriptor__77(), index));
   };
   LongArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_15(decoder, index, builder instanceof LongArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46493,7 +46598,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeLongElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeLongElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46531,7 +46636,7 @@
     return new Int32Array(0);
   };
   IntArraySerializer_0.prototype.readElement_17 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_32(decoder.decodeIntElement_8(this._get_descriptor__76(), index));
+    builder.append_31(decoder.decodeIntElement_8(this._get_descriptor__77(), index));
   };
   IntArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_17(decoder, index, builder instanceof IntArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46542,7 +46647,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeIntElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeIntElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46580,7 +46685,7 @@
     return new Int16Array(0);
   };
   ShortArraySerializer_0.prototype.readElement_19 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_33(decoder.decodeShortElement_8(this._get_descriptor__76(), index));
+    builder.append_32(decoder.decodeShortElement_8(this._get_descriptor__77(), index));
   };
   ShortArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_19(decoder, index, builder instanceof ShortArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46591,7 +46696,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeShortElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeShortElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46629,7 +46734,7 @@
     return new Int8Array(0);
   };
   ByteArraySerializer_0.prototype.readElement_21 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_34(decoder.decodeByteElement_8(this._get_descriptor__76(), index));
+    builder.append_33(decoder.decodeByteElement_8(this._get_descriptor__77(), index));
   };
   ByteArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_21(decoder, index, builder instanceof ByteArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46640,7 +46745,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeByteElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeByteElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46678,7 +46783,7 @@
     return booleanArray(0);
   };
   BooleanArraySerializer_0.prototype.readElement_23 = function (decoder, index, builder, checkIndex_0) {
-    builder.append_35(decoder.decodeBooleanElement_8(this._get_descriptor__76(), index));
+    builder.append_34(decoder.decodeBooleanElement_8(this._get_descriptor__77(), index));
   };
   BooleanArraySerializer_0.prototype.readElement_24 = function (decoder, index, builder, checkIndex_0) {
     return this.readElement_23(decoder, index, builder instanceof BooleanArrayBuilder ? builder : THROW_CCE(), checkIndex_0);
@@ -46689,7 +46794,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        encoder.encodeBooleanElement_1(this._get_descriptor__76(), i, content[i]);
+        encoder.encodeBooleanElement_1(this._get_descriptor__77(), i, content[i]);
       }
        while (inductionVariable < size_0);
   };
@@ -46720,7 +46825,7 @@
     if (this._buffer_1.length < requiredCapacity)
       this._buffer_1 = copyOf(this._buffer_1, coerceAtLeast(requiredCapacity, imul(this._buffer_1.length, 2)));
   };
-  CharArrayBuilder.prototype.append_28 = function (c) {
+  CharArrayBuilder.prototype.append_36 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_1;
     var tmp0_this = this;
@@ -46749,7 +46854,7 @@
     if (this._buffer_2.length < requiredCapacity)
       this._buffer_2 = copyOf_0(this._buffer_2, coerceAtLeast(requiredCapacity, imul(this._buffer_2.length, 2)));
   };
-  DoubleArrayBuilder.prototype.append_29 = function (c) {
+  DoubleArrayBuilder.prototype.append_28 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_2;
     var tmp0_this = this;
@@ -46778,7 +46883,7 @@
     if (this._buffer_3.length < requiredCapacity)
       this._buffer_3 = copyOf_1(this._buffer_3, coerceAtLeast(requiredCapacity, imul(this._buffer_3.length, 2)));
   };
-  FloatArrayBuilder.prototype.append_30 = function (c) {
+  FloatArrayBuilder.prototype.append_29 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_3;
     var tmp0_this = this;
@@ -46807,7 +46912,7 @@
     if (this._buffer_4.length < requiredCapacity)
       this._buffer_4 = copyOf_2(this._buffer_4, coerceAtLeast(requiredCapacity, imul(this._buffer_4.length, 2)));
   };
-  LongArrayBuilder.prototype.append_31 = function (c) {
+  LongArrayBuilder.prototype.append_35 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_4;
     var tmp0_this = this;
@@ -46836,7 +46941,7 @@
     if (this._buffer_5.length < requiredCapacity)
       this._buffer_5 = copyOf_3(this._buffer_5, coerceAtLeast(requiredCapacity, imul(this._buffer_5.length, 2)));
   };
-  IntArrayBuilder.prototype.append_32 = function (c) {
+  IntArrayBuilder.prototype.append_31 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_5;
     var tmp0_this = this;
@@ -46865,7 +46970,7 @@
     if (this._buffer_6.length < requiredCapacity)
       this._buffer_6 = copyOf_4(this._buffer_6, coerceAtLeast(requiredCapacity, imul(this._buffer_6.length, 2)));
   };
-  ShortArrayBuilder.prototype.append_33 = function (c) {
+  ShortArrayBuilder.prototype.append_32 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_6;
     var tmp0_this = this;
@@ -46894,7 +46999,7 @@
     if (this._buffer_7.length < requiredCapacity)
       this._buffer_7 = copyOf_5(this._buffer_7, coerceAtLeast(requiredCapacity, imul(this._buffer_7.length, 2)));
   };
-  ByteArrayBuilder.prototype.append_34 = function (c) {
+  ByteArrayBuilder.prototype.append_33 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_7;
     var tmp0_this = this;
@@ -46923,7 +47028,7 @@
     if (this._buffer_8.length < requiredCapacity)
       this._buffer_8 = copyOf_6(this._buffer_8, coerceAtLeast(requiredCapacity, imul(this._buffer_8.length, 2)));
   };
-  BooleanArrayBuilder.prototype.append_35 = function (c) {
+  BooleanArrayBuilder.prototype.append_34 = function (c) {
     this.ensureCapacity$default_7(0, 1, null);
     var tmp = this._buffer_8;
     var tmp0_this = this;
@@ -46942,18 +47047,18 @@
   var BUILTIN_SERIALIZERS;
   function StringSerializer() {
     StringSerializer_instance = this;
-    this._descriptor_13 = new PrimitiveSerialDescriptor_0('kotlin.String', STRING_getInstance());
+    this._descriptor_14 = new PrimitiveSerialDescriptor_0('kotlin.String', STRING_getInstance());
   }
-  StringSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_13;
+  StringSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_14;
   };
-  StringSerializer.prototype.serialize_37 = function (encoder, value) {
+  StringSerializer.prototype.serialize_38 = function (encoder, value) {
     return encoder.encodeString_1(value);
   };
-  StringSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_37(encoder, (!(value == null) ? typeof value === 'string' : false) ? value : THROW_CCE());
+  StringSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_38(encoder, (!(value == null) ? typeof value === 'string' : false) ? value : THROW_CCE());
   };
-  StringSerializer.prototype.deserialize_80 = function (decoder) {
+  StringSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeString_8();
   };
   StringSerializer.$metadata$ = {
@@ -46969,18 +47074,18 @@
   }
   function CharSerializer() {
     CharSerializer_instance = this;
-    this._descriptor_14 = new PrimitiveSerialDescriptor_0('kotlin.Char', CHAR_getInstance());
+    this._descriptor_15 = new PrimitiveSerialDescriptor_0('kotlin.Char', CHAR_getInstance());
   }
-  CharSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_14;
+  CharSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_15;
   };
-  CharSerializer.prototype.serialize_39 = function (encoder, value) {
+  CharSerializer.prototype.serialize_40 = function (encoder, value) {
     return encoder.encodeChar_1(value);
   };
-  CharSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_39(encoder, value instanceof Char ? value : THROW_CCE());
+  CharSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_40(encoder, value instanceof Char ? value : THROW_CCE());
   };
-  CharSerializer.prototype.deserialize_80 = function (decoder) {
+  CharSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeChar_8();
   };
   CharSerializer.$metadata$ = {
@@ -46996,18 +47101,18 @@
   }
   function DoubleSerializer() {
     DoubleSerializer_instance = this;
-    this._descriptor_15 = new PrimitiveSerialDescriptor_0('kotlin.Double', DOUBLE_getInstance());
+    this._descriptor_16 = new PrimitiveSerialDescriptor_0('kotlin.Double', DOUBLE_getInstance());
   }
-  DoubleSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_15;
+  DoubleSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_16;
   };
-  DoubleSerializer.prototype.serialize_41 = function (encoder, value) {
+  DoubleSerializer.prototype.serialize_42 = function (encoder, value) {
     return encoder.encodeDouble_1(value);
   };
-  DoubleSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_41(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
+  DoubleSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_42(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
-  DoubleSerializer.prototype.deserialize_80 = function (decoder) {
+  DoubleSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeDouble_8();
   };
   DoubleSerializer.$metadata$ = {
@@ -47023,18 +47128,18 @@
   }
   function FloatSerializer() {
     FloatSerializer_instance = this;
-    this._descriptor_16 = new PrimitiveSerialDescriptor_0('kotlin.Float', FLOAT_getInstance());
+    this._descriptor_17 = new PrimitiveSerialDescriptor_0('kotlin.Float', FLOAT_getInstance());
   }
-  FloatSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_16;
+  FloatSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_17;
   };
-  FloatSerializer.prototype.serialize_43 = function (encoder, value) {
+  FloatSerializer.prototype.serialize_44 = function (encoder, value) {
     return encoder.encodeFloat_1(value);
   };
-  FloatSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_43(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
+  FloatSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_44(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
-  FloatSerializer.prototype.deserialize_80 = function (decoder) {
+  FloatSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeFloat_8();
   };
   FloatSerializer.$metadata$ = {
@@ -47050,18 +47155,18 @@
   }
   function LongSerializer() {
     LongSerializer_instance = this;
-    this._descriptor_17 = new PrimitiveSerialDescriptor_0('kotlin.Long', LONG_getInstance());
+    this._descriptor_18 = new PrimitiveSerialDescriptor_0('kotlin.Long', LONG_getInstance());
   }
-  LongSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_17;
+  LongSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_18;
   };
-  LongSerializer.prototype.serialize_45 = function (encoder, value) {
+  LongSerializer.prototype.serialize_46 = function (encoder, value) {
     return encoder.encodeLong_1(value);
   };
-  LongSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_45(encoder, value instanceof Long ? value : THROW_CCE());
+  LongSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_46(encoder, value instanceof Long ? value : THROW_CCE());
   };
-  LongSerializer.prototype.deserialize_80 = function (decoder) {
+  LongSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeLong_8();
   };
   LongSerializer.$metadata$ = {
@@ -47077,18 +47182,18 @@
   }
   function IntSerializer() {
     IntSerializer_instance = this;
-    this._descriptor_18 = new PrimitiveSerialDescriptor_0('kotlin.Int', INT_getInstance());
+    this._descriptor_19 = new PrimitiveSerialDescriptor_0('kotlin.Int', INT_getInstance());
   }
-  IntSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_18;
+  IntSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_19;
   };
-  IntSerializer.prototype.serialize_47 = function (encoder, value) {
+  IntSerializer.prototype.serialize_48 = function (encoder, value) {
     return encoder.encodeInt_1(value);
   };
-  IntSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_47(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
+  IntSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_48(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
-  IntSerializer.prototype.deserialize_80 = function (decoder) {
+  IntSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeInt_8();
   };
   IntSerializer.$metadata$ = {
@@ -47104,18 +47209,18 @@
   }
   function ShortSerializer() {
     ShortSerializer_instance = this;
-    this._descriptor_19 = new PrimitiveSerialDescriptor_0('kotlin.Short', SHORT_getInstance());
+    this._descriptor_20 = new PrimitiveSerialDescriptor_0('kotlin.Short', SHORT_getInstance());
   }
-  ShortSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_19;
+  ShortSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_20;
   };
-  ShortSerializer.prototype.serialize_49 = function (encoder, value) {
+  ShortSerializer.prototype.serialize_50 = function (encoder, value) {
     return encoder.encodeShort_1(value);
   };
-  ShortSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_49(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
+  ShortSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_50(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
-  ShortSerializer.prototype.deserialize_80 = function (decoder) {
+  ShortSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeShort_8();
   };
   ShortSerializer.$metadata$ = {
@@ -47131,18 +47236,18 @@
   }
   function ByteSerializer() {
     ByteSerializer_instance = this;
-    this._descriptor_20 = new PrimitiveSerialDescriptor_0('kotlin.Byte', BYTE_getInstance());
+    this._descriptor_21 = new PrimitiveSerialDescriptor_0('kotlin.Byte', BYTE_getInstance());
   }
-  ByteSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_20;
+  ByteSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_21;
   };
-  ByteSerializer.prototype.serialize_51 = function (encoder, value) {
+  ByteSerializer.prototype.serialize_52 = function (encoder, value) {
     return encoder.encodeByte_1(value);
   };
-  ByteSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_51(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
+  ByteSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_52(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
-  ByteSerializer.prototype.deserialize_80 = function (decoder) {
+  ByteSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeByte_8();
   };
   ByteSerializer.$metadata$ = {
@@ -47158,18 +47263,18 @@
   }
   function BooleanSerializer() {
     BooleanSerializer_instance = this;
-    this._descriptor_21 = new PrimitiveSerialDescriptor_0('kotlin.Boolean', BOOLEAN_getInstance());
+    this._descriptor_22 = new PrimitiveSerialDescriptor_0('kotlin.Boolean', BOOLEAN_getInstance());
   }
-  BooleanSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_21;
+  BooleanSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_22;
   };
-  BooleanSerializer.prototype.serialize_53 = function (encoder, value) {
+  BooleanSerializer.prototype.serialize_54 = function (encoder, value) {
     return encoder.encodeBoolean_1(value);
   };
-  BooleanSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_53(encoder, (!(value == null) ? typeof value === 'boolean' : false) ? value : THROW_CCE());
+  BooleanSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_54(encoder, (!(value == null) ? typeof value === 'boolean' : false) ? value : THROW_CCE());
   };
-  BooleanSerializer.prototype.deserialize_80 = function (decoder) {
+  BooleanSerializer.prototype.deserialize_81 = function (decoder) {
     return decoder.decodeBoolean_8();
   };
   BooleanSerializer.$metadata$ = {
@@ -47187,21 +47292,21 @@
     UnitSerializer_instance = this;
     this._$$delegate_0_2 = new ObjectSerializer('kotlin.Unit', Unit_getInstance());
   }
-  UnitSerializer.prototype.deserialize_41 = function (decoder) {
-    this._$$delegate_0_2.deserialize_80(decoder);
+  UnitSerializer.prototype.deserialize_42 = function (decoder) {
+    this._$$delegate_0_2.deserialize_81(decoder);
   };
-  UnitSerializer.prototype.deserialize_80 = function (decoder) {
-    this.deserialize_41(decoder);
+  UnitSerializer.prototype.deserialize_81 = function (decoder) {
+    this.deserialize_42(decoder);
     return Unit_getInstance();
   };
-  UnitSerializer.prototype.serialize_55 = function (encoder, value) {
-    this._$$delegate_0_2.serialize_128(encoder, Unit_getInstance());
+  UnitSerializer.prototype.serialize_56 = function (encoder, value) {
+    this._$$delegate_0_2.serialize_129(encoder, Unit_getInstance());
   };
-  UnitSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_55(encoder, value instanceof Unit ? value : THROW_CCE());
+  UnitSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_56(encoder, value instanceof Unit ? value : THROW_CCE());
   };
-  UnitSerializer.prototype._get_descriptor__76 = function () {
-    return this._$$delegate_0_2._descriptor_12;
+  UnitSerializer.prototype._get_descriptor__77 = function () {
+    return this._$$delegate_0_2._descriptor_13;
   };
   UnitSerializer.$metadata$ = {
     simpleName: 'UnitSerializer',
@@ -47218,29 +47323,32 @@
     throw IllegalStateException_init_$Create$('Primitive descriptor does not have elements');
   }
   function PrimitiveSerialDescriptor_0(serialName, kind) {
-    this._serialName_5 = serialName;
+    this._serialName_6 = serialName;
     this._kind_0 = kind;
   }
-  PrimitiveSerialDescriptor_0.prototype._get_serialName__16 = function () {
-    return this._serialName_5;
+  PrimitiveSerialDescriptor_0.prototype._get_serialName__17 = function () {
+    return this._serialName_6;
   };
-  PrimitiveSerialDescriptor_0.prototype._get_kind__19 = function () {
+  PrimitiveSerialDescriptor_0.prototype._get_kind__20 = function () {
     return this._kind_0;
   };
-  PrimitiveSerialDescriptor_0.prototype._get_elementsCount__16 = function () {
+  PrimitiveSerialDescriptor_0.prototype._get_elementsCount__17 = function () {
     return 0;
   };
-  PrimitiveSerialDescriptor_0.prototype.getElementName_16 = function (index) {
+  PrimitiveSerialDescriptor_0.prototype.getElementName_17 = function (index) {
     error(this);
   };
-  PrimitiveSerialDescriptor_0.prototype.getElementIndex_16 = function (name) {
+  PrimitiveSerialDescriptor_0.prototype.getElementIndex_17 = function (name) {
     error(this);
   };
-  PrimitiveSerialDescriptor_0.prototype.getElementDescriptor_16 = function (index) {
+  PrimitiveSerialDescriptor_0.prototype.getElementDescriptor_17 = function (index) {
+    error(this);
+  };
+  PrimitiveSerialDescriptor_0.prototype.getElementAnnotations_17 = function (index) {
     error(this);
   };
   PrimitiveSerialDescriptor_0.prototype.toString = function () {
-    return '' + 'PrimitiveDescriptor(' + this._serialName_5 + ')';
+    return '' + 'PrimitiveDescriptor(' + this._serialName_6 + ')';
   };
   PrimitiveSerialDescriptor_0.$metadata$ = {
     simpleName: 'PrimitiveSerialDescriptor',
@@ -47277,7 +47385,7 @@
     return this.composeName_3(tmp0_elvis_lhs == null ? '' : tmp0_elvis_lhs, nestedName);
   };
   NamedValueDecoder.prototype.elementName_3 = function (desc, index) {
-    return desc.getElementName_16(index);
+    return desc.getElementName_17(index);
   };
   NamedValueDecoder.prototype.composeName_3 = function (parentName, childName) {
     var tmp;
@@ -47309,7 +47417,7 @@
     this._$deserializer = $deserializer;
     this._$previousValue = $previousValue;
   }
-  _no_name_provided__215.prototype.invoke_403 = function () {
+  _no_name_provided__215.prototype.invoke_411 = function () {
     return this._this$0_60.decodeSerializableValue_17(this._$deserializer, this._$previousValue);
   };
   _no_name_provided__215.$metadata$ = {
@@ -47321,7 +47429,7 @@
     this._$deserializer_0 = $deserializer;
     this._$previousValue_0 = $previousValue;
   }
-  _no_name_provided__216.prototype.invoke_403 = function () {
+  _no_name_provided__216.prototype.invoke_411 = function () {
     return this._this$0_61.decodeNotNullMark_8() ? this._this$0_61.decodeSerializableValue_17(this._$deserializer_0, this._$previousValue_0) : this._this$0_61.decodeNull_8();
   };
   _no_name_provided__216.$metadata$ = {
@@ -47333,7 +47441,7 @@
     tmp._tagStack = ArrayList_init_$Create$();
     this._flag = false;
   }
-  TaggedDecoder.prototype._get_serializersModule__14 = function () {
+  TaggedDecoder.prototype._get_serializersModule__15 = function () {
     return EmptySerializersModule;
   };
   TaggedDecoder.prototype.decodeTaggedValue_0 = function (tag) {
@@ -47489,13 +47597,13 @@
   function _no_name_provided_$factory_178(this$0, $deserializer, $previousValue) {
     var i = new _no_name_provided__215(this$0, $deserializer, $previousValue);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_179(this$0, $deserializer, $previousValue) {
     var i = new _no_name_provided__216(this$0, $deserializer, $previousValue);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   var NULL;
@@ -47540,14 +47648,14 @@
     this._$keySerializer = $keySerializer;
     this._$valueSerializer = $valueSerializer;
   }
-  _no_name_provided__217.prototype.invoke_372 = function ($this$buildSerialDescriptor) {
-    var tmp = this._$keySerializer._get_descriptor__76();
+  _no_name_provided__217.prototype.invoke_378 = function ($this$buildSerialDescriptor) {
+    var tmp = this._$keySerializer._get_descriptor__77();
     $this$buildSerialDescriptor.element$default('key', tmp, null, false, 12, null);
-    var tmp_0 = this._$valueSerializer._get_descriptor__76();
+    var tmp_0 = this._$valueSerializer._get_descriptor__77();
     $this$buildSerialDescriptor.element$default('value', tmp_0, null, false, 12, null);
   };
-  _no_name_provided__217.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__217.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__217.$metadata$ = {
@@ -47559,10 +47667,10 @@
     var tmp = this;
     var tmp_0 = MAP_getInstance();
     var tmp_1 = [];
-    tmp._descriptor_22 = buildSerialDescriptor$default('kotlin.collections.Map.Entry', tmp_0, tmp_1, _no_name_provided_$factory_180(keySerializer, valueSerializer), 4, null);
+    tmp._descriptor_23 = buildSerialDescriptor$default('kotlin.collections.Map.Entry', tmp_0, tmp_1, _no_name_provided_$factory_180(keySerializer, valueSerializer), 4, null);
   }
-  MapEntrySerializer_0.prototype._get_descriptor__76 = function () {
-    return this._descriptor_22;
+  MapEntrySerializer_0.prototype._get_descriptor__77 = function () {
+    return this._descriptor_23;
   };
   MapEntrySerializer_0.prototype._get_key__44 = function (_this__0) {
     return _this__0._get_key__52();
@@ -47588,14 +47696,14 @@
     this._$keySerializer_0 = $keySerializer;
     this._$valueSerializer_0 = $valueSerializer;
   }
-  _no_name_provided__218.prototype.invoke_372 = function ($this$buildClassSerialDescriptor) {
-    var tmp = this._$keySerializer_0._get_descriptor__76();
+  _no_name_provided__218.prototype.invoke_378 = function ($this$buildClassSerialDescriptor) {
+    var tmp = this._$keySerializer_0._get_descriptor__77();
     $this$buildClassSerialDescriptor.element$default('first', tmp, null, false, 12, null);
-    var tmp_0 = this._$valueSerializer_0._get_descriptor__76();
+    var tmp_0 = this._$valueSerializer_0._get_descriptor__77();
     $this$buildClassSerialDescriptor.element$default('second', tmp_0, null, false, 12, null);
   };
-  _no_name_provided__218.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__218.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__218.$metadata$ = {
@@ -47606,10 +47714,10 @@
     KeyValueSerializer.call(this, keySerializer, valueSerializer);
     var tmp = this;
     var tmp_0 = [];
-    tmp._descriptor_23 = buildClassSerialDescriptor$default('kotlin.Pair', tmp_0, _no_name_provided_$factory_181(keySerializer, valueSerializer), 2, null);
+    tmp._descriptor_24 = buildClassSerialDescriptor$default('kotlin.Pair', tmp_0, _no_name_provided_$factory_181(keySerializer, valueSerializer), 2, null);
   }
-  PairSerializer_0.prototype._get_descriptor__76 = function () {
-    return this._descriptor_23;
+  PairSerializer_0.prototype._get_descriptor__77 = function () {
+    return this._descriptor_24;
   };
   PairSerializer_0.prototype._get_key__46 = function (_this__0) {
     return _this__0._first;
@@ -47632,10 +47740,10 @@
     interfaces: []
   };
   function decodeSequentially_0($this, composite) {
-    var a = composite.decodeSerializableElement$default_8($this._descriptor_24, 0, $this._aSerializer, null, 8, null);
-    var b = composite.decodeSerializableElement$default_8($this._descriptor_24, 1, $this._bSerializer, null, 8, null);
-    var c = composite.decodeSerializableElement$default_8($this._descriptor_24, 2, $this._cSerializer, null, 8, null);
-    composite.endStructure_11($this._descriptor_24);
+    var a = composite.decodeSerializableElement$default_8($this._descriptor_25, 0, $this._aSerializer, null, 8, null);
+    var b = composite.decodeSerializableElement$default_8($this._descriptor_25, 1, $this._bSerializer, null, 8, null);
+    var c = composite.decodeSerializableElement$default_8($this._descriptor_25, 2, $this._cSerializer, null, 8, null);
+    composite.endStructure_11($this._descriptor_25);
     return new Triple(a, b, c);
   }
   function decodeStructure($this, composite) {
@@ -47643,19 +47751,19 @@
     var b = NULL;
     var c = NULL;
     mainLoop: while (true) {
-      var index = composite.decodeElementIndex_8($this._descriptor_24);
+      var index = composite.decodeElementIndex_8($this._descriptor_25);
       Companion_getInstance_51();
       if (index === -1) {
         break mainLoop;
       } else {
         if (index === 0) {
-          a = composite.decodeSerializableElement$default_8($this._descriptor_24, 0, $this._aSerializer, null, 8, null);
+          a = composite.decodeSerializableElement$default_8($this._descriptor_25, 0, $this._aSerializer, null, 8, null);
         } else {
           if (index === 1) {
-            b = composite.decodeSerializableElement$default_8($this._descriptor_24, 1, $this._bSerializer, null, 8, null);
+            b = composite.decodeSerializableElement$default_8($this._descriptor_25, 1, $this._bSerializer, null, 8, null);
           } else {
             if (index === 2) {
-              c = composite.decodeSerializableElement$default_8($this._descriptor_24, 2, $this._cSerializer, null, 8, null);
+              c = composite.decodeSerializableElement$default_8($this._descriptor_25, 2, $this._cSerializer, null, 8, null);
             } else {
               throw SerializationException_init_$Create$('' + 'Unexpected index ' + index);
             }
@@ -47663,7 +47771,7 @@
         }
       }
     }
-    composite.endStructure_11($this._descriptor_24);
+    composite.endStructure_11($this._descriptor_25);
     if (a === NULL)
       throw SerializationException_init_$Create$("Element 'first' is missing");
     if (b === NULL)
@@ -47677,16 +47785,16 @@
   function _no_name_provided__219(this$0) {
     this._this$0_62 = this$0;
   }
-  _no_name_provided__219.prototype.invoke_372 = function ($this$buildClassSerialDescriptor) {
-    var tmp = this._this$0_62._aSerializer._get_descriptor__76();
+  _no_name_provided__219.prototype.invoke_378 = function ($this$buildClassSerialDescriptor) {
+    var tmp = this._this$0_62._aSerializer._get_descriptor__77();
     $this$buildClassSerialDescriptor.element$default('first', tmp, null, false, 12, null);
-    var tmp_0 = this._this$0_62._bSerializer._get_descriptor__76();
+    var tmp_0 = this._this$0_62._bSerializer._get_descriptor__77();
     $this$buildClassSerialDescriptor.element$default('second', tmp_0, null, false, 12, null);
-    var tmp_1 = this._this$0_62._cSerializer._get_descriptor__76();
+    var tmp_1 = this._this$0_62._cSerializer._get_descriptor__77();
     $this$buildClassSerialDescriptor.element$default('third', tmp_1, null, false, 12, null);
   };
-  _no_name_provided__219.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__219.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__219.$metadata$ = {
@@ -47699,23 +47807,23 @@
     this._cSerializer = cSerializer;
     var tmp = this;
     var tmp_0 = [];
-    tmp._descriptor_24 = buildClassSerialDescriptor$default('kotlin.Triple', tmp_0, _no_name_provided_$factory_182(this), 2, null);
+    tmp._descriptor_25 = buildClassSerialDescriptor$default('kotlin.Triple', tmp_0, _no_name_provided_$factory_182(this), 2, null);
   }
-  TripleSerializer_0.prototype._get_descriptor__76 = function () {
-    return this._descriptor_24;
+  TripleSerializer_0.prototype._get_descriptor__77 = function () {
+    return this._descriptor_25;
   };
-  TripleSerializer_0.prototype.serialize_59 = function (encoder, value) {
-    var structuredEncoder = encoder.beginStructure_11(this._descriptor_24);
-    structuredEncoder.encodeSerializableElement_1(this._descriptor_24, 0, this._aSerializer, value._first_0);
-    structuredEncoder.encodeSerializableElement_1(this._descriptor_24, 1, this._bSerializer, value._second_0);
-    structuredEncoder.encodeSerializableElement_1(this._descriptor_24, 2, this._cSerializer, value._third);
-    structuredEncoder.endStructure_11(this._descriptor_24);
+  TripleSerializer_0.prototype.serialize_60 = function (encoder, value) {
+    var structuredEncoder = encoder.beginStructure_11(this._descriptor_25);
+    structuredEncoder.encodeSerializableElement_1(this._descriptor_25, 0, this._aSerializer, value._first_0);
+    structuredEncoder.encodeSerializableElement_1(this._descriptor_25, 1, this._bSerializer, value._second_0);
+    structuredEncoder.encodeSerializableElement_1(this._descriptor_25, 2, this._cSerializer, value._third);
+    structuredEncoder.endStructure_11(this._descriptor_25);
   };
-  TripleSerializer_0.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_59(encoder, value instanceof Triple ? value : THROW_CCE());
+  TripleSerializer_0.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_60(encoder, value instanceof Triple ? value : THROW_CCE());
   };
-  TripleSerializer_0.prototype.deserialize_80 = function (decoder) {
-    var composite = decoder.beginStructure_11(this._descriptor_24);
+  TripleSerializer_0.prototype.deserialize_81 = function (decoder) {
+    var composite = decoder.beginStructure_11(this._descriptor_25);
     if (composite.decodeSequentially_8()) {
       return decodeSequentially_0(this, composite);
     }return decodeStructure(this, composite);
@@ -47729,37 +47837,37 @@
     this._keySerializer_0 = keySerializer;
     this._valueSerializer_0 = valueSerializer;
   }
-  KeyValueSerializer.prototype.serialize_61 = function (encoder, value) {
-    var structuredEncoder = encoder.beginStructure_11(this._get_descriptor__76());
-    structuredEncoder.encodeSerializableElement_1(this._get_descriptor__76(), 0, this._keySerializer_0, this._get_key__48(value));
-    structuredEncoder.encodeSerializableElement_1(this._get_descriptor__76(), 1, this._valueSerializer_0, this._get_value__16(value));
-    structuredEncoder.endStructure_11(this._get_descriptor__76());
+  KeyValueSerializer.prototype.serialize_62 = function (encoder, value) {
+    var structuredEncoder = encoder.beginStructure_11(this._get_descriptor__77());
+    structuredEncoder.encodeSerializableElement_1(this._get_descriptor__77(), 0, this._keySerializer_0, this._get_key__48(value));
+    structuredEncoder.encodeSerializableElement_1(this._get_descriptor__77(), 1, this._valueSerializer_0, this._get_value__16(value));
+    structuredEncoder.endStructure_11(this._get_descriptor__77());
   };
-  KeyValueSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_61(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  KeyValueSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_62(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
-  KeyValueSerializer.prototype.deserialize_80 = function (decoder) {
-    var composite = decoder.beginStructure_11(this._get_descriptor__76());
+  KeyValueSerializer.prototype.deserialize_81 = function (decoder) {
+    var composite = decoder.beginStructure_11(this._get_descriptor__77());
     if (composite.decodeSequentially_8()) {
-      var tmp = this._get_descriptor__76();
+      var tmp = this._get_descriptor__77();
       var key = composite.decodeSerializableElement$default_8(tmp, 0, this._keySerializer_0, null, 8, null);
-      var tmp_0 = this._get_descriptor__76();
+      var tmp_0 = this._get_descriptor__77();
       var value = composite.decodeSerializableElement$default_8(tmp_0, 1, this._valueSerializer_0, null, 8, null);
       return this.toResult_25(key, value);
     }var key_0 = NULL;
     var value_0 = NULL;
     mainLoop: while (true) {
-      var idx = composite.decodeElementIndex_8(this._get_descriptor__76());
+      var idx = composite.decodeElementIndex_8(this._get_descriptor__77());
       Companion_getInstance_51();
       if (idx === -1) {
         break mainLoop;
       } else {
         if (idx === 0) {
-          var tmp_1 = this._get_descriptor__76();
+          var tmp_1 = this._get_descriptor__77();
           key_0 = composite.decodeSerializableElement$default_8(tmp_1, 0, this._keySerializer_0, null, 8, null);
         } else {
           if (idx === 1) {
-            var tmp_2 = this._get_descriptor__76();
+            var tmp_2 = this._get_descriptor__77();
             value_0 = composite.decodeSerializableElement$default_8(tmp_2, 1, this._valueSerializer_0, null, 8, null);
           } else {
             throw SerializationException_init_$Create$('' + 'Invalid index: ' + idx);
@@ -47767,7 +47875,7 @@
         }
       }
     }
-    composite.endStructure_11(this._get_descriptor__76());
+    composite.endStructure_11(this._get_descriptor__77());
     if (key_0 === NULL)
       throw SerializationException_init_$Create$("Element 'key' is missing");
     if (value_0 === NULL)
@@ -47783,35 +47891,43 @@
   function _no_name_provided_$factory_180($keySerializer, $valueSerializer) {
     var i = new _no_name_provided__217($keySerializer, $valueSerializer);
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_181($keySerializer, $valueSerializer) {
     var i = new _no_name_provided__218($keySerializer, $valueSerializer);
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_182(this$0) {
     var i = new _no_name_provided__219(this$0);
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
   var EmptySerializersModule;
   function SerializersModule() {
   }
+  SerializersModule.prototype.getContextual_2 = function (kclass_0) {
+    return this.getContextual_1(kclass_0, emptyList());
+  };
+  SerializersModule.prototype.getContextual$default = function (kClass, typeArgumentsSerializers, $mask0, $handler) {
+    if (!(($mask0 & 2) === 0))
+      typeArgumentsSerializers = emptyList();
+    return $handler == null ? this.getContextual_1(kClass, typeArgumentsSerializers) : $handler(kClass, typeArgumentsSerializers);
+  };
   SerializersModule.$metadata$ = {
     simpleName: 'SerializersModule',
     kind: 'class',
     interfaces: []
   };
-  function SerialModuleImpl(class2Serializer, polyBase2Serializers, polyBase2NamedSerializers, polyBase2DefaultProvider) {
+  function SerialModuleImpl(class2ContextualFactory, polyBase2Serializers, polyBase2NamedSerializers, polyBase2DefaultProvider) {
     SerializersModule.call(this);
-    this._class2Serializer_0 = class2Serializer;
+    this._class2ContextualFactory = class2ContextualFactory;
     this._polyBase2Serializers = polyBase2Serializers;
     this._polyBase2NamedSerializers = polyBase2NamedSerializers;
     this._polyBase2DefaultProvider = polyBase2DefaultProvider;
@@ -47839,19 +47955,29 @@
     var tmp1_safe_receiver = (!(tmp_1 == null) ? typeof tmp_1 === 'function' : false) ? tmp_1 : null;
     return tmp1_safe_receiver == null ? null : tmp1_safe_receiver(serializedClassName);
   };
-  SerialModuleImpl.prototype.getContextual_0 = function (kclass_0) {
-    var tmp = this._class2Serializer_0.get_65(kclass_0);
-    return (!(tmp == null) ? isInterface(tmp, KSerializer) : false) ? tmp : null;
+  SerialModuleImpl.prototype.getContextual_1 = function (kClass, typeArgumentsSerializers) {
+    var tmp0_safe_receiver = this._class2ContextualFactory.get_65(kClass);
+    var tmp = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.invoke_357(typeArgumentsSerializers);
+    return (tmp == null ? true : isInterface(tmp, KSerializer)) ? tmp : null;
   };
   SerialModuleImpl.prototype.dumpTo_0 = function (collector) {
-    var tmp0_forEach_0 = this._class2Serializer_0;
+    var tmp0_forEach_0 = this._class2ContextualFactory;
     var tmp0_iterator_1 = tmp0_forEach_0._get_entries__8().iterator_62();
     while (tmp0_iterator_1.hasNext_29()) {
       var element_2 = tmp0_iterator_1.next_31();
       var kclass_4 = element_2._get_key__52();
       var serial_5 = element_2._get_value__27();
-      var tmp = isInterface(kclass_4, KClass) ? kclass_4 : THROW_CCE();
-      collector.contextual_0(tmp, isInterface(serial_5, KSerializer) ? serial_5 : THROW_CCE());
+      var tmp0_subject_6 = serial_5;
+      if (tmp0_subject_6 instanceof Argless) {
+        var tmp = isInterface(kclass_4, KClass) ? kclass_4 : THROW_CCE();
+        var tmp_0 = serial_5._serializer_2;
+        collector.contextual_2(tmp, isInterface(tmp_0, KSerializer) ? tmp_0 : THROW_CCE());
+      } else {
+        if (tmp0_subject_6 instanceof WithTypeArguments)
+          collector.contextual_1(kclass_4, serial_5._provider);
+        else {
+        }
+      }
     }
     var tmp1_forEach_0 = this._polyBase2Serializers;
     var tmp0_iterator_1_0 = tmp1_forEach_0._get_entries__8().iterator_62();
@@ -47864,9 +47990,9 @@
         var element_2_7 = tmp0_iterator_1_6.next_31();
         var actualClass_4_8 = element_2_7._get_key__52();
         var serializer_5_9 = element_2_7._get_value__27();
-        var tmp_0 = isInterface(baseClass_4, KClass) ? baseClass_4 : THROW_CCE();
-        var tmp_1 = isInterface(actualClass_4_8, KClass) ? actualClass_4_8 : THROW_CCE();
-        collector.polymorphic_0(tmp_0, tmp_1, isInterface(serializer_5_9, KSerializer) ? serializer_5_9 : THROW_CCE());
+        var tmp_1 = isInterface(baseClass_4, KClass) ? baseClass_4 : THROW_CCE();
+        var tmp_2 = isInterface(actualClass_4_8, KClass) ? actualClass_4_8 : THROW_CCE();
+        collector.polymorphic_0(tmp_1, tmp_2, isInterface(serializer_5_9, KSerializer) ? serializer_5_9 : THROW_CCE());
       }
     }
     var tmp2_forEach_0 = this._polyBase2DefaultProvider;
@@ -47875,8 +48001,8 @@
       var element_2_1 = tmp0_iterator_1_1.next_31();
       var baseClass_4_0 = element_2_1._get_key__52();
       var provider_5 = element_2_1._get_value__27();
-      var tmp_2 = isInterface(baseClass_4_0, KClass) ? baseClass_4_0 : THROW_CCE();
-      collector.polymorphicDefault_0(tmp_2, typeof provider_5 === 'function' ? provider_5 : THROW_CCE());
+      var tmp_3 = isInterface(baseClass_4_0, KClass) ? baseClass_4_0 : THROW_CCE();
+      collector.polymorphicDefault_0(tmp_3, typeof provider_5 === 'function' ? provider_5 : THROW_CCE());
     }
   };
   SerialModuleImpl.$metadata$ = {
@@ -47884,13 +48010,56 @@
     kind: 'class',
     interfaces: []
   };
+  function Argless() {
+  }
+  Argless.$metadata$ = {
+    simpleName: 'Argless',
+    kind: 'class',
+    interfaces: []
+  };
+  function WithTypeArguments() {
+  }
+  WithTypeArguments.$metadata$ = {
+    simpleName: 'WithTypeArguments',
+    kind: 'class',
+    interfaces: []
+  };
+  function ContextualProvider() {
+  }
+  ContextualProvider.$metadata$ = {
+    simpleName: 'ContextualProvider',
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__220($serializer_19) {
+    this._$serializer = $serializer_19;
+  }
+  _no_name_provided__220.prototype.invoke_357 = function (it) {
+    return this._$serializer;
+  };
+  _no_name_provided__220.prototype.invoke_420 = function (p1) {
+    return this.invoke_357((!(p1 == null) ? isInterface(p1, List) : false) ? p1 : THROW_CCE());
+  };
+  _no_name_provided__220.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function SerializersModuleCollector() {
   }
+  SerializersModuleCollector.prototype.contextual_2 = function (kClass, serializer_16) {
+    return this.contextual_1(kClass, _no_name_provided_$factory_183(serializer_16));
+  };
   SerializersModuleCollector.$metadata$ = {
     simpleName: 'SerializersModuleCollector',
     kind: 'interface',
     interfaces: []
   };
+  function _no_name_provided_$factory_183($serializer_19) {
+    var i = new _no_name_provided__220($serializer_19);
+    return function (p1) {
+      return i.invoke_357(p1);
+    };
+  }
   function SerializableWith() {
   }
   SerializableWith.$metadata$ = {
@@ -47938,8 +48107,12 @@
           var tmp_1 = assocObject.serializer(args.slice());
           tmp_0 = isInterface(tmp_1, KSerializer) ? tmp_1 : THROW_CCE();
         } else {
-          {
-            tmp_0 = null;
+          if (_get_isInterface_(_this_)) {
+            tmp_0 = new PolymorphicSerializer(_this_);
+          } else {
+            {
+              tmp_0 = null;
+            }
           }
         }
       }
@@ -47953,12 +48126,17 @@
     }
     return tmp;
   }
+  function _get_isInterface_(_this_) {
+    var tmp0_asDynamic_0 = _get_js_(_this_);
+    var tmp0_safe_receiver = tmp0_asDynamic_0.$metadata$;
+    return (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.kind) == 'interface';
+  }
   function toNativeArrayImpl(_this_, eClass) {
     return copyToArray_0(_this_);
   }
   function Default() {
     Default_instance = this;
-    Json_0.call(this, JsonConf_init_$Create$(false, false, false, false, false, null, false, false, null, false, null, 2047, null));
+    Json_0.call(this, JsonConfiguration_init_$Create$(false, false, false, false, false, null, false, false, null, false, false, 2047, null), EmptySerializersModule);
   }
   Default.$metadata$ = {
     simpleName: 'Default',
@@ -47971,32 +48149,36 @@
       new Default();
     return Default_instance;
   }
-  function Json_0(configuration) {
+  function Json_0(configuration, serializersModule) {
     Default_getInstance();
     this._configuration = configuration;
+    this._serializersModule = serializersModule;
+    this._schemaCache = new DescriptorSchemaCache();
   }
   Json_0.prototype._get_configuration__3 = function () {
     return this._configuration;
   };
-  Json_0.prototype._get_serializersModule__14 = function () {
-    return this._configuration._serializersModule_0;
+  Json_0.prototype._get_serializersModule__15 = function () {
+    return this._serializersModule;
   };
   Json_0.prototype.encodeToString_1 = function (serializer_16, value) {
-    var result = StringBuilder_init_$Create$_0();
-    var tmp = WriteMode_OBJ_getInstance();
-    var tmp0_arrayOfNulls_0 = values_3().length;
-    var encoder = StreamingJsonEncoder_init_$Create$(result, this, tmp, fillArrayVal(Array(tmp0_arrayOfNulls_0), null));
-    encoder.encodeSerializableValue_1(serializer_16, value);
-    return result.toString();
+    var result = new JsonStringBuilder();
+    try {
+      var tmp = WriteMode_OBJ_getInstance();
+      var tmp0_arrayOfNulls_0 = values_3().length;
+      var encoder = StreamingJsonEncoder_init_$Create$(result, this, tmp, fillArrayVal(Array(tmp0_arrayOfNulls_0), null));
+      encoder.encodeSerializableValue_1(serializer_16, value);
+      return result.toString();
+    }finally {
+      result.release_10();
+    }
   };
-  Json_0.prototype.decodeFromString_1 = function (deserializer, string) {
-    var reader = new JsonReader(string);
-    var input = new StreamingJsonDecoder(this, WriteMode_OBJ_getInstance(), reader);
+  Json_0.prototype.decodeFromString_2 = function (deserializer, string) {
+    var lexer = new JsonLexer(string);
+    var input = new StreamingJsonDecoder(this, WriteMode_OBJ_getInstance(), lexer);
     var result = input.decodeSerializableValue_16(deserializer);
-    if (!reader._get_isDone_()) {
-      var tmp0_error_0 = '' + 'Reader has not consumed the whole input: ' + reader;
-      throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0));
-    }return result;
+    lexer.expectEof();
+    return result;
   };
   Json_0.$metadata$ = {
     simpleName: 'Json',
@@ -48004,28 +48186,29 @@
     interfaces: [StringFormat]
   };
   function Json_1(from, builderAction) {
-    var builder = new JsonBuilder(from._configuration);
+    var builder = new JsonBuilder(from);
     builderAction(builder);
     var conf = builder.build_17();
-    return new JsonImpl(conf);
+    return new JsonImpl(conf, builder._serializersModule_0);
   }
   function Json$default(from, builderAction, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
       from = Default_getInstance();
     return Json_1(from, builderAction);
   }
-  function JsonBuilder(conf) {
-    this._encodeDefaults = conf._encodeDefaults_0;
-    this._ignoreUnknownKeys = conf._ignoreUnknownKeys_0;
-    this._isLenient = conf._isLenient_0;
-    this._allowStructuredMapKeys = conf._allowStructuredMapKeys_0;
-    this._prettyPrint = conf._prettyPrint_0;
-    this._prettyPrintIndent = conf._prettyPrintIndent_0;
-    this._coerceInputValues = conf._coerceInputValues_0;
-    this._useArrayPolymorphism = conf._useArrayPolymorphism_0;
-    this._classDiscriminator = conf._classDiscriminator_0;
-    this._allowSpecialFloatingPointValues = conf._allowSpecialFloatingPointValues_0;
-    this._serializersModule = conf._serializersModule_0;
+  function JsonBuilder(json) {
+    this._encodeDefaults = json._configuration._encodeDefaults_0;
+    this._ignoreUnknownKeys = json._configuration._ignoreUnknownKeys_0;
+    this._isLenient = json._configuration._isLenient_0;
+    this._allowStructuredMapKeys = json._configuration._allowStructuredMapKeys_0;
+    this._prettyPrint = json._configuration._prettyPrint_0;
+    this._prettyPrintIndent = json._configuration._prettyPrintIndent_0;
+    this._coerceInputValues = json._configuration._coerceInputValues_0;
+    this._useArrayPolymorphism = json._configuration._useArrayPolymorphism_0;
+    this._classDiscriminator = json._configuration._classDiscriminator_0;
+    this._allowSpecialFloatingPointValues = json._configuration._allowSpecialFloatingPointValues_0;
+    this._useAlternativeNames = json._configuration._useAlternativeNames_0;
+    this._serializersModule_0 = json._get_serializersModule__15();
   }
   JsonBuilder.prototype.build_17 = function () {
     if (this._useArrayPolymorphism) {
@@ -48061,7 +48244,7 @@
       if (!allWhitespaces) {
         var message_1_1 = '' + 'Only whitespace, tab, newline and carriage return are allowed as pretty print symbols. Had ' + this._prettyPrintIndent;
         throw IllegalArgumentException_init_$Create$_0(toString_1(message_1_1));
-      }}return new JsonConf(this._encodeDefaults, this._ignoreUnknownKeys, this._isLenient, this._allowStructuredMapKeys, this._prettyPrint, this._prettyPrintIndent, this._coerceInputValues, this._useArrayPolymorphism, this._classDiscriminator, this._allowSpecialFloatingPointValues, this._serializersModule);
+      }}return new JsonConfiguration(this._encodeDefaults, this._ignoreUnknownKeys, this._isLenient, this._allowStructuredMapKeys, this._prettyPrint, this._prettyPrintIndent, this._coerceInputValues, this._useArrayPolymorphism, this._classDiscriminator, this._allowSpecialFloatingPointValues, this._useAlternativeNames);
   };
   JsonBuilder.$metadata$ = {
     simpleName: 'JsonBuilder',
@@ -48069,17 +48252,67 @@
     interfaces: []
   };
   function validateConfiguration($this) {
-    if (equals_1($this._get_serializersModule__14(), EmptySerializersModule))
+    if (equals_1($this._get_serializersModule__15(), EmptySerializersModule))
       return Unit_getInstance();
     var collector = new PolymorphismValidator($this._get_configuration__3()._useArrayPolymorphism_0, $this._get_configuration__3()._classDiscriminator_0);
-    $this._get_serializersModule__14().dumpTo_0(collector);
+    $this._get_serializersModule__15().dumpTo_0(collector);
   }
-  function JsonImpl(configuration) {
-    Json_0.call(this, configuration);
+  function JsonImpl(configuration, module_0) {
+    Json_0.call(this, configuration, module_0);
     validateConfiguration(this);
   }
   JsonImpl.$metadata$ = {
     simpleName: 'JsonImpl',
+    kind: 'class',
+    interfaces: []
+  };
+  function JsonConfiguration_init_$Init$(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, useAlternativeNames, $mask0, $marker, $this) {
+    if (!(($mask0 & 1) === 0))
+      encodeDefaults = false;
+    if (!(($mask0 & 2) === 0))
+      ignoreUnknownKeys = false;
+    if (!(($mask0 & 4) === 0))
+      isLenient = false;
+    if (!(($mask0 & 8) === 0))
+      allowStructuredMapKeys = false;
+    if (!(($mask0 & 16) === 0))
+      prettyPrint = false;
+    if (!(($mask0 & 32) === 0))
+      prettyPrintIndent = '    ';
+    if (!(($mask0 & 64) === 0))
+      coerceInputValues = false;
+    if (!(($mask0 & 128) === 0))
+      useArrayPolymorphism = false;
+    if (!(($mask0 & 256) === 0))
+      classDiscriminator = 'type';
+    if (!(($mask0 & 512) === 0))
+      allowSpecialFloatingPointValues = false;
+    if (!(($mask0 & 1024) === 0))
+      useAlternativeNames = true;
+    JsonConfiguration.call($this, encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, useAlternativeNames);
+    return $this;
+  }
+  function JsonConfiguration_init_$Create$(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, useAlternativeNames, $mask0, $marker) {
+    return JsonConfiguration_init_$Init$(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, useAlternativeNames, $mask0, $marker, Object.create(JsonConfiguration.prototype));
+  }
+  function JsonConfiguration(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, useAlternativeNames) {
+    this._encodeDefaults_0 = encodeDefaults;
+    this._ignoreUnknownKeys_0 = ignoreUnknownKeys;
+    this._isLenient_0 = isLenient;
+    this._allowStructuredMapKeys_0 = allowStructuredMapKeys;
+    this._prettyPrint_0 = prettyPrint;
+    this._prettyPrintIndent_0 = prettyPrintIndent;
+    this._coerceInputValues_0 = coerceInputValues;
+    this._useArrayPolymorphism_0 = useArrayPolymorphism;
+    this._classDiscriminator_0 = classDiscriminator;
+    this._allowSpecialFloatingPointValues_0 = allowSpecialFloatingPointValues;
+    this._useAlternativeNames_0 = useAlternativeNames;
+  }
+  JsonConfiguration.prototype.toString = function () {
+    return '' + 'JsonConfiguration(encodeDefaults=' + this._encodeDefaults_0 + ', ignoreUnknownKeys=' + this._ignoreUnknownKeys_0 + ', isLenient=' + this._isLenient_0 + ', allowStructuredMapKeys=' + this._allowStructuredMapKeys_0 + ', prettyPrint=' + this._prettyPrint_0 + ", prettyPrintIndent='" + this._prettyPrintIndent_0 + "', coerceInputValues=" + this._coerceInputValues_0 + ', useArrayPolymorphism=' + this._useArrayPolymorphism_0 + ", classDiscriminator='" + this._classDiscriminator_0 + "', allowSpecialFloatingPointValues=" + this._allowSpecialFloatingPointValues_0 + ')';
+  };
+  JsonConfiguration.$metadata$ = {
+    simpleName: 'JsonConfiguration',
     kind: 'class',
     interfaces: []
   };
@@ -48130,23 +48363,23 @@
       new Companion_54();
     return Companion_instance_53;
   }
-  function _no_name_provided__220() {
+  function _no_name_provided__221() {
   }
-  _no_name_provided__220.prototype.invoke_355 = function (_name_for_destructuring_parameter_0_) {
+  _no_name_provided__221.prototype.invoke_359 = function (_name_for_destructuring_parameter_0_) {
     var k = _name_for_destructuring_parameter_0_._get_key__52();
     var v = _name_for_destructuring_parameter_0_._get_value__27();
     var tmp0_apply_0_1 = StringBuilder_init_$Create$_0();
     printQuoted(tmp0_apply_0_1, k);
-    tmp0_apply_0_1.append_24(new Char(58));
+    tmp0_apply_0_1.append_23(new Char(58));
     Unit_getInstance();
     tmp0_apply_0_1.append_5(v);
     Unit_getInstance();
     return tmp0_apply_0_1.toString();
   };
-  _no_name_provided__220.prototype.invoke_412 = function (p1) {
-    return this.invoke_355((!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE());
+  _no_name_provided__221.prototype.invoke_420 = function (p1) {
+    return this.invoke_359((!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE());
   };
-  _no_name_provided__220.$metadata$ = {
+  _no_name_provided__221.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -48198,7 +48431,7 @@
   };
   JsonObject.prototype.toString = function () {
     var tmp = this._content_9._get_entries__8();
-    return joinToString$default_0(tmp, ',', '{', '}', 0, null, _no_name_provided_$factory_183(), 24, null);
+    return joinToString$default_0(tmp, ',', '{', '}', 0, null, _no_name_provided_$factory_184(), 24, null);
   };
   JsonObject.$metadata$ = {
     simpleName: 'JsonObject',
@@ -48337,8 +48570,8 @@
   JsonArray.prototype.containsAll_37 = function (elements) {
     return this.containsAll_36(elements);
   };
-  JsonArray.prototype.get_76 = function (index) {
-    return this._content_12.get_76(index);
+  JsonArray.prototype.get_77 = function (index) {
+    return this._content_12.get_77(index);
   };
   JsonArray.prototype.isEmpty_50 = function () {
     return this._content_12.isEmpty_50();
@@ -48411,25 +48644,16 @@
   function error_0(_this_, element) {
     throw IllegalArgumentException_init_$Create$_0('' + 'Element ' + getKClassFromExpression_0(_this_) + ' is not a ' + element);
   }
-  function _no_name_provided_$factory_183() {
-    var i = new _no_name_provided__220();
+  function _no_name_provided_$factory_184() {
+    var i = new _no_name_provided__221();
     return function (p1) {
-      return i.invoke_355(p1);
+      return i.invoke_359(p1);
     };
   }
-  function _no_name_provided__221() {
-  }
-  _no_name_provided__221.prototype.invoke_403 = function () {
-    return JsonPrimitiveSerializer_getInstance()._descriptor_28;
-  };
-  _no_name_provided__221.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function _no_name_provided__222() {
   }
-  _no_name_provided__222.prototype.invoke_403 = function () {
-    return JsonNullSerializer_getInstance()._descriptor_29;
+  _no_name_provided__222.prototype.invoke_411 = function () {
+    return JsonPrimitiveSerializer_getInstance()._descriptor_29;
   };
   _no_name_provided__222.$metadata$ = {
     kind: 'class',
@@ -48437,8 +48661,8 @@
   };
   function _no_name_provided__223() {
   }
-  _no_name_provided__223.prototype.invoke_403 = function () {
-    return JsonLiteralSerializer_getInstance()._descriptor_30;
+  _no_name_provided__223.prototype.invoke_411 = function () {
+    return JsonNullSerializer_getInstance()._descriptor_30;
   };
   _no_name_provided__223.$metadata$ = {
     kind: 'class',
@@ -48446,8 +48670,8 @@
   };
   function _no_name_provided__224() {
   }
-  _no_name_provided__224.prototype.invoke_403 = function () {
-    return JsonObjectSerializer_getInstance()._descriptor_26;
+  _no_name_provided__224.prototype.invoke_411 = function () {
+    return JsonLiteralSerializer_getInstance()._descriptor_31;
   };
   _no_name_provided__224.$metadata$ = {
     kind: 'class',
@@ -48455,8 +48679,8 @@
   };
   function _no_name_provided__225() {
   }
-  _no_name_provided__225.prototype.invoke_403 = function () {
-    return JsonArraySerializer_getInstance()._descriptor_27;
+  _no_name_provided__225.prototype.invoke_411 = function () {
+    return JsonObjectSerializer_getInstance()._descriptor_27;
   };
   _no_name_provided__225.$metadata$ = {
     kind: 'class',
@@ -48464,23 +48688,32 @@
   };
   function _no_name_provided__226() {
   }
-  _no_name_provided__226.prototype.invoke_372 = function ($this$buildSerialDescriptor) {
-    var tmp = defer(_no_name_provided_$factory_185());
-    $this$buildSerialDescriptor.element$default('JsonPrimitive', tmp, null, false, 12, null);
-    var tmp_0 = defer(_no_name_provided_$factory_186());
-    $this$buildSerialDescriptor.element$default('JsonNull', tmp_0, null, false, 12, null);
-    var tmp_1 = defer(_no_name_provided_$factory_187());
-    $this$buildSerialDescriptor.element$default('JsonLiteral', tmp_1, null, false, 12, null);
-    var tmp_2 = defer(_no_name_provided_$factory_188());
-    $this$buildSerialDescriptor.element$default('JsonObject', tmp_2, null, false, 12, null);
-    var tmp_3 = defer(_no_name_provided_$factory_189());
-    $this$buildSerialDescriptor.element$default('JsonArray', tmp_3, null, false, 12, null);
-  };
-  _no_name_provided__226.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__226.prototype.invoke_411 = function () {
+    return JsonArraySerializer_getInstance()._descriptor_28;
   };
   _no_name_provided__226.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__227() {
+  }
+  _no_name_provided__227.prototype.invoke_378 = function ($this$buildSerialDescriptor) {
+    var tmp = defer(_no_name_provided_$factory_186());
+    $this$buildSerialDescriptor.element$default('JsonPrimitive', tmp, null, false, 12, null);
+    var tmp_0 = defer(_no_name_provided_$factory_187());
+    $this$buildSerialDescriptor.element$default('JsonNull', tmp_0, null, false, 12, null);
+    var tmp_1 = defer(_no_name_provided_$factory_188());
+    $this$buildSerialDescriptor.element$default('JsonLiteral', tmp_1, null, false, 12, null);
+    var tmp_2 = defer(_no_name_provided_$factory_189());
+    $this$buildSerialDescriptor.element$default('JsonObject', tmp_2, null, false, 12, null);
+    var tmp_3 = defer(_no_name_provided_$factory_190());
+    $this$buildSerialDescriptor.element$default('JsonArray', tmp_3, null, false, 12, null);
+  };
+  _no_name_provided__227.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__227.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -48489,12 +48722,12 @@
     var tmp = this;
     var tmp_0 = SEALED_getInstance();
     var tmp_1 = [];
-    tmp._descriptor_25 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonElement', tmp_0, tmp_1, _no_name_provided_$factory_184(), 4, null);
+    tmp._descriptor_26 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonElement', tmp_0, tmp_1, _no_name_provided_$factory_185(), 4, null);
   }
-  JsonElementSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_25;
+  JsonElementSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_26;
   };
-  JsonElementSerializer.prototype.serialize_63 = function (encoder, value) {
+  JsonElementSerializer.prototype.serialize_64 = function (encoder, value) {
     verify(encoder);
     var tmp0_subject = value;
     if (tmp0_subject instanceof JsonPrimitive)
@@ -48510,10 +48743,10 @@
       }
     }
   };
-  JsonElementSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_63(encoder, value instanceof JsonElement ? value : THROW_CCE());
+  JsonElementSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_64(encoder, value instanceof JsonElement ? value : THROW_CCE());
   };
-  JsonElementSerializer.prototype.deserialize_80 = function (decoder) {
+  JsonElementSerializer.prototype.deserialize_81 = function (decoder) {
     var input = asJsonDecoder(decoder);
     return input.decodeJsonElement_4();
   };
@@ -48532,32 +48765,35 @@
     JsonObjectDescriptor_instance = this;
     var tmp = this;
     var tmp0_cast_0_1_1 = serializer(createKType_0(getKClass_0(HashMap), [createInvariantKTypeProjection_0(createKType_0(PrimitiveClasses_getInstance()._get_stringClass_(), [], false)), createInvariantKTypeProjection_0(createKType_0(getKClass_0(JsonElement), [], false))], false));
-    tmp._$$delegate_0_3 = (isInterface(tmp0_cast_0_1_1, KSerializer) ? tmp0_cast_0_1_1 : THROW_CCE())._get_descriptor__76();
-    this._serialName_6 = 'kotlinx.serialization.json.JsonObject';
+    tmp._$$delegate_0_3 = (isInterface(tmp0_cast_0_1_1, KSerializer) ? tmp0_cast_0_1_1 : THROW_CCE())._get_descriptor__77();
+    this._serialName_7 = 'kotlinx.serialization.json.JsonObject';
   }
-  JsonObjectDescriptor.prototype.getElementDescriptor_16 = function (index) {
-    return this._$$delegate_0_3.getElementDescriptor_16(index);
+  JsonObjectDescriptor.prototype.getElementAnnotations_17 = function (index) {
+    return this._$$delegate_0_3.getElementAnnotations_17(index);
   };
-  JsonObjectDescriptor.prototype.getElementIndex_16 = function (name) {
-    return this._$$delegate_0_3.getElementIndex_16(name);
+  JsonObjectDescriptor.prototype.getElementDescriptor_17 = function (index) {
+    return this._$$delegate_0_3.getElementDescriptor_17(index);
   };
-  JsonObjectDescriptor.prototype.getElementName_16 = function (index) {
-    return this._$$delegate_0_3.getElementName_16(index);
+  JsonObjectDescriptor.prototype.getElementIndex_17 = function (name) {
+    return this._$$delegate_0_3.getElementIndex_17(name);
   };
-  JsonObjectDescriptor.prototype._get_elementsCount__16 = function () {
-    return this._$$delegate_0_3._get_elementsCount__16();
+  JsonObjectDescriptor.prototype.getElementName_17 = function (index) {
+    return this._$$delegate_0_3.getElementName_17(index);
   };
-  JsonObjectDescriptor.prototype._get_isInline__16 = function () {
-    return this._$$delegate_0_3._get_isInline__16();
+  JsonObjectDescriptor.prototype._get_elementsCount__17 = function () {
+    return this._$$delegate_0_3._get_elementsCount__17();
   };
-  JsonObjectDescriptor.prototype._get_isNullable__16 = function () {
-    return this._$$delegate_0_3._get_isNullable__16();
+  JsonObjectDescriptor.prototype._get_isInline__17 = function () {
+    return this._$$delegate_0_3._get_isInline__17();
   };
-  JsonObjectDescriptor.prototype._get_kind__19 = function () {
-    return this._$$delegate_0_3._get_kind__19();
+  JsonObjectDescriptor.prototype._get_isNullable__17 = function () {
+    return this._$$delegate_0_3._get_isNullable__17();
   };
-  JsonObjectDescriptor.prototype._get_serialName__16 = function () {
-    return this._serialName_6;
+  JsonObjectDescriptor.prototype._get_kind__20 = function () {
+    return this._$$delegate_0_3._get_kind__20();
+  };
+  JsonObjectDescriptor.prototype._get_serialName__17 = function () {
+    return this._serialName_7;
   };
   JsonObjectDescriptor.$metadata$ = {
     simpleName: 'JsonObjectDescriptor',
@@ -48572,21 +48808,21 @@
   }
   function JsonObjectSerializer() {
     JsonObjectSerializer_instance = this;
-    this._descriptor_26 = JsonObjectDescriptor_getInstance();
+    this._descriptor_27 = JsonObjectDescriptor_getInstance();
   }
-  JsonObjectSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_26;
+  JsonObjectSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_27;
   };
-  JsonObjectSerializer.prototype.serialize_65 = function (encoder, value) {
+  JsonObjectSerializer.prototype.serialize_66 = function (encoder, value) {
     verify(encoder);
-    MapSerializer(serializer_2(StringCompanionObject_getInstance()), JsonElementSerializer_getInstance()).serialize_128(encoder, value);
+    MapSerializer(serializer_2(StringCompanionObject_getInstance()), JsonElementSerializer_getInstance()).serialize_129(encoder, value);
   };
-  JsonObjectSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_65(encoder, value instanceof JsonObject ? value : THROW_CCE());
+  JsonObjectSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_66(encoder, value instanceof JsonObject ? value : THROW_CCE());
   };
-  JsonObjectSerializer.prototype.deserialize_80 = function (decoder) {
+  JsonObjectSerializer.prototype.deserialize_81 = function (decoder) {
     verify_0(decoder);
-    return new JsonObject(MapSerializer(serializer_2(StringCompanionObject_getInstance()), JsonElementSerializer_getInstance()).deserialize_80(decoder));
+    return new JsonObject(MapSerializer(serializer_2(StringCompanionObject_getInstance()), JsonElementSerializer_getInstance()).deserialize_81(decoder));
   };
   JsonObjectSerializer.$metadata$ = {
     simpleName: 'JsonObjectSerializer',
@@ -48603,32 +48839,35 @@
     JsonArrayDescriptor_instance = this;
     var tmp = this;
     var tmp0_cast_0_1_1 = serializer(createKType_0(getKClass_0(List), [createInvariantKTypeProjection_0(createKType_0(getKClass_0(JsonElement), [], false))], false));
-    tmp._$$delegate_0_4 = (isInterface(tmp0_cast_0_1_1, KSerializer) ? tmp0_cast_0_1_1 : THROW_CCE())._get_descriptor__76();
-    this._serialName_7 = 'kotlinx.serialization.json.JsonArray';
+    tmp._$$delegate_0_4 = (isInterface(tmp0_cast_0_1_1, KSerializer) ? tmp0_cast_0_1_1 : THROW_CCE())._get_descriptor__77();
+    this._serialName_8 = 'kotlinx.serialization.json.JsonArray';
   }
-  JsonArrayDescriptor.prototype.getElementDescriptor_16 = function (index) {
-    return this._$$delegate_0_4.getElementDescriptor_16(index);
+  JsonArrayDescriptor.prototype.getElementAnnotations_17 = function (index) {
+    return this._$$delegate_0_4.getElementAnnotations_17(index);
   };
-  JsonArrayDescriptor.prototype.getElementIndex_16 = function (name) {
-    return this._$$delegate_0_4.getElementIndex_16(name);
+  JsonArrayDescriptor.prototype.getElementDescriptor_17 = function (index) {
+    return this._$$delegate_0_4.getElementDescriptor_17(index);
   };
-  JsonArrayDescriptor.prototype.getElementName_16 = function (index) {
-    return this._$$delegate_0_4.getElementName_16(index);
+  JsonArrayDescriptor.prototype.getElementIndex_17 = function (name) {
+    return this._$$delegate_0_4.getElementIndex_17(name);
   };
-  JsonArrayDescriptor.prototype._get_elementsCount__16 = function () {
-    return this._$$delegate_0_4._get_elementsCount__16();
+  JsonArrayDescriptor.prototype.getElementName_17 = function (index) {
+    return this._$$delegate_0_4.getElementName_17(index);
   };
-  JsonArrayDescriptor.prototype._get_isInline__16 = function () {
-    return this._$$delegate_0_4._get_isInline__16();
+  JsonArrayDescriptor.prototype._get_elementsCount__17 = function () {
+    return this._$$delegate_0_4._get_elementsCount__17();
   };
-  JsonArrayDescriptor.prototype._get_isNullable__16 = function () {
-    return this._$$delegate_0_4._get_isNullable__16();
+  JsonArrayDescriptor.prototype._get_isInline__17 = function () {
+    return this._$$delegate_0_4._get_isInline__17();
   };
-  JsonArrayDescriptor.prototype._get_kind__19 = function () {
-    return this._$$delegate_0_4._get_kind__19();
+  JsonArrayDescriptor.prototype._get_isNullable__17 = function () {
+    return this._$$delegate_0_4._get_isNullable__17();
   };
-  JsonArrayDescriptor.prototype._get_serialName__16 = function () {
-    return this._serialName_7;
+  JsonArrayDescriptor.prototype._get_kind__20 = function () {
+    return this._$$delegate_0_4._get_kind__20();
+  };
+  JsonArrayDescriptor.prototype._get_serialName__17 = function () {
+    return this._serialName_8;
   };
   JsonArrayDescriptor.$metadata$ = {
     simpleName: 'JsonArrayDescriptor',
@@ -48643,21 +48882,21 @@
   }
   function JsonArraySerializer() {
     JsonArraySerializer_instance = this;
-    this._descriptor_27 = JsonArrayDescriptor_getInstance();
+    this._descriptor_28 = JsonArrayDescriptor_getInstance();
   }
-  JsonArraySerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_27;
+  JsonArraySerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_28;
   };
-  JsonArraySerializer.prototype.serialize_67 = function (encoder, value) {
+  JsonArraySerializer.prototype.serialize_68 = function (encoder, value) {
     verify(encoder);
-    ListSerializer(JsonElementSerializer_getInstance()).serialize_128(encoder, value);
+    ListSerializer(JsonElementSerializer_getInstance()).serialize_129(encoder, value);
   };
-  JsonArraySerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_67(encoder, value instanceof JsonArray ? value : THROW_CCE());
+  JsonArraySerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_68(encoder, value instanceof JsonArray ? value : THROW_CCE());
   };
-  JsonArraySerializer.prototype.deserialize_80 = function (decoder) {
+  JsonArraySerializer.prototype.deserialize_81 = function (decoder) {
     verify_0(decoder);
-    return new JsonArray(ListSerializer(JsonElementSerializer_getInstance()).deserialize_80(decoder));
+    return new JsonArray(ListSerializer(JsonElementSerializer_getInstance()).deserialize_81(decoder));
   };
   JsonArraySerializer.$metadata$ = {
     simpleName: 'JsonArraySerializer',
@@ -48671,19 +48910,19 @@
     return JsonArraySerializer_instance;
   }
   function defer(deferred) {
-    return new _no_name_provided__227(deferred);
+    return new _no_name_provided__228(deferred);
   }
   function JsonPrimitiveSerializer() {
     JsonPrimitiveSerializer_instance = this;
     var tmp = this;
     var tmp_0 = STRING_getInstance();
     var tmp_1 = [];
-    tmp._descriptor_28 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonPrimitive', tmp_0, tmp_1, null, 12, null);
+    tmp._descriptor_29 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonPrimitive', tmp_0, tmp_1, null, 12, null);
   }
-  JsonPrimitiveSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_28;
+  JsonPrimitiveSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_29;
   };
-  JsonPrimitiveSerializer.prototype.serialize_69 = function (encoder, value) {
+  JsonPrimitiveSerializer.prototype.serialize_70 = function (encoder, value) {
     verify(encoder);
     var tmp;
     if (value instanceof JsonNull) {
@@ -48696,10 +48935,10 @@
     }
     return tmp;
   };
-  JsonPrimitiveSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_69(encoder, value instanceof JsonPrimitive ? value : THROW_CCE());
+  JsonPrimitiveSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_70(encoder, value instanceof JsonPrimitive ? value : THROW_CCE());
   };
-  JsonPrimitiveSerializer.prototype.deserialize_80 = function (decoder) {
+  JsonPrimitiveSerializer.prototype.deserialize_81 = function (decoder) {
     var result = asJsonDecoder(decoder).decodeJsonElement_4();
     if (!(result instanceof JsonPrimitive))
       throw JsonDecodingException_0(-1, '' + 'Unexpected JSON element, expected JsonPrimitive, had ' + getKClassFromExpression_0(result), toString_1(result));
@@ -48723,21 +48962,23 @@
     var tmp = this;
     var tmp_0 = ENUM_getInstance();
     var tmp_1 = [];
-    tmp._descriptor_29 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonNull', tmp_0, tmp_1, null, 12, null);
+    tmp._descriptor_30 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonNull', tmp_0, tmp_1, null, 12, null);
   }
-  JsonNullSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_29;
+  JsonNullSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_30;
   };
-  JsonNullSerializer.prototype.serialize_71 = function (encoder, value) {
+  JsonNullSerializer.prototype.serialize_72 = function (encoder, value) {
     verify(encoder);
     encoder.encodeNull_1();
   };
-  JsonNullSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_71(encoder, value instanceof JsonNull ? value : THROW_CCE());
+  JsonNullSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_72(encoder, value instanceof JsonNull ? value : THROW_CCE());
   };
-  JsonNullSerializer.prototype.deserialize_80 = function (decoder) {
+  JsonNullSerializer.prototype.deserialize_81 = function (decoder) {
     verify_0(decoder);
-    decoder.decodeNull_8();
+    if (decoder.decodeNotNullMark_8()) {
+      throw new JsonDecodingException("Expected 'null' literal");
+    }decoder.decodeNull_8();
     Unit_getInstance();
     return JsonNull_getInstance();
   };
@@ -48754,12 +48995,12 @@
   }
   function JsonLiteralSerializer() {
     JsonLiteralSerializer_instance = this;
-    this._descriptor_30 = PrimitiveSerialDescriptor('kotlinx.serialization.json.JsonLiteral', STRING_getInstance());
+    this._descriptor_31 = PrimitiveSerialDescriptor('kotlinx.serialization.json.JsonLiteral', STRING_getInstance());
   }
-  JsonLiteralSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_30;
+  JsonLiteralSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_31;
   };
-  JsonLiteralSerializer.prototype.serialize_73 = function (encoder, value) {
+  JsonLiteralSerializer.prototype.serialize_74 = function (encoder, value) {
     verify(encoder);
     if (value._isString) {
       return encoder.encodeString_1(value._content_11);
@@ -48776,7 +49017,7 @@
       null;
     else {
       {
-        var tmp0_safe_receiver_2 = encoder.encodeInline_1(serializer_13(Companion_getInstance_6())._get_descriptor__76());
+        var tmp0_safe_receiver_2 = encoder.encodeInline_1(serializer_13(Companion_getInstance_6())._get_descriptor__77());
         if (tmp0_safe_receiver_2 == null)
           null;
         else {
@@ -48804,10 +49045,10 @@
     Unit_getInstance();
     encoder.encodeString_1(value._content_11);
   };
-  JsonLiteralSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_73(encoder, value instanceof JsonLiteral ? value : THROW_CCE());
+  JsonLiteralSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_74(encoder, value instanceof JsonLiteral ? value : THROW_CCE());
   };
-  JsonLiteralSerializer.prototype.deserialize_80 = function (decoder) {
+  JsonLiteralSerializer.prototype.deserialize_81 = function (decoder) {
     var result = asJsonDecoder(decoder).decodeJsonElement_4();
     if (!(result instanceof JsonLiteral))
       throw JsonDecodingException_0(-1, '' + 'Unexpected JSON element, expected JsonLiteral, had ' + getKClassFromExpression_0(result), toString_1(result));
@@ -48859,29 +49100,32 @@
     var tmp1_getValue_0 = original$factory();
     return tmp0_getValue_0._get_value__27();
   }
-  function _no_name_provided__227($deferred) {
+  function _no_name_provided__228($deferred) {
     this._$deferred = $deferred;
     this._original$delegate = lazy(this._$deferred);
   }
-  _no_name_provided__227.prototype._get_serialName__16 = function () {
-    return _get_original_(this)._get_serialName__16();
+  _no_name_provided__228.prototype._get_serialName__17 = function () {
+    return _get_original_(this)._get_serialName__17();
   };
-  _no_name_provided__227.prototype._get_kind__19 = function () {
-    return _get_original_(this)._get_kind__19();
+  _no_name_provided__228.prototype._get_kind__20 = function () {
+    return _get_original_(this)._get_kind__20();
   };
-  _no_name_provided__227.prototype._get_elementsCount__16 = function () {
-    return _get_original_(this)._get_elementsCount__16();
+  _no_name_provided__228.prototype._get_elementsCount__17 = function () {
+    return _get_original_(this)._get_elementsCount__17();
   };
-  _no_name_provided__227.prototype.getElementName_16 = function (index) {
-    return _get_original_(this).getElementName_16(index);
+  _no_name_provided__228.prototype.getElementName_17 = function (index) {
+    return _get_original_(this).getElementName_17(index);
   };
-  _no_name_provided__227.prototype.getElementIndex_16 = function (name) {
-    return _get_original_(this).getElementIndex_16(name);
+  _no_name_provided__228.prototype.getElementIndex_17 = function (name) {
+    return _get_original_(this).getElementIndex_17(name);
   };
-  _no_name_provided__227.prototype.getElementDescriptor_16 = function (index) {
-    return _get_original_(this).getElementDescriptor_16(index);
+  _no_name_provided__228.prototype.getElementAnnotations_17 = function (index) {
+    return _get_original_(this).getElementAnnotations_17(index);
   };
-  _no_name_provided__227.$metadata$ = {
+  _no_name_provided__228.prototype.getElementDescriptor_17 = function (index) {
+    return _get_original_(this).getElementDescriptor_17(index);
+  };
+  _no_name_provided__228.$metadata$ = {
     kind: 'class',
     interfaces: [SerialDescriptor]
   };
@@ -48890,41 +49134,41 @@
       return _get_original_(receiver);
     }, null);
   }
-  function _no_name_provided_$factory_184() {
-    var i = new _no_name_provided__226();
-    return function (p1) {
-      i.invoke_372(p1);
-      return Unit_getInstance();
-    };
-  }
   function _no_name_provided_$factory_185() {
-    var i = new _no_name_provided__221();
-    return function () {
-      return i.invoke_403();
+    var i = new _no_name_provided__227();
+    return function (p1) {
+      i.invoke_378(p1);
+      return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_186() {
     var i = new _no_name_provided__222();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_187() {
     var i = new _no_name_provided__223();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_188() {
     var i = new _no_name_provided__224();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
   function _no_name_provided_$factory_189() {
     var i = new _no_name_provided__225();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
+    };
+  }
+  function _no_name_provided_$factory_190() {
+    var i = new _no_name_provided__226();
+    return function () {
+      return i.invoke_411();
     };
   }
   function JsonEncoder() {
@@ -48934,99 +49178,150 @@
     kind: 'interface',
     interfaces: [Encoder, CompositeEncoder]
   };
-  function JsonConf_init_$Init$(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, serializersModule, $mask0, $marker, $this) {
-    if (!(($mask0 & 1) === 0))
-      encodeDefaults = false;
-    if (!(($mask0 & 2) === 0))
-      ignoreUnknownKeys = false;
-    if (!(($mask0 & 4) === 0))
-      isLenient = false;
-    if (!(($mask0 & 8) === 0))
-      allowStructuredMapKeys = false;
-    if (!(($mask0 & 16) === 0))
-      prettyPrint = false;
-    if (!(($mask0 & 32) === 0))
-      prettyPrintIndent = '    ';
-    if (!(($mask0 & 64) === 0))
-      coerceInputValues = false;
-    if (!(($mask0 & 128) === 0))
-      useArrayPolymorphism = false;
-    if (!(($mask0 & 256) === 0))
-      classDiscriminator = 'type';
-    if (!(($mask0 & 512) === 0))
-      allowSpecialFloatingPointValues = false;
-    if (!(($mask0 & 1024) === 0))
-      serializersModule = EmptySerializersModule;
-    JsonConf.call($this, encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, serializersModule);
-    return $this;
+  var JsonAlternativeNamesKey;
+  function buildAlternativeNamesMap(_this_) {
+    var builder = null;
+    var inductionVariable = 0;
+    var last_1 = _this_._get_elementsCount__17();
+    if (inductionVariable < last_1)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var tmp0_filterIsInstance_0 = _this_.getElementAnnotations_17(i);
+        var tmp0_filterIsInstanceTo_0_1 = ArrayList_init_$Create$();
+        var tmp0_iterator_1_2 = tmp0_filterIsInstance_0.iterator_62();
+        while (tmp0_iterator_1_2.hasNext_29()) {
+          var element_2_3 = tmp0_iterator_1_2.next_31();
+          if (element_2_3 instanceof JsonNames) {
+            tmp0_filterIsInstanceTo_0_1.add_32(element_2_3);
+            Unit_getInstance();
+          } else {
+          }
+        }
+        var tmp1_safe_receiver = singleOrNull(tmp0_filterIsInstanceTo_0_1);
+        var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver._names_0;
+        if (tmp2_safe_receiver == null)
+          null;
+        else {
+          var tmp0_iterator_1 = arrayIterator(tmp2_safe_receiver);
+          while (tmp0_iterator_1.hasNext_29()) {
+            var element_2 = tmp0_iterator_1.next_31();
+            if (builder == null)
+              builder = createMapForCache(_this_._get_elementsCount__17());
+            buildAlternativeNamesMap$putOrThrow(ensureNotNull(builder), _this_, element_2, i);
+          }
+          Unit_getInstance();
+        }
+        Unit_getInstance();
+      }
+       while (inductionVariable < last_1);
+    var tmp3_elvis_lhs = builder;
+    return tmp3_elvis_lhs == null ? emptyMap() : tmp3_elvis_lhs;
   }
-  function JsonConf_init_$Create$(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, serializersModule, $mask0, $marker) {
-    return JsonConf_init_$Init$(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, serializersModule, $mask0, $marker, Object.create(JsonConf.prototype));
+  function JsonNames() {
   }
-  function JsonConf(encodeDefaults, ignoreUnknownKeys, isLenient, allowStructuredMapKeys, prettyPrint, prettyPrintIndent, coerceInputValues, useArrayPolymorphism, classDiscriminator, allowSpecialFloatingPointValues, serializersModule) {
-    this._encodeDefaults_0 = encodeDefaults;
-    this._ignoreUnknownKeys_0 = ignoreUnknownKeys;
-    this._isLenient_0 = isLenient;
-    this._allowStructuredMapKeys_0 = allowStructuredMapKeys;
-    this._prettyPrint_0 = prettyPrint;
-    this._prettyPrintIndent_0 = prettyPrintIndent;
-    this._coerceInputValues_0 = coerceInputValues;
-    this._useArrayPolymorphism_0 = useArrayPolymorphism;
-    this._classDiscriminator_0 = classDiscriminator;
-    this._allowSpecialFloatingPointValues_0 = allowSpecialFloatingPointValues;
-    this._serializersModule_0 = serializersModule;
-  }
-  JsonConf.prototype.toString = function () {
-    return '' + 'JsonConf(encodeDefaults=' + this._encodeDefaults_0 + ', ignoreUnknownKeys=' + this._ignoreUnknownKeys_0 + ', isLenient=' + this._isLenient_0 + ', allowStructuredMapKeys=' + this._allowStructuredMapKeys_0 + ', prettyPrint=' + this._prettyPrint_0 + ', prettyPrintIndent=' + this._prettyPrintIndent_0 + ', coerceInputValues=' + this._coerceInputValues_0 + ', useArrayPolymorphism=' + this._useArrayPolymorphism_0 + ', classDiscriminator=' + this._classDiscriminator_0 + ', allowSpecialFloatingPointValues=' + this._allowSpecialFloatingPointValues_0 + ', serializersModule=' + this._serializersModule_0 + ')';
+  JsonNames.$metadata$ = {
+    simpleName: 'JsonNames',
+    kind: 'class',
+    interfaces: [Annotation]
   };
-  JsonConf.prototype.hashCode = function () {
-    var result = this._encodeDefaults_0 | 0;
-    result = imul(result, 31) + (this._ignoreUnknownKeys_0 | 0) | 0;
-    result = imul(result, 31) + (this._isLenient_0 | 0) | 0;
-    result = imul(result, 31) + (this._allowStructuredMapKeys_0 | 0) | 0;
-    result = imul(result, 31) + (this._prettyPrint_0 | 0) | 0;
-    result = imul(result, 31) + getStringHashCode(this._prettyPrintIndent_0) | 0;
-    result = imul(result, 31) + (this._coerceInputValues_0 | 0) | 0;
-    result = imul(result, 31) + (this._useArrayPolymorphism_0 | 0) | 0;
-    result = imul(result, 31) + getStringHashCode(this._classDiscriminator_0) | 0;
-    result = imul(result, 31) + (this._allowSpecialFloatingPointValues_0 | 0) | 0;
-    result = imul(result, 31) + hashCode(this._serializersModule_0) | 0;
-    return result;
-  };
-  JsonConf.prototype.equals = function (other) {
-    if (this === other)
-      return true;
-    if (!(other instanceof JsonConf))
-      return false;
-    else {
+  function buildAlternativeNamesMap$putOrThrow(_this_, $this_buildAlternativeNamesMap, name, index) {
+    if ((isInterface(_this_, Map_0) ? _this_ : THROW_CCE()).containsKey_12(name)) {
+      throw new JsonException('' + "The suggested name '" + name + "' for property " + $this_buildAlternativeNamesMap.getElementName_17(index) + ' is already one of the names for property ' + ('' + $this_buildAlternativeNamesMap.getElementName_17(getValue(_this_, name)) + ' in ' + $this_buildAlternativeNamesMap));
+    } else {
     }
-    var tmp0_other_with_cast = other instanceof JsonConf ? other : THROW_CCE();
-    if (!(this._encodeDefaults_0 === tmp0_other_with_cast._encodeDefaults_0))
-      return false;
-    if (!(this._ignoreUnknownKeys_0 === tmp0_other_with_cast._ignoreUnknownKeys_0))
-      return false;
-    if (!(this._isLenient_0 === tmp0_other_with_cast._isLenient_0))
-      return false;
-    if (!(this._allowStructuredMapKeys_0 === tmp0_other_with_cast._allowStructuredMapKeys_0))
-      return false;
-    if (!(this._prettyPrint_0 === tmp0_other_with_cast._prettyPrint_0))
-      return false;
-    if (!(this._prettyPrintIndent_0 === tmp0_other_with_cast._prettyPrintIndent_0))
-      return false;
-    if (!(this._coerceInputValues_0 === tmp0_other_with_cast._coerceInputValues_0))
-      return false;
-    if (!(this._useArrayPolymorphism_0 === tmp0_other_with_cast._useArrayPolymorphism_0))
-      return false;
-    if (!(this._classDiscriminator_0 === tmp0_other_with_cast._classDiscriminator_0))
-      return false;
-    if (!(this._allowSpecialFloatingPointValues_0 === tmp0_other_with_cast._allowSpecialFloatingPointValues_0))
-      return false;
-    if (!equals_1(this._serializersModule_0, tmp0_other_with_cast._serializersModule_0))
-      return false;
-    return true;
+    _this_.put_10(name, index);
+    Unit_getInstance();
+  }
+  function Composer(sb, json) {
+    this._sb = sb;
+    this._json = json;
+    this._level_1 = 0;
+    this._writingFirst = true;
+  }
+  Composer.prototype.indent_0 = function () {
+    this._writingFirst = true;
+    var tmp0_this = this;
+    var tmp1 = tmp0_this._level_1;
+    tmp0_this._level_1 = tmp1 + 1 | 0;
+    Unit_getInstance();
   };
-  JsonConf.$metadata$ = {
-    simpleName: 'JsonConf',
+  Composer.prototype.unIndent_0 = function () {
+    var tmp0_this = this;
+    var tmp1 = tmp0_this._level_1;
+    tmp0_this._level_1 = tmp1 - 1 | 0;
+    Unit_getInstance();
+  };
+  Composer.prototype.nextItem_0 = function () {
+    this._writingFirst = false;
+    if (this._json._configuration._prettyPrint_0) {
+      this.print_18('\n');
+      var tmp0_repeat_0 = this._level_1;
+      var inductionVariable = 0;
+      if (inductionVariable < tmp0_repeat_0)
+        do {
+          var index_2 = inductionVariable;
+          inductionVariable = inductionVariable + 1 | 0;
+          this.print_18(this._json._configuration._prettyPrintIndent_0);
+        }
+         while (inductionVariable < tmp0_repeat_0);
+    }};
+  Composer.prototype.space_0 = function () {
+    if (this._json._configuration._prettyPrint_0)
+      this.print_17(new Char(32));
+  };
+  Composer.prototype.print_17 = function (v) {
+    return this._sb.append_36(v);
+  };
+  Composer.prototype.print_18 = function (v) {
+    return this._sb.append_37(v);
+  };
+  Composer.prototype.print_19 = function (v) {
+    return this._sb.append_37(v.toString());
+  };
+  Composer.prototype.print_20 = function (v) {
+    return this._sb.append_37(v.toString());
+  };
+  Composer.prototype.print_15 = function (v) {
+    return this._sb.append_35(toLong_0(v));
+  };
+  Composer.prototype.print_16 = function (v) {
+    return this._sb.append_35(toLong_0(v));
+  };
+  Composer.prototype.print_13 = function (v) {
+    return this._sb.append_35(toLong_0(v));
+  };
+  Composer.prototype.print_14 = function (v) {
+    return this._sb.append_35(v);
+  };
+  Composer.prototype.print_21 = function (v) {
+    return this._sb.append_37(v.toString());
+  };
+  Composer.prototype.printQuoted_0 = function (value) {
+    return this._sb.appendQuoted(value);
+  };
+  Composer.$metadata$ = {
+    simpleName: 'Composer',
+    kind: 'class',
+    interfaces: []
+  };
+  function ComposerForUnsignedNumbers(sb, json) {
+    Composer.call(this, sb, json);
+  }
+  ComposerForUnsignedNumbers.prototype.print_13 = function (v) {
+    return Composer.prototype.print_18.call(this, UInt__toString_impl(_UInt___init__impl_(v)));
+  };
+  ComposerForUnsignedNumbers.prototype.print_14 = function (v) {
+    return Composer.prototype.print_18.call(this, ULong__toString_impl(_ULong___init__impl_(v)));
+  };
+  ComposerForUnsignedNumbers.prototype.print_15 = function (v) {
+    return Composer.prototype.print_18.call(this, UByte__toString_impl(_UByte___init__impl_(v)));
+  };
+  ComposerForUnsignedNumbers.prototype.print_16 = function (v) {
+    return Composer.prototype.print_18.call(this, UShort__toString_impl(_UShort___init__impl_(v)));
+  };
+  ComposerForUnsignedNumbers.$metadata$ = {
+    simpleName: 'ComposerForUnsignedNumbers',
     kind: 'class',
     interfaces: []
   };
@@ -49044,7 +49339,7 @@
     return new JsonEncodingException(tmp + ('' + 'Current output: ' + minify$default(output_0, 0, 1, null)));
   }
   function InvalidKeyKindException(keyDescriptor) {
-    return new JsonEncodingException('' + "Value of type '" + keyDescriptor._get_serialName__16() + "' can't be used in JSON as a key in the map. " + ('' + "It should have either primitive or enum kind, but its kind is '" + keyDescriptor._get_kind__19() + "'.\n") + "Use 'allowStructuredMapKeys = true' in 'Json {}' builder to convert such maps to [key1, value1, key2, value2,...] arrays.");
+    return new JsonEncodingException('' + "Value of type '" + keyDescriptor._get_serialName__17() + "' can't be used in JSON as a key in the map. " + ('' + "It should have either primitive or enum kind, but its kind is '" + keyDescriptor._get_kind__20() + "'.\n") + "Use 'allowStructuredMapKeys = true' in 'Json {}' builder to convert such maps to [key1, value1, key2, value2,...] arrays.");
   }
   function JsonDecodingException(message) {
     JsonException.call(this, message);
@@ -49106,202 +49401,47 @@
     var tmp = '' + 'Unexpected special floating-point value ' + value + ' with key ' + key + '. By default, ' + 'non-finite floating point values are prohibited because they do not conform JSON specification. ' + "It is possible to deserialize them using 'JsonBuilder.allowSpecialFloatingPointValues = true'\n";
     return tmp + ('' + 'Current output: ' + minify$default(output_0, 0, 1, null));
   }
-  function readObject($this) {
-    var tmp0_requireTokenClass_0 = $this._reader;
-    var tmp1_requireTokenClass_0 = 6;
-    if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-      var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-      tmp0_requireTokenClass_0.fail('Expected start of the object', tmp0_requireTokenClass_0._tokenPosition);
-    }$this._reader.nextToken();
-    var tmp3_require_0 = $this._reader;
-    var tmp4_require_0 = !($this._reader._tokenClass === 4);
-    var tmp5_require_0 = $this._reader._currentPosition;
-    if (!tmp4_require_0) {
-      tmp3_require_0.fail('Unexpected leading comma', tmp5_require_0);
-    }var result = LinkedHashMap_init_$Create$();
-    var valueExpected = false;
-    while ($this._reader._get_canBeginValue_()) {
-      valueExpected = false;
-      var key = $this._isLenient_1 ? $this._reader.takeString() : $this._reader.takeStringQuoted();
-      var tmp6_requireTokenClass_0 = $this._reader;
-      var tmp7_requireTokenClass_0 = 5;
-      if (!(tmp6_requireTokenClass_0._tokenClass === tmp7_requireTokenClass_0)) {
-        var tmp8__anonymous__1 = numberToChar(tmp6_requireTokenClass_0._tokenClass);
-        tmp6_requireTokenClass_0.fail("Expected ':'", tmp6_requireTokenClass_0._tokenPosition);
-      }$this._reader.nextToken();
-      var element = $this.read_2();
-      result.put_10(key, element);
-      Unit_getInstance();
-      if (!($this._reader._tokenClass === 4)) {
-        var tmp9_requireTokenClass_0 = $this._reader;
-        var tmp10_requireTokenClass_0 = 7;
-        if (!(tmp9_requireTokenClass_0._tokenClass === tmp10_requireTokenClass_0)) {
-          var tmp11__anonymous__1 = numberToChar(tmp9_requireTokenClass_0._tokenClass);
-          tmp9_requireTokenClass_0.fail('Expected end of the object or comma', tmp9_requireTokenClass_0._tokenPosition);
-        }} else {
-        valueExpected = true;
-        $this._reader.nextToken();
-      }
-    }
-    var tmp12_require_0 = $this._reader;
-    var tmp13_require_0 = !valueExpected ? $this._reader._tokenClass === 7 : false;
-    var tmp14_require_0 = $this._reader._currentPosition;
-    if (!tmp13_require_0) {
-      tmp12_require_0.fail('Expected end of the object', tmp14_require_0);
-    }$this._reader.nextToken();
-    return new JsonObject(result);
+  function isValidValueStart($this, c) {
+    var tmp0_subject = c;
+    return (((tmp0_subject.equals(new Char(125)) ? true : tmp0_subject.equals(new Char(93))) ? true : tmp0_subject.equals(new Char(58))) ? true : tmp0_subject.equals(new Char(44))) ? false : true;
   }
-  function readArray($this) {
-    var tmp0_requireTokenClass_0 = $this._reader;
-    var tmp1_requireTokenClass_0 = 8;
-    if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-      var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-      tmp0_requireTokenClass_0.fail('Expected start of the array', tmp0_requireTokenClass_0._tokenPosition);
-    }$this._reader.nextToken();
-    var tmp3_require_0 = $this._reader;
-    var tmp4_require_0 = !($this._reader._tokenClass === 4);
-    var tmp5_require_0 = $this._reader._currentPosition;
-    if (!tmp4_require_0) {
-      tmp3_require_0.fail('Unexpected leading comma', tmp5_require_0);
-    }var result = ArrayList_init_$Create$();
-    var valueExpected = false;
-    while ($this._reader._get_canBeginValue_()) {
-      valueExpected = false;
-      var element = $this.read_2();
-      result.add_32(element);
-      Unit_getInstance();
-      if (!($this._reader._tokenClass === 4)) {
-        var tmp6_requireTokenClass_0 = $this._reader;
-        var tmp7_requireTokenClass_0 = 9;
-        if (!(tmp6_requireTokenClass_0._tokenClass === tmp7_requireTokenClass_0)) {
-          var tmp8__anonymous__1 = numberToChar(tmp6_requireTokenClass_0._tokenClass);
-          tmp6_requireTokenClass_0.fail('Expected end of the array or comma', tmp6_requireTokenClass_0._tokenPosition);
-        }} else {
-        valueExpected = true;
-        $this._reader.nextToken();
-      }
-    }
-    var tmp9_require_0 = $this._reader;
-    var tmp10_require_0 = !valueExpected;
-    var tmp11_require_0 = $this._reader._currentPosition;
-    if (!tmp10_require_0) {
-      tmp9_require_0.fail('Unexpected trailing comma', tmp11_require_0);
-    }$this._reader.nextToken();
-    return new JsonArray(result);
-  }
-  function readValue($this, isString_0) {
-    var tmp;
-    if ($this._isLenient_1) {
-      tmp = $this._reader.takeString();
-    } else {
-      tmp = isString_0 ? $this._reader.takeStringQuoted() : $this._reader.takeString();
-    }
-    var str = tmp;
-    return new JsonLiteral(str, isString_0);
-  }
-  function JsonParser(configuration, reader) {
-    this._reader = reader;
-    this._isLenient_1 = configuration._isLenient_0;
-  }
-  JsonParser.prototype.read_2 = function () {
-    if (!this._reader._get_canBeginValue_()) {
-      this._reader.fail$default("Can't begin reading value from here", 0, 2, null);
-    }var tmp0_subject = this._reader._tokenClass;
-    var tmp;
-    if (tmp0_subject === 10) {
-      var tmp0_also_0 = JsonNull_getInstance();
-      this._reader.nextToken();
-      tmp = tmp0_also_0;
-    } else if (tmp0_subject === 1) {
-      tmp = readValue(this, true);
-    } else if (tmp0_subject === 0) {
-      tmp = readValue(this, false);
-    } else if (tmp0_subject === 6) {
-      tmp = readObject(this);
-    } else if (tmp0_subject === 8) {
-      tmp = readArray(this);
-    } else {
-      this._reader.fail$default("Can't begin reading element, unexpected token", 0, 2, null);
-    }
-    return tmp;
-  };
-  JsonParser.$metadata$ = {
-    simpleName: 'JsonParser',
-    kind: 'class',
-    interfaces: []
-  };
-  function takeStringInternal($this, advance) {
-    var tmp;
-    if ($this._offset_0 < 0) {
-      tmp = concatToString($this._buf, 0, 0 + $this._length_0 | 0);
-    } else {
-      var tmp0_substring_0 = $this._source;
-      var tmp1_substring_0 = $this._offset_0;
-      var tmp2_substring_0 = $this._offset_0 + $this._length_0 | 0;
-      tmp = tmp0_substring_0.substring(tmp1_substring_0, tmp2_substring_0);
-    }
-    var prevStr = tmp;
-    if (advance)
-      $this.nextToken();
-    return prevStr;
-  }
-  function takeStringInternal$default($this, advance, $mask0, $handler) {
-    if (!(($mask0 & 2) === 0))
-      advance = true;
-    return takeStringInternal($this, advance);
-  }
-  function append_0($this, ch) {
-    if ($this._length_0 >= $this._buf.length)
-      $this._buf = copyOf($this._buf, imul(2, $this._buf.length));
-    var tmp = $this._buf;
+  function unexpectedToken($this, expected) {
     var tmp0_this = $this;
-    var tmp1 = tmp0_this._length_0;
-    tmp0_this._length_0 = tmp1 + 1 | 0;
-    tmp[tmp1] = ch;
+    tmp0_this._currentPosition = tmp0_this._currentPosition - 1 | 0;
+    Unit_getInstance();
+    if (expected.equals(new Char(34)) ? $this.consumeStringLenient() === 'null' : false) {
+      $this.fail("Expected string literal but 'null' literal was found.\nUse 'coerceInputValues = true' in 'Json {}` builder to coerce nulls to default values.", $this._currentPosition - 4 | 0);
+    }fail($this, charToTokenClass(expected));
   }
-  function appendRange($this, source, fromIndex, toIndex) {
-    var addLen = toIndex - fromIndex | 0;
-    var oldLen = $this._length_0;
-    var newLen = oldLen + addLen | 0;
-    if (newLen > $this._buf.length)
-      $this._buf = copyOf($this._buf, coerceAtLeast(newLen, imul(2, $this._buf.length)));
-    var inductionVariable = 0;
-    if (inductionVariable < addLen)
-      do {
-        var i = inductionVariable;
-        inductionVariable = inductionVariable + 1 | 0;
-        $this._buf[oldLen + i | 0] = charSequenceGet(source, fromIndex + i | 0);
+  function fail($this, expectedToken) {
+    var tmp0_subject = expectedToken;
+    var expected = tmp0_subject === 1 ? "quotation mark '\"'" : tmp0_subject === 4 ? "comma ','" : tmp0_subject === 5 ? "semicolon ':'" : tmp0_subject === 6 ? "start of the object '{'" : tmp0_subject === 7 ? "end of the object '}'" : tmp0_subject === 8 ? "start of the array '['" : tmp0_subject === 9 ? "end of the array ']'" : 'valid token';
+    var s = ($this._currentPosition === $this._source.length ? true : $this._currentPosition <= 0) ? 'EOF' : charSequenceGet($this._source, $this._currentPosition - 1 | 0).toString();
+    $this.fail('' + 'Expected ' + expected + ", but had '" + s + "' instead", $this._currentPosition - 1 | 0);
+  }
+  function skipWhitespaces($this) {
+    var current = $this._currentPosition;
+    $l$break: while (current < $this._source.length) {
+      var c = charSequenceGet($this._source, current);
+      if (((c.equals(new Char(32)) ? true : c.equals(new Char(10))) ? true : c.equals(new Char(13))) ? true : c.equals(new Char(9))) {
+        current = current + 1 | 0;
+        Unit_getInstance();
+      } else {
+        break $l$break;
       }
-       while (inductionVariable < addLen);
-    var tmp1_this = $this;
-    tmp1_this._length_0 = tmp1_this._length_0 + addLen | 0;
-  }
-  function nextLiteral($this, source, startPos) {
-    $this._tokenPosition = startPos;
-    $this._offset_0 = startPos;
-    var currentPosition = startPos;
-    while (currentPosition < source.length ? charToTokenClass(charSequenceGet(source, currentPosition)) === 0 : false) {
-      var tmp0 = currentPosition;
-      currentPosition = tmp0 + 1 | 0;
-      Unit_getInstance();
     }
-    $this._currentPosition = currentPosition;
-    $this._length_0 = currentPosition - $this._offset_0 | 0;
-    $this._tokenClass = rangeEquals(source, $this._offset_0, $this._length_0, 'null') ? 10 : 0;
+    $this._currentPosition = current;
+    return current;
   }
-  function nextString($this, source, startPosition) {
-    $this._tokenPosition = startPosition;
-    $this._length_0 = 0;
-    var currentPosition = startPosition + 1 | 0;
-    if (currentPosition >= source.length) {
-      $this.fail('EOF', currentPosition);
-    }var lastPosition = currentPosition;
-    while (!charSequenceGet(source, currentPosition).equals(new Char(34))) {
-      if (charSequenceGet(source, currentPosition).equals(new Char(92))) {
-        appendRange($this, source, lastPosition, currentPosition);
-        var newPosition = appendEsc($this, source, currentPosition + 1 | 0);
-        currentPosition = newPosition;
-        lastPosition = newPosition;
+  function consumeString($this, startPosition, current) {
+    var currentPosition = current;
+    var lastPosition = startPosition;
+    var source = $this._source;
+    var char = charSequenceGet(source, currentPosition);
+    while (!char.equals(new Char(34))) {
+      if (char.equals(new Char(92))) {
+        currentPosition = appendEscape($this, lastPosition, currentPosition);
+        lastPosition = currentPosition;
       } else {
         currentPosition = currentPosition + 1 | 0;
         if (currentPosition >= source.length) {
@@ -49309,196 +49449,448 @@
         } else {
         }
       }
+      char = charSequenceGet(source, currentPosition);
     }
-    if (lastPosition === (startPosition + 1 | 0)) {
-      $this._offset_0 = lastPosition;
-      $this._length_0 = currentPosition - lastPosition | 0;
+    var tmp;
+    if (lastPosition === startPosition) {
+      var tmp0_substring_0 = lastPosition;
+      var tmp1_substring_0 = currentPosition;
+      tmp = source.substring(tmp0_substring_0, tmp1_substring_0);
     } else {
-      appendRange($this, source, lastPosition, currentPosition);
-      $this._offset_0 = -1;
+      tmp = decodedString($this, lastPosition, currentPosition);
     }
+    var string = tmp;
     $this._currentPosition = currentPosition + 1 | 0;
-    $this._tokenClass = 1;
+    return string;
   }
-  function appendEsc($this, source, startPosition) {
+  function appendEscape($this, lastPosition, current) {
+    $this._escapedString.append_21($this._source, lastPosition, current);
+    Unit_getInstance();
+    return appendEsc($this, current + 1 | 0);
+  }
+  function decodedString($this, lastPosition, currentPosition) {
+    appendRange($this, lastPosition, currentPosition);
+    var result = $this._escapedString.toString();
+    $this._escapedString.setLength(0);
+    return result;
+  }
+  function takePeeked($this) {
+    var tmp0_also_0 = ensureNotNull($this._peekedString);
+    $this._peekedString = null;
+    return tmp0_also_0;
+  }
+  function appendRange($this, fromIndex, toIndex) {
+    $this._escapedString.append_21($this._source, fromIndex, toIndex);
+    Unit_getInstance();
+  }
+  function appendEsc($this, startPosition) {
     var currentPosition = startPosition;
-    var tmp0_require_0 = currentPosition < source.length;
-    var tmp1_require_0 = currentPosition;
-    if (!tmp0_require_0) {
-      $this.fail('Unexpected EOF after escape character', tmp1_require_0);
-    }var tmp0 = currentPosition;
+    var tmp0 = currentPosition;
     currentPosition = tmp0 + 1 | 0;
-    var currentChar = charSequenceGet(source, tmp0);
+    var currentChar = charSequenceGet($this._source, tmp0);
     if (currentChar.equals(new Char(117))) {
-      return appendHex($this, source, currentPosition);
+      return appendHex($this, $this._source, currentPosition);
     }var c = escapeToChar(currentChar.toInt_5());
-    var tmp2_require_0 = !c.equals(new Char(0));
-    var tmp3_require_0 = currentPosition;
-    if (!tmp2_require_0) {
-      $this.fail('' + "Invalid escaped char '" + currentChar + "'", tmp3_require_0);
-    }append_0($this, c);
+    if (c.equals(new Char(0))) {
+      var tmp = '' + "Invalid escaped char '" + currentChar + "'";
+      $this.fail$default(tmp, 0, 2, null);
+    }$this._escapedString.append_23(c);
+    Unit_getInstance();
     return currentPosition;
   }
   function appendHex($this, source, startPos) {
-    var curPos = startPos;
-    var tmp3 = curPos;
-    curPos = tmp3 + 1 | 0;
-    var tmp = fromHexChar($this, source, tmp3) << 12;
-    var tmp2 = curPos;
-    curPos = tmp2 + 1 | 0;
-    var tmp_0 = tmp + (fromHexChar($this, source, tmp2) << 8) | 0;
-    var tmp1 = curPos;
-    curPos = tmp1 + 1 | 0;
-    var tmp_1 = tmp_0 + (fromHexChar($this, source, tmp1) << 4) | 0;
-    var tmp0 = curPos;
-    curPos = tmp0 + 1 | 0;
-    append_0($this, numberToChar(tmp_1 + fromHexChar($this, source, tmp0) | 0));
-    return curPos;
+    if ((startPos + 4 | 0) >= source.length) {
+      $this.fail$default('Unexpected EOF during unicode escape', 0, 2, null);
+    }$this._escapedString.append_23(numberToChar((((fromHexChar($this, source, startPos) << 12) + (fromHexChar($this, source, startPos + 1 | 0) << 8) | 0) + (fromHexChar($this, source, startPos + 2 | 0) << 4) | 0) + fromHexChar($this, source, startPos + 3 | 0) | 0));
+    Unit_getInstance();
+    return startPos + 4 | 0;
   }
   function fromHexChar($this, source, currentPosition) {
-    var tmp0_require_0 = currentPosition < source.length;
-    if (!tmp0_require_0) {
-      $this.fail('Unexpected EOF during unicode escape', currentPosition);
-    }var curChar = charSequenceGet(source, currentPosition);
+    var character = charSequenceGet(source, currentPosition);
     var tmp;
-    if (new Char(48) <= curChar ? curChar <= new Char(57) : false) {
-      tmp = curChar.toInt_5() - 48 | 0;
-    } else if (new Char(97) <= curChar ? curChar <= new Char(102) : false) {
-      tmp = (curChar.toInt_5() - 97 | 0) + 10 | 0;
-    } else if (new Char(65) <= curChar ? curChar <= new Char(70) : false) {
-      tmp = (curChar.toInt_5() - 65 | 0) + 10 | 0;
+    if (new Char(48) <= character ? character <= new Char(57) : false) {
+      tmp = character.toInt_5() - 48 | 0;
+    } else if (new Char(97) <= character ? character <= new Char(102) : false) {
+      tmp = (character.toInt_5() - 97 | 0) + 10 | 0;
+    } else if (new Char(65) <= character ? character <= new Char(70) : false) {
+      tmp = (character.toInt_5() - 65 | 0) + 10 | 0;
     } else {
-      var tmp_0 = '' + "Invalid toHexChar char '" + curChar + "' in unicode escape";
+      var tmp_0 = '' + "Invalid toHexChar char '" + character + "' in unicode escape";
       $this.fail$default(tmp_0, 0, 2, null);
     }
     return tmp;
   }
-  function JsonReader(source) {
+  function consumeBoolean($this, start) {
+    var current = start;
+    if (current === $this._source.length) {
+      $this.fail$default('EOF', 0, 2, null);
+    }var tmp0 = current;
+    current = tmp0 + 1 | 0;
+    var tmp1_subject = charSequenceGet($this._source, tmp0).toInt_5() | 32;
+    var tmp;
+    switch (tmp1_subject) {
+      case 116:
+        consumeBooleanLiteral($this, 'rue', current);
+        tmp = true;
+        break;
+      case 102:
+        consumeBooleanLiteral($this, 'alse', current);
+        tmp = false;
+        break;
+      default:var tmp_0 = '' + "Expected valid boolean literal prefix, but had '" + $this.consumeStringLenient() + "'";
+        $this.fail$default(tmp_0, 0, 2, null);
+        break;
+    }
+    return tmp;
+  }
+  function consumeBooleanLiteral($this, literalSuffix, current) {
+    if (($this._source.length - current | 0) < literalSuffix.length) {
+      $this.fail$default('Unexpected end of boolean literal', 0, 2, null);
+    }var inductionVariable = 0;
+    var last_1 = charSequenceLength(literalSuffix) - 1 | 0;
+    if (inductionVariable <= last_1)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var expected = charSequenceGet(literalSuffix, i);
+        var actual = charSequenceGet($this._source, current + i | 0);
+        if (!(expected.toInt_5() === (actual.toInt_5() | 32))) {
+          var tmp = '' + "Expected valid boolean literal prefix, but had '" + $this.consumeStringLenient() + "'";
+          $this.fail$default(tmp, 0, 2, null);
+        }}
+       while (inductionVariable <= last_1);
+    $this._currentPosition = current + literalSuffix.length | 0;
+  }
+  function JsonLexer(source) {
     this._source = source;
     this._currentPosition = 0;
-    this._tokenClass = 12;
-    this._tokenPosition = 0;
-    this._offset_0 = -1;
-    this._length_0 = 0;
-    this._buf = charArray(16);
-    this.nextToken();
+    this._peekedString = null;
+    this._escapedString = StringBuilder_init_$Create$_0();
   }
-  JsonReader.prototype._get_isDone_ = function () {
-    return this._tokenClass === 12;
+  JsonLexer.prototype.expectEof = function () {
+    var nextToken = this.consumeNextToken_1();
+    if (!(nextToken === 10)) {
+      var tmp = '' + 'Expected EOF, but had ' + charSequenceGet(this._source, this._currentPosition - 1 | 0) + ' instead';
+      this.fail$default(tmp, 0, 2, null);
+    }};
+  JsonLexer.prototype.tryConsumeComma = function () {
+    var current = skipWhitespaces(this);
+    if (current === this._source.length)
+      return false;
+    if (charSequenceGet(this._source, current).equals(new Char(44))) {
+      var tmp0_this = this;
+      tmp0_this._currentPosition = tmp0_this._currentPosition + 1 | 0;
+      Unit_getInstance();
+      return true;
+    }return false;
   };
-  JsonReader.prototype._get_canBeginValue_ = function () {
-    var tmp0_subject = this._tokenClass;
-    return ((((tmp0_subject === 8 ? true : tmp0_subject === 6) ? true : tmp0_subject === 0) ? true : tmp0_subject === 1) ? true : tmp0_subject === 10) ? true : false;
-  };
-  JsonReader.prototype.takeString = function () {
-    if (!(this._tokenClass === 0) ? !(this._tokenClass === 1) : false) {
-      this.fail('Expected string or non-null literal', this._tokenPosition);
-    }return takeStringInternal$default(this, false, 2, null);
-  };
-  JsonReader.prototype.peekString = function (isLenient) {
-    return (!(this._tokenClass === 1) ? !isLenient ? true : !(this._tokenClass === 0) : false) ? null : takeStringInternal(this, false);
-  };
-  JsonReader.prototype.takeStringQuoted = function () {
-    var tmp0_subject = this._tokenClass;
-    if (tmp0_subject === 1) {
-    } else if (tmp0_subject === 10) {
-      this.fail("Expected string literal but 'null' literal was found.\nUse 'coerceInputValues = true' in 'Json {}` builder to coerce nulls to default values.", this._tokenPosition);
-    } else {
-      this.fail("Expected string literal with quotes.\nUse 'isLenient = true' in 'Json {}` builder to accept non-compliant JSON.", this._tokenPosition);
-    }
-    return takeStringInternal$default(this, false, 2, null);
-  };
-  JsonReader.prototype.takeBooleanStringUnquoted = function () {
-    if (!(this._tokenClass === 0)) {
-      this.fail("Expected start of the unquoted boolean literal.\nUse 'isLenient = true' in 'Json {}` builder to accept non-compliant JSON.", this._tokenPosition);
-    }return takeStringInternal$default(this, false, 2, null);
-  };
-  JsonReader.prototype.nextToken = function () {
-    var source = this._source;
-    var currentPosition = this._currentPosition;
-    while (currentPosition < source.length) {
-      var ch = charSequenceGet(source, currentPosition);
-      var tc = charToTokenClass(ch);
-      if (tc === 3) {
-        var tmp0 = currentPosition;
-        currentPosition = tmp0 + 1 | 0;
+  JsonLexer.prototype.canConsumeValue = function () {
+    var current = this._currentPosition;
+    while (current < this._source.length) {
+      var c = charSequenceGet(this._source, current);
+      if (((c.equals(new Char(32)) ? true : c.equals(new Char(10))) ? true : c.equals(new Char(13))) ? true : c.equals(new Char(9))) {
+        current = current + 1 | 0;
         Unit_getInstance();
-      } else if (tc === 0) {
-        nextLiteral(this, source, currentPosition);
+        continue;
+      }this._currentPosition = current;
+      return isValidValueStart(this, c);
+    }
+    this._currentPosition = current;
+    return false;
+  };
+  JsonLexer.prototype.consumeNextToken = function (expected) {
+    var token = this.consumeNextToken_1();
+    if (!(token === expected)) {
+      fail(this, expected);
+    }return token;
+  };
+  JsonLexer.prototype.consumeNextToken_0 = function (expected) {
+    var source = this._source;
+    while (this._currentPosition < source.length) {
+      var tmp0_this = this;
+      var tmp1 = tmp0_this._currentPosition;
+      tmp0_this._currentPosition = tmp1 + 1 | 0;
+      var c = charSequenceGet(source, tmp1);
+      if (((c.equals(new Char(32)) ? true : c.equals(new Char(10))) ? true : c.equals(new Char(13))) ? true : c.equals(new Char(9)))
+        continue;
+      if (c.equals(expected))
         return Unit_getInstance();
-      } else if (tc === 1) {
-        nextString(this, source, currentPosition);
-        return Unit_getInstance();
+      unexpectedToken(this, expected);
+    }
+    unexpectedToken(this, expected);
+  };
+  JsonLexer.prototype.peekNextToken = function () {
+    var source = this._source;
+    while (this._currentPosition < source.length) {
+      var ch = charSequenceGet(source, this._currentPosition);
+      if (((ch.equals(new Char(32)) ? true : ch.equals(new Char(10))) ? true : ch.equals(new Char(13))) ? true : ch.equals(new Char(9))) {
+        var tmp0_this = this;
+        tmp0_this._currentPosition = tmp0_this._currentPosition + 1 | 0;
+        Unit_getInstance();
+        continue;
+      }return charToTokenClass(ch);
+    }
+    return 10;
+  };
+  JsonLexer.prototype.consumeNextToken_1 = function () {
+    var source = this._source;
+    while (this._currentPosition < source.length) {
+      var tmp0_this = this;
+      var tmp1 = tmp0_this._currentPosition;
+      tmp0_this._currentPosition = tmp1 + 1 | 0;
+      var ch = charSequenceGet(source, tmp1);
+      var tc = charToTokenClass(ch);
+      var tmp;
+      if (tc === 3) {
+        continue;
       } else {
-        this._tokenPosition = currentPosition;
-        this._tokenClass = tc;
-        this._currentPosition = currentPosition + 1 | 0;
-        return Unit_getInstance();
+        tmp = tc;
       }
+      return tmp;
     }
-    this._tokenPosition = currentPosition;
-    this._tokenClass = 12;
+    return 10;
   };
-  JsonReader.prototype.skipElement = function () {
-    if (!(this._tokenClass === 6) ? !(this._tokenClass === 8) : false) {
-      this.nextToken();
+  JsonLexer.prototype.tryConsumeNotNull = function () {
+    var current = skipWhitespaces(this);
+    if ((this._source.length - current | 0) < 4)
+      return true;
+    var inductionVariable = 0;
+    if (inductionVariable <= 3)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        if (!charSequenceGet('null', i).equals(charSequenceGet(this._source, current + i | 0)))
+          return true;
+      }
+       while (inductionVariable <= 3);
+    this._currentPosition = current + 4 | 0;
+    return false;
+  };
+  JsonLexer.prototype.peekString = function (isLenient) {
+    var token = this.peekNextToken();
+    var tmp;
+    if (isLenient) {
+      if (!(token === 1) ? !(token === 0) : false)
+        return null;
+      tmp = this.consumeStringLenient();
+    } else {
+      if (!(token === 1))
+        return null;
+      tmp = this.consumeString();
+    }
+    var string = tmp;
+    this._peekedString = string;
+    return string;
+  };
+  JsonLexer.prototype.consumeKeyString = function () {
+    this.consumeNextToken_0(new Char(34));
+    var current = this._currentPosition;
+    var tmp = new Char(34);
+    var closingQuote = indexOf$default(this._source, tmp, current, false, 4, null);
+    if (closingQuote === -1)
+      fail(this, 1);
+    var inductionVariable = current;
+    if (inductionVariable < closingQuote)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        if (charSequenceGet(this._source, i).equals(new Char(92))) {
+          return consumeString(this, this._currentPosition, i);
+        }}
+       while (inductionVariable < closingQuote);
+    this._currentPosition = closingQuote + 1 | 0;
+    var tmp0_substring_0 = this._source;
+    return tmp0_substring_0.substring(current, closingQuote);
+  };
+  JsonLexer.prototype.consumeString = function () {
+    if (!(this._peekedString == null)) {
+      return takePeeked(this);
+    }return this.consumeKeyString();
+  };
+  JsonLexer.prototype.consumeStringLenient = function () {
+    if (!(this._peekedString == null)) {
+      return takePeeked(this);
+    }var current = skipWhitespaces(this);
+    var token = charToTokenClass(charSequenceGet(this._source, current));
+    if (token === 1) {
+      return this.consumeString();
+    }if (!(token === 0)) {
+      var tmp = '' + 'Expected beginning of the string, but got ' + charSequenceGet(this._source, current);
+      this.fail$default(tmp, 0, 2, null);
+    }while (current < this._source.length ? charToTokenClass(charSequenceGet(this._source, current)) === 0 : false) {
+      current = current + 1 | 0;
+      Unit_getInstance();
+    }
+    var tmp0_substring_0 = this._source;
+    var tmp1_substring_0 = this._currentPosition;
+    var tmp2_substring_0 = current;
+    var result = tmp0_substring_0.substring(tmp1_substring_0, tmp2_substring_0);
+    this._currentPosition = current;
+    return result;
+  };
+  JsonLexer.prototype.skipElement = function (allowLenientStrings) {
+    var tokenStack = ArrayList_init_$Create$();
+    var lastToken = this.peekNextToken();
+    if (!(lastToken === 8) ? !(lastToken === 6) : false) {
+      this.consumeStringLenient();
+      Unit_getInstance();
       return Unit_getInstance();
-    }var tokenStack = ArrayList_init_$Create$();
-    $l$1: do {
-      $l$0: do {
-        var tmp0_subject = this._tokenClass;
-        if (tmp0_subject === 8 ? true : tmp0_subject === 6) {
-          tokenStack.add_32(this._tokenClass);
+    }while (true) {
+      lastToken = this.peekNextToken();
+      if (lastToken === 1) {
+        if (allowLenientStrings) {
+          this.consumeStringLenient();
           Unit_getInstance();
-        } else if (tmp0_subject === 9) {
-          if (!(last(tokenStack) === 8))
-            throw JsonDecodingException_0(this._currentPosition, 'found ] instead of }', this._source);
-          tokenStack.removeAt_2(tokenStack._get_size__48() - 1 | 0);
+        } else {
+          this.consumeKeyString();
           Unit_getInstance();
-        } else if (tmp0_subject === 7) {
-          if (!(last(tokenStack) === 6))
-            throw JsonDecodingException_0(this._currentPosition, 'found } instead of ]', this._source);
-          tokenStack.removeAt_2(tokenStack._get_size__48() - 1 | 0);
-          Unit_getInstance();
-        }this.nextToken();
-      }
-       while (false);
+        }
+        continue;
+      }var tmp0_subject = lastToken;
+      if (tmp0_subject === 8 ? true : tmp0_subject === 6) {
+        tokenStack.add_32(lastToken);
+        Unit_getInstance();
+      } else if (tmp0_subject === 9) {
+        if (!(last(tokenStack) === 8))
+          throw JsonDecodingException_0(this._currentPosition, 'found ] instead of }', this._source);
+        tokenStack.removeAt_2(tokenStack._get_size__48() - 1 | 0);
+        Unit_getInstance();
+      } else if (tmp0_subject === 7) {
+        if (!(last(tokenStack) === 6))
+          throw JsonDecodingException_0(this._currentPosition, 'found } instead of ]', this._source);
+        tokenStack.removeAt_2(tokenStack._get_size__48() - 1 | 0);
+        Unit_getInstance();
+      }this.consumeNextToken_1();
+      Unit_getInstance();
+      if (tokenStack._get_size__48() === 0)
+        return Unit_getInstance();
     }
-     while (!tokenStack.isEmpty_50());
   };
-  JsonReader.prototype.toString = function () {
-    return '' + "JsonReader(source='" + this._source + "', currentPosition=" + this._currentPosition + ', tokenClass=' + this._tokenClass + ', tokenPosition=' + this._tokenPosition + ', offset=' + this._offset_0 + ')';
+  JsonLexer.prototype.toString = function () {
+    return '' + "JsonReader(source='" + this._source + "', currentPosition=" + this._currentPosition + ')';
   };
-  JsonReader.prototype.fail = function (message, position) {
+  JsonLexer.prototype.failOnUnknownKey = function (key) {
+    var tmp0_substring_0 = this._source;
+    var tmp1_substring_0 = 0;
+    var tmp2_substring_0 = this._currentPosition;
+    var processed = tmp0_substring_0.substring(tmp1_substring_0, tmp2_substring_0);
+    var lastIndexOf_1 = lastIndexOf$default(processed, key, 0, false, 6, null);
+    this.fail('' + "Encountered an unknown key '" + key + "'.\nUse 'ignoreUnknownKeys = true' in 'Json {}' builder to ignore unknown keys.", lastIndexOf_1);
+  };
+  JsonLexer.prototype.fail = function (message, position) {
     throw JsonDecodingException_0(position, message, this._source);
   };
-  JsonReader.prototype.fail$default = function (message, position, $mask0, $handler) {
+  JsonLexer.prototype.fail$default = function (message, position, $mask0, $handler) {
     if (!(($mask0 & 2) === 0))
       position = this._currentPosition;
     return this.fail(message, position);
   };
-  JsonReader.$metadata$ = {
-    simpleName: 'JsonReader',
+  JsonLexer.prototype.consumeNumericLiteral = function () {
+    var current = skipWhitespaces(this);
+    if (current === this._source.length) {
+      this.fail$default('EOF', 0, 2, null);
+    }var tmp;
+    if (charSequenceGet(this._source, current).equals(new Char(34))) {
+      current = current + 1 | 0;
+      if (current === this._source.length) {
+        this.fail$default('EOF', 0, 2, null);
+      } else {
+      }
+      tmp = true;
+    } else {
+      tmp = false;
+    }
+    var hasQuotation = tmp;
+    var accumulator = new Long(0, 0);
+    var isNegative_0 = false;
+    var start = current;
+    var hasChars = true;
+    $l$break: while (hasChars) {
+      var ch = charSequenceGet(this._source, current);
+      if (ch.equals(new Char(45))) {
+        if (!(current === start)) {
+          this.fail$default("Unexpected symbol '-' in numeric literal", 0, 2, null);
+        }isNegative_0 = true;
+        current = current + 1 | 0;
+        Unit_getInstance();
+        continue $l$break;
+      }var token = charToTokenClass(ch);
+      if (!(token === 0))
+        break $l$break;
+      current = current + 1 | 0;
+      Unit_getInstance();
+      hasChars = !(current === this._source.length);
+      var digit = ch.minus_0(new Char(48));
+      if (!(0 <= digit ? digit <= 9 : false)) {
+        var tmp_0 = '' + "Unexpected symbol '" + ch + "' in numeric literal";
+        this.fail$default(tmp_0, 0, 2, null);
+      }var tmp0_times_0 = accumulator;
+      var tmp1_times_0 = 10;
+      var tmp2_minus_0 = tmp0_times_0.times_30(toLong_0(tmp1_times_0));
+      accumulator = tmp2_minus_0.minus_30(toLong_0(digit));
+      if (accumulator.compareTo_59(new Long(0, 0)) > 0) {
+        this.fail$default('Numeric value overflow', 0, 2, null);
+      }}
+    if (start === current ? true : isNegative_0 ? start === (current - 1 | 0) : false) {
+      this.fail$default('Expected numeric literal', 0, 2, null);
+    }if (hasQuotation) {
+      if (!hasChars) {
+        this.fail$default('EOF', 0, 2, null);
+      }if (!charSequenceGet(this._source, current).equals(new Char(34))) {
+        this.fail$default('Expected closing quotation mark', 0, 2, null);
+      }current = current + 1 | 0;
+      Unit_getInstance();
+    }this._currentPosition = current;
+    var tmp_1;
+    if (isNegative_0) {
+      tmp_1 = accumulator;
+    } else {
+      var tmp_2 = accumulator;
+      Companion_getInstance_15();
+      if (!tmp_2.equals(new Long(0, -2147483648))) {
+        tmp_1 = accumulator.unaryMinus_4();
+      } else {
+        {
+          this.fail$default('Numeric value overflow', 0, 2, null);
+        }
+      }
+    }
+    return tmp_1;
+  };
+  JsonLexer.prototype.consumeBoolean = function () {
+    return consumeBoolean(this, skipWhitespaces(this));
+  };
+  JsonLexer.prototype.consumeBooleanLenient = function () {
+    var current = skipWhitespaces(this);
+    if (current === this._source.length) {
+      this.fail$default('EOF', 0, 2, null);
+    }var tmp;
+    if (charSequenceGet(this._source, current).equals(new Char(34))) {
+      current = current + 1 | 0;
+      Unit_getInstance();
+      tmp = true;
+    } else {
+      tmp = false;
+    }
+    var hasQuotation = tmp;
+    var result = consumeBoolean(this, current);
+    if (hasQuotation) {
+      if (this._currentPosition === this._source.length) {
+        this.fail$default('EOF', 0, 2, null);
+      }if (!charSequenceGet(this._source, this._currentPosition).equals(new Char(34))) {
+        this.fail$default('Expected closing quotation mark', 0, 2, null);
+      }var tmp0_this = this;
+      tmp0_this._currentPosition = tmp0_this._currentPosition + 1 | 0;
+      Unit_getInstance();
+    }return result;
+  };
+  JsonLexer.$metadata$ = {
+    simpleName: 'JsonLexer',
     kind: 'class',
     interfaces: []
   };
   function charToTokenClass(c) {
-    return c.toInt_5() < 126 ? CharMappings_getInstance()._C2TC[c.toInt_5()] : 0;
-  }
-  function rangeEquals(source, start, length, str) {
-    var n = str.length;
-    if (!(length === n))
-      return false;
-    var inductionVariable = 0;
-    if (inductionVariable < n)
-      do {
-        var i = inductionVariable;
-        inductionVariable = inductionVariable + 1 | 0;
-        if (!charSequenceGet(source, start + i | 0).equals(charSequenceGet(str, i)))
-          return false;
-      }
-       while (inductionVariable < n);
-    return true;
+    return c.toInt_5() < 126 ? CharMappings_getInstance()._CHAR_TO_TOKEN[c.toInt_5()] : 0;
   }
   function escapeToChar(c) {
     return c < 117 ? CharMappings_getInstance()._ESCAPE_2_CHAR[c] : new Char(0);
@@ -49527,7 +49919,7 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        initC2TC($this, i, 11);
+        initC2TC($this, i, 127);
       }
        while (inductionVariable <= 32);
     initC2TC($this, 9, 3);
@@ -49551,7 +49943,7 @@
     return initC2ESC($this, c.toInt_5(), esc);
   }
   function initC2TC($this, c, cl) {
-    $this._C2TC[c] = cl;
+    $this._CHAR_TO_TOKEN[c] = cl;
   }
   function initC2TC_0($this, c, cl) {
     return initC2TC($this, c.toInt_5(), cl);
@@ -49559,7 +49951,7 @@
   function CharMappings() {
     CharMappings_instance = this;
     this._ESCAPE_2_CHAR = charArray(117);
-    this._C2TC = new Int8Array(126);
+    this._CHAR_TO_TOKEN = new Int8Array(126);
     initEscape(this);
     initCharToToken(this);
   }
@@ -49574,6 +49966,90 @@
       new CharMappings();
     return CharMappings_instance;
   }
+  function readObject($this) {
+    var lastToken = $this._lexer.consumeNextToken(6);
+    if ($this._lexer.peekNextToken() === 4) {
+      $this._lexer.fail$default('Unexpected leading comma', 0, 2, null);
+    }var result = LinkedHashMap_init_$Create$();
+    while ($this._lexer.canConsumeValue()) {
+      var key = $this._isLenient_1 ? $this._lexer.consumeStringLenient() : $this._lexer.consumeString();
+      $this._lexer.consumeNextToken(5);
+      Unit_getInstance();
+      var element = $this.read_2();
+      result.put_10(key, element);
+      Unit_getInstance();
+      lastToken = $this._lexer.consumeNextToken_1();
+      if (!(lastToken === 4) ? !(lastToken === 7) : false) {
+        $this._lexer.fail$default('Expected end of the object or comma', 0, 2, null);
+      }}
+    if (lastToken === 6) {
+      $this._lexer.consumeNextToken(7);
+      Unit_getInstance();
+    } else if (lastToken === 4) {
+      $this._lexer.fail$default('Unexpected trailing comma', 0, 2, null);
+    }return new JsonObject(result);
+  }
+  function readArray($this) {
+    var lastToken = $this._lexer.consumeNextToken_1();
+    if ($this._lexer.peekNextToken() === 4) {
+      $this._lexer.fail$default('Unexpected leading comma', 0, 2, null);
+    }var result = ArrayList_init_$Create$();
+    while ($this._lexer.canConsumeValue()) {
+      var element = $this.read_2();
+      result.add_32(element);
+      Unit_getInstance();
+      lastToken = $this._lexer.consumeNextToken_1();
+      if (!(lastToken === 4)) {
+        var tmp0_require_0 = $this._lexer;
+        var tmp1_require_0 = lastToken === 9;
+        var tmp2_require_0 = tmp0_require_0._currentPosition;
+        if (!tmp1_require_0) {
+          tmp0_require_0.fail('Expected end of the array or comma', tmp2_require_0);
+        }}}
+    if (lastToken === 8) {
+      $this._lexer.consumeNextToken(9);
+      Unit_getInstance();
+    } else if (lastToken === 4) {
+      $this._lexer.fail$default('Unexpected trailing comma', 0, 2, null);
+    }return new JsonArray(result);
+  }
+  function readValue($this, isString_0) {
+    var tmp;
+    if ($this._isLenient_1 ? true : !isString_0) {
+      tmp = $this._lexer.consumeStringLenient();
+    } else {
+      tmp = $this._lexer.consumeString();
+    }
+    var string = tmp;
+    if (string === 'null')
+      return JsonNull_getInstance();
+    return new JsonLiteral(string, isString_0);
+  }
+  function JsonTreeReader(configuration, lexer) {
+    this._lexer = lexer;
+    this._isLenient_1 = configuration._isLenient_0;
+  }
+  JsonTreeReader.prototype.read_2 = function () {
+    var tmp0_subject = this._lexer.peekNextToken();
+    var tmp;
+    if (tmp0_subject === 1) {
+      tmp = readValue(this, true);
+    } else if (tmp0_subject === 0) {
+      tmp = readValue(this, false);
+    } else if (tmp0_subject === 6) {
+      tmp = readObject(this);
+    } else if (tmp0_subject === 8) {
+      tmp = readArray(this);
+    } else {
+      this._lexer.fail$default("Can't begin reading element, unexpected token", 0, 2, null);
+    }
+    return tmp;
+  };
+  JsonTreeReader.$metadata$ = {
+    simpleName: 'JsonTreeReader',
+    kind: 'class',
+    interfaces: []
+  };
   function decodeSerializableValuePolymorphic(_this_, deserializer) {
     var tmp;
     if (!(deserializer instanceof AbstractPolymorphicSerializer)) {
@@ -49584,13 +50060,13 @@
       }
     }
     if (tmp) {
-      return deserializer.deserialize_80(_this_);
+      return deserializer.deserialize_81(_this_);
     } else {
     }
     var tmp0_cast_0 = _this_.decodeJsonElement_4();
-    var tmp1_cast_0 = deserializer._get_descriptor__76();
+    var tmp1_cast_0 = deserializer._get_descriptor__77();
     if (!(tmp0_cast_0 instanceof JsonObject)) {
-      throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonObject) + ' as the serialized body of ' + tmp1_cast_0._get_serialName__16() + ', but had ' + getKClassFromExpression_0(tmp0_cast_0));
+      throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonObject) + ' as the serialized body of ' + tmp1_cast_0._get_serialName__17() + ', but had ' + getKClassFromExpression_0(tmp0_cast_0));
     } else {
     }
     var jsonTree = tmp0_cast_0;
@@ -49598,7 +50074,7 @@
     var tmp0_safe_receiver = jsonTree.get_64(discriminator);
     var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : _get_jsonPrimitive_(tmp0_safe_receiver);
     var type = tmp1_safe_receiver == null ? null : tmp1_safe_receiver._get_content__8();
-    var tmp2_elvis_lhs = deserializer.findPolymorphicSerializerOrNull_6(_this_, type);
+    var tmp2_elvis_lhs = deserializer.findPolymorphicSerializerOrNull_8(_this_, type);
     var tmp_0;
     if (tmp2_elvis_lhs == null) {
       throwSerializerNotFound(type, jsonTree);
@@ -49613,7 +50089,7 @@
     var casted = serializer_16 instanceof AbstractPolymorphicSerializer ? serializer_16 : THROW_CCE();
     var actualSerializer = findPolymorphicSerializer(casted, _this_, isObject(value) ? value : THROW_CCE());
     validateIfSealed(casted, actualSerializer, _this_._get_json__6()._configuration._classDiscriminator_0);
-    var kind = actualSerializer._get_descriptor__76()._get_kind__19();
+    var kind = actualSerializer._get_descriptor__77()._get_kind__20();
     checkKind(kind);
     return actualSerializer;
   }
@@ -49626,9 +50102,9 @@
       return Unit_getInstance();
     else {
     }
-    if (jsonCachedSerialNames(actualSerializer._get_descriptor__76()).contains_48(classDiscriminator)) {
-      var baseName = serializer_16._get_descriptor__76()._get_serialName__16();
-      var actualName = actualSerializer._get_descriptor__76()._get_serialName__16();
+    if (jsonCachedSerialNames(actualSerializer._get_descriptor__77()).contains_48(classDiscriminator)) {
+      var baseName = serializer_16._get_descriptor__77()._get_serialName__17();
+      var actualName = actualSerializer._get_descriptor__77()._get_serialName__17();
       var tmp0_error_0 = '' + "Sealed class '" + actualName + "' cannot be serialized as base class '" + baseName + "' because" + ('' + " it has property name that conflicts with JSON class discriminator '" + classDiscriminator + "'. ") + 'You can either change class discriminator in JsonConfiguration, ' + 'rename property with @SerialName annotation or fall back to array polymorphism';
       throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0));
     }}
@@ -49650,7 +50126,7 @@
     }
   }
   function checkKind_0($this, descriptor, actualClass) {
-    var kind = descriptor._get_kind__19();
+    var kind = descriptor._get_kind__20();
     var tmp;
     if (kind instanceof PolymorphicKind) {
       tmp = true;
@@ -49686,12 +50162,12 @@
   }
   function checkDiscriminatorCollisions($this, descriptor, actualClass) {
     var inductionVariable = 0;
-    var last_1 = descriptor._get_elementsCount__16();
+    var last_1 = descriptor._get_elementsCount__17();
     if (inductionVariable < last_1)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var name = descriptor.getElementName_16(i);
+        var name = descriptor.getElementName_17(i);
         if (name === $this._discriminator) {
           throw IllegalArgumentException_init_$Create$_0('' + 'Polymorphic serializer for ' + actualClass + " has property '" + name + "' that conflicts " + 'with JSON class discriminator. You can either change class discriminator in JsonConfiguration, ' + 'rename property with @SerialName annotation ' + 'or fall back to array polymorphism');
         }}
@@ -49701,10 +50177,10 @@
     this._useArrayPolymorphism_1 = useArrayPolymorphism;
     this._discriminator = discriminator;
   }
-  PolymorphismValidator.prototype.contextual_0 = function (kClass, serializer_16) {
+  PolymorphismValidator.prototype.contextual_1 = function (kClass, provider) {
   };
   PolymorphismValidator.prototype.polymorphic_0 = function (baseClass, actualClass, actualSerializer) {
-    var descriptor = actualSerializer._get_descriptor__76();
+    var descriptor = actualSerializer._get_descriptor__77();
     checkKind_0(this, descriptor, actualClass);
     if (!this._useArrayPolymorphism_1) {
       checkDiscriminatorCollisions(this, descriptor, actualClass);
@@ -49716,42 +50192,128 @@
     kind: 'class',
     interfaces: [SerializersModuleCollector]
   };
-  function decodeMapIndex($this, tokenClass) {
-    if (!(tokenClass === 4) ? $this._currentIndex_0 % 2 === 1 : false) {
-      var tmp0_requireTokenClass_0 = $this._reader_0;
-      var tmp1_requireTokenClass_0 = 7;
-      if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-        var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-        tmp0_requireTokenClass_0.fail('Expected end of the object or comma', tmp0_requireTokenClass_0._tokenPosition);
-      }}if ($this._currentIndex_0 % 2 === 0) {
-      var tmp3_requireTokenClass_0 = $this._reader_0;
-      var tmp4_requireTokenClass_0 = 5;
-      if (!(tmp3_requireTokenClass_0._tokenClass === tmp4_requireTokenClass_0)) {
-        var tmp5__anonymous__1 = numberToChar(tmp3_requireTokenClass_0._tokenClass);
-        tmp3_requireTokenClass_0.fail("Expected ':' after the key", tmp3_requireTokenClass_0._tokenPosition);
-      }$this._reader_0.nextToken();
-    }var tmp;
-    if (!$this._reader_0._get_canBeginValue_()) {
-      var tmp6_require_0 = $this._reader_0;
-      var tmp7_require_0 = !(tokenClass === 4);
-      var tmp8_require_0 = tmp6_require_0._currentPosition;
-      if (!tmp7_require_0) {
-        tmp6_require_0.fail('Unexpected trailing comma', tmp8_require_0);
-      }Companion_getInstance_51();
-      tmp = -1;
+  function Key_6() {
+  }
+  Key_6.$metadata$ = {
+    simpleName: 'Key',
+    kind: 'class',
+    interfaces: []
+  };
+  function DescriptorSchemaCache() {
+    this._map_2 = createMapForCache(1);
+  }
+  DescriptorSchemaCache.prototype.set_9 = function (descriptor, key, value) {
+    var tmp0_getOrPut_0 = this._map_2;
+    var value_1 = tmp0_getOrPut_0.get_65(descriptor);
+    var tmp;
+    if (value_1 == null) {
+      var answer_2 = createMapForCache(1);
+      tmp0_getOrPut_0.put_10(descriptor, answer_2);
+      Unit_getInstance();
+      tmp = answer_2;
     } else {
-      var tmp0_this = $this;
+      tmp = value_1;
+    }
+    var tmp1_set_0 = tmp;
+    var tmp2_set_0 = key instanceof Key_6 ? key : THROW_CCE();
+    var tmp3_set_0 = isObject(value) ? value : THROW_CCE();
+    tmp1_set_0.put_10(tmp2_set_0, tmp3_set_0);
+    Unit_getInstance();
+  };
+  DescriptorSchemaCache.prototype.getOrPut = function (descriptor, key, defaultValue) {
+    var tmp0_safe_receiver = this.get_67(descriptor, key);
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      return tmp0_safe_receiver;
+    }
+    Unit_getInstance();
+    var value = defaultValue();
+    this.set_9(descriptor, key, value);
+    return value;
+  };
+  DescriptorSchemaCache.prototype.get_67 = function (descriptor, key) {
+    var tmp0_safe_receiver = this._map_2.get_65(descriptor);
+    var tmp;
+    if (tmp0_safe_receiver == null) {
+      tmp = null;
+    } else {
+      tmp = tmp0_safe_receiver.get_65(key instanceof Key_6 ? key : THROW_CCE());
+    }
+    var tmp_0 = tmp;
+    return isObject(tmp_0) ? tmp_0 : null;
+  };
+  DescriptorSchemaCache.$metadata$ = {
+    simpleName: 'DescriptorSchemaCache',
+    kind: 'class',
+    interfaces: []
+  };
+  function checkLeadingComma($this) {
+    if ($this._lexer_0.peekNextToken() === 4) {
+      $this._lexer_0.fail$default('Unexpected leading comma', 0, 2, null);
+    }}
+  function decodeMapIndex($this) {
+    var hasComma = false;
+    var decodingKey = !($this._currentIndex_0 % 2 === 0);
+    if (decodingKey) {
+      if (!($this._currentIndex_0 === -1)) {
+        hasComma = $this._lexer_0.tryConsumeComma();
+      }} else {
+      $this._lexer_0.consumeNextToken_0(new Char(58));
+    }
+    var tmp;
+    if ($this._lexer_0.canConsumeValue()) {
+      if (decodingKey) {
+        if ($this._currentIndex_0 === -1) {
+          var tmp0_require_0 = $this._lexer_0;
+          var tmp1_require_0 = !hasComma;
+          var tmp2_require_0 = tmp0_require_0._currentPosition;
+          if (!tmp1_require_0) {
+            tmp0_require_0.fail('Unexpected trailing comma', tmp2_require_0);
+          }} else {
+          var tmp3_require_0 = $this._lexer_0;
+          var tmp4_require_0 = hasComma;
+          var tmp5_require_0 = tmp3_require_0._currentPosition;
+          if (!tmp4_require_0) {
+            tmp3_require_0.fail('Expected comma after the key-value pair', tmp5_require_0);
+          }}
+      }var tmp0_this = $this;
       tmp0_this._currentIndex_0 = tmp0_this._currentIndex_0 + 1 | 0;
       tmp = tmp0_this._currentIndex_0;
+    } else {
+      if (hasComma) {
+        $this._lexer_0.fail$default("Expected '}', but had ',' instead", 0, 2, null);
+      }Companion_getInstance_51();
+      tmp = -1;
+    }
+    return tmp;
+  }
+  function getJsonElementIndex(_this_, $this, key) {
+    var index = _this_.getElementIndex_17(key);
+    Companion_getInstance_51();
+    if (!(index === -3))
+      return index;
+    else {
+    }
+    if (!$this._json_0._configuration._useAlternativeNames_0)
+      return index;
+    var alternativeNamesMap = $this._json_0._schemaCache.getOrPut(_this_, JsonAlternativeNamesKey, _no_name_provided_$factory_191(_this_));
+    var tmp0_elvis_lhs = alternativeNamesMap.get_65(key);
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      Companion_getInstance_51();
+      tmp = -3;
+    } else {
+      tmp = tmp0_elvis_lhs;
     }
     return tmp;
   }
   function coerceInputValue($this, descriptor, index) {
-    var elementDescriptor = descriptor.getElementDescriptor_16(index);
-    if ($this._reader_0._tokenClass === 10 ? !elementDescriptor._get_isNullable__16() : false)
+    var elementDescriptor = descriptor.getElementDescriptor_17(index);
+    if (!elementDescriptor._get_isNullable__17() ? !$this._lexer_0.tryConsumeNotNull() : false)
       return true;
-    if (equals_1(elementDescriptor._get_kind__19(), ENUM_getInstance())) {
-      var tmp0_elvis_lhs = $this._reader_0.peekString($this._configuration_0._isLenient_0);
+    if (equals_1(elementDescriptor._get_kind__20(), ENUM_getInstance())) {
+      var tmp0_elvis_lhs = $this._lexer_0.peekString($this._configuration_0._isLenient_0);
       var tmp;
       if (tmp0_elvis_lhs == null) {
         return false;
@@ -49759,34 +50321,29 @@
         tmp = tmp0_elvis_lhs;
       }
       var enumValue = tmp;
-      var enumIndex = elementDescriptor.getElementIndex_16(enumValue);
+      var enumIndex = elementDescriptor.getElementIndex_17(enumValue);
       Companion_getInstance_51();
-      if (enumIndex === -3)
+      if (enumIndex === -3) {
+        $this._lexer_0.consumeString();
+        Unit_getInstance();
         return true;
-      else {
+      } else {
       }
     }return false;
   }
-  function decodeObjectIndex($this, tokenClass, descriptor) {
-    if (tokenClass === 4 ? !$this._reader_0._get_canBeginValue_() : false) {
-      $this._reader_0.fail$default('Unexpected trailing comma', 0, 2, null);
-    }while ($this._reader_0._get_canBeginValue_()) {
-      var tmp0_this = $this;
-      tmp0_this._currentIndex_0 = tmp0_this._currentIndex_0 + 1 | 0;
-      Unit_getInstance();
-      var key = $this.decodeString_8();
-      var tmp0_requireTokenClass_0 = $this._reader_0;
-      var tmp1_requireTokenClass_0 = 5;
-      if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-        var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-        tmp0_requireTokenClass_0.fail("Expected ':'", tmp0_requireTokenClass_0._tokenPosition);
-      }$this._reader_0.nextToken();
-      var index = descriptor.getElementIndex_16(key);
+  function decodeObjectIndex($this, descriptor) {
+    var hasComma = $this._lexer_0.tryConsumeComma();
+    while ($this._lexer_0.canConsumeValue()) {
+      hasComma = false;
+      var key = decodeStringKey($this);
+      $this._lexer_0.consumeNextToken_0(new Char(58));
+      var index = getJsonElementIndex(descriptor, $this, key);
       var tmp;
       Companion_getInstance_51();
       if (!(index === -3)) {
         var tmp_0;
         if ($this._configuration_0._coerceInputValues_0 ? coerceInputValue($this, descriptor, index) : false) {
+          hasComma = $this._lexer_0.tryConsumeComma();
           tmp_0 = false;
         } else {
           return index;
@@ -49798,253 +50355,153 @@
         }
       }
       var isUnknown = tmp;
-      if (isUnknown ? !$this._configuration_0._ignoreUnknownKeys_0 : false) {
-        var tmp_1 = '' + "Encountered an unknown key '" + key + "'.\nUse 'ignoreUnknownKeys = true' in 'Json {}' builder to ignore unknown keys.";
-        $this._reader_0.fail$default(tmp_1, 0, 2, null);
-      } else {
-        $this._reader_0.skipElement();
-      }
-      if ($this._reader_0._tokenClass === 4) {
-        $this._reader_0.nextToken();
-        var tmp3_require_0 = $this._reader_0;
-        var tmp4_require_0 = $this._reader_0._get_canBeginValue_();
-        var tmp5_require_0 = $this._reader_0._currentPosition;
-        if (!tmp4_require_0) {
-          tmp3_require_0.fail('Unexpected trailing comma', tmp5_require_0);
-        }}}
-    Companion_getInstance_51();
+      if (isUnknown) {
+        hasComma = handleUnknown($this, key);
+      }}
+    if (hasComma) {
+      $this._lexer_0.fail$default('Unexpected trailing comma', 0, 2, null);
+    }Companion_getInstance_51();
     return -1;
   }
-  function decodeListIndex($this, tokenClass) {
-    if (!(tokenClass === 4) ? !($this._currentIndex_0 === -1) : false) {
-      var tmp0_requireTokenClass_0 = $this._reader_0;
-      var tmp1_requireTokenClass_0 = 9;
-      if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-        var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-        tmp0_requireTokenClass_0.fail('Expected end of the array or comma', tmp0_requireTokenClass_0._tokenPosition);
-      }}var tmp;
-    if (!$this._reader_0._get_canBeginValue_()) {
-      var tmp3_require_0 = $this._reader_0;
-      var tmp4_require_0 = !(tokenClass === 4);
-      var tmp5_require_0 = tmp3_require_0._currentPosition;
-      if (!tmp4_require_0) {
-        tmp3_require_0.fail('Unexpected trailing comma', tmp5_require_0);
-      }Companion_getInstance_51();
-      tmp = -1;
+  function handleUnknown($this, key) {
+    if ($this._configuration_0._ignoreUnknownKeys_0) {
+      $this._lexer_0.skipElement($this._configuration_0._isLenient_0);
     } else {
-      var tmp0_this = $this;
+      $this._lexer_0.failOnUnknownKey(key);
+    }
+    return $this._lexer_0.tryConsumeComma();
+  }
+  function decodeListIndex($this) {
+    var hasComma = $this._lexer_0.tryConsumeComma();
+    var tmp;
+    if ($this._lexer_0.canConsumeValue()) {
+      if (!($this._currentIndex_0 === -1) ? !hasComma : false) {
+        $this._lexer_0.fail$default('Expected end of the array or comma', 0, 2, null);
+      }var tmp0_this = $this;
       tmp0_this._currentIndex_0 = tmp0_this._currentIndex_0 + 1 | 0;
       tmp = tmp0_this._currentIndex_0;
+    } else {
+      if (hasComma) {
+        $this._lexer_0.fail$default('Unexpected trailing comma', 0, 2, null);
+      }Companion_getInstance_51();
+      tmp = -1;
     }
     return tmp;
   }
-  function StreamingJsonDecoder(json, mode, reader) {
+  function decodeStringKey($this) {
+    var tmp;
+    if ($this._configuration_0._isLenient_0) {
+      tmp = $this._lexer_0.consumeStringLenient();
+    } else {
+      tmp = $this._lexer_0.consumeKeyString();
+    }
+    return tmp;
+  }
+  function _no_name_provided__229($boundThis) {
+    this._$boundThis = $boundThis;
+  }
+  _no_name_provided__229.prototype.invoke_411 = function () {
+    return buildAlternativeNamesMap(this._$boundThis);
+  };
+  _no_name_provided__229.prototype._get_name__11 = function () {
+    return 'buildAlternativeNamesMap';
+  };
+  _no_name_provided__229.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function StreamingJsonDecoder(json, mode, lexer) {
     AbstractDecoder.call(this);
-    this._json = json;
+    this._json_0 = json;
     this._mode = mode;
-    this._reader_0 = reader;
-    this._serializersModule_1 = this._get_json__6()._get_serializersModule__14();
+    this._lexer_0 = lexer;
+    this._serializersModule_1 = this._json_0._get_serializersModule__15();
     this._currentIndex_0 = -1;
-    this._configuration_0 = this._get_json__6()._configuration;
+    this._configuration_0 = this._json_0._configuration;
   }
   StreamingJsonDecoder.prototype._get_json__6 = function () {
-    return this._json;
+    return this._json_0;
   };
-  StreamingJsonDecoder.prototype._get_serializersModule__14 = function () {
+  StreamingJsonDecoder.prototype._get_serializersModule__15 = function () {
     return this._serializersModule_1;
   };
   StreamingJsonDecoder.prototype.decodeJsonElement_4 = function () {
-    return (new JsonParser(this._get_json__6()._configuration, this._reader_0)).read_2();
+    return (new JsonTreeReader(this._json_0._configuration, this._lexer_0)).read_2();
   };
   StreamingJsonDecoder.prototype.decodeSerializableValue_16 = function (deserializer) {
     return decodeSerializableValuePolymorphic(this, deserializer);
   };
   StreamingJsonDecoder.prototype.beginStructure_11 = function (descriptor) {
-    var newMode = switchMode(this._get_json__6(), descriptor);
-    if (!newMode._begin.equals(new Char(0))) {
-      var tmp0_requireTokenClass_0 = this._reader_0;
-      var tmp1_requireTokenClass_0 = newMode._beginTc;
-      if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-        var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-        tmp0_requireTokenClass_0.fail('' + "Expected '" + newMode._begin + ', kind: ' + descriptor._get_kind__19() + "'", tmp0_requireTokenClass_0._tokenPosition);
-      }this._reader_0.nextToken();
-    }var tmp0_subject = newMode;
-    return ((tmp0_subject.equals(WriteMode_LIST_getInstance()) ? true : tmp0_subject.equals(WriteMode_MAP_getInstance())) ? true : tmp0_subject.equals(WriteMode_POLY_OBJ_getInstance())) ? new StreamingJsonDecoder(this._get_json__6(), newMode, this._reader_0) : this._mode.equals(newMode) ? this : new StreamingJsonDecoder(this._get_json__6(), newMode, this._reader_0);
+    var newMode = switchMode(this._json_0, descriptor);
+    this._lexer_0.consumeNextToken_0(newMode._begin);
+    checkLeadingComma(this);
+    var tmp0_subject = newMode;
+    var tmp;
+    if ((tmp0_subject.equals(WriteMode_LIST_getInstance()) ? true : tmp0_subject.equals(WriteMode_MAP_getInstance())) ? true : tmp0_subject.equals(WriteMode_POLY_OBJ_getInstance())) {
+      tmp = new StreamingJsonDecoder(this._json_0, newMode, this._lexer_0);
+    } else {
+      var tmp_0;
+      if (this._mode.equals(newMode)) {
+        tmp_0 = this;
+      } else {
+        tmp_0 = new StreamingJsonDecoder(this._json_0, newMode, this._lexer_0);
+      }
+      tmp = tmp_0;
+    }
+    return tmp;
   };
   StreamingJsonDecoder.prototype.endStructure_11 = function (descriptor) {
-    if (!this._mode._end.equals(new Char(0))) {
-      var tmp0_requireTokenClass_0 = this._reader_0;
-      var tmp1_requireTokenClass_0 = this._mode._endTc;
-      if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-        var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-        tmp0_requireTokenClass_0.fail('' + "Expected '" + this._mode._end + "'", tmp0_requireTokenClass_0._tokenPosition);
-      }this._reader_0.nextToken();
-    }};
+    this._lexer_0.consumeNextToken_0(this._mode._end);
+  };
   StreamingJsonDecoder.prototype.decodeNotNullMark_8 = function () {
-    return !(this._reader_0._tokenClass === 10);
+    return this._lexer_0.tryConsumeNotNull();
   };
   StreamingJsonDecoder.prototype.decodeNull_8 = function () {
-    var tmp0_requireTokenClass_0 = this._reader_0;
-    var tmp1_requireTokenClass_0 = 10;
-    if (!(tmp0_requireTokenClass_0._tokenClass === tmp1_requireTokenClass_0)) {
-      var tmp2__anonymous__1 = numberToChar(tmp0_requireTokenClass_0._tokenClass);
-      tmp0_requireTokenClass_0.fail("Expected 'null' literal", tmp0_requireTokenClass_0._tokenPosition);
-    }this._reader_0.nextToken();
     return null;
   };
   StreamingJsonDecoder.prototype.decodeElementIndex_8 = function (descriptor) {
-    var tokenClass = this._reader_0._tokenClass;
-    if (tokenClass === 4) {
-      var tmp0_require_0 = this._reader_0;
-      var tmp1_require_0 = !(this._currentIndex_0 === -1);
-      var tmp2_require_0 = this._reader_0._currentPosition;
-      if (!tmp1_require_0) {
-        tmp0_require_0.fail('Unexpected leading comma', tmp2_require_0);
-      }this._reader_0.nextToken();
-    }var tmp0_subject = this._mode;
-    var tmp;
-    if (tmp0_subject.equals(WriteMode_LIST_getInstance())) {
-      tmp = decodeListIndex(this, tokenClass);
-    } else if (tmp0_subject.equals(WriteMode_MAP_getInstance())) {
-      tmp = decodeMapIndex(this, tokenClass);
-    } else if (tmp0_subject.equals(WriteMode_POLY_OBJ_getInstance())) {
-      var tmp1_this = this;
-      tmp1_this._currentIndex_0 = tmp1_this._currentIndex_0 + 1 | 0;
-      var tmp2_subject = tmp1_this._currentIndex_0;
-      var tmp_0;
-      switch (tmp2_subject) {
-        case 0:
-          tmp_0 = 0;
-          break;
-        case 1:
-          tmp_0 = 1;
-          break;
-        default:Companion_getInstance_51();
-          tmp_0 = -1;
-          break;
-      }
-      tmp = tmp_0;
-    } else {
-      tmp = decodeObjectIndex(this, tokenClass, descriptor);
-    }
-    return tmp;
+    var tmp0_subject = this._mode;
+    return tmp0_subject.equals(WriteMode_OBJ_getInstance()) ? decodeObjectIndex(this, descriptor) : tmp0_subject.equals(WriteMode_MAP_getInstance()) ? decodeMapIndex(this) : decodeListIndex(this);
   };
   StreamingJsonDecoder.prototype.decodeBoolean_8 = function () {
     var tmp;
     if (this._configuration_0._isLenient_0) {
-      tmp = this._reader_0.takeString();
+      tmp = this._lexer_0.consumeBooleanLenient();
     } else {
-      tmp = this._reader_0.takeBooleanStringUnquoted();
+      tmp = this._lexer_0.consumeBoolean();
     }
-    var string = tmp;
-    var tmp0_safe_receiver = toBooleanStrictOrNull(string);
-    if (tmp0_safe_receiver == null)
-      null;
-    else {
-      return tmp0_safe_receiver;
-    }
-    Unit_getInstance();
-    var tmp_0 = '' + "Failed to parse type 'boolean' for input '" + string + "'";
-    this._reader_0.fail$default(tmp_0, 0, 2, null);
+    return tmp;
   };
   StreamingJsonDecoder.prototype.decodeByte_8 = function () {
-    var tmp$ret$0;
-    l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_0;
-      var tmp1_parseString_0 = 'byte';
-      var input_1 = tmp0_parseString_0.takeString();
-      try {
-        tmp$ret$0 = toByte(input_1);
-        break l$ret$1;
-      } catch ($p) {
-        if ($p instanceof IllegalArgumentException) {
-          var tmp = '' + "Failed to parse type '" + tmp1_parseString_0 + "' for input '" + input_1 + "'";
-          tmp0_parseString_0.fail$default(tmp, 0, 2, null);
-        } else {
-          {
-            throw $p;
-          }
-        }
-      }
-    }
-     while (false);
-    return tmp$ret$0;
+    var value = this._lexer_0.consumeNumericLiteral();
+    if (!value.equals(toLong_0(value.toByte_5()))) {
+      var tmp = '' + "Failed to parse byte for input '" + value + "'";
+      this._lexer_0.fail$default(tmp, 0, 2, null);
+    }return value.toByte_5();
   };
   StreamingJsonDecoder.prototype.decodeShort_8 = function () {
-    var tmp$ret$0;
-    l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_0;
-      var tmp1_parseString_0 = 'short';
-      var input_1 = tmp0_parseString_0.takeString();
-      try {
-        tmp$ret$0 = toShort(input_1);
-        break l$ret$1;
-      } catch ($p) {
-        if ($p instanceof IllegalArgumentException) {
-          var tmp = '' + "Failed to parse type '" + tmp1_parseString_0 + "' for input '" + input_1 + "'";
-          tmp0_parseString_0.fail$default(tmp, 0, 2, null);
-        } else {
-          {
-            throw $p;
-          }
-        }
-      }
-    }
-     while (false);
-    return tmp$ret$0;
+    var value = this._lexer_0.consumeNumericLiteral();
+    if (!value.equals(toLong_0(value.toShort_4()))) {
+      var tmp = '' + "Failed to parse short for input '" + value + "'";
+      this._lexer_0.fail$default(tmp, 0, 2, null);
+    }return value.toShort_4();
   };
   StreamingJsonDecoder.prototype.decodeInt_8 = function () {
-    var tmp$ret$0;
-    l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_0;
-      var tmp1_parseString_0 = 'int';
-      var input_1 = tmp0_parseString_0.takeString();
-      try {
-        tmp$ret$0 = toInt(input_1);
-        break l$ret$1;
-      } catch ($p) {
-        if ($p instanceof IllegalArgumentException) {
-          var tmp = '' + "Failed to parse type '" + tmp1_parseString_0 + "' for input '" + input_1 + "'";
-          tmp0_parseString_0.fail$default(tmp, 0, 2, null);
-        } else {
-          {
-            throw $p;
-          }
-        }
-      }
-    }
-     while (false);
-    return tmp$ret$0;
+    var value = this._lexer_0.consumeNumericLiteral();
+    if (!value.equals(toLong_0(value.toInt_5()))) {
+      var tmp = '' + "Failed to parse int for input '" + value + "'";
+      this._lexer_0.fail$default(tmp, 0, 2, null);
+    }return value.toInt_5();
   };
   StreamingJsonDecoder.prototype.decodeLong_8 = function () {
-    var tmp$ret$0;
-    l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_0;
-      var tmp1_parseString_0 = 'long';
-      var input_1 = tmp0_parseString_0.takeString();
-      try {
-        tmp$ret$0 = toLong(input_1);
-        break l$ret$1;
-      } catch ($p) {
-        if ($p instanceof IllegalArgumentException) {
-          var tmp = '' + "Failed to parse type '" + tmp1_parseString_0 + "' for input '" + input_1 + "'";
-          tmp0_parseString_0.fail$default(tmp, 0, 2, null);
-        } else {
-          {
-            throw $p;
-          }
-        }
-      }
-    }
-     while (false);
-    return tmp$ret$0;
+    return this._lexer_0.consumeNumericLiteral();
   };
   StreamingJsonDecoder.prototype.decodeFloat_8 = function () {
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_0;
+      var tmp0_parseString_0 = this._lexer_0;
       var tmp1_parseString_0 = 'float';
-      var input_1 = tmp0_parseString_0.takeString();
+      var input_1 = tmp0_parseString_0.consumeStringLenient();
       try {
         var tmp0_unsafeCast_0_1_4 = toDouble(input_1);
         tmp$ret$0 = tmp0_unsafeCast_0_1_4;
@@ -50062,17 +50519,17 @@
     }
      while (false);
     var result = tmp$ret$0;
-    var specialFp = this._get_json__6()._configuration._allowSpecialFloatingPointValues_0;
+    var specialFp = this._json_0._configuration._allowSpecialFloatingPointValues_0;
     if (specialFp ? true : isFinite(result))
       return result;
-    throwInvalidFloatingPointDecoded(this._reader_0, result);
+    throwInvalidFloatingPointDecoded(this._lexer_0, result);
   };
   StreamingJsonDecoder.prototype.decodeDouble_8 = function () {
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_0;
+      var tmp0_parseString_0 = this._lexer_0;
       var tmp1_parseString_0 = 'double';
-      var input_1 = tmp0_parseString_0.takeString();
+      var input_1 = tmp0_parseString_0.consumeStringLenient();
       try {
         tmp$ret$0 = toDouble(input_1);
         break l$ret$1;
@@ -50089,57 +50546,41 @@
     }
      while (false);
     var result = tmp$ret$0;
-    var specialFp = this._get_json__6()._configuration._allowSpecialFloatingPointValues_0;
+    var specialFp = this._json_0._configuration._allowSpecialFloatingPointValues_0;
     if (specialFp ? true : isFinite_0(result))
       return result;
-    throwInvalidFloatingPointDecoded(this._reader_0, result);
+    throwInvalidFloatingPointDecoded(this._lexer_0, result);
   };
   StreamingJsonDecoder.prototype.decodeChar_8 = function () {
-    var tmp$ret$0;
-    l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_0;
-      var tmp1_parseString_0 = 'char';
-      var input_1 = tmp0_parseString_0.takeString();
-      try {
-        tmp$ret$0 = single_2(input_1);
-        break l$ret$1;
-      } catch ($p) {
-        if ($p instanceof IllegalArgumentException) {
-          var tmp = '' + "Failed to parse type '" + tmp1_parseString_0 + "' for input '" + input_1 + "'";
-          tmp0_parseString_0.fail$default(tmp, 0, 2, null);
-        } else {
-          {
-            throw $p;
-          }
-        }
-      }
-    }
-     while (false);
-    return tmp$ret$0;
+    var string = this._lexer_0.consumeStringLenient();
+    if (!(string.length === 1)) {
+      var tmp = '' + "Expected single char, but got '" + string + "'";
+      this._lexer_0.fail$default(tmp, 0, 2, null);
+    }return charSequenceGet(string, 0);
   };
   StreamingJsonDecoder.prototype.decodeString_8 = function () {
     var tmp;
     if (this._configuration_0._isLenient_0) {
-      tmp = this._reader_0.takeString();
+      tmp = this._lexer_0.consumeStringLenient();
     } else {
-      tmp = this._reader_0.takeStringQuoted();
+      tmp = this._lexer_0.consumeString();
     }
     return tmp;
   };
   StreamingJsonDecoder.prototype.decodeInline_8 = function (inlineDescriptor) {
-    return _get_isUnsignedNumber_(inlineDescriptor) ? new JsonDecoderForUnsignedTypes(this._reader_0, this._get_json__6()) : this;
+    return _get_isUnsignedNumber_(inlineDescriptor) ? new JsonDecoderForUnsignedTypes(this._lexer_0, this._json_0) : AbstractDecoder.prototype.decodeInline_8.call(this, inlineDescriptor);
   };
   StreamingJsonDecoder.$metadata$ = {
     simpleName: 'StreamingJsonDecoder',
     kind: 'class',
     interfaces: [JsonDecoder]
   };
-  function JsonDecoderForUnsignedTypes(reader, json) {
+  function JsonDecoderForUnsignedTypes(lexer, json) {
     AbstractDecoder.call(this);
-    this._reader_1 = reader;
-    this._serializersModule_2 = json._get_serializersModule__14();
+    this._lexer_1 = lexer;
+    this._serializersModule_2 = json._get_serializersModule__15();
   }
-  JsonDecoderForUnsignedTypes.prototype._get_serializersModule__14 = function () {
+  JsonDecoderForUnsignedTypes.prototype._get_serializersModule__15 = function () {
     return this._serializersModule_2;
   };
   JsonDecoderForUnsignedTypes.prototype.decodeElementIndex_8 = function (descriptor) {
@@ -50149,9 +50590,9 @@
   JsonDecoderForUnsignedTypes.prototype.decodeInt_8 = function () {
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_1;
+      var tmp0_parseString_0 = this._lexer_1;
       var tmp1_parseString_0 = 'UInt';
-      var input_1 = tmp0_parseString_0.takeString();
+      var input_1 = tmp0_parseString_0.consumeStringLenient();
       try {
         var tmp0_toInt_0_4 = toUInt(input_1);
         tmp$ret$0 = _UInt___get_data__impl_(tmp0_toInt_0_4);
@@ -50173,9 +50614,9 @@
   JsonDecoderForUnsignedTypes.prototype.decodeLong_8 = function () {
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_1;
+      var tmp0_parseString_0 = this._lexer_1;
       var tmp1_parseString_0 = 'ULong';
-      var input_1 = tmp0_parseString_0.takeString();
+      var input_1 = tmp0_parseString_0.consumeStringLenient();
       try {
         var tmp0_toLong_0_4 = toULong(input_1);
         tmp$ret$0 = _ULong___get_data__impl_(tmp0_toLong_0_4);
@@ -50197,9 +50638,9 @@
   JsonDecoderForUnsignedTypes.prototype.decodeByte_8 = function () {
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_1;
+      var tmp0_parseString_0 = this._lexer_1;
       var tmp1_parseString_0 = 'UByte';
-      var input_1 = tmp0_parseString_0.takeString();
+      var input_1 = tmp0_parseString_0.consumeStringLenient();
       try {
         var tmp0_toByte_0_4 = toUByte(input_1);
         tmp$ret$0 = _UByte___get_data__impl_(tmp0_toByte_0_4);
@@ -50221,9 +50662,9 @@
   JsonDecoderForUnsignedTypes.prototype.decodeShort_8 = function () {
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_parseString_0 = this._reader_1;
+      var tmp0_parseString_0 = this._lexer_1;
       var tmp1_parseString_0 = 'UShort';
-      var input_1 = tmp0_parseString_0.takeString();
+      var input_1 = tmp0_parseString_0.consumeStringLenient();
       try {
         var tmp0_toShort_0_4 = toUShort(input_1);
         tmp$ret$0 = _UShort___get_data__impl_(tmp0_toShort_0_4);
@@ -50247,6 +50688,14 @@
     kind: 'class',
     interfaces: []
   };
+  function _no_name_provided_$factory_191($boundThis) {
+    var i = new _no_name_provided__229($boundThis);
+    var l = function () {
+      return i.invoke_411();
+    };
+    l.callableName = i._get_name__11();
+    return l;
+  }
   var unsignedNumberDescriptors;
   function StreamingJsonEncoder_init_$Init$(output_0, json, mode, modeReuseCache, $this) {
     StreamingJsonEncoder.call($this, new Composer(output_0, json), json, mode, modeReuseCache);
@@ -50259,112 +50708,16 @@
     $this._composer.nextItem_0();
     $this.encodeString_1($this._configuration_1._classDiscriminator_0);
     $this._composer.print_17(new Char(58));
-    Unit_getInstance();
     $this._composer.space_0();
-    $this.encodeString_1(descriptor._get_serialName__16());
+    $this.encodeString_1(descriptor._get_serialName__17());
   }
-  function Composer(sb, json) {
-    this._sb = sb;
-    this._json_0 = json;
-    this._level_1 = 0;
-    this._writingFirst = true;
-  }
-  Composer.prototype.indent_0 = function () {
-    this._writingFirst = true;
-    var tmp0_this = this;
-    var tmp1 = tmp0_this._level_1;
-    tmp0_this._level_1 = tmp1 + 1 | 0;
-    Unit_getInstance();
-  };
-  Composer.prototype.unIndent_0 = function () {
-    var tmp0_this = this;
-    var tmp1 = tmp0_this._level_1;
-    tmp0_this._level_1 = tmp1 - 1 | 0;
-    Unit_getInstance();
-  };
-  Composer.prototype.nextItem_0 = function () {
-    this._writingFirst = false;
-    if (this._json_0._configuration._prettyPrint_0) {
-      this.print_18('\n');
-      Unit_getInstance();
-      var tmp0_repeat_0 = this._level_1;
-      var inductionVariable = 0;
-      if (inductionVariable < tmp0_repeat_0)
-        do {
-          var index_2 = inductionVariable;
-          inductionVariable = inductionVariable + 1 | 0;
-          this.print_18(this._json_0._configuration._prettyPrintIndent_0);
-          Unit_getInstance();
-        }
-         while (inductionVariable < tmp0_repeat_0);
-    }};
-  Composer.prototype.space_0 = function () {
-    if (this._json_0._configuration._prettyPrint_0) {
-      this.print_17(new Char(32));
-      Unit_getInstance();
-    }};
-  Composer.prototype.print_17 = function (v) {
-    return this._sb.append_24(v);
-  };
-  Composer.prototype.print_18 = function (v) {
-    return this._sb.append_7(v);
-  };
-  Composer.prototype.print_19 = function (v) {
-    return this._sb.append_5(v);
-  };
-  Composer.prototype.print_20 = function (v) {
-    return this._sb.append_5(v);
-  };
-  Composer.prototype.print_15 = function (v) {
-    return this._sb.append_5(v);
-  };
-  Composer.prototype.print_16 = function (v) {
-    return this._sb.append_5(v);
-  };
-  Composer.prototype.print_13 = function (v) {
-    return this._sb.append_5(v);
-  };
-  Composer.prototype.print_14 = function (v) {
-    return this._sb.append_5(v);
-  };
-  Composer.prototype.print_21 = function (v) {
-    return this._sb.append_6(v);
-  };
-  Composer.prototype.printQuoted_0 = function (value) {
-    return printQuoted(this._sb, value);
-  };
-  Composer.$metadata$ = {
-    simpleName: 'Composer',
-    kind: 'class',
-    interfaces: []
-  };
-  function ComposerForUnsignedNumbers(sb, json) {
-    Composer.call(this, sb, json);
-  }
-  ComposerForUnsignedNumbers.prototype.print_13 = function (v) {
-    return Composer.prototype.print_18.call(this, UInt__toString_impl(_UInt___init__impl_(v)));
-  };
-  ComposerForUnsignedNumbers.prototype.print_14 = function (v) {
-    return Composer.prototype.print_18.call(this, ULong__toString_impl(_ULong___init__impl_(v)));
-  };
-  ComposerForUnsignedNumbers.prototype.print_15 = function (v) {
-    return Composer.prototype.print_18.call(this, UByte__toString_impl(_UByte___init__impl_(v)));
-  };
-  ComposerForUnsignedNumbers.prototype.print_16 = function (v) {
-    return Composer.prototype.print_18.call(this, UShort__toString_impl(_UShort___init__impl_(v)));
-  };
-  ComposerForUnsignedNumbers.$metadata$ = {
-    simpleName: 'ComposerForUnsignedNumbers',
-    kind: 'class',
-    interfaces: []
-  };
   function StreamingJsonEncoder(composer, json, mode, modeReuseCache) {
     AbstractEncoder.call(this);
     this._composer = composer;
     this._json_1 = json;
     this._mode_0 = mode;
     this._modeReuseCache = modeReuseCache;
-    this._serializersModule_3 = this._json_1._get_serializersModule__14();
+    this._serializersModule_3 = this._json_1._get_serializersModule__15();
     this._configuration_1 = this._json_1._configuration;
     this._forceQuoting = false;
     this._writePolymorphic = false;
@@ -50376,7 +50729,7 @@
   StreamingJsonEncoder.prototype._get_json__6 = function () {
     return this._json_1;
   };
-  StreamingJsonEncoder.prototype._get_serializersModule__14 = function () {
+  StreamingJsonEncoder.prototype._get_serializersModule__15 = function () {
     return this._serializersModule_3;
   };
   StreamingJsonEncoder.prototype.encodeSerializableValue_1 = function (serializer_16, value) {
@@ -50391,7 +50744,7 @@
         }
       }
       if (tmp) {
-        serializer_16.serialize_128(this, value);
+        serializer_16.serialize_129(this, value);
         tmp$ret$0 = Unit_getInstance();
         break l$ret$1;
       } else {
@@ -50399,7 +50752,7 @@
       var tmp_0 = isInterface(serializer_16, SerializationStrategy) ? serializer_16 : THROW_CCE();
       var actualSerializer_1 = findActualSerializer(this, tmp_0, isObject(value) ? value : THROW_CCE());
       this._writePolymorphic = true;
-      actualSerializer_1.serialize_128(this, value);
+      actualSerializer_1.serialize_129(this, value);
     }
      while (false);
   };
@@ -50407,7 +50760,6 @@
     var newMode = switchMode(this._json_1, descriptor);
     if (!newMode._begin.equals(new Char(0))) {
       this._composer.print_17(newMode._begin);
-      Unit_getInstance();
       this._composer.indent_0();
     }if (this._writePolymorphic) {
       this._writePolymorphic = false;
@@ -50423,27 +50775,23 @@
       this._composer.unIndent_0();
       this._composer.nextItem_0();
       this._composer.print_17(this._mode_0._end);
-      Unit_getInstance();
     }};
   StreamingJsonEncoder.prototype.encodeElement_0 = function (descriptor, index) {
     var tmp0_subject = this._mode_0;
     if (tmp0_subject.equals(WriteMode_LIST_getInstance())) {
-      if (!this._composer._writingFirst) {
+      if (!this._composer._writingFirst)
         this._composer.print_17(new Char(44));
-        Unit_getInstance();
-      }this._composer.nextItem_0();
+      this._composer.nextItem_0();
     } else if (tmp0_subject.equals(WriteMode_MAP_getInstance())) {
       if (!this._composer._writingFirst) {
         var tmp = this;
         var tmp_0;
         if (index % 2 === 0) {
           this._composer.print_17(new Char(44));
-          Unit_getInstance();
           this._composer.nextItem_0();
           tmp_0 = true;
         } else {
           this._composer.print_17(new Char(58));
-          Unit_getInstance();
           this._composer.space_0();
           tmp_0 = false;
         }
@@ -50457,85 +50805,67 @@
         this._forceQuoting = true;
       if (index === 1) {
         this._composer.print_17(new Char(44));
-        Unit_getInstance();
         this._composer.space_0();
         this._forceQuoting = false;
       }} else {
-      if (!this._composer._writingFirst) {
+      if (!this._composer._writingFirst)
         this._composer.print_17(new Char(44));
-        Unit_getInstance();
-      }this._composer.nextItem_0();
-      this.encodeString_1(descriptor.getElementName_16(index));
+      this._composer.nextItem_0();
+      this.encodeString_1(descriptor.getElementName_17(index));
       this._composer.print_17(new Char(58));
-      Unit_getInstance();
       this._composer.space_0();
     }
     return true;
   };
   StreamingJsonEncoder.prototype.encodeInline_1 = function (inlineDescriptor) {
-    return _get_isUnsignedNumber_(inlineDescriptor) ? new StreamingJsonEncoder(new ComposerForUnsignedNumbers(this._composer._sb, this._composer._json_0), this._json_1, this._mode_0, null) : this;
+    return _get_isUnsignedNumber_(inlineDescriptor) ? new StreamingJsonEncoder(new ComposerForUnsignedNumbers(this._composer._sb, this._json_1), this._json_1, this._mode_0, null) : AbstractEncoder.prototype.encodeInline_1.call(this, inlineDescriptor);
   };
   StreamingJsonEncoder.prototype.encodeNull_1 = function () {
     this._composer.print_18('null');
-    Unit_getInstance();
   };
   StreamingJsonEncoder.prototype.encodeBoolean_1 = function (value) {
     if (this._forceQuoting)
       this.encodeString_1(value.toString());
-    else {
+    else
       this._composer.print_21(value);
-      Unit_getInstance();
-    }
   };
   StreamingJsonEncoder.prototype.encodeByte_1 = function (value) {
     if (this._forceQuoting)
       this.encodeString_1(value.toString());
-    else {
+    else
       this._composer.print_15(value);
-      Unit_getInstance();
-    }
   };
   StreamingJsonEncoder.prototype.encodeShort_1 = function (value) {
     if (this._forceQuoting)
       this.encodeString_1(value.toString());
-    else {
+    else
       this._composer.print_16(value);
-      Unit_getInstance();
-    }
   };
   StreamingJsonEncoder.prototype.encodeInt_1 = function (value) {
     if (this._forceQuoting)
       this.encodeString_1(value.toString());
-    else {
+    else
       this._composer.print_13(value);
-      Unit_getInstance();
-    }
   };
   StreamingJsonEncoder.prototype.encodeLong_1 = function (value) {
     if (this._forceQuoting)
       this.encodeString_1(value.toString());
-    else {
+    else
       this._composer.print_14(value);
-      Unit_getInstance();
-    }
   };
   StreamingJsonEncoder.prototype.encodeFloat_1 = function (value) {
     if (this._forceQuoting)
       this.encodeString_1(value.toString());
-    else {
+    else
       this._composer.print_19(value);
-      Unit_getInstance();
-    }
     if (!this._configuration_1._allowSpecialFloatingPointValues_0 ? !isFinite(value) : false) {
       throw InvalidFloatingPointEncoded(value, this._composer._sb.toString());
     }};
   StreamingJsonEncoder.prototype.encodeDouble_1 = function (value) {
     if (this._forceQuoting)
       this.encodeString_1(value.toString());
-    else {
+    else
       this._composer.print_20(value);
-      Unit_getInstance();
-    }
     if (!this._configuration_1._allowSpecialFloatingPointValues_0 ? !isFinite_0(value) : false) {
       throw InvalidFloatingPointEncoded(value, this._composer._sb.toString());
     }};
@@ -50551,51 +50881,47 @@
     interfaces: [JsonEncoder]
   };
   function _get_isUnsignedNumber_(_this_) {
-    return _this_._get_isInline__16() ? unsignedNumberDescriptors.contains_48(_this_) : false;
+    return _this_._get_isInline__17() ? unsignedNumberDescriptors.contains_48(_this_) : false;
   }
-  var ESCAPE_CHARS;
+  var ESCAPE_STRINGS;
   function toHexChar(i) {
     var d = i & 15;
     return d < 10 ? numberToChar(d + 48 | 0) : numberToChar((d - 10 | 0) + 97 | 0);
   }
   function printQuoted(_this_, value) {
-    _this_.append_24(new Char(34));
+    _this_.append_23(new Char(34));
     Unit_getInstance();
     var lastPos = 0;
-    var length = value.length;
     var inductionVariable = 0;
-    if (inductionVariable < length)
+    var last_1 = charSequenceLength(value) - 1 | 0;
+    if (inductionVariable <= last_1)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
         var c = charSequenceGet(value, i).toInt_5();
-        if (c >= ESCAPE_CHARS.length)
-          continue;
-        var tmp1_elvis_lhs = ESCAPE_CHARS[c];
-        var tmp;
-        if (tmp1_elvis_lhs == null) {
-          continue;
-        } else {
-          tmp = tmp1_elvis_lhs;
-        }
-        var esc = tmp;
-        _this_.append_22(value, lastPos, i);
-        Unit_getInstance();
-        _this_.append_7(esc);
-        Unit_getInstance();
-        lastPos = i + 1 | 0;
-      }
-       while (inductionVariable < length);
-    _this_.append_22(value, lastPos, length);
-    Unit_getInstance();
-    _this_.append_24(new Char(34));
+        if (c < ESCAPE_STRINGS.length ? !(ESCAPE_STRINGS[c] == null) : false) {
+          _this_.append_21(value, lastPos, i);
+          Unit_getInstance();
+          _this_.append_6(ESCAPE_STRINGS[c]);
+          Unit_getInstance();
+          lastPos = i + 1 | 0;
+        }}
+       while (inductionVariable <= last_1);
+    if (!(lastPos === 0)) {
+      _this_.append_21(value, lastPos, value.length);
+      Unit_getInstance();
+    } else {
+      _this_.append_6(value);
+      Unit_getInstance();
+    }
+    _this_.append_23(new Char(34));
     Unit_getInstance();
   }
   function toBooleanStrictOrNull(_this_) {
     return equals_0(_this_, 'true', true) ? true : equals_0(_this_, 'false', true) ? false : null;
   }
-  function ESCAPE_CHARS$init$() {
-    var tmp0_arrayOfNulls_0 = 128;
+  function ESCAPE_STRINGS$init$() {
+    var tmp0_arrayOfNulls_0 = 93;
     var tmp1_apply_0 = fillArrayVal(Array(tmp0_arrayOfNulls_0), null);
     var inductionVariable = 0;
     if (inductionVariable <= 31)
@@ -50644,8 +50970,8 @@
   AbstractJsonTreeDecoder.prototype._get_value__27 = function () {
     return this._value_20;
   };
-  AbstractJsonTreeDecoder.prototype._get_serializersModule__14 = function () {
-    return this._get_json__6()._get_serializersModule__14();
+  AbstractJsonTreeDecoder.prototype._get_serializersModule__15 = function () {
+    return this._get_json__6()._get_serializersModule__15();
   };
   AbstractJsonTreeDecoder.prototype._get_configuration__3 = function () {
     return this._configuration_2;
@@ -50661,7 +50987,7 @@
   };
   AbstractJsonTreeDecoder.prototype.beginStructure_11 = function (descriptor) {
     var currentObject_0 = currentObject(this);
-    var tmp0_subject = descriptor._get_kind__19();
+    var tmp0_subject = descriptor._get_kind__20();
     var tmp;
     var tmp_0;
     if (equals_1(tmp0_subject, LIST_getInstance())) {
@@ -50672,15 +50998,15 @@
     if (tmp_0) {
       var tmp_1 = this._get_json__6();
       if (!(currentObject_0 instanceof JsonArray)) {
-        throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonArray) + ' as the serialized body of ' + descriptor._get_serialName__16() + ', but had ' + getKClassFromExpression_0(currentObject_0));
+        throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonArray) + ' as the serialized body of ' + descriptor._get_serialName__17() + ', but had ' + getKClassFromExpression_0(currentObject_0));
       } else {
       }
       tmp = new JsonTreeListDecoder(tmp_1, currentObject_0);
     } else {
       if (equals_1(tmp0_subject, MAP_getInstance())) {
         var tmp0_selectMapMode_0 = this._get_json__6();
-        var keyDescriptor_1 = descriptor.getElementDescriptor_16(0);
-        var keyKind_2 = keyDescriptor_1._get_kind__19();
+        var keyDescriptor_1 = descriptor.getElementDescriptor_17(0);
+        var keyKind_2 = keyDescriptor_1._get_kind__20();
         var tmp_2;
         var tmp_3;
         if (keyKind_2 instanceof PrimitiveKind) {
@@ -50693,7 +51019,7 @@
         if (tmp_3) {
           var tmp_4 = this._get_json__6();
           if (!(currentObject_0 instanceof JsonObject)) {
-            throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonObject) + ' as the serialized body of ' + descriptor._get_serialName__16() + ', but had ' + getKClassFromExpression_0(currentObject_0));
+            throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonObject) + ' as the serialized body of ' + descriptor._get_serialName__17() + ', but had ' + getKClassFromExpression_0(currentObject_0));
           } else {
           }
           tmp_2 = new JsonTreeMapDecoder(tmp_4, currentObject_0);
@@ -50701,7 +51027,7 @@
           if (tmp0_selectMapMode_0._configuration._allowStructuredMapKeys_0) {
             var tmp_5 = this._get_json__6();
             if (!(currentObject_0 instanceof JsonArray)) {
-              throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonArray) + ' as the serialized body of ' + descriptor._get_serialName__16() + ', but had ' + getKClassFromExpression_0(currentObject_0));
+              throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonArray) + ' as the serialized body of ' + descriptor._get_serialName__17() + ', but had ' + getKClassFromExpression_0(currentObject_0));
             } else {
             }
             tmp_2 = new JsonTreeListDecoder(tmp_5, currentObject_0);
@@ -50716,7 +51042,7 @@
         {
           var tmp_6 = this._get_json__6();
           if (!(currentObject_0 instanceof JsonObject)) {
-            throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonObject) + ' as the serialized body of ' + descriptor._get_serialName__16() + ', but had ' + getKClassFromExpression_0(currentObject_0));
+            throw JsonDecodingException_1(-1, '' + 'Expected ' + getKClass_0(JsonObject) + ' as the serialized body of ' + descriptor._get_serialName__17() + ', but had ' + getKClassFromExpression_0(currentObject_0));
           } else {
           }
           var tmp_7 = currentObject_0;
@@ -50801,7 +51127,7 @@
         var tmp;
         var containsLower = ByteCompanionObject_getInstance()._MIN_VALUE_3;
         if (result_4 <= ByteCompanionObject_getInstance()._MAX_VALUE_3 ? containsLower <= result_4 : false) {
-          tmp = toByte_0(result_4);
+          tmp = toByte(result_4);
         } else {
           {
             tmp = null;
@@ -50842,7 +51168,7 @@
         var tmp;
         var containsLower = ShortCompanionObject_getInstance()._MIN_VALUE_4;
         if (result_4 <= ShortCompanionObject_getInstance()._MAX_VALUE_4 ? containsLower <= result_4 : false) {
-          tmp = toShort_0(result_4);
+          tmp = toShort(result_4);
         } else {
           {
             tmp = null;
@@ -51048,7 +51374,7 @@
     return this.decodeTaggedString_5((!(tag == null) ? typeof tag === 'string' : false) ? tag : THROW_CCE());
   };
   AbstractJsonTreeDecoder.prototype.decodeTaggedInline_5 = function (tag, inlineDescriptor) {
-    return new JsonDecoderForUnsignedTypes(new JsonReader(this.getValue_7(tag)._get_content__8()), this._get_json__6());
+    return _get_isUnsignedNumber_(inlineDescriptor) ? new JsonDecoderForUnsignedTypes(new JsonLexer(this.getValue_7(tag)._get_content__8()), this._get_json__6()) : NamedValueDecoder.prototype.decodeTaggedInline_2.call(this, tag, inlineDescriptor);
   };
   AbstractJsonTreeDecoder.prototype.decodeTaggedInline_2 = function (tag, inlineDescriptor) {
     return this.decodeTaggedInline_5((!(tag == null) ? typeof tag === 'string' : false) ? tag : THROW_CCE(), inlineDescriptor);
@@ -51070,11 +51396,11 @@
     return JsonTreeDecoder_init_$Init$(json, value, polyDiscriminator, polyDescriptor, $mask0, $marker, Object.create(JsonTreeDecoder.prototype));
   }
   function coerceInputValue_0($this, descriptor, index, tag) {
-    var elementDescriptor = descriptor.getElementDescriptor_16(index);
+    var elementDescriptor = descriptor.getElementDescriptor_17(index);
     var tmp;
     var tmp_0 = $this.currentElement_2(tag);
     if (tmp_0 instanceof JsonNull) {
-      tmp = !elementDescriptor._get_isNullable__16();
+      tmp = !elementDescriptor._get_isNullable__17();
     } else {
       {
         tmp = false;
@@ -51084,7 +51410,7 @@
       return true;
     else {
     }
-    if (equals_1(elementDescriptor._get_kind__19(), ENUM_getInstance())) {
+    if (equals_1(elementDescriptor._get_kind__20(), ENUM_getInstance())) {
       var tmp_1 = $this.currentElement_2(tag);
       var tmp0_safe_receiver = tmp_1 instanceof JsonPrimitive ? tmp_1 : null;
       var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : _get_contentOrNull_(tmp0_safe_receiver);
@@ -51095,7 +51421,7 @@
         tmp_2 = tmp1_elvis_lhs;
       }
       var enumValue = tmp_2;
-      var enumIndex = elementDescriptor.getElementIndex_16(enumValue);
+      var enumIndex = elementDescriptor.getElementIndex_17(enumValue);
       Companion_getInstance_51();
       if (enumIndex === -3)
         return true;
@@ -51103,6 +51429,19 @@
       }
     }return false;
   }
+  function _no_name_provided__230($boundThis) {
+    this._$boundThis_0 = $boundThis;
+  }
+  _no_name_provided__230.prototype.invoke_411 = function () {
+    return buildAlternativeNamesMap(this._$boundThis_0);
+  };
+  _no_name_provided__230.prototype._get_name__11 = function () {
+    return 'buildAlternativeNamesMap';
+  };
+  _no_name_provided__230.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function JsonTreeDecoder(json, value, polyDiscriminator, polyDescriptor) {
     AbstractJsonTreeDecoder.call(this, json, value);
     this._value_21 = value;
@@ -51114,7 +51453,7 @@
     return this._value_21;
   };
   JsonTreeDecoder.prototype.decodeElementIndex_8 = function (descriptor) {
-    while (this._position_9 < descriptor._get_elementsCount__16()) {
+    while (this._position_9 < descriptor._get_elementsCount__17()) {
       var tmp0_this = this;
       var tmp1 = tmp0_this._position_9;
       tmp0_this._position_9 = tmp1 + 1 | 0;
@@ -51136,6 +51475,33 @@
     Companion_getInstance_51();
     return -1;
   };
+  JsonTreeDecoder.prototype.elementName_3 = function (desc, index) {
+    var mainName = desc.getElementName_17(index);
+    if (!this._get_configuration__3()._useAlternativeNames_0)
+      return mainName;
+    if (this._get_value__27()._get_keys__8().contains_48(mainName))
+      return mainName;
+    var tmp = this._get_json__6()._schemaCache;
+    var alternativeNamesMap = tmp.getOrPut(desc, JsonAlternativeNamesKey, _no_name_provided_$factory_192(desc));
+    var tmp0_find_0 = this._get_value__27()._get_keys__8();
+    var tmp$ret$0;
+    l$ret$1: do {
+      var tmp0_iterator_1_1 = tmp0_find_0.iterator_62();
+      while (tmp0_iterator_1_1.hasNext_29()) {
+        var element_2_2 = tmp0_iterator_1_1.next_31();
+        if (alternativeNamesMap.get_65(element_2_2) === index) {
+          tmp$ret$0 = element_2_2;
+          break l$ret$1;
+        } else {
+        }
+      }
+      tmp$ret$0 = null;
+    }
+     while (false);
+    var nameInObject = tmp$ret$0;
+    var tmp0_elvis_lhs = nameInObject;
+    return tmp0_elvis_lhs == null ? mainName : tmp0_elvis_lhs;
+  };
   JsonTreeDecoder.prototype.currentElement_2 = function (tag) {
     return getValue(this._get_value__27(), tag);
   };
@@ -51149,17 +51515,27 @@
     if (this._get_configuration__3()._ignoreUnknownKeys_0) {
       tmp = true;
     } else {
-      var tmp_0 = descriptor._get_kind__19();
+      var tmp_0 = descriptor._get_kind__20();
       tmp = tmp_0 instanceof PolymorphicKind;
     }
     if (tmp)
       return Unit_getInstance();
     else {
     }
-    var names = jsonCachedSerialNames(descriptor);
-    var tmp0_iterator = this._get_value__27()._get_keys__8().iterator_62();
-    while (tmp0_iterator.hasNext_29()) {
-      var key = tmp0_iterator.next_31();
+    var tmp_1;
+    if (!this._get_configuration__3()._useAlternativeNames_0) {
+      tmp_1 = jsonCachedSerialNames(descriptor);
+    } else {
+      var tmp_2 = jsonCachedSerialNames(descriptor);
+      var tmp0_safe_receiver = this._get_json__6()._schemaCache.get_67(descriptor, JsonAlternativeNamesKey);
+      var tmp0_orEmpty_0 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver._get_keys__8();
+      var tmp0_elvis_lhs_1 = tmp0_orEmpty_0;
+      tmp_1 = plus_2(tmp_2, tmp0_elvis_lhs_1 == null ? emptySet() : tmp0_elvis_lhs_1);
+    }
+    var names = tmp_1;
+    var tmp1_iterator = this._get_value__27()._get_keys__8().iterator_62();
+    while (tmp1_iterator.hasNext_29()) {
+      var key = tmp1_iterator.next_31();
       if (!names.contains_48(key) ? !(key === this._polyDiscriminator) : false) {
         throw UnknownKeyException(key, this._get_value__27().toString());
       }}
@@ -51182,7 +51558,7 @@
     return index.toString();
   };
   JsonTreeListDecoder.prototype.currentElement_2 = function (tag) {
-    return this._value_22.get_76(toInt(tag));
+    return this._value_22.get_77(toInt(tag));
   };
   JsonTreeListDecoder.prototype.decodeElementIndex_8 = function (descriptor) {
     while (this._currentIndex_1 < (this._size_5 - 1 | 0)) {
@@ -51212,7 +51588,7 @@
   };
   JsonTreeMapDecoder.prototype.elementName_3 = function (desc, index) {
     var i = index / 2 | 0;
-    return this._keys_0.get_76(i);
+    return this._keys_0.get_77(i);
   };
   JsonTreeMapDecoder.prototype.decodeElementIndex_8 = function (descriptor) {
     while (this._position_10 < (this._size_6 - 1 | 0)) {
@@ -51236,7 +51612,15 @@
     interfaces: []
   };
   function readPolymorphicJson(_this_, discriminator, element, deserializer) {
-    return (new JsonTreeDecoder(_this_, element, discriminator, deserializer._get_descriptor__76())).decodeSerializableValue_16(deserializer);
+    return (new JsonTreeDecoder(_this_, element, discriminator, deserializer._get_descriptor__77())).decodeSerializableValue_16(deserializer);
+  }
+  function _no_name_provided_$factory_192($boundThis) {
+    var i = new _no_name_provided__230($boundThis);
+    var l = function () {
+      return i.invoke_411();
+    };
+    l.callableName = i._get_name__11();
+    return l;
   }
   var WriteMode_OBJ_instance;
   var WriteMode_LIST_instance;
@@ -51259,8 +51643,6 @@
     Enum.call(this, name, ordinal);
     this._begin = begin;
     this._end = end;
-    this._beginTc = charToTokenClass(this._begin);
-    this._endTc = charToTokenClass(this._end);
   }
   WriteMode.$metadata$ = {
     simpleName: 'WriteMode',
@@ -51268,7 +51650,7 @@
     interfaces: []
   };
   function switchMode(_this_, desc) {
-    var tmp0_subject = desc._get_kind__19();
+    var tmp0_subject = desc._get_kind__20();
     var tmp;
     if (tmp0_subject instanceof PolymorphicKind) {
       tmp = WriteMode_POLY_OBJ_getInstance();
@@ -51277,8 +51659,8 @@
         tmp = WriteMode_LIST_getInstance();
       } else {
         if (equals_1(tmp0_subject, MAP_getInstance())) {
-          var keyDescriptor_1 = desc.getElementDescriptor_16(0);
-          var keyKind_2 = keyDescriptor_1._get_kind__19();
+          var keyDescriptor_1 = desc.getElementDescriptor_17(0);
+          var keyKind_2 = keyDescriptor_1._get_kind__20();
           var tmp_0;
           var tmp_1;
           if (keyKind_2 instanceof PrimitiveKind) {
@@ -51325,35 +51707,66 @@
     WriteMode_initEntries();
     return WriteMode_POLY_OBJ_instance;
   }
-  function _no_name_provided__228() {
+  function JsonStringBuilder() {
+    this._sb_0 = StringBuilder_init_$Create$(128);
   }
-  _no_name_provided__228.prototype.invoke_377 = function ($this$Json) {
-    $this$Json._isLenient = false;
-    $this$Json._ignoreUnknownKeys = false;
-    $this$Json._allowSpecialFloatingPointValues = true;
-    $this$Json._useArrayPolymorphism = false;
+  JsonStringBuilder.prototype.append_35 = function (value) {
+    this._sb_0.append_5(value);
+    Unit_getInstance();
   };
-  _no_name_provided__228.prototype.invoke_412 = function (p1) {
-    this.invoke_377(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  JsonStringBuilder.prototype.append_36 = function (ch) {
+    this._sb_0.append_23(ch);
+    Unit_getInstance();
   };
-  _no_name_provided__228.$metadata$ = {
+  JsonStringBuilder.prototype.append_37 = function (string) {
+    this._sb_0.append_6(string);
+    Unit_getInstance();
+  };
+  JsonStringBuilder.prototype.appendQuoted = function (string) {
+    printQuoted(this._sb_0, string);
+  };
+  JsonStringBuilder.prototype.toString = function () {
+    return this._sb_0.toString();
+  };
+  JsonStringBuilder.prototype.release_10 = function () {
+  };
+  JsonStringBuilder.$metadata$ = {
+    simpleName: 'JsonStringBuilder',
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__229() {
+  function createMapForCache(initialCapacity) {
+    return HashMap_init_$Create$_1(initialCapacity);
   }
-  _no_name_provided__229.prototype.invoke_377 = function ($this$Json) {
+  function _no_name_provided__231() {
+  }
+  _no_name_provided__231.prototype.invoke_398 = function ($this$Json) {
     $this$Json._isLenient = false;
     $this$Json._ignoreUnknownKeys = false;
     $this$Json._allowSpecialFloatingPointValues = true;
     $this$Json._useArrayPolymorphism = false;
   };
-  _no_name_provided__229.prototype.invoke_412 = function (p1) {
-    this.invoke_377(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
+  _no_name_provided__231.prototype.invoke_420 = function (p1) {
+    this.invoke_398(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__229.$metadata$ = {
+  _no_name_provided__231.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__232() {
+  }
+  _no_name_provided__232.prototype.invoke_398 = function ($this$Json) {
+    $this$Json._isLenient = false;
+    $this$Json._ignoreUnknownKeys = false;
+    $this$Json._allowSpecialFloatingPointValues = true;
+    $this$Json._useArrayPolymorphism = false;
+  };
+  _no_name_provided__232.prototype.invoke_420 = function (p1) {
+    this.invoke_398(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__232.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -51369,9 +51782,9 @@
   function Companion_57() {
     Companion_instance_56 = this;
     var tmp = this;
-    tmp._DefaultJsonConfiguration = Json$default(null, _no_name_provided_$factory_190(), 1, null);
+    tmp._DefaultJsonConfiguration = Json$default(null, _no_name_provided_$factory_193(), 1, null);
     var tmp_0 = this;
-    tmp_0._DefaultJson = Json$default(null, _no_name_provided_$factory_191(), 1, null);
+    tmp_0._DefaultJson = Json$default(null, _no_name_provided_$factory_194(), 1, null);
   }
   Companion_57.$metadata$ = {
     simpleName: 'Companion',
@@ -51393,11 +51806,11 @@
     return TextContent_init_$Create$(tmp, contentType_1, null, 4, null);
   };
   KotlinxSerializer.prototype.writeContent_16 = function (data) {
-    return this._json_3.encodeToString_1(buildSerializer(data, this._json_3._get_serializersModule__14()), data);
+    return this._json_3.encodeToString_1(buildSerializer(data, this._json_3._get_serializersModule__15()), data);
   };
   KotlinxSerializer.prototype.read_3 = function (type, body) {
     var text = readText$default(body, null, 0, 3, null);
-    var deserializationStrategy = this._json_3._get_serializersModule__14().getContextual_0(type._type_0);
+    var deserializationStrategy = this._json_3._get_serializersModule__15().getContextual_2(type._type_0);
     var tmp2_elvis_lhs = deserializationStrategy;
     var tmp;
     if (tmp2_elvis_lhs == null) {
@@ -51414,7 +51827,7 @@
       tmp = tmp2_elvis_lhs;
     }
     var mapper = tmp;
-    return ensureNotNull(this._json_3.decodeFromString_1(mapper, text));
+    return ensureNotNull(this._json_3.decodeFromString_2(mapper, text));
   };
   KotlinxSerializer.$metadata$ = {
     simpleName: 'KotlinxSerializer',
@@ -51450,7 +51863,7 @@
               tmp = MapSerializer(keySerializer, valueSerializer);
             } else {
               {
-                var tmp3_elvis_lhs = module_0.getContextual_0(getKClassFromExpression_0(value));
+                var tmp3_elvis_lhs = module_0.getContextual_2(getKClassFromExpression_0(value));
                 tmp = tmp3_elvis_lhs == null ? serializer_0(getKClassFromExpression_0(value)) : tmp3_elvis_lhs;
               }
             }
@@ -51476,7 +51889,7 @@
     var tmp0_iterator_3 = tmp1_distinctBy_0.iterator_62();
     while (tmp0_iterator_3.hasNext_29()) {
       var e_4 = tmp0_iterator_3.next_31();
-      var key_5 = e_4._get_descriptor__76()._get_serialName__16();
+      var key_5 = e_4._get_descriptor__77()._get_serialName__17();
       if (set_1.add_32(key_5)) {
         list_2.add_32(e_4);
         Unit_getInstance();
@@ -51487,14 +51900,14 @@
       var tmp0_iterator_1_2_0 = serializers.iterator_62();
       while (tmp0_iterator_1_2_0.hasNext_29()) {
         var item_2_3_0 = tmp0_iterator_1_2_0.next_31();
-        tmp0_mapTo_0_1_0.add_32(item_2_3_0._get_descriptor__76()._get_serialName__16());
+        tmp0_mapTo_0_1_0.add_32(item_2_3_0._get_descriptor__77()._get_serialName__17());
         Unit_getInstance();
       }
       var tmp2_error_0 = 'Serializing collections of different element types is not yet supported. ' + ('' + 'Selected serializers: ' + tmp0_mapTo_0_1_0);
       throw IllegalStateException_init_$Create$(toString_1(tmp2_error_0));
     }var tmp0_elvis_lhs = singleOrNull(serializers);
     var selected = tmp0_elvis_lhs == null ? serializer_2(StringCompanionObject_getInstance()) : tmp0_elvis_lhs;
-    if (selected._get_descriptor__76()._get_isNullable__16()) {
+    if (selected._get_descriptor__77()._get_isNullable__17()) {
       return selected;
     }if (isInterface(selected, KSerializer))
       selected;
@@ -51534,17 +51947,17 @@
     }
     return selected;
   }
-  function _no_name_provided_$factory_190() {
-    var i = new _no_name_provided__228();
+  function _no_name_provided_$factory_193() {
+    var i = new _no_name_provided__231();
     return function (p1) {
-      i.invoke_377(p1);
+      i.invoke_398(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_191() {
-    var i = new _no_name_provided__229();
+  function _no_name_provided_$factory_194() {
+    var i = new _no_name_provided__232();
     return function (p1) {
-      i.invoke_377(p1);
+      i.invoke_398(p1);
       return Unit_getInstance();
     };
   }
@@ -52039,21 +52452,21 @@
       return new Long(0, 0);
     }return total;
   }
-  function _no_name_provided__230() {
+  function _no_name_provided__233() {
   }
-  _no_name_provided__230.prototype.invoke_372 = function ($this$buildClassSerialDescriptor) {
+  _no_name_provided__233.prototype.invoke_378 = function ($this$buildClassSerialDescriptor) {
     var tmp0_element_0 = 'nanoseconds';
     var tmp1_element_0 = emptyList();
     var tmp2_element_0 = false;
     var tmp0_cast_0_1_2 = serializer(createKType_0(getKClass_0(Long), [], false));
-    var descriptor_1 = (isInterface(tmp0_cast_0_1_2, KSerializer) ? tmp0_cast_0_1_2 : THROW_CCE())._get_descriptor__76();
+    var descriptor_1 = (isInterface(tmp0_cast_0_1_2, KSerializer) ? tmp0_cast_0_1_2 : THROW_CCE())._get_descriptor__77();
     $this$buildClassSerialDescriptor.element(tmp0_element_0, descriptor_1, tmp1_element_0, tmp2_element_0);
   };
-  _no_name_provided__230.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__233.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__230.$metadata$ = {
+  _no_name_provided__233.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -52061,17 +52474,17 @@
     TimeBasedDateTimeUnitSerializer_instance = this;
     var tmp = this;
     var tmp_0 = [];
-    tmp._descriptor_31 = buildClassSerialDescriptor$default('TimeBased', tmp_0, _no_name_provided_$factory_192(), 2, null);
+    tmp._descriptor_32 = buildClassSerialDescriptor$default('TimeBased', tmp_0, _no_name_provided_$factory_195(), 2, null);
   }
-  TimeBasedDateTimeUnitSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_31;
+  TimeBasedDateTimeUnitSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_32;
   };
-  TimeBasedDateTimeUnitSerializer.prototype.serialize_75 = function (encoder, value) {
-    var tmp0_encodeStructure_0 = this._descriptor_31;
+  TimeBasedDateTimeUnitSerializer.prototype.serialize_76 = function (encoder, value) {
+    var tmp0_encodeStructure_0 = this._descriptor_32;
     var composite_1 = encoder.beginStructure_11(tmp0_encodeStructure_0);
     var ex_2 = null;
     try {
-      composite_1.encodeLongElement_1(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_31, 0, value._nanoseconds);
+      composite_1.encodeLongElement_1(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_32, 0, value._nanoseconds);
     } catch ($p) {
       if ($p instanceof Error) {
         ex_2 = $p;
@@ -52087,28 +52500,28 @@
         composite_1.endStructure_11(tmp0_encodeStructure_0);
     }
   };
-  TimeBasedDateTimeUnitSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_75(encoder, value instanceof TimeBased ? value : THROW_CCE());
+  TimeBasedDateTimeUnitSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_76(encoder, value instanceof TimeBased ? value : THROW_CCE());
   };
-  TimeBasedDateTimeUnitSerializer.prototype.deserialize_80 = function (decoder) {
+  TimeBasedDateTimeUnitSerializer.prototype.deserialize_81 = function (decoder) {
     var seen = false;
     var nanoseconds = new Long(0, 0);
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_decodeStructure_0 = this._descriptor_31;
+      var tmp0_decodeStructure_0 = this._descriptor_32;
       var composite_1 = decoder.beginStructure_11(tmp0_decodeStructure_0);
       var ex_2 = null;
       try {
         var tmp;
         if (composite_1.decodeSequentially_8()) {
-          nanoseconds = composite_1.decodeLongElement_8(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_31, 0);
+          nanoseconds = composite_1.decodeLongElement_8(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_32, 0);
           seen = true;
           tmp = Unit_getInstance();
         } else {
           loop: while (true) {
-            var elementIndex_5 = composite_1.decodeElementIndex_8(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_31);
+            var elementIndex_5 = composite_1.decodeElementIndex_8(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_32);
             if (elementIndex_5 === 0) {
-              nanoseconds = composite_1.decodeLongElement_8(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_31, 0);
+              nanoseconds = composite_1.decodeLongElement_8(TimeBasedDateTimeUnitSerializer_getInstance()._descriptor_32, 0);
               seen = true;
             } else {
               Companion_getInstance_51();
@@ -52154,21 +52567,21 @@
       new TimeBasedDateTimeUnitSerializer();
     return TimeBasedDateTimeUnitSerializer_instance;
   }
-  function _no_name_provided__231() {
+  function _no_name_provided__234() {
   }
-  _no_name_provided__231.prototype.invoke_372 = function ($this$buildClassSerialDescriptor) {
+  _no_name_provided__234.prototype.invoke_378 = function ($this$buildClassSerialDescriptor) {
     var tmp0_element_0 = 'days';
     var tmp1_element_0 = emptyList();
     var tmp2_element_0 = false;
     var tmp0_cast_0_1_2 = serializer(createKType_0(PrimitiveClasses_getInstance()._get_intClass_(), [], false));
-    var descriptor_1 = (isInterface(tmp0_cast_0_1_2, KSerializer) ? tmp0_cast_0_1_2 : THROW_CCE())._get_descriptor__76();
+    var descriptor_1 = (isInterface(tmp0_cast_0_1_2, KSerializer) ? tmp0_cast_0_1_2 : THROW_CCE())._get_descriptor__77();
     $this$buildClassSerialDescriptor.element(tmp0_element_0, descriptor_1, tmp1_element_0, tmp2_element_0);
   };
-  _no_name_provided__231.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__234.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__231.$metadata$ = {
+  _no_name_provided__234.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -52176,17 +52589,17 @@
     DayBasedDateTimeUnitSerializer_instance = this;
     var tmp = this;
     var tmp_0 = [];
-    tmp._descriptor_32 = buildClassSerialDescriptor$default('DayBased', tmp_0, _no_name_provided_$factory_193(), 2, null);
+    tmp._descriptor_33 = buildClassSerialDescriptor$default('DayBased', tmp_0, _no_name_provided_$factory_196(), 2, null);
   }
-  DayBasedDateTimeUnitSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_32;
+  DayBasedDateTimeUnitSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_33;
   };
-  DayBasedDateTimeUnitSerializer.prototype.serialize_77 = function (encoder, value) {
-    var tmp0_encodeStructure_0 = this._descriptor_32;
+  DayBasedDateTimeUnitSerializer.prototype.serialize_78 = function (encoder, value) {
+    var tmp0_encodeStructure_0 = this._descriptor_33;
     var composite_1 = encoder.beginStructure_11(tmp0_encodeStructure_0);
     var ex_2 = null;
     try {
-      composite_1.encodeIntElement_1(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_32, 0, value._days);
+      composite_1.encodeIntElement_1(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_33, 0, value._days);
     } catch ($p) {
       if ($p instanceof Error) {
         ex_2 = $p;
@@ -52202,28 +52615,28 @@
         composite_1.endStructure_11(tmp0_encodeStructure_0);
     }
   };
-  DayBasedDateTimeUnitSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_77(encoder, value instanceof DayBased ? value : THROW_CCE());
+  DayBasedDateTimeUnitSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_78(encoder, value instanceof DayBased ? value : THROW_CCE());
   };
-  DayBasedDateTimeUnitSerializer.prototype.deserialize_80 = function (decoder) {
+  DayBasedDateTimeUnitSerializer.prototype.deserialize_81 = function (decoder) {
     var seen = false;
     var days = 0;
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_decodeStructure_0 = this._descriptor_32;
+      var tmp0_decodeStructure_0 = this._descriptor_33;
       var composite_1 = decoder.beginStructure_11(tmp0_decodeStructure_0);
       var ex_2 = null;
       try {
         var tmp;
         if (composite_1.decodeSequentially_8()) {
-          days = composite_1.decodeIntElement_8(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_32, 0);
+          days = composite_1.decodeIntElement_8(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_33, 0);
           seen = true;
           tmp = Unit_getInstance();
         } else {
           loop: while (true) {
-            var elementIndex_5 = composite_1.decodeElementIndex_8(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_32);
+            var elementIndex_5 = composite_1.decodeElementIndex_8(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_33);
             if (elementIndex_5 === 0) {
-              days = composite_1.decodeIntElement_8(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_32, 0);
+              days = composite_1.decodeIntElement_8(DayBasedDateTimeUnitSerializer_getInstance()._descriptor_33, 0);
               seen = true;
             } else {
               Companion_getInstance_51();
@@ -52269,21 +52682,21 @@
       new DayBasedDateTimeUnitSerializer();
     return DayBasedDateTimeUnitSerializer_instance;
   }
-  function _no_name_provided__232() {
+  function _no_name_provided__235() {
   }
-  _no_name_provided__232.prototype.invoke_372 = function ($this$buildClassSerialDescriptor) {
+  _no_name_provided__235.prototype.invoke_378 = function ($this$buildClassSerialDescriptor) {
     var tmp0_element_0 = 'months';
     var tmp1_element_0 = emptyList();
     var tmp2_element_0 = false;
     var tmp0_cast_0_1_2 = serializer(createKType_0(PrimitiveClasses_getInstance()._get_intClass_(), [], false));
-    var descriptor_1 = (isInterface(tmp0_cast_0_1_2, KSerializer) ? tmp0_cast_0_1_2 : THROW_CCE())._get_descriptor__76();
+    var descriptor_1 = (isInterface(tmp0_cast_0_1_2, KSerializer) ? tmp0_cast_0_1_2 : THROW_CCE())._get_descriptor__77();
     $this$buildClassSerialDescriptor.element(tmp0_element_0, descriptor_1, tmp1_element_0, tmp2_element_0);
   };
-  _no_name_provided__232.prototype.invoke_412 = function (p1) {
-    this.invoke_372(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+  _no_name_provided__235.prototype.invoke_420 = function (p1) {
+    this.invoke_378(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__232.$metadata$ = {
+  _no_name_provided__235.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -52291,17 +52704,17 @@
     MonthBasedDateTimeUnitSerializer_instance = this;
     var tmp = this;
     var tmp_0 = [];
-    tmp._descriptor_33 = buildClassSerialDescriptor$default('MonthBased', tmp_0, _no_name_provided_$factory_194(), 2, null);
+    tmp._descriptor_34 = buildClassSerialDescriptor$default('MonthBased', tmp_0, _no_name_provided_$factory_197(), 2, null);
   }
-  MonthBasedDateTimeUnitSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_33;
+  MonthBasedDateTimeUnitSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_34;
   };
-  MonthBasedDateTimeUnitSerializer.prototype.serialize_79 = function (encoder, value) {
-    var tmp0_encodeStructure_0 = this._descriptor_33;
+  MonthBasedDateTimeUnitSerializer.prototype.serialize_80 = function (encoder, value) {
+    var tmp0_encodeStructure_0 = this._descriptor_34;
     var composite_1 = encoder.beginStructure_11(tmp0_encodeStructure_0);
     var ex_2 = null;
     try {
-      composite_1.encodeIntElement_1(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_33, 0, value._months);
+      composite_1.encodeIntElement_1(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_34, 0, value._months);
     } catch ($p) {
       if ($p instanceof Error) {
         ex_2 = $p;
@@ -52317,28 +52730,28 @@
         composite_1.endStructure_11(tmp0_encodeStructure_0);
     }
   };
-  MonthBasedDateTimeUnitSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_79(encoder, value instanceof MonthBased ? value : THROW_CCE());
+  MonthBasedDateTimeUnitSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_80(encoder, value instanceof MonthBased ? value : THROW_CCE());
   };
-  MonthBasedDateTimeUnitSerializer.prototype.deserialize_80 = function (decoder) {
+  MonthBasedDateTimeUnitSerializer.prototype.deserialize_81 = function (decoder) {
     var seen = false;
     var months = 0;
     var tmp$ret$0;
     l$ret$1: do {
-      var tmp0_decodeStructure_0 = this._descriptor_33;
+      var tmp0_decodeStructure_0 = this._descriptor_34;
       var composite_1 = decoder.beginStructure_11(tmp0_decodeStructure_0);
       var ex_2 = null;
       try {
         var tmp;
         if (composite_1.decodeSequentially_8()) {
-          months = composite_1.decodeIntElement_8(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_33, 0);
+          months = composite_1.decodeIntElement_8(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_34, 0);
           seen = true;
           tmp = Unit_getInstance();
         } else {
           loop: while (true) {
-            var elementIndex_5 = composite_1.decodeElementIndex_8(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_33);
+            var elementIndex_5 = composite_1.decodeElementIndex_8(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_34);
             if (elementIndex_5 === 0) {
-              months = composite_1.decodeIntElement_8(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_33, 0);
+              months = composite_1.decodeIntElement_8(MonthBasedDateTimeUnitSerializer_getInstance()._descriptor_34, 0);
               seen = true;
             } else {
               Companion_getInstance_51();
@@ -52394,20 +52807,20 @@
     var tmp1_arrayOf_0 = [DayBasedDateTimeUnitSerializer_getInstance(), MonthBasedDateTimeUnitSerializer_getInstance()];
     tmp._impl = new SealedClassSerializer('kotlinx.datetime.DateTimeUnit.DateBased', tmp_0, tmp_1, tmp1_arrayOf_0);
   }
-  DateBasedDateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_6 = function (decoder, klassName) {
-    return this._impl.findPolymorphicSerializerOrNull_6(decoder, klassName);
+  DateBasedDateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (decoder, klassName) {
+    return this._impl.findPolymorphicSerializerOrNull_8(decoder, klassName);
   };
-  DateBasedDateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_4 = function (encoder, value) {
-    return this._impl.findPolymorphicSerializerOrNull_8(encoder, value);
+  DateBasedDateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_6 = function (encoder, value) {
+    return this._impl.findPolymorphicSerializerOrNull_10(encoder, value);
   };
-  DateBasedDateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (encoder, value) {
-    return this.findPolymorphicSerializerOrNull_4(encoder, value instanceof DateBased ? value : THROW_CCE());
+  DateBasedDateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_10 = function (encoder, value) {
+    return this.findPolymorphicSerializerOrNull_6(encoder, value instanceof DateBased ? value : THROW_CCE());
   };
-  DateBasedDateTimeUnitSerializer.prototype._get_baseClass__2 = function () {
+  DateBasedDateTimeUnitSerializer.prototype._get_baseClass__3 = function () {
     return getKClass_0(DateBased);
   };
-  DateBasedDateTimeUnitSerializer.prototype._get_descriptor__76 = function () {
-    return this._impl._descriptor;
+  DateBasedDateTimeUnitSerializer.prototype._get_descriptor__77 = function () {
+    return this._impl._descriptor_0;
   };
   DateBasedDateTimeUnitSerializer.$metadata$ = {
     simpleName: 'DateBasedDateTimeUnitSerializer',
@@ -52430,20 +52843,20 @@
     var tmp1_arrayOf_0 = [DayBasedDateTimeUnitSerializer_getInstance(), MonthBasedDateTimeUnitSerializer_getInstance(), TimeBasedDateTimeUnitSerializer_getInstance()];
     tmp._impl_0 = new SealedClassSerializer('kotlinx.datetime.DateTimeUnit', tmp_0, tmp_1, tmp1_arrayOf_0);
   }
-  DateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_6 = function (decoder, klassName) {
-    return this._impl_0.findPolymorphicSerializerOrNull_6(decoder, klassName);
+  DateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (decoder, klassName) {
+    return this._impl_0.findPolymorphicSerializerOrNull_8(decoder, klassName);
   };
-  DateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_7 = function (encoder, value) {
-    return this._impl_0.findPolymorphicSerializerOrNull_8(encoder, value);
+  DateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_9 = function (encoder, value) {
+    return this._impl_0.findPolymorphicSerializerOrNull_10(encoder, value);
   };
-  DateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_8 = function (encoder, value) {
-    return this.findPolymorphicSerializerOrNull_7(encoder, value instanceof DateTimeUnit ? value : THROW_CCE());
+  DateTimeUnitSerializer.prototype.findPolymorphicSerializerOrNull_10 = function (encoder, value) {
+    return this.findPolymorphicSerializerOrNull_9(encoder, value instanceof DateTimeUnit ? value : THROW_CCE());
   };
-  DateTimeUnitSerializer.prototype._get_baseClass__2 = function () {
+  DateTimeUnitSerializer.prototype._get_baseClass__3 = function () {
     return getKClass_0(DateTimeUnit);
   };
-  DateTimeUnitSerializer.prototype._get_descriptor__76 = function () {
-    return this._impl_0._descriptor;
+  DateTimeUnitSerializer.prototype._get_descriptor__77 = function () {
+    return this._impl_0._descriptor_0;
   };
   DateTimeUnitSerializer.$metadata$ = {
     simpleName: 'DateTimeUnitSerializer',
@@ -52456,42 +52869,42 @@
       new DateTimeUnitSerializer();
     return DateTimeUnitSerializer_instance;
   }
-  function _no_name_provided_$factory_192() {
-    var i = new _no_name_provided__230();
+  function _no_name_provided_$factory_195() {
+    var i = new _no_name_provided__233();
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_193() {
-    var i = new _no_name_provided__231();
+  function _no_name_provided_$factory_196() {
+    var i = new _no_name_provided__234();
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_194() {
-    var i = new _no_name_provided__232();
+  function _no_name_provided_$factory_197() {
+    var i = new _no_name_provided__235();
     return function (p1) {
-      i.invoke_372(p1);
+      i.invoke_378(p1);
       return Unit_getInstance();
     };
   }
   function InstantIso8601Serializer() {
     InstantIso8601Serializer_instance = this;
-    this._descriptor_34 = PrimitiveSerialDescriptor('Instant', STRING_getInstance());
+    this._descriptor_35 = PrimitiveSerialDescriptor('Instant', STRING_getInstance());
   }
-  InstantIso8601Serializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_34;
+  InstantIso8601Serializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_35;
   };
-  InstantIso8601Serializer.prototype.deserialize_80 = function (decoder) {
+  InstantIso8601Serializer.prototype.deserialize_81 = function (decoder) {
     return Companion_getInstance_62().parse_1(decoder.decodeString_8());
   };
-  InstantIso8601Serializer.prototype.serialize_83 = function (encoder, value) {
+  InstantIso8601Serializer.prototype.serialize_84 = function (encoder, value) {
     encoder.encodeString_1(value.toString());
   };
-  InstantIso8601Serializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_83(encoder, value instanceof Instant_0 ? value : THROW_CCE());
+  InstantIso8601Serializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_84(encoder, value instanceof Instant_0 ? value : THROW_CCE());
   };
   InstantIso8601Serializer.$metadata$ = {
     simpleName: 'InstantIso8601Serializer',
@@ -52506,19 +52919,19 @@
   }
   function TimeZoneSerializer() {
     TimeZoneSerializer_instance = this;
-    this._descriptor_35 = PrimitiveSerialDescriptor('TimeZone', STRING_getInstance());
+    this._descriptor_36 = PrimitiveSerialDescriptor('TimeZone', STRING_getInstance());
   }
-  TimeZoneSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_35;
+  TimeZoneSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_36;
   };
-  TimeZoneSerializer.prototype.deserialize_80 = function (decoder) {
+  TimeZoneSerializer.prototype.deserialize_81 = function (decoder) {
     return Companion_getInstance_63().of_0(decoder.decodeString_8());
   };
-  TimeZoneSerializer.prototype.serialize_85 = function (encoder, value) {
+  TimeZoneSerializer.prototype.serialize_86 = function (encoder, value) {
     encoder.encodeString_1(value._get_id__14());
   };
-  TimeZoneSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_85(encoder, value instanceof TimeZone ? value : THROW_CCE());
+  TimeZoneSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_86(encoder, value instanceof TimeZone ? value : THROW_CCE());
   };
   TimeZoneSerializer.$metadata$ = {
     simpleName: 'TimeZoneSerializer',
@@ -52533,12 +52946,12 @@
   }
   function ZoneOffsetSerializer() {
     ZoneOffsetSerializer_instance = this;
-    this._descriptor_36 = PrimitiveSerialDescriptor('ZoneOffset', STRING_getInstance());
+    this._descriptor_37 = PrimitiveSerialDescriptor('ZoneOffset', STRING_getInstance());
   }
-  ZoneOffsetSerializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_36;
+  ZoneOffsetSerializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_37;
   };
-  ZoneOffsetSerializer.prototype.deserialize_80 = function (decoder) {
+  ZoneOffsetSerializer.prototype.deserialize_81 = function (decoder) {
     var zone = Companion_getInstance_63().of_0(decoder.decodeString_8());
     if (zone instanceof ZoneOffset_0) {
       return zone;
@@ -52548,11 +52961,11 @@
       }
     }
   };
-  ZoneOffsetSerializer.prototype.serialize_87 = function (encoder, value) {
+  ZoneOffsetSerializer.prototype.serialize_88 = function (encoder, value) {
     encoder.encodeString_1(value._get_id__14());
   };
-  ZoneOffsetSerializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_87(encoder, value instanceof ZoneOffset_0 ? value : THROW_CCE());
+  ZoneOffsetSerializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_88(encoder, value instanceof ZoneOffset_0 ? value : THROW_CCE());
   };
   ZoneOffsetSerializer.$metadata$ = {
     simpleName: 'ZoneOffsetSerializer',
@@ -52928,33 +53341,33 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   }
-  function _no_name_provided__233(this$0) {
+  function _no_name_provided__236(this$0) {
     this._this$0_63 = this$0;
   }
-  _no_name_provided__233.prototype.invoke_403 = function () {
+  _no_name_provided__236.prototype.invoke_411 = function () {
     return new GithubClient(this._this$0_63._inputs._token_0, this._this$0_63._inputs._owner_3, this._this$0_63._inputs._repo_1);
   };
-  _no_name_provided__233.$metadata$ = {
+  _no_name_provided__236.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__234(this$0) {
+  function _no_name_provided__237(this$0) {
     this._this$0_64 = this$0;
   }
-  _no_name_provided__234.prototype.invoke_403 = function () {
+  _no_name_provided__237.prototype.invoke_411 = function () {
     return new GetPRsForMilestone(_get_githubClient_(this._this$0_64));
   };
-  _no_name_provided__234.$metadata$ = {
+  _no_name_provided__237.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__235(this$0) {
+  function _no_name_provided__238(this$0) {
     this._this$0_65 = this$0;
   }
-  _no_name_provided__235.prototype.invoke_403 = function () {
+  _no_name_provided__238.prototype.invoke_411 = function () {
     return new BuildChangelog(this._this$0_65._inputs);
   };
-  _no_name_provided__235.$metadata$ = {
+  _no_name_provided__238.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -52997,7 +53410,7 @@
             var tmp_1 = _get_pRsForMilestone_(this.__this__42);
             var tmp0_elvis_lhs_3 = this._milestoneInfo0._closedAt_1;
             var tmp1_elvis_lhs_2 = tmp0_elvis_lhs_3 == null ? this._milestoneInfo0._updated_at : tmp0_elvis_lhs_3;
-            suspendResult = tmp_1.invoke_413(this._milestoneInfo0._number_1, this._milestoneInfo0._closedPRs, tmp1_elvis_lhs_2 == null ? System_getInstance().now_1() : tmp1_elvis_lhs_2, this);
+            suspendResult = tmp_1.invoke_421(this._milestoneInfo0._number_1, this._milestoneInfo0._closedPRs, tmp1_elvis_lhs_2 == null ? System_getInstance().now_1() : tmp1_elvis_lhs_2, this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -53036,7 +53449,7 @@
           case 11:
             this._exceptionState = 16;
             this._state_0 = 12;
-            suspendResult = _get_buildChangelog_(this.__this__42).invoke_398(this._pullRequestList6, this);
+            suspendResult = _get_buildChangelog_(this.__this__42).invoke_406(this._pullRequestList6, this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -53126,7 +53539,7 @@
             this._exceptionState = 8;
             this.__this__43._fetchMilestoneByName = new FetchMilestoneByName(_get_githubClient_(this.__this__43));
             this._state_0 = 4;
-            suspendResult = _get_fetchMilestoneByName_(this.__this__43).invoke_406(this.__this__43._inputs._milestone_0, this);
+            suspendResult = _get_fetchMilestoneByName_(this.__this__43).invoke_414(this.__this__43._inputs._milestone_0, this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -53170,7 +53583,7 @@
             this._exceptionState = 17;
             this.__this__43._fetchLastClosedMilestone = new FetchLastClosedMilestone(_get_githubClient_(this.__this__43));
             this._state_0 = 12;
-            suspendResult = _get_fetchLastClosedMilestone_(this.__this__43).invoke_403(this);
+            suspendResult = _get_fetchLastClosedMilestone_(this.__this__43).invoke_411(this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -53224,11 +53637,11 @@
   function ReleaseNoteBuilder(inputs) {
     this._inputs = inputs;
     var tmp = this;
-    tmp._githubClient$delegate = lazy(_no_name_provided_$factory_195(this));
+    tmp._githubClient$delegate = lazy(_no_name_provided_$factory_198(this));
     var tmp_0 = this;
-    tmp_0._pRsForMilestone$delegate = lazy(_no_name_provided_$factory_196(this));
+    tmp_0._pRsForMilestone$delegate = lazy(_no_name_provided_$factory_199(this));
     var tmp_1 = this;
-    tmp_1._buildChangelog$delegate = lazy(_no_name_provided_$factory_197(this));
+    tmp_1._buildChangelog$delegate = lazy(_no_name_provided_$factory_200(this));
   }
   ReleaseNoteBuilder.prototype.build_17 = function ($cont) {
     var tmp = new $buildCOROUTINE$0(this, $cont);
@@ -53256,53 +53669,53 @@
       return _get_buildChangelog_(receiver);
     }, null);
   }
-  function _no_name_provided_$factory_195(this$0) {
-    var i = new _no_name_provided__233(this$0);
+  function _no_name_provided_$factory_198(this$0) {
+    var i = new _no_name_provided__236(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
-  function _no_name_provided_$factory_196(this$0) {
-    var i = new _no_name_provided__234(this$0);
+  function _no_name_provided_$factory_199(this$0) {
+    var i = new _no_name_provided__237(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
-  function _no_name_provided_$factory_197(this$0) {
-    var i = new _no_name_provided__235(this$0);
+  function _no_name_provided_$factory_200(this$0) {
+    var i = new _no_name_provided__238(this$0);
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
-  function _no_name_provided__236() {
+  function _no_name_provided__239() {
   }
-  _no_name_provided__236.prototype.invoke_377 = function ($this$Json) {
+  _no_name_provided__239.prototype.invoke_398 = function ($this$Json) {
     $this$Json._ignoreUnknownKeys = true;
     $this$Json._coerceInputValues = false;
     $this$Json._isLenient = true;
   };
-  _no_name_provided__236.prototype.invoke_412 = function (p1) {
-    this.invoke_377(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
+  _no_name_provided__239.prototype.invoke_420 = function (p1) {
+    this.invoke_398(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__236.$metadata$ = {
+  _no_name_provided__239.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__237(resultContinuation) {
+  function _no_name_provided__240(resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__237.prototype.invoke_379 = function (it, $cont) {
+  _no_name_provided__240.prototype.invoke_385 = function (it, $cont) {
     var tmp = this.create_43(it, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__237.prototype.invoke_412 = function (p1, $cont) {
-    this.invoke_379(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__240.prototype.invoke_420 = function (p1, $cont) {
+    this.invoke_385(p1 instanceof HttpResponse ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__237.prototype.doResume_95 = function () {
+  _no_name_provided__240.prototype.doResume_95 = function () {
     var suspendResult = this._result;
     $sm: do
       try {
@@ -53327,71 +53740,71 @@
       }
      while (true);
   };
-  _no_name_provided__237.prototype.create_43 = function (it, completion) {
-    var i = new _no_name_provided__237(completion);
+  _no_name_provided__240.prototype.create_43 = function (it, completion) {
+    var i = new _no_name_provided__240(completion);
     i._it_8 = it;
     return i;
   };
-  _no_name_provided__237.$metadata$ = {
+  _no_name_provided__240.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: 1
   };
-  function _no_name_provided__238() {
-  }
-  _no_name_provided__238.prototype.invoke_381 = function ($this$install) {
-    var tmp = $this$install;
-    tmp._serializer = new KotlinxSerializer(Json$default(null, _no_name_provided_$factory_204(), 1, null));
-  };
-  _no_name_provided__238.prototype.invoke_412 = function (p1) {
-    this.invoke_381(p1 instanceof Config_3 ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__238.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__239() {
-  }
-  _no_name_provided__239.prototype.invoke_383 = function ($this$install) {
-    $this$install._logger = _get_DEFAULT_(Companion_getInstance_49());
-    $this$install._level = LogLevel_INFO_getInstance();
-  };
-  _no_name_provided__239.prototype.invoke_412 = function (p1) {
-    this.invoke_383(p1 instanceof Config_2 ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__239.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__240() {
-  }
-  _no_name_provided__240.prototype.invoke_385 = function ($this$HttpResponseValidator) {
-    $this$HttpResponseValidator.validateResponse(_no_name_provided_$factory_205(null));
-  };
-  _no_name_provided__240.prototype.invoke_412 = function (p1) {
-    this.invoke_385(p1 instanceof Config ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__240.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function _no_name_provided__241() {
   }
-  _no_name_provided__241.prototype.invoke_387 = function ($this$HttpClient) {
-    var tmp = Feature_getInstance_5();
-    $this$HttpClient.install(tmp, _no_name_provided_$factory_201());
-    var tmp_0 = Companion_getInstance_50();
-    $this$HttpClient.install(tmp_0, _no_name_provided_$factory_202());
-    HttpResponseValidator($this$HttpClient, _no_name_provided_$factory_203());
+  _no_name_provided__241.prototype.invoke_387 = function ($this$install) {
+    var tmp = $this$install;
+    tmp._serializer = new KotlinxSerializer(Json$default(null, _no_name_provided_$factory_207(), 1, null));
   };
-  _no_name_provided__241.prototype.invoke_412 = function (p1) {
-    this.invoke_387(p1 instanceof HttpClientConfig ? p1 : THROW_CCE());
+  _no_name_provided__241.prototype.invoke_420 = function (p1) {
+    this.invoke_387(p1 instanceof Config_3 ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__241.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__242() {
+  }
+  _no_name_provided__242.prototype.invoke_389 = function ($this$install) {
+    $this$install._logger = _get_DEFAULT_(Companion_getInstance_49());
+    $this$install._level = LogLevel_INFO_getInstance();
+  };
+  _no_name_provided__242.prototype.invoke_420 = function (p1) {
+    this.invoke_389(p1 instanceof Config_2 ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__242.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__243() {
+  }
+  _no_name_provided__243.prototype.invoke_391 = function ($this$HttpResponseValidator) {
+    $this$HttpResponseValidator.validateResponse(_no_name_provided_$factory_208(null));
+  };
+  _no_name_provided__243.prototype.invoke_420 = function (p1) {
+    this.invoke_391(p1 instanceof Config ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__243.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__244() {
+  }
+  _no_name_provided__244.prototype.invoke_393 = function ($this$HttpClient) {
+    var tmp = Feature_getInstance_5();
+    $this$HttpClient.install(tmp, _no_name_provided_$factory_204());
+    var tmp_0 = Companion_getInstance_50();
+    $this$HttpClient.install(tmp_0, _no_name_provided_$factory_205());
+    HttpResponseValidator($this$HttpClient, _no_name_provided_$factory_206());
+  };
+  _no_name_provided__244.prototype.invoke_420 = function (p1) {
+    this.invoke_393(p1 instanceof HttpClientConfig ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__244.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -53404,31 +53817,31 @@
     header(_this_, HttpHeaders_getInstance()._Authorization, '' + 'token ' + $this._token);
     header(_this_, HttpHeaders_getInstance()._Accept, 'application/vnd.github.v3+json');
     header(_this_, HttpHeaders_getInstance()._CacheControl, 'no-cache');
-    _this_.url_0(_no_name_provided_$factory_199(path_0));
+    _this_.url_0(_no_name_provided_$factory_202(path_0));
   }
-  function _no_name_provided__242() {
+  function _no_name_provided__245() {
   }
-  _no_name_provided__242.prototype.invoke_403 = function () {
-    return HttpClient_1(_no_name_provided_$factory_200());
+  _no_name_provided__245.prototype.invoke_411 = function () {
+    return HttpClient_1(_no_name_provided_$factory_203());
   };
-  _no_name_provided__242.$metadata$ = {
+  _no_name_provided__245.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__243($path) {
+  function _no_name_provided__246($path) {
     this._$path = $path;
   }
-  _no_name_provided__243.prototype.invoke_390 = function ($this$url, it) {
+  _no_name_provided__246.prototype.invoke_396 = function ($this$url, it) {
     takeFrom($this$url, 'https://api.github.com');
     Unit_getInstance();
     $this$url._encodedPath = this._$path;
   };
-  _no_name_provided__243.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__246.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof URLBuilder ? p1 : THROW_CCE();
-    this.invoke_390(tmp, p2 instanceof URLBuilder ? p2 : THROW_CCE());
+    this.invoke_396(tmp, p2 instanceof URLBuilder ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__243.$metadata$ = {
+  _no_name_provided__246.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -53707,7 +54120,7 @@
     this._owner_1 = owner;
     this._repo = repo;
     var tmp = this;
-    tmp._client$delegate_0 = lazy(_no_name_provided_$factory_198());
+    tmp._client$delegate_0 = lazy(_no_name_provided_$factory_201());
   }
   GithubClient.prototype.milestones = function (request, $cont) {
     var tmp = new $milestonesCOROUTINE$2(this, request, $cont);
@@ -53731,58 +54144,58 @@
       return _get_client_(receiver);
     }, null);
   }
-  function _no_name_provided_$factory_198() {
-    var i = new _no_name_provided__242();
+  function _no_name_provided_$factory_201() {
+    var i = new _no_name_provided__245();
     return function () {
-      return i.invoke_403();
+      return i.invoke_411();
     };
   }
-  function _no_name_provided_$factory_199($path) {
-    var i = new _no_name_provided__243($path);
+  function _no_name_provided_$factory_202($path) {
+    var i = new _no_name_provided__246($path);
     return function (p1, p2) {
-      i.invoke_390(p1, p2);
+      i.invoke_396(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_200() {
+  function _no_name_provided_$factory_203() {
+    var i = new _no_name_provided__244();
+    return function (p1) {
+      i.invoke_393(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_204() {
     var i = new _no_name_provided__241();
     return function (p1) {
       i.invoke_387(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_201() {
-    var i = new _no_name_provided__238();
+  function _no_name_provided_$factory_205() {
+    var i = new _no_name_provided__242();
     return function (p1) {
-      i.invoke_381(p1);
+      i.invoke_389(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_202() {
+  function _no_name_provided_$factory_206() {
+    var i = new _no_name_provided__243();
+    return function (p1) {
+      i.invoke_391(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_207() {
     var i = new _no_name_provided__239();
     return function (p1) {
-      i.invoke_383(p1);
+      i.invoke_398(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_203() {
-    var i = new _no_name_provided__240();
-    return function (p1) {
-      i.invoke_385(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_204() {
-    var i = new _no_name_provided__236();
-    return function (p1) {
-      i.invoke_377(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_205(resultContinuation) {
-    var i = new _no_name_provided__237(resultContinuation);
+  function _no_name_provided_$factory_208(resultContinuation) {
+    var i = new _no_name_provided__240(resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_379(p1, $cont);
+      return i.invoke_385(p1, $cont);
     };
     l.$arity = 1;
     return l;
@@ -53885,17 +54298,17 @@
     tmp0_serialDesc.addElement_0('subscriptions_url', false);
     tmp0_serialDesc.addElement_0('type', false);
     tmp0_serialDesc.addElement_0('url', false);
-    this._descriptor_37 = tmp0_serialDesc;
+    this._descriptor_38 = tmp0_serialDesc;
   }
-  $serializer.prototype._get_descriptor__76 = function () {
-    return this._descriptor_37;
+  $serializer.prototype._get_descriptor__77 = function () {
+    return this._descriptor_38;
   };
   $serializer.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), BooleanSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance()];
     return tmp0_arrayOf_0;
   };
-  $serializer.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_37;
+  $serializer.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_38;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -54040,8 +54453,8 @@
     tmp22_input.endStructure_11(tmp0_desc);
     return GithubUser_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, tmp12_local8, tmp13_local9, tmp14_local10, tmp15_local11, tmp16_local12, tmp17_local13, tmp18_local14, tmp19_local15, tmp20_local16, tmp21_local17, null);
   };
-  $serializer.prototype.serialize_89 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_37;
+  $serializer.prototype.serialize_90 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_38;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeStringElement_1(tmp0_desc, 0, value._avatar_url);
     tmp1_output.encodeStringElement_1(tmp0_desc, 1, value._events_url);
@@ -54063,8 +54476,8 @@
     tmp1_output.encodeStringElement_1(tmp0_desc, 17, value._url_2);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_89(encoder, value instanceof GithubUser ? value : THROW_CCE());
+  $serializer.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_90(encoder, value instanceof GithubUser ? value : THROW_CCE());
   };
   $serializer.$metadata$ = {
     simpleName: '$serializer',
@@ -54252,17 +54665,17 @@
     tmp0_serialDesc.addElement_0('title', false);
     tmp0_serialDesc.addElement_0('updated_at', false);
     tmp0_serialDesc.addElement_0('url', false);
-    this._descriptor_38 = tmp0_serialDesc;
+    this._descriptor_39 = tmp0_serialDesc;
   }
-  $serializer_0.prototype._get_descriptor__76 = function () {
-    return this._descriptor_38;
+  $serializer_0.prototype._get_descriptor__77 = function () {
+    return this._descriptor_39;
   };
   $serializer_0.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance()), IntSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), IntSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), IntSerializer_getInstance(), IntSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_0.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_38;
+  $serializer_0.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_39;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -54393,8 +54806,8 @@
     tmp20_input.endStructure_11(tmp0_desc);
     return Milestone_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, tmp12_local8, tmp13_local9, tmp14_local10, tmp15_local11, tmp16_local12, tmp17_local13, tmp18_local14, tmp19_local15, null);
   };
-  $serializer_0.prototype.serialize_91 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_38;
+  $serializer_0.prototype.serialize_92 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_39;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._closedAt);
     tmp1_output.encodeIntElement_1(tmp0_desc, 1, value._closedIssues);
@@ -54414,8 +54827,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 15, StringSerializer_getInstance(), value._url_3);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_0.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_91(encoder, value instanceof Milestone ? value : THROW_CCE());
+  $serializer_0.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_92(encoder, value instanceof Milestone ? value : THROW_CCE());
   };
   $serializer_0.$metadata$ = {
     simpleName: '$serializer',
@@ -54591,17 +55004,17 @@
     tmp0_serialDesc.addElement_0('subscriptions_url', false);
     tmp0_serialDesc.addElement_0('type', false);
     tmp0_serialDesc.addElement_0('url', false);
-    this._descriptor_39 = tmp0_serialDesc;
+    this._descriptor_40 = tmp0_serialDesc;
   }
-  $serializer_1.prototype._get_descriptor__76 = function () {
-    return this._descriptor_39;
+  $serializer_1.prototype._get_descriptor__77 = function () {
+    return this._descriptor_40;
   };
   $serializer_1.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), StringSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), BooleanSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_1.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_39;
+  $serializer_1.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_40;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -54746,8 +55159,8 @@
     tmp22_input.endStructure_11(tmp0_desc);
     return EnabledBy_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, tmp12_local8, tmp13_local9, tmp14_local10, tmp15_local11, tmp16_local12, tmp17_local13, tmp18_local14, tmp19_local15, tmp20_local16, tmp21_local17, null);
   };
-  $serializer_1.prototype.serialize_93 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_39;
+  $serializer_1.prototype.serialize_94 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_40;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._avatarUrl);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 1, StringSerializer_getInstance(), value._eventsUrl);
@@ -54769,8 +55182,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 17, StringSerializer_getInstance(), value._url_4);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_1.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_93(encoder, value instanceof EnabledBy ? value : THROW_CCE());
+  $serializer_1.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_94(encoder, value instanceof EnabledBy ? value : THROW_CCE());
   };
   $serializer_1.$metadata$ = {
     simpleName: '$serializer',
@@ -54946,17 +55359,17 @@
     tmp0_serialDesc.addElement_0('commit_title', false);
     tmp0_serialDesc.addElement_0('enabled_by', false);
     tmp0_serialDesc.addElement_0('merge_method', false);
-    this._descriptor_40 = tmp0_serialDesc;
+    this._descriptor_41 = tmp0_serialDesc;
   }
-  $serializer_2.prototype._get_descriptor__76 = function () {
-    return this._descriptor_40;
+  $serializer_2.prototype._get_descriptor__77 = function () {
+    return this._descriptor_41;
   };
   $serializer_2.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance_1()), new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_2.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_40;
+  $serializer_2.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_41;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -55003,8 +55416,8 @@
     tmp8_input.endStructure_11(tmp0_desc);
     return AutoMerge_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
-  $serializer_2.prototype.serialize_95 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_40;
+  $serializer_2.prototype.serialize_96 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_41;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._commitMessage);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 1, StringSerializer_getInstance(), value._commitTitle);
@@ -55012,8 +55425,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 3, StringSerializer_getInstance(), value._mergeMethod);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_2.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_95(encoder, value instanceof AutoMerge ? value : THROW_CCE());
+  $serializer_2.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_96(encoder, value instanceof AutoMerge ? value : THROW_CCE());
   };
   $serializer_2.$metadata$ = {
     simpleName: '$serializer',
@@ -55124,17 +55537,17 @@
     tmp0_serialDesc.addElement_0('url', false);
     tmp0_serialDesc.addElement_0('watchers', false);
     tmp0_serialDesc.addElement_0('watchers_count', false);
-    this._descriptor_41 = tmp0_serialDesc;
+    this._descriptor_42 = tmp0_serialDesc;
   }
-  $serializer_3.prototype._get_descriptor__76 = function () {
-    return this._descriptor_41;
+  $serializer_3.prototype._get_descriptor__77 = function () {
+    return this._descriptor_42;
   };
   $serializer_3.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance()), BooleanSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), BooleanSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), BooleanSerializer_getInstance(), IntSerializer_getInstance(), IntSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), BooleanSerializer_getInstance(), BooleanSerializer_getInstance(), BooleanSerializer_getInstance(), BooleanSerializer_getInstance(), BooleanSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), StringSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), IntSerializer_getInstance(), IntSerializer_getInstance(), new NullableSerializer($serializer_getInstance()), BooleanSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), LongSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), IntSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), IntSerializer_getInstance(), IntSerializer_getInstance()];
     return tmp0_arrayOf_0;
   };
-  $serializer_3.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_41;
+  $serializer_3.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_42;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -55666,8 +56079,8 @@
     tmp79_input.endStructure_11(tmp0_desc);
     return Repo_init_$Create$(tmp3_bitMask0, tmp4_bitMask1, tmp5_bitMask2, tmp6_local0, tmp7_local1, tmp8_local2, tmp9_local3, tmp10_local4, tmp11_local5, tmp12_local6, tmp13_local7, tmp14_local8, tmp15_local9, tmp16_local10, tmp17_local11, tmp18_local12, tmp19_local13, tmp20_local14, tmp21_local15, tmp22_local16, tmp23_local17, tmp24_local18, tmp25_local19, tmp26_local20, tmp27_local21, tmp28_local22, tmp29_local23, tmp30_local24, tmp31_local25, tmp32_local26, tmp33_local27, tmp34_local28, tmp35_local29, tmp36_local30, tmp37_local31, tmp38_local32, tmp39_local33, tmp40_local34, tmp41_local35, tmp42_local36, tmp43_local37, tmp44_local38, tmp45_local39, tmp46_local40, tmp47_local41, tmp48_local42, tmp49_local43, tmp50_local44, tmp51_local45, tmp52_local46, tmp53_local47, tmp54_local48, tmp55_local49, tmp56_local50, tmp57_local51, tmp58_local52, tmp59_local53, tmp60_local54, tmp61_local55, tmp62_local56, tmp63_local57, tmp64_local58, tmp65_local59, tmp66_local60, tmp67_local61, tmp68_local62, tmp69_local63, tmp70_local64, tmp71_local65, tmp72_local66, tmp73_local67, tmp74_local68, tmp75_local69, tmp76_local70, tmp77_local71, tmp78_local72, null);
   };
-  $serializer_3.prototype.serialize_97 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_41;
+  $serializer_3.prototype.serialize_98 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_42;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._archiveUrl);
     tmp1_output.encodeBooleanElement_1(tmp0_desc, 1, value._archived);
@@ -55744,8 +56157,8 @@
     tmp1_output.encodeIntElement_1(tmp0_desc, 72, value._watchersCount);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_3.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_97(encoder, value instanceof Repo ? value : THROW_CCE());
+  $serializer_3.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_98(encoder, value instanceof Repo ? value : THROW_CCE());
   };
   $serializer_3.$metadata$ = {
     simpleName: '$serializer',
@@ -56307,17 +56720,17 @@
     tmp0_serialDesc.addElement_0('repo', false);
     tmp0_serialDesc.addElement_0('sha', false);
     tmp0_serialDesc.addElement_0('user', false);
-    this._descriptor_42 = tmp0_serialDesc;
+    this._descriptor_43 = tmp0_serialDesc;
   }
-  $serializer_4.prototype._get_descriptor__76 = function () {
-    return this._descriptor_42;
+  $serializer_4.prototype._get_descriptor__77 = function () {
+    return this._descriptor_43;
   };
   $serializer_4.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance_3()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_4.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_42;
+  $serializer_4.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_43;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56371,8 +56784,8 @@
     tmp9_input.endStructure_11(tmp0_desc);
     return Branch_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
-  $serializer_4.prototype.serialize_99 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_42;
+  $serializer_4.prototype.serialize_100 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_43;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._label);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 1, StringSerializer_getInstance(), value._ref_0);
@@ -56381,8 +56794,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 4, $serializer_getInstance(), value._user_1);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_4.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_99(encoder, value instanceof Branch ? value : THROW_CCE());
+  $serializer_4.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_100(encoder, value instanceof Branch ? value : THROW_CCE());
   };
   $serializer_4.$metadata$ = {
     simpleName: '$serializer',
@@ -56431,17 +56844,17 @@
     tmp0_serialDesc.addElement_0('name', false);
     tmp0_serialDesc.addElement_0('node_id', false);
     tmp0_serialDesc.addElement_0('url', false);
-    this._descriptor_43 = tmp0_serialDesc;
+    this._descriptor_44 = tmp0_serialDesc;
   }
-  $serializer_5.prototype._get_descriptor__76 = function () {
-    return this._descriptor_43;
+  $serializer_5.prototype._get_descriptor__77 = function () {
+    return this._descriptor_44;
   };
   $serializer_5.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance()), BooleanSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), StringSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_5.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_43;
+  $serializer_5.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_44;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56509,8 +56922,8 @@
     tmp11_input.endStructure_11(tmp0_desc);
     return Label_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
   };
-  $serializer_5.prototype.serialize_101 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_43;
+  $serializer_5.prototype.serialize_102 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_44;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._color);
     tmp1_output.encodeBooleanElement_1(tmp0_desc, 1, value._default);
@@ -56521,8 +56934,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 6, StringSerializer_getInstance(), value._url_6);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_5.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_101(encoder, value instanceof Label ? value : THROW_CCE());
+  $serializer_5.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_102(encoder, value instanceof Label ? value : THROW_CCE());
   };
   $serializer_5.$metadata$ = {
     simpleName: '$serializer',
@@ -56573,17 +56986,17 @@
     $serializer_instance_6 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.Comments', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_44 = tmp0_serialDesc;
+    this._descriptor_45 = tmp0_serialDesc;
   }
-  $serializer_6.prototype._get_descriptor__76 = function () {
-    return this._descriptor_44;
+  $serializer_6.prototype._get_descriptor__77 = function () {
+    return this._descriptor_45;
   };
   $serializer_6.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_6.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_44;
+  $serializer_6.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_45;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56609,14 +57022,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return Comments_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_6.prototype.serialize_103 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_44;
+  $serializer_6.prototype.serialize_104 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_45;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_6.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_103(encoder, value instanceof Comments ? value : THROW_CCE());
+  $serializer_6.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_104(encoder, value instanceof Comments ? value : THROW_CCE());
   };
   $serializer_6.$metadata$ = {
     simpleName: '$serializer',
@@ -56643,17 +57056,17 @@
     $serializer_instance_7 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.Commits', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_45 = tmp0_serialDesc;
+    this._descriptor_46 = tmp0_serialDesc;
   }
-  $serializer_7.prototype._get_descriptor__76 = function () {
-    return this._descriptor_45;
+  $serializer_7.prototype._get_descriptor__77 = function () {
+    return this._descriptor_46;
   };
   $serializer_7.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_7.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_45;
+  $serializer_7.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_46;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56679,14 +57092,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return Commits_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_7.prototype.serialize_105 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_45;
+  $serializer_7.prototype.serialize_106 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_46;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href_0);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_7.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_105(encoder, value instanceof Commits ? value : THROW_CCE());
+  $serializer_7.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_106(encoder, value instanceof Commits ? value : THROW_CCE());
   };
   $serializer_7.$metadata$ = {
     simpleName: '$serializer',
@@ -56713,17 +57126,17 @@
     $serializer_instance_8 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.Html', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_46 = tmp0_serialDesc;
+    this._descriptor_47 = tmp0_serialDesc;
   }
-  $serializer_8.prototype._get_descriptor__76 = function () {
-    return this._descriptor_46;
+  $serializer_8.prototype._get_descriptor__77 = function () {
+    return this._descriptor_47;
   };
   $serializer_8.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_8.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_46;
+  $serializer_8.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_47;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56749,14 +57162,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return Html_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_8.prototype.serialize_107 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_46;
+  $serializer_8.prototype.serialize_108 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_47;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href_1);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_8.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_107(encoder, value instanceof Html ? value : THROW_CCE());
+  $serializer_8.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_108(encoder, value instanceof Html ? value : THROW_CCE());
   };
   $serializer_8.$metadata$ = {
     simpleName: '$serializer',
@@ -56783,17 +57196,17 @@
     $serializer_instance_9 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.Issue', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_47 = tmp0_serialDesc;
+    this._descriptor_48 = tmp0_serialDesc;
   }
-  $serializer_9.prototype._get_descriptor__76 = function () {
-    return this._descriptor_47;
+  $serializer_9.prototype._get_descriptor__77 = function () {
+    return this._descriptor_48;
   };
   $serializer_9.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_9.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_47;
+  $serializer_9.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_48;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56819,14 +57232,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return Issue_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_9.prototype.serialize_109 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_47;
+  $serializer_9.prototype.serialize_110 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_48;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href_2);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_9.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_109(encoder, value instanceof Issue ? value : THROW_CCE());
+  $serializer_9.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_110(encoder, value instanceof Issue ? value : THROW_CCE());
   };
   $serializer_9.$metadata$ = {
     simpleName: '$serializer',
@@ -56853,17 +57266,17 @@
     $serializer_instance_10 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.ReviewComment', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_48 = tmp0_serialDesc;
+    this._descriptor_49 = tmp0_serialDesc;
   }
-  $serializer_10.prototype._get_descriptor__76 = function () {
-    return this._descriptor_48;
+  $serializer_10.prototype._get_descriptor__77 = function () {
+    return this._descriptor_49;
   };
   $serializer_10.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_10.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_48;
+  $serializer_10.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_49;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56889,14 +57302,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return ReviewComment_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_10.prototype.serialize_111 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_48;
+  $serializer_10.prototype.serialize_112 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_49;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href_3);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_10.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_111(encoder, value instanceof ReviewComment ? value : THROW_CCE());
+  $serializer_10.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_112(encoder, value instanceof ReviewComment ? value : THROW_CCE());
   };
   $serializer_10.$metadata$ = {
     simpleName: '$serializer',
@@ -56923,17 +57336,17 @@
     $serializer_instance_11 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.ReviewComments', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_49 = tmp0_serialDesc;
+    this._descriptor_50 = tmp0_serialDesc;
   }
-  $serializer_11.prototype._get_descriptor__76 = function () {
-    return this._descriptor_49;
+  $serializer_11.prototype._get_descriptor__77 = function () {
+    return this._descriptor_50;
   };
   $serializer_11.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_11.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_49;
+  $serializer_11.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_50;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -56959,14 +57372,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return ReviewComments_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_11.prototype.serialize_113 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_49;
+  $serializer_11.prototype.serialize_114 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_50;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href_4);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_11.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_113(encoder, value instanceof ReviewComments ? value : THROW_CCE());
+  $serializer_11.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_114(encoder, value instanceof ReviewComments ? value : THROW_CCE());
   };
   $serializer_11.$metadata$ = {
     simpleName: '$serializer',
@@ -56993,17 +57406,17 @@
     $serializer_instance_12 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.Self', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_50 = tmp0_serialDesc;
+    this._descriptor_51 = tmp0_serialDesc;
   }
-  $serializer_12.prototype._get_descriptor__76 = function () {
-    return this._descriptor_50;
+  $serializer_12.prototype._get_descriptor__77 = function () {
+    return this._descriptor_51;
   };
   $serializer_12.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_12.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_50;
+  $serializer_12.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_51;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -57029,14 +57442,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return Self_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_12.prototype.serialize_115 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_50;
+  $serializer_12.prototype.serialize_116 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_51;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href_5);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_12.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_115(encoder, value instanceof Self ? value : THROW_CCE());
+  $serializer_12.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_116(encoder, value instanceof Self ? value : THROW_CCE());
   };
   $serializer_12.$metadata$ = {
     simpleName: '$serializer',
@@ -57063,17 +57476,17 @@
     $serializer_instance_13 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('data.response.PullRequest.Links.Statuses', this, 1);
     tmp0_serialDesc.addElement_0('href', false);
-    this._descriptor_51 = tmp0_serialDesc;
+    this._descriptor_52 = tmp0_serialDesc;
   }
-  $serializer_13.prototype._get_descriptor__76 = function () {
-    return this._descriptor_51;
+  $serializer_13.prototype._get_descriptor__77 = function () {
+    return this._descriptor_52;
   };
   $serializer_13.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_13.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_51;
+  $serializer_13.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_52;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -57099,14 +57512,14 @@
     tmp5_input.endStructure_11(tmp0_desc);
     return Statuses_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer_13.prototype.serialize_117 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_51;
+  $serializer_13.prototype.serialize_118 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_52;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._href_6);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_13.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_117(encoder, value instanceof Statuses ? value : THROW_CCE());
+  $serializer_13.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_118(encoder, value instanceof Statuses ? value : THROW_CCE());
   };
   $serializer_13.$metadata$ = {
     simpleName: '$serializer',
@@ -57348,17 +57761,17 @@
     tmp0_serialDesc.addElement_0('review_comments', false);
     tmp0_serialDesc.addElement_0('self', false);
     tmp0_serialDesc.addElement_0('statuses', false);
-    this._descriptor_52 = tmp0_serialDesc;
+    this._descriptor_53 = tmp0_serialDesc;
   }
-  $serializer_14.prototype._get_descriptor__76 = function () {
-    return this._descriptor_52;
+  $serializer_14.prototype._get_descriptor__77 = function () {
+    return this._descriptor_53;
   };
   $serializer_14.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer($serializer_getInstance_6()), new NullableSerializer($serializer_getInstance_7()), new NullableSerializer($serializer_getInstance_8()), new NullableSerializer($serializer_getInstance_9()), new NullableSerializer($serializer_getInstance_10()), new NullableSerializer($serializer_getInstance_11()), new NullableSerializer($serializer_getInstance_12()), new NullableSerializer($serializer_getInstance_13())];
     return tmp0_arrayOf_0;
   };
-  $serializer_14.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_52;
+  $serializer_14.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_53;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -57433,8 +57846,8 @@
     tmp12_input.endStructure_11(tmp0_desc);
     return Links_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, null);
   };
-  $serializer_14.prototype.serialize_119 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_52;
+  $serializer_14.prototype.serialize_120 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_53;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, $serializer_getInstance_6(), value._comments);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 1, $serializer_getInstance_7(), value._commits);
@@ -57446,8 +57859,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 7, $serializer_getInstance_13(), value._statuses);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_14.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_119(encoder, value instanceof Links ? value : THROW_CCE());
+  $serializer_14.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_120(encoder, value instanceof Links ? value : THROW_CCE());
   };
   $serializer_14.$metadata$ = {
     simpleName: '$serializer',
@@ -57705,17 +58118,17 @@
     tmp0_serialDesc.addElement_0('updated_at', false);
     tmp0_serialDesc.addElement_0('url', false);
     tmp0_serialDesc.addElement_0('user', false);
-    this._descriptor_53 = tmp0_serialDesc;
+    this._descriptor_54 = tmp0_serialDesc;
   }
-  $serializer_15.prototype._get_descriptor__76 = function () {
-    return this._descriptor_53;
+  $serializer_15.prototype._get_descriptor__77 = function () {
+    return this._descriptor_54;
   };
   $serializer_15.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance()), new NullableSerializer(new ArrayListSerializer(new NullableSerializer($serializer_getInstance()))), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance_2()), new NullableSerializer($serializer_getInstance_4()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), BooleanSerializer_getInstance(), new NullableSerializer($serializer_getInstance_4()), new NullableSerializer(StringSerializer_getInstance()), StringSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(new ArrayListSerializer(new NullableSerializer($serializer_getInstance_5()))), new NullableSerializer($serializer_getInstance_14()), BooleanSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance_0()), new NullableSerializer(StringSerializer_getInstance()), IntSerializer_getInstance(), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(new ArrayListSerializer(new NullableSerializer($serializer_getInstance()))), new NullableSerializer(new ArrayListSerializer(new NullableSerializer($serializer_getInstance()))), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer($serializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_15.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_53;
+  $serializer_15.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_54;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -57987,8 +58400,8 @@
     tmp41_input.endStructure_11(tmp0_desc);
     return PullRequest_init_$Create$(tmp3_bitMask0, tmp4_bitMask1, tmp5_local0, tmp6_local1, tmp7_local2, tmp8_local3, tmp9_local4, tmp10_local5, tmp11_local6, tmp12_local7, tmp13_local8, tmp14_local9, tmp15_local10, tmp16_local11, tmp17_local12, tmp18_local13, tmp19_local14, tmp20_local15, tmp21_local16, tmp22_local17, tmp23_local18, tmp24_local19, tmp25_local20, tmp26_local21, tmp27_local22, tmp28_local23, tmp29_local24, tmp30_local25, tmp31_local26, tmp32_local27, tmp33_local28, tmp34_local29, tmp35_local30, tmp36_local31, tmp37_local32, tmp38_local33, tmp39_local34, tmp40_local35, null);
   };
-  $serializer_15.prototype.serialize_121 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_53;
+  $serializer_15.prototype.serialize_122 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_54;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, StringSerializer_getInstance(), value._activeLockReason);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 1, $serializer_getInstance(), value._assignee);
@@ -58028,8 +58441,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 35, $serializer_getInstance(), value._user_2);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_15.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_121(encoder, value instanceof PullRequest ? value : THROW_CCE());
+  $serializer_15.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_122(encoder, value instanceof PullRequest ? value : THROW_CCE());
   };
   $serializer_15.$metadata$ = {
     simpleName: '$serializer',
@@ -58343,17 +58756,17 @@
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('models.Configuration.Category', this, 2);
     tmp0_serialDesc.addElement_0('labels', false);
     tmp0_serialDesc.addElement_0('title', false);
-    this._descriptor_54 = tmp0_serialDesc;
+    this._descriptor_55 = tmp0_serialDesc;
   }
-  $serializer_16.prototype._get_descriptor__76 = function () {
-    return this._descriptor_54;
+  $serializer_16.prototype._get_descriptor__77 = function () {
+    return this._descriptor_55;
   };
   $serializer_16.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new ArrayListSerializer(StringSerializer_getInstance()), StringSerializer_getInstance()];
     return tmp0_arrayOf_0;
   };
-  $serializer_16.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_54;
+  $serializer_16.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_55;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -58386,15 +58799,15 @@
     tmp6_input.endStructure_11(tmp0_desc);
     return Category_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
-  $serializer_16.prototype.serialize_123 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_54;
+  $serializer_16.prototype.serialize_124 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_55;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeSerializableElement_1(tmp0_desc, 0, new ArrayListSerializer(StringSerializer_getInstance()), value._labels_0);
     tmp1_output.encodeStringElement_1(tmp0_desc, 1, value._title_1);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_16.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_123(encoder, value instanceof Category ? value : THROW_CCE());
+  $serializer_16.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_124(encoder, value instanceof Category ? value : THROW_CCE());
   };
   $serializer_16.$metadata$ = {
     simpleName: '$serializer',
@@ -58426,17 +58839,17 @@
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('models.Configuration.Transformer', this, 2);
     tmp0_serialDesc.addElement_0('pattern', false);
     tmp0_serialDesc.addElement_0('target', false);
-    this._descriptor_55 = tmp0_serialDesc;
+    this._descriptor_56 = tmp0_serialDesc;
   }
-  $serializer_17.prototype._get_descriptor__76 = function () {
-    return this._descriptor_55;
+  $serializer_17.prototype._get_descriptor__77 = function () {
+    return this._descriptor_56;
   };
   $serializer_17.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [StringSerializer_getInstance(), StringSerializer_getInstance()];
     return tmp0_arrayOf_0;
   };
-  $serializer_17.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_55;
+  $serializer_17.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_56;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -58469,15 +58882,15 @@
     tmp6_input.endStructure_11(tmp0_desc);
     return Transformer_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
-  $serializer_17.prototype.serialize_125 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_55;
+  $serializer_17.prototype.serialize_126 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_56;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeStringElement_1(tmp0_desc, 0, value._pattern_0);
     tmp1_output.encodeStringElement_1(tmp0_desc, 1, value._target);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_17.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_125(encoder, value instanceof Transformer ? value : THROW_CCE());
+  $serializer_17.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_126(encoder, value instanceof Transformer ? value : THROW_CCE());
   };
   $serializer_17.$metadata$ = {
     simpleName: '$serializer',
@@ -58598,17 +59011,17 @@
     tmp0_serialDesc.addElement_0('sort', false);
     tmp0_serialDesc.addElement_0('transformers', false);
     tmp0_serialDesc.addElement_0('template', false);
-    this._descriptor_56 = tmp0_serialDesc;
+    this._descriptor_57 = tmp0_serialDesc;
   }
-  $serializer_18.prototype._get_descriptor__76 = function () {
-    return this._descriptor_56;
+  $serializer_18.prototype._get_descriptor__77 = function () {
+    return this._descriptor_57;
   };
   $serializer_18.prototype.childSerializers_20 = function () {
     var tmp0_arrayOf_0 = [new NullableSerializer(new ArrayListSerializer($serializer_getInstance_16())), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(new ArrayListSerializer(StringSerializer_getInstance())), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(StringSerializer_getInstance()), new NullableSerializer(new ArrayListSerializer($serializer_getInstance_17())), new NullableSerializer(StringSerializer_getInstance())];
     return tmp0_arrayOf_0;
   };
-  $serializer_18.prototype.deserialize_80 = function (decoder) {
-    var tmp0_desc = this._descriptor_56;
+  $serializer_18.prototype.deserialize_81 = function (decoder) {
+    var tmp0_desc = this._descriptor_57;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -58676,8 +59089,8 @@
     tmp11_input.endStructure_11(tmp0_desc);
     return Configuration_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
   };
-  $serializer_18.prototype.serialize_127 = function (encoder, value) {
-    var tmp0_desc = this._descriptor_56;
+  $serializer_18.prototype.serialize_128 = function (encoder, value) {
+    var tmp0_desc = this._descriptor_57;
     var tmp1_output = encoder.beginStructure_11(tmp0_desc);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 0, new ArrayListSerializer($serializer_getInstance_16()), value._categories);
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 1, StringSerializer_getInstance(), value._empty_template);
@@ -58688,8 +59101,8 @@
     tmp1_output.encodeNullableSerializableElement_1(tmp0_desc, 6, StringSerializer_getInstance(), value._template);
     tmp1_output.endStructure_11(tmp0_desc);
   };
-  $serializer_18.prototype.serialize_128 = function (encoder, value) {
-    return this.serialize_127(encoder, value instanceof Configuration ? value : THROW_CCE());
+  $serializer_18.prototype.serialize_129 = function (encoder, value) {
+    return this.serialize_128(encoder, value instanceof Configuration ? value : THROW_CCE());
   };
   $serializer_18.$metadata$ = {
     simpleName: '$serializer',
@@ -58795,6 +59208,19 @@
     tmp._exception_0 = null;
     return tmp.doResume_95();
   }
+  function _no_name_provided__247() {
+  }
+  _no_name_provided__247.prototype.invoke_398 = function ($this$Json) {
+    $this$Json._isLenient = true;
+  };
+  _no_name_provided__247.prototype.invoke_420 = function (p1) {
+    this.invoke_398(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__247.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function $resolveConfigurationCOROUTINE$4(_this_, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
     this.__this__46 = _this_;
@@ -58820,7 +59246,7 @@
               var $externalVarargReceiverTmp = path;
               return $externalVarargReceiverTmp.resolve.apply($externalVarargReceiverTmp, [].concat([this._repoPath2, this.__this__46._configPath]));
             }.call(this);
-            debug_1('' + 'config path = ' + this._resolvedConfigPath3);
+            print('' + 'config path = ' + this._resolvedConfigPath3);
             this._state_0 = 1;
             suspendResult = readJsonFile(this.__this__46, this._resolvedConfigPath3, this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
@@ -58862,7 +59288,7 @@
         var tmp = this._state_0;
         switch (tmp) {
           case 0:
-            this._exceptionState = 5;
+            this._exceptionState = 6;
             this._exceptionState = 2;
             this._state_0 = 1;
             suspendResult = readFile_0(this._filename, 'utf8', this);
@@ -58872,11 +59298,11 @@
             continue $sm;
           case 1:
             this._rawData0 = suspendResult;
-            this._exceptionState = 5;
+            this._exceptionState = 6;
             this._state_0 = 3;
             continue $sm;
           case 2:
-            this._exceptionState = 5;
+            this._exceptionState = 6;
             var tmp_0 = this._exception_0;
             if (tmp_0 instanceof Exception) {
               var error_1 = this._exception_0;
@@ -58890,21 +59316,25 @@
 
             break;
           case 3:
-            this._exceptionState = 5;
+            this._exceptionState = 6;
+            println(this._rawData0);
             var TRY_RESULT;
             this._exceptionState = 4;
-            TRY_RESULT = JSON.parse(this._rawData0);
-            this._exceptionState = 5;
-            this._state_0 = 6;
+            var tmp0_decodeFromString_0 = Json$default(null, _no_name_provided_$factory_209(), 1, null);
+            var tmp1_serializer_0_1 = tmp0_decodeFromString_0._get_serializersModule__15();
+            var tmp0_cast_0_2 = serializer_1(tmp1_serializer_0_1, createKType_0(getKClass_0(Configuration), [], false));
+            TRY_RESULT = tmp0_decodeFromString_0.decodeFromString_2(isInterface(tmp0_cast_0_2, KSerializer) ? tmp0_cast_0_2 : THROW_CCE(), this._rawData0);
+            this._exceptionState = 6;
+            this._state_0 = 5;
             continue $sm;
           case 4:
-            this._exceptionState = 5;
+            this._exceptionState = 6;
             var tmp_1 = this._exception_0;
             if (tmp_1 instanceof Exception) {
               var error_2 = this._exception_0;
               print("\u26A0\uFE0F Configuration provided, but it couldn't be parsed. Fallback to Defaults.");
               TRY_RESULT = null;
-              this._state_0 = 6;
+              this._state_0 = 5;
               continue $sm;
             } else {
               {
@@ -58914,13 +59344,13 @@
 
             break;
           case 5:
-            throw this._exception_0;
-          case 6:
-            this._exceptionState = 5;
+            this._exceptionState = 6;
             return TRY_RESULT;
+          case 6:
+            throw this._exception_0;
         }
       } catch ($p) {
-        if (this._exceptionState === 5) {
+        if (this._exceptionState === 6) {
           throw $p;
         } else {
           this._state_0 = this._exceptionState;
@@ -58991,6 +59421,13 @@
     kind: 'class',
     interfaces: []
   };
+  function _no_name_provided_$factory_209() {
+    var i = new _no_name_provided__247();
+    return function (p1) {
+      i.invoke_398(p1);
+      return Unit_getInstance();
+    };
+  }
   function MilestoneInfo(number, title, created_at, updated_at, closedPRs, closedAt) {
     this._number_1 = number;
     this._title_2 = title;
@@ -59101,29 +59538,29 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__244() {
+  function _no_name_provided__248() {
   }
-  _no_name_provided__244.prototype.invoke_409 = function (a, b) {
+  _no_name_provided__248.prototype.invoke_417 = function (a, b) {
     return compareValues(a._mergedAt_0, b._mergedAt_0);
   };
-  _no_name_provided__244.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__248.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof PullRequestInfo ? p1 : THROW_CCE();
-    return this.invoke_409(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
+    return this.invoke_417(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
   };
-  _no_name_provided__244.$metadata$ = {
+  _no_name_provided__248.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__245() {
+  function _no_name_provided__249() {
   }
-  _no_name_provided__245.prototype.invoke_409 = function (a, b) {
+  _no_name_provided__249.prototype.invoke_417 = function (a, b) {
     return compareValues(b._mergedAt_0, a._mergedAt_0);
   };
-  _no_name_provided__245.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__249.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof PullRequestInfo ? p1 : THROW_CCE();
-    return this.invoke_409(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
+    return this.invoke_417(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
   };
-  _no_name_provided__245.$metadata$ = {
+  _no_name_provided__249.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -59228,21 +59665,21 @@
     kind: 'class',
     interfaces: [Comparator]
   };
-  function _no_name_provided__246(this$0, $prs, resultContinuation) {
+  function _no_name_provided__250(this$0, $prs, resultContinuation) {
     this._this$0_66 = this$0;
     this._$prs = $prs;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__246.prototype.invoke_411 = function ($this$supervisorScope, $cont) {
+  _no_name_provided__250.prototype.invoke_419 = function ($this$supervisorScope, $cont) {
     var tmp = this.create_47($this$supervisorScope, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__246.prototype.invoke_412 = function (p1, $cont) {
-    return this.invoke_411((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__250.prototype.invoke_420 = function (p1, $cont) {
+    return this.invoke_419((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
   };
-  _no_name_provided__246.prototype.doResume_95 = function () {
+  _no_name_provided__250.prototype.doResume_95 = function () {
     var suspendResult = this._result;
     $sm: do
       try {
@@ -59258,41 +59695,64 @@
             continue $sm;
           case 1:
             var config = suspendResult;
-            println('' + '\u2139\uFE0F config: ' + config);
-            var tmp0_safe_receiver = config._sort_0;
+            var tmp0_safe_receiver = config._categories;
             var tmp_0;
             if (tmp0_safe_receiver == null) {
               tmp_0 = null;
             } else {
-              var tmp_1;
-              if (charSequenceLength(tmp0_safe_receiver) === 0) {
-                tmp_1 = Companion_getInstance_67()._DEFAULT_CONFIG._sort_0;
-              } else {
-                {
-                  tmp_1 = tmp0_safe_receiver;
-                }
+              var tmp0_mapTo_0_1 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp0_safe_receiver, 10));
+              var tmp0_iterator_1_2 = tmp0_safe_receiver.iterator_62();
+              while (tmp0_iterator_1_2.hasNext_29()) {
+                var item_2_3 = tmp0_iterator_1_2.next_31();
+                tmp0_mapTo_0_1.add_32(joinToString$default_0(item_2_3._labels_0, null, null, null, 0, null, null, 63, null));
+                Unit_getInstance();
               }
-              tmp_0 = tmp_1;
+              tmp_0 = tmp0_mapTo_0_1;
             }
 
-            var tmp1_elvis_lhs = tmp_0;
-            var sort = tmp1_elvis_lhs == null ? Companion_getInstance_67()._DEFAULT_CONFIG._sort_0 : tmp1_elvis_lhs;
-            var tmp2_safe_receiver = sort;
+            var tmp1_safe_receiver = tmp_0;
+            var tmp_1;
+            if (tmp1_safe_receiver == null) {
+              tmp_1 = null;
+            } else {
+              tmp_1 = joinToString$default_0(tmp1_safe_receiver, ' | ', null, null, 0, null, null, 62, null);
+            }
+
+            println('' + '\u2139\uFE0F config categories: ' + tmp_1);
+            var tmp2_safe_receiver = config._sort_0;
             var tmp_2;
             if (tmp2_safe_receiver == null) {
               tmp_2 = null;
             } else {
-              tmp_2 = tmp2_safe_receiver.toUpperCase();
+              var tmp_3;
+              if (charSequenceLength(tmp2_safe_receiver) === 0) {
+                tmp_3 = Companion_getInstance_67()._DEFAULT_CONFIG._sort_0;
+              } else {
+                {
+                  tmp_3 = tmp2_safe_receiver;
+                }
+              }
+              tmp_2 = tmp_3;
             }
 
-            var sortAsc = tmp_2 === 'ASC';
+            var tmp3_elvis_lhs = tmp_2;
+            var sort = tmp3_elvis_lhs == null ? Companion_getInstance_67()._DEFAULT_CONFIG._sort_0 : tmp3_elvis_lhs;
+            var tmp4_safe_receiver = sort;
+            var tmp_4;
+            if (tmp4_safe_receiver == null) {
+              tmp_4 = null;
+            } else {
+              tmp_4 = tmp4_safe_receiver.toUpperCase();
+            }
+
+            var sortAsc = tmp_4 === 'ASC';
             if (sortAsc) {
-              var tmp_3 = _no_name_provided_$factory_207();
-              sortedWith(this._$prs, new sam$kotlin_Comparator$0_1(tmp_3));
+              var tmp_5 = _no_name_provided_$factory_211();
+              sortedWith(this._$prs, new sam$kotlin_Comparator$0_1(tmp_5));
               Unit_getInstance();
             } else {
-              var tmp_4 = _no_name_provided_$factory_208();
-              sortedWith(this._$prs, new sam$kotlin_Comparator$0_1(tmp_4));
+              var tmp_6 = _no_name_provided_$factory_212();
+              sortedWith(this._$prs, new sam$kotlin_Comparator$0_1(tmp_6));
               Unit_getInstance();
             }
 
@@ -59309,10 +59769,10 @@
 
             println('' + 'Wrote messages for ' + this._$prs._get_size__48() + ' pull requests');
             var categorized = LinkedHashMap_init_$Create$();
-            var tmp3_elvis_lhs = config._categories;
-            var categories = tmp3_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._categories) : tmp3_elvis_lhs;
-            var tmp4_elvis_lhs = config._ignore_labels;
-            var ignoredLabels = tmp4_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._ignore_labels) : tmp4_elvis_lhs;
+            var tmp5_elvis_lhs = config._categories;
+            var categories = tmp5_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._categories) : tmp5_elvis_lhs;
+            var tmp6_elvis_lhs = config._ignore_labels;
+            var ignoredLabels = tmp6_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._ignore_labels) : tmp6_elvis_lhs;
             var tmp0_iterator_1_0 = categories.iterator_62();
             while (tmp0_iterator_1_0.hasNext_29()) {
               var element_2_0 = tmp0_iterator_1_0.next_31();
@@ -59360,16 +59820,16 @@
 
             println('' + '\u2139\uFE0F Ordered all pull requests into ' + joinToString$default_0(categories, null, null, null, 0, null, null, 63, null) + ' categories');
             var changelog = '';
-            var tmp5_iterator = categorized._get_entries__8().iterator_62();
-            while (tmp5_iterator.hasNext_29()) {
-              var categorizedEntry = tmp5_iterator.next_31();
+            var tmp7_iterator = categorized._get_entries__8().iterator_62();
+            while (tmp7_iterator.hasNext_29()) {
+              var categorizedEntry = tmp7_iterator.next_31();
               var pullRequests = categorizedEntry._get_value__27();
               var category = categorizedEntry._get_key__52();
               if (pullRequests._get_size__48() > 0) {
                 changelog = '' + (changelog + category._title_1) + '\n\n';
-                var tmp6_iterator = pullRequests.iterator_62();
-                while (tmp6_iterator.hasNext_29()) {
-                  var pr = tmp6_iterator.next_31();
+                var tmp8_iterator = pullRequests.iterator_62();
+                while (tmp8_iterator.hasNext_29()) {
+                  var pr = tmp8_iterator.next_31();
                   changelog = '' + (changelog + pr) + '\n';
                 }
                 changelog = '' + changelog + '\n';
@@ -59377,41 +59837,41 @@
 
             println('' + 'Wrote ' + joinToString$default_0(categorizedPrs, null, null, null, 0, null, null, 63, null) + ' categorized pull requests down');
             var changelogUncategorized = '';
-            var tmp7_iterator = uncategorizedPrs.iterator_62();
-            while (tmp7_iterator.hasNext_29()) {
-              var pr_0 = tmp7_iterator.next_31();
+            var tmp9_iterator = uncategorizedPrs.iterator_62();
+            while (tmp9_iterator.hasNext_29()) {
+              var pr_0 = tmp9_iterator.next_31();
               changelogUncategorized = '' + (changelogUncategorized + pr_0) + '\n';
             }
 
             println('' + 'Wrote ' + joinToString$default_0(uncategorizedPrs, null, null, null, 0, null, null, 63, null) + ' non categorized pull requests down');
             var changelogIgnored = '';
-            var tmp8_iterator = ignoredPrs.iterator_62();
-            while (tmp8_iterator.hasNext_29()) {
-              var pr_1 = tmp8_iterator.next_31();
+            var tmp10_iterator = ignoredPrs.iterator_62();
+            while (tmp10_iterator.hasNext_29()) {
+              var pr_1 = tmp10_iterator.next_31();
               changelogIgnored = '' + (changelogIgnored + pr_1) + '\n';
             }
 
             println('' + 'Wrote ' + ignoredPrs._get_size__48() + ' ignored pull requests down');
-            var tmp9_elvis_lhs = config._template;
-            var transformedChangelog = tmp9_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._template) : tmp9_elvis_lhs;
-            var tmp_5 = transformedChangelog;
-            var tmp_6 = changelog;
-            transformedChangelog = replace$default_0(tmp_5, '${{CHANGELOG}}', tmp_6, false, 4, null);
+            var tmp11_elvis_lhs = config._template;
+            var transformedChangelog = tmp11_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._template) : tmp11_elvis_lhs;
             var tmp_7 = transformedChangelog;
-            var tmp_8 = changelogUncategorized;
-            transformedChangelog = replace$default_0(tmp_7, '${{UNCATEGORIZED}}', tmp_8, false, 4, null);
+            var tmp_8 = changelog;
+            transformedChangelog = replace$default_0(tmp_7, '${{CHANGELOG}}', tmp_8, false, 4, null);
             var tmp_9 = transformedChangelog;
-            var tmp_10 = changelogIgnored;
-            transformedChangelog = replace$default_0(tmp_9, '${{IGNORED}}', tmp_10, false, 4, null);
+            var tmp_10 = changelogUncategorized;
+            transformedChangelog = replace$default_0(tmp_9, '${{UNCATEGORIZED}}', tmp_10, false, 4, null);
             var tmp_11 = transformedChangelog;
-            var tmp_12 = categorizedPrs._get_size__48().toString();
-            transformedChangelog = replace$default_0(tmp_11, '${{CATEGORIZED_COUNT}}', tmp_12, false, 4, null);
+            var tmp_12 = changelogIgnored;
+            transformedChangelog = replace$default_0(tmp_11, '${{IGNORED}}', tmp_12, false, 4, null);
             var tmp_13 = transformedChangelog;
-            var tmp_14 = uncategorizedPrs._get_size__48().toString();
-            transformedChangelog = replace$default_0(tmp_13, '${{UNCATEGORIZED_COUNT}}', tmp_14, false, 4, null);
+            var tmp_14 = categorizedPrs._get_size__48().toString();
+            transformedChangelog = replace$default_0(tmp_13, '${{CATEGORIZED_COUNT}}', tmp_14, false, 4, null);
             var tmp_15 = transformedChangelog;
-            var tmp_16 = ignoredPrs._get_size__48().toString();
-            transformedChangelog = replace$default_0(tmp_15, '${{IGNORED_COUNT}}', tmp_16, false, 4, null);
+            var tmp_16 = uncategorizedPrs._get_size__48().toString();
+            transformedChangelog = replace$default_0(tmp_15, '${{UNCATEGORIZED_COUNT}}', tmp_16, false, 4, null);
+            var tmp_17 = transformedChangelog;
+            var tmp_18 = ignoredPrs._get_size__48().toString();
+            transformedChangelog = replace$default_0(tmp_17, '${{IGNORED_COUNT}}', tmp_18, false, 4, null);
             println('\u2139\uFE0F Filled template');
             return transformedChangelog;
           case 2:
@@ -59427,12 +59887,12 @@
       }
      while (true);
   };
-  _no_name_provided__246.prototype.create_47 = function ($this$supervisorScope, completion) {
-    var i = new _no_name_provided__246(this._this$0_66, this._$prs, completion);
+  _no_name_provided__250.prototype.create_47 = function ($this$supervisorScope, completion) {
+    var i = new _no_name_provided__250(this._this$0_66, this._$prs, completion);
     i._$this$supervisorScope = $this$supervisorScope;
     return i;
   };
-  _no_name_provided__246.$metadata$ = {
+  _no_name_provided__250.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: 1
@@ -59440,47 +59900,47 @@
   function BuildChangelog(inputs) {
     this._inputs_0 = inputs;
   }
-  BuildChangelog.prototype.invoke_398 = function (prs, $cont) {
-    return supervisorScope(_no_name_provided_$factory_206(this, prs, null), $cont);
+  BuildChangelog.prototype.invoke_406 = function (prs, $cont) {
+    return supervisorScope(_no_name_provided_$factory_210(this, prs, null), $cont);
   };
   BuildChangelog.$metadata$ = {
     simpleName: 'BuildChangelog',
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_206(this$0, $prs, resultContinuation) {
-    var i = new _no_name_provided__246(this$0, $prs, resultContinuation);
+  function _no_name_provided_$factory_210(this$0, $prs, resultContinuation) {
+    var i = new _no_name_provided__250(this$0, $prs, resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_411(p1, $cont);
+      return i.invoke_419(p1, $cont);
     };
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided_$factory_207() {
-    var i = new _no_name_provided__244();
+  function _no_name_provided_$factory_211() {
+    var i = new _no_name_provided__248();
     return function (p1, p2) {
-      return i.invoke_409(p1, p2);
+      return i.invoke_417(p1, p2);
     };
   }
-  function _no_name_provided_$factory_208() {
-    var i = new _no_name_provided__245();
+  function _no_name_provided_$factory_212() {
+    var i = new _no_name_provided__249();
     return function (p1, p2) {
-      return i.invoke_409(p1, p2);
+      return i.invoke_417(p1, p2);
     };
   }
-  function _no_name_provided__247() {
+  function _no_name_provided__251() {
   }
-  _no_name_provided__247.prototype.invoke_399 = function (a, b) {
+  _no_name_provided__251.prototype.invoke_407 = function (a, b) {
     var tmp0_safe_receiver_3 = b._updated_at;
     var tmp = tmp0_safe_receiver_3 == null ? null : tmp0_safe_receiver_3._get_epochSeconds_();
     var tmp0_safe_receiver_3_0 = a._updated_at;
     return compareValues(tmp, tmp0_safe_receiver_3_0 == null ? null : tmp0_safe_receiver_3_0._get_epochSeconds_());
   };
-  _no_name_provided__247.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__251.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof MilestoneInfo ? p1 : THROW_CCE();
-    return this.invoke_399(tmp, p2 instanceof MilestoneInfo ? p2 : THROW_CCE());
+    return this.invoke_407(tmp, p2 instanceof MilestoneInfo ? p2 : THROW_CCE());
   };
-  _no_name_provided__247.$metadata$ = {
+  _no_name_provided__251.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -59498,20 +59958,20 @@
     kind: 'class',
     interfaces: [Comparator]
   };
-  function _no_name_provided__248(this$0, resultContinuation) {
+  function _no_name_provided__252(this$0, resultContinuation) {
     this._this$0_67 = this$0;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__248.prototype.invoke_411 = function ($this$supervisorScope, $cont) {
+  _no_name_provided__252.prototype.invoke_419 = function ($this$supervisorScope, $cont) {
     var tmp = this.create_47($this$supervisorScope, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__248.prototype.invoke_412 = function (p1, $cont) {
-    return this.invoke_411((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__252.prototype.invoke_420 = function (p1, $cont) {
+    return this.invoke_419((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
   };
-  _no_name_provided__248.prototype.doResume_95 = function () {
+  _no_name_provided__252.prototype.doResume_95 = function () {
     var suspendResult = this._result;
     $sm: do
       try {
@@ -59572,7 +60032,7 @@
               throw IllegalStateException_init_$Create$('No closed milestones found');
             }
             if (this._mergedMilestoneList2._get_size__48() > 1) {
-              var tmp_5 = _no_name_provided_$factory_210();
+              var tmp_5 = _no_name_provided_$factory_214();
               sortWith(this._mergedMilestoneList2, new sam$kotlin_Comparator$0_2(tmp_5));
             }
             var firstMilestone = first(this._mergedMilestoneList2);
@@ -59595,12 +60055,12 @@
       }
      while (true);
   };
-  _no_name_provided__248.prototype.create_47 = function ($this$supervisorScope, completion) {
-    var i = new _no_name_provided__248(this._this$0_67, completion);
+  _no_name_provided__252.prototype.create_47 = function ($this$supervisorScope, completion) {
+    var i = new _no_name_provided__252(this._this$0_67, completion);
     i._$this$supervisorScope_0 = $this$supervisorScope;
     return i;
   };
-  _no_name_provided__248.$metadata$ = {
+  _no_name_provided__252.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: 1
@@ -59608,43 +60068,43 @@
   function FetchLastClosedMilestone(githubClient) {
     this._githubClient = githubClient;
   }
-  FetchLastClosedMilestone.prototype.invoke_403 = function ($cont) {
-    return supervisorScope(_no_name_provided_$factory_209(this, null), $cont);
+  FetchLastClosedMilestone.prototype.invoke_411 = function ($cont) {
+    return supervisorScope(_no_name_provided_$factory_213(this, null), $cont);
   };
   FetchLastClosedMilestone.$metadata$ = {
     simpleName: 'FetchLastClosedMilestone',
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_209(this$0, resultContinuation) {
-    var i = new _no_name_provided__248(this$0, resultContinuation);
+  function _no_name_provided_$factory_213(this$0, resultContinuation) {
+    var i = new _no_name_provided__252(this$0, resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_411(p1, $cont);
+      return i.invoke_419(p1, $cont);
     };
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided_$factory_210() {
-    var i = new _no_name_provided__247();
+  function _no_name_provided_$factory_214() {
+    var i = new _no_name_provided__251();
     return function (p1, p2) {
-      return i.invoke_399(p1, p2);
+      return i.invoke_407(p1, p2);
     };
   }
-  function _no_name_provided__249(this$0, $name, resultContinuation) {
+  function _no_name_provided__253(this$0, $name, resultContinuation) {
     this._this$0_68 = this$0;
     this._$name = $name;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__249.prototype.invoke_411 = function ($this$supervisorScope, $cont) {
+  _no_name_provided__253.prototype.invoke_419 = function ($this$supervisorScope, $cont) {
     var tmp = this.create_47($this$supervisorScope, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__249.prototype.invoke_412 = function (p1, $cont) {
-    return this.invoke_411((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__253.prototype.invoke_420 = function (p1, $cont) {
+    return this.invoke_419((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
   };
-  _no_name_provided__249.prototype.doResume_95 = function () {
+  _no_name_provided__253.prototype.doResume_95 = function () {
     var suspendResult = this._result;
     $sm: do
       try {
@@ -59710,12 +60170,12 @@
       }
      while (true);
   };
-  _no_name_provided__249.prototype.create_47 = function ($this$supervisorScope, completion) {
-    var i = new _no_name_provided__249(this._this$0_68, this._$name, completion);
+  _no_name_provided__253.prototype.create_47 = function ($this$supervisorScope, completion) {
+    var i = new _no_name_provided__253(this._this$0_68, this._$name, completion);
     i._$this$supervisorScope_1 = $this$supervisorScope;
     return i;
   };
-  _no_name_provided__249.$metadata$ = {
+  _no_name_provided__253.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: 1
@@ -59723,51 +60183,51 @@
   function FetchMilestoneByName(githubClient) {
     this._githubClient_0 = githubClient;
   }
-  FetchMilestoneByName.prototype.invoke_406 = function (name, $cont) {
-    return supervisorScope(_no_name_provided_$factory_211(this, name, null), $cont);
+  FetchMilestoneByName.prototype.invoke_414 = function (name, $cont) {
+    return supervisorScope(_no_name_provided_$factory_215(this, name, null), $cont);
   };
   FetchMilestoneByName.$metadata$ = {
     simpleName: 'FetchMilestoneByName',
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_211(this$0, $name, resultContinuation) {
-    var i = new _no_name_provided__249(this$0, $name, resultContinuation);
+  function _no_name_provided_$factory_215(this$0, $name, resultContinuation) {
+    var i = new _no_name_provided__253(this$0, $name, resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_411(p1, $cont);
+      return i.invoke_419(p1, $cont);
     };
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided__250() {
+  function _no_name_provided__254() {
   }
-  _no_name_provided__250.prototype.invoke_409 = function (a, b) {
+  _no_name_provided__254.prototype.invoke_417 = function (a, b) {
     var tmp0_safe_receiver_3_30 = b._mergedAt_0;
     var tmp = tmp0_safe_receiver_3_30 == null ? null : tmp0_safe_receiver_3_30._get_epochSeconds_();
     var tmp0_safe_receiver_3_31 = a._mergedAt_0;
     return compareValues(tmp, tmp0_safe_receiver_3_31 == null ? null : tmp0_safe_receiver_3_31._get_epochSeconds_());
   };
-  _no_name_provided__250.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__254.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof PullRequestInfo ? p1 : THROW_CCE();
-    return this.invoke_409(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
+    return this.invoke_417(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
   };
-  _no_name_provided__250.$metadata$ = {
+  _no_name_provided__254.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__251() {
+  function _no_name_provided__255() {
   }
-  _no_name_provided__251.prototype.invoke_409 = function (a, b) {
+  _no_name_provided__255.prototype.invoke_417 = function (a, b) {
     var tmp0_safe_receiver_3 = b._mergedAt_0;
     var tmp = tmp0_safe_receiver_3 == null ? null : tmp0_safe_receiver_3._get_epochSeconds_();
     var tmp0_safe_receiver_3_0 = a._mergedAt_0;
     return compareValues(tmp, tmp0_safe_receiver_3_0 == null ? null : tmp0_safe_receiver_3_0._get_epochSeconds_());
   };
-  _no_name_provided__251.prototype.invoke_410 = function (p1, p2) {
+  _no_name_provided__255.prototype.invoke_418 = function (p1, p2) {
     var tmp = p1 instanceof PullRequestInfo ? p1 : THROW_CCE();
-    return this.invoke_409(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
+    return this.invoke_417(tmp, p2 instanceof PullRequestInfo ? p2 : THROW_CCE());
   };
-  _no_name_provided__251.$metadata$ = {
+  _no_name_provided__255.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -59785,22 +60245,22 @@
     kind: 'class',
     interfaces: [Comparator]
   };
-  function _no_name_provided__252(this$0, $milestone, $closedPRs, resultContinuation) {
+  function _no_name_provided__256(this$0, $milestone, $closedPRs, resultContinuation) {
     this._this$0_69 = this$0;
     this._$milestone = $milestone;
     this._$closedPRs = $closedPRs;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__252.prototype.invoke_411 = function ($this$supervisorScope, $cont) {
+  _no_name_provided__256.prototype.invoke_419 = function ($this$supervisorScope, $cont) {
     var tmp = this.create_47($this$supervisorScope, $cont);
     tmp._result = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_95();
   };
-  _no_name_provided__252.prototype.invoke_412 = function (p1, $cont) {
-    return this.invoke_411((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
+  _no_name_provided__256.prototype.invoke_420 = function (p1, $cont) {
+    return this.invoke_419((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
   };
-  _no_name_provided__252.prototype.doResume_95 = function () {
+  _no_name_provided__256.prototype.doResume_95 = function () {
     var suspendResult = this._result;
     $sm: do
       try {
@@ -59910,7 +60370,7 @@
               Unit_getInstance();
               if (this._mergedPRList1._get_size__48() === this._$closedPRs) {
                 if (this._mergedPRList1._get_size__48() > 1) {
-                  var tmp_12 = _no_name_provided_$factory_213();
+                  var tmp_12 = _no_name_provided_$factory_217();
                   sortWith(this._mergedPRList1, new sam$kotlin_Comparator$0_3(tmp_12));
                 }return this._mergedPRList1;
               }}
@@ -59934,7 +60394,7 @@
               throw IllegalStateException_init_$Create$('Found no Pull Requests for milestone');
             }
             if (this._mergedPRList1._get_size__48() > 1) {
-              var tmp_14 = _no_name_provided_$factory_214();
+              var tmp_14 = _no_name_provided_$factory_218();
               sortWith(this._mergedPRList1, new sam$kotlin_Comparator$0_3(tmp_14));
             }
             return toList_0(this._mergedPRList1);
@@ -59951,12 +60411,12 @@
       }
      while (true);
   };
-  _no_name_provided__252.prototype.create_47 = function ($this$supervisorScope, completion) {
-    var i = new _no_name_provided__252(this._this$0_69, this._$milestone, this._$closedPRs, completion);
+  _no_name_provided__256.prototype.create_47 = function ($this$supervisorScope, completion) {
+    var i = new _no_name_provided__256(this._this$0_69, this._$milestone, this._$closedPRs, completion);
     i._$this$supervisorScope_2 = $this$supervisorScope;
     return i;
   };
-  _no_name_provided__252.$metadata$ = {
+  _no_name_provided__256.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: 1
@@ -59964,32 +60424,32 @@
   function GetPRsForMilestone(githubClient) {
     this._githubClient_1 = githubClient;
   }
-  GetPRsForMilestone.prototype.invoke_413 = function (milestone, closedPRs, milestoneClosedAt, $cont) {
-    return supervisorScope(_no_name_provided_$factory_212(this, milestone, closedPRs, null), $cont);
+  GetPRsForMilestone.prototype.invoke_421 = function (milestone, closedPRs, milestoneClosedAt, $cont) {
+    return supervisorScope(_no_name_provided_$factory_216(this, milestone, closedPRs, null), $cont);
   };
   GetPRsForMilestone.$metadata$ = {
     simpleName: 'GetPRsForMilestone',
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_212(this$0, $milestone, $closedPRs, resultContinuation) {
-    var i = new _no_name_provided__252(this$0, $milestone, $closedPRs, resultContinuation);
+  function _no_name_provided_$factory_216(this$0, $milestone, $closedPRs, resultContinuation) {
+    var i = new _no_name_provided__256(this$0, $milestone, $closedPRs, resultContinuation);
     var l = function (p1, $cont) {
-      return i.invoke_411(p1, $cont);
+      return i.invoke_419(p1, $cont);
     };
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided_$factory_213() {
-    var i = new _no_name_provided__250();
+  function _no_name_provided_$factory_217() {
+    var i = new _no_name_provided__254();
     return function (p1, p2) {
-      return i.invoke_409(p1, p2);
+      return i.invoke_417(p1, p2);
     };
   }
-  function _no_name_provided_$factory_214() {
-    var i = new _no_name_provided__251();
+  function _no_name_provided_$factory_218() {
+    var i = new _no_name_provided__255();
     return function (p1, p2) {
-      return i.invoke_409(p1, p2);
+      return i.invoke_417(p1, p2);
     };
   }
   function failOrError(message, failOnError) {
@@ -60173,7 +60633,7 @@
         var tmp2_ifEmpty_0_5 = getInput_1('repo');
         var tmp_5;
         if (charSequenceLength(tmp2_ifEmpty_0_5) === 0) {
-          tmp_5 = tempRepoString_2.get_76(1);
+          tmp_5 = tempRepoString_2.get_77(1);
         } else {
           {
             tmp_5 = tmp2_ifEmpty_0_5;
@@ -60264,7 +60724,7 @@
   AbstractCoroutineContextElement.prototype.plus_31 = CoroutineContext.prototype.plus_31;
   IntIterator.prototype.hasNext_29 = Iterator_0.prototype.hasNext_29;
   CharIterator.prototype.hasNext_29 = Iterator_0.prototype.hasNext_29;
-  AbstractMutableList.prototype.get_76 = List.prototype.get_76;
+  AbstractMutableList.prototype.get_77 = List.prototype.get_77;
   AbstractMutableMap.prototype._get_entries__8 = MutableMap.prototype._get_entries__8;
   InternalHashCodeMap.prototype.createJsMap_0 = InternalMap.prototype.createJsMap_0;
   KClassImpl.prototype._get_simpleName__4 = KClass.prototype._get_simpleName__4;
@@ -60434,46 +60894,46 @@
   KtorCallContextElement.prototype.minusKey_29 = Element_0.prototype.minusKey_29;
   KtorCallContextElement.prototype.plus_31 = CoroutineContext.prototype.plus_31;
   JsClientEngine.prototype.install_19 = HttpClientEngine.prototype.install_19;
-  AbstractPolymorphicSerializer.prototype._get_descriptor__76 = KSerializer.prototype._get_descriptor__76;
-  SerialDescriptorImpl.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  SerialDescriptorImpl.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
+  AbstractPolymorphicSerializer.prototype._get_descriptor__77 = KSerializer.prototype._get_descriptor__77;
+  SerialDescriptorImpl.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  SerialDescriptorImpl.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
   AbstractDecoder.prototype.decodeSerializableElement$default_8 = CompositeDecoder.prototype.decodeSerializableElement$default_8;
-  AbstractDecoder.prototype._get_serializersModule__14 = Decoder_1.prototype._get_serializersModule__14;
+  AbstractDecoder.prototype._get_serializersModule__15 = Decoder_1.prototype._get_serializersModule__15;
   AbstractDecoder.prototype.decodeSerializableValue_16 = Decoder_1.prototype.decodeSerializableValue_16;
   AbstractDecoder.prototype.decodeSequentially_8 = CompositeDecoder.prototype.decodeSequentially_8;
   AbstractDecoder.prototype.decodeElementIndex_8 = CompositeDecoder.prototype.decodeElementIndex_8;
   AbstractDecoder.prototype.decodeCollectionSize_8 = CompositeDecoder.prototype.decodeCollectionSize_8;
-  AbstractEncoder.prototype._get_serializersModule__14 = Encoder.prototype._get_serializersModule__14;
+  AbstractEncoder.prototype._get_serializersModule__15 = Encoder.prototype._get_serializersModule__15;
   AbstractEncoder.prototype.encodeNotNullMark_1 = Encoder.prototype.encodeNotNullMark_1;
   AbstractEncoder.prototype.beginCollection_1 = Encoder.prototype.beginCollection_1;
   AbstractEncoder.prototype.encodeSerializableValue_1 = Encoder.prototype.encodeSerializableValue_1;
   AbstractEncoder.prototype.encodeNullableSerializableValue_1 = Encoder.prototype.encodeNullableSerializableValue_1;
-  ListLikeDescriptor.prototype._get_serialName__16 = SerialDescriptor.prototype._get_serialName__16;
-  ListLikeDescriptor.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  ListLikeDescriptor.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  PrimitiveArrayDescriptor.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  PrimitiveArrayDescriptor.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  ArrayListClassDesc.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  ArrayListClassDesc.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  LinkedHashSetClassDesc.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  LinkedHashSetClassDesc.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  MapLikeDescriptor.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  MapLikeDescriptor.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  LinkedHashMapClassDesc.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  LinkedHashMapClassDesc.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  HashSetClassDesc.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  HashSetClassDesc.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  HashMapClassDesc.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  HashMapClassDesc.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  ArrayClassDesc.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  ArrayClassDesc.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  AbstractCollectionSerializer.prototype._get_descriptor__76 = KSerializer.prototype._get_descriptor__76;
-  PluginGeneratedSerialDescriptor.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  PluginGeneratedSerialDescriptor.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
-  InlineClassDescriptor.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  _no_name_provided__209.prototype.typeParametersSerializers_20 = GeneratedSerializer.prototype.typeParametersSerializers_20;
-  PrimitiveSerialDescriptor_0.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  PrimitiveSerialDescriptor_0.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
+  ListLikeDescriptor.prototype._get_serialName__17 = SerialDescriptor.prototype._get_serialName__17;
+  ListLikeDescriptor.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  ListLikeDescriptor.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  PrimitiveArrayDescriptor.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  PrimitiveArrayDescriptor.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  ArrayListClassDesc.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  ArrayListClassDesc.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  LinkedHashSetClassDesc.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  LinkedHashSetClassDesc.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  MapLikeDescriptor.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  MapLikeDescriptor.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  LinkedHashMapClassDesc.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  LinkedHashMapClassDesc.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  HashSetClassDesc.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  HashSetClassDesc.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  HashMapClassDesc.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  HashMapClassDesc.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  ArrayClassDesc.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  ArrayClassDesc.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  AbstractCollectionSerializer.prototype._get_descriptor__77 = KSerializer.prototype._get_descriptor__77;
+  PluginGeneratedSerialDescriptor.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  PluginGeneratedSerialDescriptor.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  InlineClassDescriptor.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  _no_name_provided__210.prototype.typeParametersSerializers_20 = GeneratedSerializer.prototype.typeParametersSerializers_20;
+  PrimitiveSerialDescriptor_0.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  PrimitiveSerialDescriptor_0.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
   TaggedDecoder.prototype.decodeSerializableElement$default_8 = CompositeDecoder.prototype.decodeSerializableElement$default_8;
   TaggedDecoder.prototype.decodeSerializableValue_16 = Decoder_1.prototype.decodeSerializableValue_16;
   TaggedDecoder.prototype.decodeSequentially_8 = CompositeDecoder.prototype.decodeSequentially_8;
@@ -60484,9 +60944,10 @@
   NamedValueDecoder.prototype.decodeSequentially_8 = CompositeDecoder.prototype.decodeSequentially_8;
   NamedValueDecoder.prototype.decodeElementIndex_8 = CompositeDecoder.prototype.decodeElementIndex_8;
   NamedValueDecoder.prototype.decodeCollectionSize_8 = CompositeDecoder.prototype.decodeCollectionSize_8;
-  KeyValueSerializer.prototype._get_descriptor__76 = KSerializer.prototype._get_descriptor__76;
-  _no_name_provided__227.prototype._get_isNullable__16 = SerialDescriptor.prototype._get_isNullable__16;
-  _no_name_provided__227.prototype._get_isInline__16 = SerialDescriptor.prototype._get_isInline__16;
+  KeyValueSerializer.prototype._get_descriptor__77 = KSerializer.prototype._get_descriptor__77;
+  _no_name_provided__228.prototype._get_isNullable__17 = SerialDescriptor.prototype._get_isNullable__17;
+  _no_name_provided__228.prototype._get_isInline__17 = SerialDescriptor.prototype._get_isInline__17;
+  PolymorphismValidator.prototype.contextual_2 = SerializersModuleCollector.prototype.contextual_2;
   StreamingJsonDecoder.prototype.decodeSequentially_8 = CompositeDecoder.prototype.decodeSequentially_8;
   StreamingJsonDecoder.prototype.decodeCollectionSize_8 = CompositeDecoder.prototype.decodeCollectionSize_8;
   StreamingJsonDecoder.prototype.decodeSerializableElement$default_8 = CompositeDecoder.prototype.decodeSerializableElement$default_8;
@@ -60630,8 +61091,9 @@
   BUILTIN_SERIALIZERS = mapOf([to(PrimitiveClasses_getInstance()._get_stringClass_(), serializer_2(StringCompanionObject_getInstance())), to(getKClass_0(Char), serializer_3(Companion_getInstance_13())), to(PrimitiveClasses_getInstance()._get_charArrayClass_(), CharArraySerializer()), to(PrimitiveClasses_getInstance()._get_doubleClass_(), serializer_4(DoubleCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_doubleArrayClass_(), DoubleArraySerializer()), to(PrimitiveClasses_getInstance()._get_floatClass_(), serializer_5(FloatCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_floatArrayClass_(), FloatArraySerializer()), to(getKClass_0(Long), serializer_6(Companion_getInstance_15())), to(PrimitiveClasses_getInstance()._get_longArrayClass_(), LongArraySerializer()), to(PrimitiveClasses_getInstance()._get_intClass_(), serializer_7(IntCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_intArrayClass_(), IntArraySerializer()), to(PrimitiveClasses_getInstance()._get_shortClass_(), serializer_8(ShortCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_shortArrayClass_(), ShortArraySerializer()), to(PrimitiveClasses_getInstance()._get_byteClass_(), serializer_9(ByteCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_byteArrayClass_(), ByteArraySerializer()), to(PrimitiveClasses_getInstance()._get_booleanClass_(), serializer_10(BooleanCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_booleanArrayClass_(), BooleanArraySerializer()), to(getKClass_0(Unit), serializer_11(Unit_getInstance()))]);
   NULL = new Object();
   EmptySerializersModule = new SerialModuleImpl(emptyMap(), emptyMap(), emptyMap(), emptyMap());
-  unsignedNumberDescriptors = setOf([serializer_12(Companion_getInstance_5())._get_descriptor__76(), serializer_13(Companion_getInstance_6())._get_descriptor__76(), serializer_14(Companion_getInstance_4())._get_descriptor__76(), serializer_15(Companion_getInstance_7())._get_descriptor__76()]);
-  ESCAPE_CHARS = ESCAPE_CHARS$init$();
+  JsonAlternativeNamesKey = new Key_6();
+  unsignedNumberDescriptors = setOf([serializer_12(Companion_getInstance_5())._get_descriptor__77(), serializer_13(Companion_getInstance_6())._get_descriptor__77(), serializer_14(Companion_getInstance_4())._get_descriptor__77(), serializer_15(Companion_getInstance_7())._get_descriptor__77()]);
+  ESCAPE_STRINGS = ESCAPE_STRINGS$init$();
   initializer = SerializerInitializer_getInstance();
   var $kotlinx = _.kotlinx || (_.kotlinx = {});
   var $kotlinx$atomicfu = $kotlinx.atomicfu || ($kotlinx.atomicfu = {});

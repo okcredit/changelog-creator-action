@@ -10,7 +10,7 @@ class BuildChangelog(private val inputs: Inputs) {
 
     suspend operator fun invoke(prs: List<PullRequestInfo>) = supervisorScope {
         val config = inputs.resolveConfiguration()
-        println("ℹ️ config: $config")
+        println("ℹ️ config categories: ${config.categories?.map { it.labels.joinToString() }?.joinToString(" | ")}")
 
         // sort to target order
         val sort = config.sort?.ifEmpty { Configuration.DEFAULT_CONFIG.sort } ?: Configuration.DEFAULT_CONFIG.sort
