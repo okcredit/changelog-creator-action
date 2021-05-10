@@ -1,5 +1,5 @@
 name: 'Changelog Creator'
-description: 'A GitHub action built using Kotlin/JS that creates your release notes/changelog using the PRs closed in a milestone. Heavily taken from mikepenz/release-changelog-generator'
+description: 'A GitHub action built using Kotlin/JS that creates your release notes/changelog using the PRs closed in a milestone.'
 author: 'Mohitesh Aeron'
 branding:
   icon: 'award'
@@ -8,22 +8,19 @@ inputs:
   configuration:
     required: false
     description: 'Defines the relative path to the configuration file.'
-  owner:
-    required: false
-    description: 'Defines the owner of the repository to create the changelog for'
-  repo:
-    required: false
-    description: 'Defines the repository to create the changelog for'
   milestone:
     required: false
-    description: 'Defines the milestone for which change log needs to be generated'
+    description: 'Defines the milestone for which change log needs to be generated. If not supplied last closed milestone will be used'
   failOnError:
     description: 'Defines if the action should result in a build failure, if an error was discovered'
     required: false
     default: "false"
-  outputFile:
+  owner:
+    description: 'Definer the owner of the repo, uses `env.GITHUB_REPOSITORY` to resolve owner name by default'
     required: false
-    description: 'If defined, the changelog will get written to this file. (relative to the checkout dir)'
+  repo:
+    description: 'Definer the name of the repo, uses `env.GITHUB_REPOSITORY` to resolve repo name by default'
+    required: false
   token:
     required: false
     description: 'Defines the token to use to execute the git API requests with, uses `env.GITHUB_TOKEN` by default'
@@ -34,6 +31,8 @@ outputs:
     description: 'Specifies the owner of the repository processed'
   repo:
     description: 'Describes the repository name, which was processed'
+  milestone:
+    description: 'Milestone either provided in the input or resolved from the last closed list'
   failed:
     description: 'Defines if there was an issue with the action run, and the changelog may not have been generated correctly. [true, false]'
 runs:
