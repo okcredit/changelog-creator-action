@@ -31,7 +31,7 @@ class ReleaseNoteBuilder(private val inputs: Inputs) {
             )
         }
 
-        print("ℹ️ Retrieved ${pullRequestList.size} merged PRs")
+        println("ℹ️ Retrieved ${pullRequestList.size} merged PRs")
         return utils.actions.group("ℹ️ Building changelog") {
             buildChangelog(pullRequestList)
         }

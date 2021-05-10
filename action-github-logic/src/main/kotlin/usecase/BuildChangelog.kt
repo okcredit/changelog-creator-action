@@ -13,7 +13,7 @@ class BuildChangelog(private val inputs: Inputs) {
 
         // sort to target order
         val sort = config.sort?.ifEmpty { Configuration.DEFAULT_CONFIG.sort } ?: Configuration.DEFAULT_CONFIG.sort
-        val sortAsc = sort?.toUpperCase() == "ASC"
+        val sortAsc = sort?.uppercase() == "ASC"
         if (sortAsc) {
             prs.sortedBy { it.mergedAt }
         } else {
@@ -30,7 +30,7 @@ class BuildChangelog(private val inputs: Inputs) {
             )
         }
 
-        print("Wrote messages for ${prs.size} pull requests")
+        println("Wrote messages for ${prs.size} pull requests")
 
         // bring PRs into the order of categories
         val categorized = mutableMapOf<Configuration.Category, MutableList<String>>()
@@ -74,7 +74,7 @@ class BuildChangelog(private val inputs: Inputs) {
                 categorizedPrs.add(body)
             }
         }
-        print("ℹ️ Ordered all pull requests into ${categories.size} categories")
+        println("ℹ️ Ordered all pull requests into ${categories.joinToString()} categories")
 
         // construct final changelog
         var changelog = ""
@@ -93,21 +93,21 @@ class BuildChangelog(private val inputs: Inputs) {
             }
         }
 
-        print("Wrote ${categorizedPrs.size} categorized pull requests down")
+        println("Wrote ${categorizedPrs.joinToString()} categorized pull requests down")
 
         var changelogUncategorized = ""
         for (pr in uncategorizedPrs) {
             changelogUncategorized = "${changelogUncategorized + pr}\n"
         }
-        print(
-            "Wrote ${uncategorizedPrs.size} non categorized pull requests down"
+        println(
+            "Wrote ${uncategorizedPrs.joinToString()} non categorized pull requests down"
         )
 
         var changelogIgnored = ""
         for (pr in ignoredPrs) {
             changelogIgnored = "${changelogIgnored + pr}\n"
         }
-        print("Wrote ${ignoredPrs.size} ignored pull requests down")
+        println("Wrote ${ignoredPrs.size} ignored pull requests down")
 
         // fill template
         var transformedChangelog = config.template ?: Configuration.DEFAULT_CONFIG.template!!
@@ -130,11 +130,12 @@ class BuildChangelog(private val inputs: Inputs) {
         )
         transformedChangelog = transformedChangelog.replace("\${{IGNORED_COUNT}}", ignoredPrs.size.toString())
 
-        print("ℹ️ Filled template")
+        println("ℹ️ Filled template")
         return@supervisorScope transformedChangelog
     }
 
     private fun haveCommonElements(arr1: List<String>?, arr2: List<String>?): Boolean {
+        println("haveCommonElements - ${arr1?.joinToString()} ${arr2?.joinToString()}")
         arr1?.forEach {
             return arr2?.contains(it) ?: false
         }
@@ -160,6 +161,8 @@ class BuildChangelog(private val inputs: Inputs) {
         transformed = transformed.replace("\${{REVIEWERS}}",
             pr.requestedReviewers?.joinToString() ?: ""
         )
+
+        println("transformed - $transformed")
         return transformed
     }
 

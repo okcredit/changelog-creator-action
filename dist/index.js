@@ -53021,7 +53021,7 @@
             continue $sm;
           case 8:
             this._pullRequestList6 = this._tmp$ret$41;
-            print('' + '\u2139\uFE0F Retrieved ' + this._pullRequestList6._get_size__48() + ' merged PRs');
+            println('' + '\u2139\uFE0F Retrieved ' + this._pullRequestList6._get_size__48() + ' merged PRs');
             this._state_0 = 9;
             continue $sm;
           case 9:
@@ -59128,10 +59128,26 @@
   };
   function haveCommonElements($this, arr1, arr2) {
     var tmp0_safe_receiver = arr1;
-    if (tmp0_safe_receiver == null)
+    var tmp;
+    if (tmp0_safe_receiver == null) {
+      tmp = null;
+    } else {
+      tmp = joinToString$default_0(tmp0_safe_receiver, null, null, null, 0, null, null, 63, null);
+    }
+    var tmp_0 = tmp;
+    var tmp1_safe_receiver = arr2;
+    var tmp_1;
+    if (tmp1_safe_receiver == null) {
+      tmp_1 = null;
+    } else {
+      tmp_1 = joinToString$default_0(tmp1_safe_receiver, null, null, null, 0, null, null, 63, null);
+    }
+    println('' + 'haveCommonElements - ' + tmp_0 + ' ' + tmp_1);
+    var tmp2_safe_receiver = arr1;
+    if (tmp2_safe_receiver == null)
       null;
     else {
-      var tmp0_iterator_1 = tmp0_safe_receiver.iterator_62();
+      var tmp0_iterator_1 = tmp2_safe_receiver.iterator_62();
       while (tmp0_iterator_1.hasNext_29()) {
         var element_2 = tmp0_iterator_1.next_31();
         var tmp0_safe_receiver_5 = arr2;
@@ -59194,6 +59210,7 @@
     var tmp5_elvis_lhs = tmp_14;
     var tmp_15 = tmp5_elvis_lhs == null ? '' : tmp5_elvis_lhs;
     transformed = replace$default_0(tmp_13, '${{REVIEWERS}}', tmp_15, false, 4, null);
+    println('' + 'transformed - ' + transformed);
     return transformed;
   }
   function sam$kotlin_Comparator$0_1(function_0) {
@@ -59288,7 +59305,7 @@
               Unit_getInstance();
             }
 
-            print('' + 'Wrote messages for ' + this._$prs._get_size__48() + ' pull requests');
+            println('' + 'Wrote messages for ' + this._$prs._get_size__48() + ' pull requests');
             var categorized = LinkedHashMap_init_$Create$();
             var tmp3_elvis_lhs = config._categories;
             var categories = tmp3_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._categories) : tmp3_elvis_lhs;
@@ -59339,7 +59356,7 @@
               }
             }
 
-            print('' + '\u2139\uFE0F Ordered all pull requests into ' + categories._get_size__48() + ' categories');
+            println('' + '\u2139\uFE0F Ordered all pull requests into ' + joinToString$default_0(categories, null, null, null, 0, null, null, 63, null) + ' categories');
             var changelog = '';
             var tmp5_iterator = categorized._get_entries__8().iterator_62();
             while (tmp5_iterator.hasNext_29()) {
@@ -59356,7 +59373,7 @@
                 changelog = '' + changelog + '\n';
               }}
 
-            print('' + 'Wrote ' + categorizedPrs._get_size__48() + ' categorized pull requests down');
+            println('' + 'Wrote ' + joinToString$default_0(categorizedPrs, null, null, null, 0, null, null, 63, null) + ' categorized pull requests down');
             var changelogUncategorized = '';
             var tmp7_iterator = uncategorizedPrs.iterator_62();
             while (tmp7_iterator.hasNext_29()) {
@@ -59364,7 +59381,7 @@
               changelogUncategorized = '' + (changelogUncategorized + pr_0) + '\n';
             }
 
-            print('' + 'Wrote ' + uncategorizedPrs._get_size__48() + ' non categorized pull requests down');
+            println('' + 'Wrote ' + joinToString$default_0(uncategorizedPrs, null, null, null, 0, null, null, 63, null) + ' non categorized pull requests down');
             var changelogIgnored = '';
             var tmp8_iterator = ignoredPrs.iterator_62();
             while (tmp8_iterator.hasNext_29()) {
@@ -59372,7 +59389,7 @@
               changelogIgnored = '' + (changelogIgnored + pr_1) + '\n';
             }
 
-            print('' + 'Wrote ' + ignoredPrs._get_size__48() + ' ignored pull requests down');
+            println('' + 'Wrote ' + ignoredPrs._get_size__48() + ' ignored pull requests down');
             var tmp9_elvis_lhs = config._template;
             var transformedChangelog = tmp9_elvis_lhs == null ? ensureNotNull(Companion_getInstance_67()._DEFAULT_CONFIG._template) : tmp9_elvis_lhs;
             var tmp_5 = transformedChangelog;
@@ -59393,7 +59410,7 @@
             var tmp_15 = transformedChangelog;
             var tmp_16 = ignoredPrs._get_size__48().toString();
             transformedChangelog = replace$default_0(tmp_15, '${{IGNORED_COUNT}}', tmp_16, false, 4, null);
-            print('\u2139\uFE0F Filled template');
+            println('\u2139\uFE0F Filled template');
             return transformedChangelog;
           case 2:
             throw this._exception_0;
