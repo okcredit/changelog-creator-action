@@ -7,6 +7,11 @@ import kotlinx.datetime.*
 import models.MilestoneInfo
 import utils.actions.info
 
+/**
+ * Fetches the last closed milestone from list of all milestones with status `closed`
+ * It also checks for closed time of last closed milestone and throws an exception if it was closed more that 24 hours
+ * ago.
+ */
 class FetchLastClosedMilestone(private val githubClient: GithubClient) {
 
     suspend operator fun invoke() = supervisorScope {

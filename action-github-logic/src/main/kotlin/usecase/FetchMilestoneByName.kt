@@ -6,6 +6,10 @@ import kotlinx.coroutines.supervisorScope
 import kotlinx.datetime.toInstant
 import models.MilestoneInfo
 
+
+/**
+ * Returns the milestone supplied in input or throw and exception not found
+ */
 class FetchMilestoneByName(private val githubClient: GithubClient) {
 
     suspend operator fun invoke(name: String) = supervisorScope {

@@ -4,13 +4,16 @@ import data.GithubClient
 import data.request.MilestoneRequest
 import data.request.MilestoneRequest.Companion.DEFAULT_PAGE_SIZE
 import kotlinx.coroutines.supervisorScope
-import kotlinx.datetime.Instant
 import kotlinx.datetime.toInstant
 import models.PullRequestInfo
 
+/**
+ * Fetches all the `closed` PRs and filter the ones with milestone number supplied in input. We also check for number of
+ * closed PRs in a milestone to return early.
+ */
 class GetPRsForMilestone(private val githubClient: GithubClient) {
 
-    suspend operator fun invoke(milestone: Int, closedPRs: Int, milestoneClosedAt: Instant) = supervisorScope {
+    suspend operator fun invoke(milestoneNumber: Int, closedPRs: Int) = supervisorScope {
         var page = 1
         val mergedPRList = mutableListOf<PullRequestInfo>()
         var morePRsExist = true
@@ -24,7 +27,7 @@ class GetPRsForMilestone(private val githubClient: GithubClient) {
                 )
             )
 
-            pullRequests.filter { it.milestone?.number == milestone }
+            pullRequests.filter { it.milestone?.number == milestoneNumber }
                 .forEach { pr ->
                     mergedPRList.add(
                         PullRequestInfo(
