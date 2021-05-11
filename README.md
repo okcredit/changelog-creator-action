@@ -212,5 +212,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-Credits -
+### Credits
 - Core configuration logic is inspired from [mikepenz/release-changelog-builder-action](https://github.com/mikepenz/release-changelog-builder-action).
