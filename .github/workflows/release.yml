@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.0.0
+        with:
+          java-version: 14
+          
+      # Cache Gradle Wrapper
+      - name: Setup Gradle Wrapper Cache
+        uses: actions/cache@v2.1.5
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+          
+      - name: Build and Copy JS
+        run: ./gradlew assemble --stacktrace
+        
+      - name: Run NCC and build index JS
+        run: ncc build dist/index.js -s --license license.txt
