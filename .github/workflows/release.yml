@@ -18,6 +18,9 @@ jobs:
           java-version: 14
           distribution: 'adopt'
 
+      - name: Setup NCC
+        run: npm i -g @vercel/ncc
+
       # Cache Gradle Wrapper
       - name: Setup Gradle Wrapper Cache
         uses: actions/cache@v2.1.5
