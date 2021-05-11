@@ -3,7 +3,7 @@ A GitHub action built using `Kotlin/JS` that creates your release notes/changelo
 
 ### Tech Stack
 
-This project is written in `Kotlin/JS` to compile as Javascript Action. It uses following libraries:
+This project is written in `Kotlin/JS` to compile as a Javascript Action. `@vercel/ncc` is used to create a single JS file with all dependencies from `node_modules`.
 
 - [@vercel/ncc](https://github.com/vercel/ncc) - Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style.
 - [@actions/core](https://github.com/actions/toolkit/tree/main/packages/core) - Github toolkit which provides core functions for setting results, logging, registering secrets and exporting variables across actions
