@@ -11,7 +11,7 @@ suspend fun main() {
     setOutput("owner", inputs.owner)
     setOutput("repo", inputs.repo)
     try {
-        val releaseNoteBuilder = ReleaseNoteBuilder(inputs)
+        val releaseNoteBuilder = ChangelogBuilder(inputs)
         val changelog = releaseNoteBuilder.build()
         setOutput("changelog", changelog)
         print(changelog)

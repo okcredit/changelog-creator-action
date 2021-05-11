@@ -1,15 +1,13 @@
-
 dependencies {
+    api(npm("@vercel/ncc", "0.28.5"))
     api(project(":action-github-logic"))
 }
-
 tasks.register<Copy>("CopyGeneratedJSToDistribution") {
-    val file = File("${rootDir}/dist")
-    if(file.exists()) file.deleteRecursively()
-
-    file.mkdir()
-    from("${rootDir}/action-entry-point/build/compileSync/main/productionExecutable/kotlin/changelog-creator-action-entry-point.js")
-    into("${rootDir}/dist")
+    dependsOn("CopyGeneratedNodeModuleToRoot")
+    from("${rootDir}/action-entry-point/build/compileSync/main/productionExecutable/kotlin/changelog-creator-action-entry-point.js") {
+        rename("changelog-creator-action-entry-point.js", "index.js")
+    }
+    into("$rootDir/dist")
 }
 
 tasks.register<Copy>("CopyGeneratedNodeModuleToRoot") {
@@ -20,5 +18,9 @@ tasks.register<Copy>("CopyGeneratedNodeModuleToRoot") {
 }
 
 tasks.named("assemble") {
-    finalizedBy("CopyGeneratedNodeModuleToRoot","CopyGeneratedJSToDistribution")
+    finalizedBy("CopyGeneratedNodeModuleToRoot")
+}
+
+tasks.named("CopyGeneratedNodeModuleToRoot") {
+    finalizedBy("CopyGeneratedJSToDistribution")
 }
