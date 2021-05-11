@@ -16,17 +16,17 @@ inputs:
     required: false
     default: "false"
   owner:
-    description: 'Definer the owner of the repo, uses `env.GITHUB_REPOSITORY` to resolve owner name by default'
+    description: 'Defines the owner of the repo, uses `env.GITHUB_REPOSITORY` to resolve owner name by default'
     required: false
   repo:
-    description: 'Definer the name of the repo, uses `env.GITHUB_REPOSITORY` to resolve repo name by default'
+    description: 'Defines the name of the repo, uses `env.GITHUB_REPOSITORY` to resolve repo name by default'
     required: false
   token:
     required: false
     description: 'Defines the token to use to execute the git API requests with, uses `env.GITHUB_TOKEN` by default'
 outputs:
   changelog:
-    description: 'The built release changelog built from the merged pull requests'
+    description: 'The built changelog from merged PRs for milestone'
   owner:
     description: 'Specifies the owner of the repository processed'
   repo:

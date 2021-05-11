@@ -9,14 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
       - name: Setup Java JDK
         uses: actions/setup-java@v2.0.0
         with:
           java-version: 14
-          
+          distribution: 'adopt'
+
+      - name: Setup NCC
+        run: npm i -g @vercel/ncc
+
       # Cache Gradle Wrapper
       - name: Setup Gradle Wrapper Cache
         uses: actions/cache@v2.1.5

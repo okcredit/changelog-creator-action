@@ -143,7 +143,11 @@ class BuildChangelog(private val inputs: Inputs) {
         transformedChangelog = transformedChangelog.replace("\${{IGNORED_COUNT}}", ignoredPrs.size.toString())
 
         println("ℹ️ Filled template")
-        return@supervisorScope transformedChangelog
+
+        if (transformedChangelog.isEmpty()) {
+            transformedChangelog = config.empty_template ?: Configuration.DEFAULT_CONFIG.empty_template!!
+        }
+        return@supervisorScope fillAdditionalPlaceholders(transformedChangelog)
     }
 
     private fun haveCommonElements(arr1: List<String>?, arr2: List<String>?): Boolean {
@@ -178,6 +182,15 @@ class BuildChangelog(private val inputs: Inputs) {
         )
 
         println("transformed $transformed")
+        return transformed
+    }
+
+    private fun fillAdditionalPlaceholders(
+        text: String
+    ): String {
+        var transformed = text
+        transformed = transformed.replace("\${{OWNER}}", inputs.owner)
+        transformed = transformed.replace("\${{REPO}}", inputs.repo)
         return transformed
     }
 
