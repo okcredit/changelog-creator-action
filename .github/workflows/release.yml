@@ -16,7 +16,8 @@ jobs:
         uses: actions/setup-java@v2.0.0
         with:
           java-version: 14
-          
+          distribution: 'adopt'
+
       # Cache Gradle Wrapper
       - name: Setup Gradle Wrapper Cache
         uses: actions/cache@v2.1.5
