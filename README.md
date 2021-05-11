@@ -1,5 +1,15 @@
 # Changelog Creator Action
-A GitHub action built using Kotlin/JS that creates your release notes/changelog using the PRs closed in a milestone
+A GitHub action built using `Kotlin/JS` that creates your release notes/changelog using the PRs closed in a milestone
+
+### Tech Stack
+
+This project is written in `Kotlin/JS` to compile as Javascript Action. It uses following libraries:
+
+- [@vercel/ncc](https://github.com/vercel/ncc) - Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style.
+- [@actions/core](https://github.com/actions/toolkit/tree/main/packages/core) - Github toolkit which provides core functions for setting results, logging, registering secrets and exporting variables across actions
+- [Ktor](https://ktor.io/) - Perform all the network calls
+- [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) - For serialization and deserialization of JSON
+- [kotlinx-datetime](https://github.com/Kotlin/kotlinx-datetime) - A multiplatform Kotlin library for working with date and time.
 
 ## Setup
 
@@ -62,7 +72,7 @@ A full set list of possible output values for this action.
 This action supports configuring the changelog output using a configuration file and passing it in as input.
 A default configuration is used if not passed as input.
 
-####Default Configuration -
+#### Default Configuration -
 ```json
 {
   "categories": [
@@ -89,7 +99,7 @@ A default configuration is used if not passed as input.
 }
 
 ```
-###PR Template Placeholders
+#### PR Template Placeholders
 
 Below are supported placeholders for individual PR messages - 
 
@@ -105,7 +115,7 @@ Below are supported placeholders for individual PR messages -
 | `${{ASSIGNEES}}` | Login names of assigned GitHub users, joined by `,`         |
 | `${{REVIEWERS}}` | GitHub Login names of specified reviewers, joined by `,`    |
 
-### Template Placeholders
+#### Template Placeholders
 
 Following placeholders can be used in `template` or `empty_template` in configuration
 
@@ -202,16 +212,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-
-### Tech Stack
-
-This project is written in `Kotlin/JS` to compile as Javascript Action. It uses following libraries:
-
-- [@vercel/ncc](https://github.com/vercel/ncc) - Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style.
-- [@actions/core](https://github.com/actions/toolkit/tree/main/packages/core) - Github toolkit which provides core functions for setting results, logging, registering secrets and exporting variables across actions
-- [Ktor](https://ktor.io/) - Perform all the network calls
-- [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) - For serialization and deserialization of JSON
-- [kotlinx-datetime](https://github.com/Kotlin/kotlinx-datetime) - A multiplatform Kotlin library for working with date and time.
-
-
-
