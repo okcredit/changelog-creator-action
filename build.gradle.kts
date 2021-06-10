@@ -15,46 +15,60 @@
  */
 
 plugins {
-    kotlin("js") version "1.5.0" apply false
+    kotlin("js") version "1.5.10"
     kotlin("plugin.serialization") version "1.5.0"
 }
 
-plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin> {
-    configure<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension> {
-        nodeVersion = "12.18.3"
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+
+kotlin {
+    js(IR) {
+        binaries.executable()
+        useCommonJs()
+        nodejs {
+
+        }
     }
 }
 
-subprojects {
-    apply(plugin = "org.jetbrains.kotlin.js")
-    apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
+tasks.register<Copy>("CopyGeneratedJSToDistribution") {
+    dependsOn("CopyGeneratedNodeModuleToRoot")
+    from("${buildDir}/compileSync/main/productionExecutable/kotlin/milestone-changelog-creator.js") {
+        rename("milestone-changelog-creator", "index")
+    }
+    into("$rootDir/dist")
 }
 
-allprojects {
-    repositories {
-        mavenCentral()
-        jcenter {
-            content {
-                // https://github.com/JetBrains/kotlin-wrappers/issues/279
-                includeModule("org.jetbrains", "kotlin-extensions")
-                // https://github.com/Kotlin/kotlinx-nodejs/issues/16
-                includeModule("org.jetbrains.kotlinx", "kotlinx-nodejs")
-            }
-        }
+tasks.register<Copy>("CopyGeneratedNodeModuleToRoot") {
+    from("${buildDir}/js/node_modules") {
+        exclude("**/.bin")
     }
-    plugins.withId("org.jetbrains.kotlin.js") {
-        tasks {
-            withType<org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile>().configureEach {
-                kotlinOptions {
-                    moduleKind = "commonjs"
-                }
-            }
-        }
-        configure<org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension> {
-            js(IR) {
-                nodejs()
-                binaries.executable()
-            }
-        }
-    }
+    into("$rootDir/node_modules")
+}
+
+tasks.named("assemble") {
+    finalizedBy("CopyGeneratedNodeModuleToRoot")
+}
+
+tasks.named("CopyGeneratedNodeModuleToRoot") {
+    finalizedBy("CopyGeneratedJSToDistribution")
+}
+
+tasks.named("CopyGeneratedJSToDistribution") {
+    finalizedBy(project(":ncc-packer").tasks.named("run"))
+}
+
+dependencies {
+    api(npm("@actions/core", "1.2.7"))
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.0")
+    implementation( "io.ktor:ktor-client-js:1.5.4")
+    implementation( "io.ktor:ktor-client-serialization:1.5.4")
+    implementation( "io.ktor:ktor-client-logging-js:1.5.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.0")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3")
+    api("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
 }

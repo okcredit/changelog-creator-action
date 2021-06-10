@@ -5,7 +5,7 @@ import process
 import kotlin.reflect.KProperty
 
 /**
- * See https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables
+ * See [https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables]
  */
 object ActionsEnvironment {
     val HOME by Environment
