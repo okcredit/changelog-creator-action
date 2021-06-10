@@ -214,3 +214,4 @@ jobs:
 ```
 ### Credits
 - Core configuration logic is inspired from [mikepenz/release-changelog-builder-action](https://github.com/mikepenz/release-changelog-builder-action).
+- Thanks to Björn Kautler (@Vampire) for ncc-packer in [Vampire/setup-wsl](https://github.com/Vampire/setup-wsl) that made packaging the JS easier.
