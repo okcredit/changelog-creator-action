@@ -1,8 +1,9 @@
-name: CI
+name: PR Build Check
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -11,15 +12,8 @@ jobs:
     steps:
       # Checks-out repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      - name: Setup Java JDK
-        uses: actions/setup-java@v2.0.0
         with:
-          java-version: 14
-          distribution: 'adopt'
-
-      - name: Setup NCC
-        run: npm i -g @vercel/ncc
+          fetch-depth: 0
 
       # Cache Gradle Wrapper
       - name: Setup Gradle Wrapper Cache
@@ -30,6 +24,3 @@ jobs:
           
       - name: Build and Copy JS
         run: ./gradlew assemble --stacktrace
-        
-      - name: Run NCC and build index JS
-        run: ncc build dist/index.js -s --license license.txt
