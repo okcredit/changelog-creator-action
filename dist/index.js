@@ -2541,6 +2541,15 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
   function addAll_0(_this_, elements) {
     return _this_.addAll_23(asList(elements));
   }
+  function removeLast(_this_) {
+    var tmp;
+    if (_this_.isEmpty_50()) {
+      throw NoSuchElementException_init_$Create$_0('List is empty.');
+    } else {
+      tmp = _this_.removeAt_2(_get_lastIndex__0(_this_));
+    }
+    return tmp;
+  }
   function Sequence() {
   }
   Sequence.$metadata$ = {
@@ -46157,46 +46166,6 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
     kind: 'interface',
     interfaces: [Encoder, CompositeEncoder]
   };
-  var JsonAlternativeNamesKey;
-  function buildAlternativeNamesMap(_this_) {
-    var builder = null;
-    var inductionVariable = 0;
-    var last_1 = _this_._get_elementsCount__17();
-    if (inductionVariable < last_1)
-      do {
-        var i = inductionVariable;
-        inductionVariable = inductionVariable + 1 | 0;
-        var tmp0_filterIsInstance_0 = _this_.getElementAnnotations_17(i);
-        var tmp0_filterIsInstanceTo_0_1 = ArrayList_init_$Create$();
-        var tmp0_iterator_1_2 = tmp0_filterIsInstance_0.iterator_62();
-        while (tmp0_iterator_1_2.hasNext_29()) {
-          var element_2_3 = tmp0_iterator_1_2.next_31();
-          if (element_2_3 instanceof JsonNames) {
-            tmp0_filterIsInstanceTo_0_1.add_32(element_2_3);
-            Unit_getInstance();
-          } else {
-          }
-        }
-        var tmp1_safe_receiver = singleOrNull(tmp0_filterIsInstanceTo_0_1);
-        var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver._names_0;
-        if (tmp2_safe_receiver == null)
-          null;
-        else {
-          var tmp0_iterator_1 = arrayIterator(tmp2_safe_receiver);
-          while (tmp0_iterator_1.hasNext_29()) {
-            var element_2 = tmp0_iterator_1.next_31();
-            if (builder == null)
-              builder = createMapForCache(_this_._get_elementsCount__17());
-            buildAlternativeNamesMap$putOrThrow(ensureNotNull(builder), _this_, element_2, i);
-          }
-          Unit_getInstance();
-        }
-        Unit_getInstance();
-      }
-       while (inductionVariable < last_1);
-    var tmp3_elvis_lhs = builder;
-    return tmp3_elvis_lhs == null ? emptyMap() : tmp3_elvis_lhs;
-  }
   function JsonNames() {
   }
   JsonNames.$metadata$ = {
@@ -46204,14 +46173,6 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
     kind: 'class',
     interfaces: [Annotation]
   };
-  function buildAlternativeNamesMap$putOrThrow(_this_, $this_buildAlternativeNamesMap, name, index) {
-    if ((isInterface(_this_, Map_0) ? _this_ : THROW_CCE()).containsKey_12(name)) {
-      throw new JsonException('' + "The suggested name '" + name + "' for property " + $this_buildAlternativeNamesMap.getElementName_17(index) + ' is already one of the names for property ' + ('' + $this_buildAlternativeNamesMap.getElementName_17(getValue(_this_, name)) + ' in ' + $this_buildAlternativeNamesMap));
-    } else {
-    }
-    _this_.put_10(name, index);
-    Unit_getInstance();
-  }
   function Composer(sb, json) {
     this._sb = sb;
     this._json = json;
@@ -46690,7 +46651,9 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
     if (!(this._peekedString == null)) {
       return takePeeked(this);
     }var current = skipWhitespaces(this);
-    var token = charToTokenClass(charSequenceGet(this._source, current));
+    if (current >= this._source.length) {
+      this.fail('EOF', current);
+    }var token = charToTokenClass(charSequenceGet(this._source, current));
     if (token === 1) {
       return this.consumeString();
     }if (!(token === 0)) {
@@ -46732,13 +46695,15 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
       } else if (tmp0_subject === 9) {
         if (!(last(tokenStack) === 8))
           throw JsonDecodingException_0(this._currentPosition, 'found ] instead of }', this._source);
-        tokenStack.removeAt_2(tokenStack._get_size__48() - 1 | 0);
+        removeLast(tokenStack);
         Unit_getInstance();
       } else if (tmp0_subject === 7) {
         if (!(last(tokenStack) === 6))
           throw JsonDecodingException_0(this._currentPosition, 'found } instead of ]', this._source);
-        tokenStack.removeAt_2(tokenStack._get_size__48() - 1 | 0);
+        removeLast(tokenStack);
         Unit_getInstance();
+      } else if (tmp0_subject === 10) {
+        this.fail$default('Unexpected end of input due to malformed JSON during ignoring unknown keys', 0, 2, null);
       }this.consumeNextToken_1();
       Unit_getInstance();
       if (tokenStack._get_size__48() === 0)
@@ -46945,6 +46910,95 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
       new CharMappings();
     return CharMappings_instance;
   }
+  var JsonAlternativeNamesKey;
+  function getJsonNameIndex(_this_, json, name) {
+    var index = _this_.getElementIndex_17(name);
+    Companion_getInstance_49();
+    if (!(index === -3))
+      return index;
+    else {
+    }
+    if (!json._configuration._useAlternativeNames_0)
+      return index;
+    var alternativeNamesMap = json._schemaCache.getOrPut(_this_, JsonAlternativeNamesKey, _no_name_provided_$factory_173(_this_));
+    var tmp0_elvis_lhs = alternativeNamesMap.get_65(name);
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      Companion_getInstance_49();
+      tmp = -3;
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    return tmp;
+  }
+  function buildAlternativeNamesMap(_this_) {
+    var builder = null;
+    var inductionVariable = 0;
+    var last_1 = _this_._get_elementsCount__17();
+    if (inductionVariable < last_1)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var tmp0_filterIsInstance_0 = _this_.getElementAnnotations_17(i);
+        var tmp0_filterIsInstanceTo_0_1 = ArrayList_init_$Create$();
+        var tmp0_iterator_1_2 = tmp0_filterIsInstance_0.iterator_62();
+        while (tmp0_iterator_1_2.hasNext_29()) {
+          var element_2_3 = tmp0_iterator_1_2.next_31();
+          if (element_2_3 instanceof JsonNames) {
+            tmp0_filterIsInstanceTo_0_1.add_32(element_2_3);
+            Unit_getInstance();
+          } else {
+          }
+        }
+        var tmp1_safe_receiver = singleOrNull(tmp0_filterIsInstanceTo_0_1);
+        var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver._names_0;
+        if (tmp2_safe_receiver == null)
+          null;
+        else {
+          var tmp0_iterator_1 = arrayIterator(tmp2_safe_receiver);
+          while (tmp0_iterator_1.hasNext_29()) {
+            var element_2 = tmp0_iterator_1.next_31();
+            if (builder == null)
+              builder = createMapForCache(_this_._get_elementsCount__17());
+            buildAlternativeNamesMap$putOrThrow(ensureNotNull(builder), _this_, element_2, i);
+          }
+          Unit_getInstance();
+        }
+        Unit_getInstance();
+      }
+       while (inductionVariable < last_1);
+    var tmp3_elvis_lhs = builder;
+    return tmp3_elvis_lhs == null ? emptyMap() : tmp3_elvis_lhs;
+  }
+  function buildAlternativeNamesMap$putOrThrow(_this_, $this_buildAlternativeNamesMap, name, index) {
+    if ((isInterface(_this_, Map_0) ? _this_ : THROW_CCE()).containsKey_12(name)) {
+      throw new JsonException('' + "The suggested name '" + name + "' for property " + $this_buildAlternativeNamesMap.getElementName_17(index) + ' is already one of the names for property ' + ('' + $this_buildAlternativeNamesMap.getElementName_17(getValue(_this_, name)) + ' in ' + $this_buildAlternativeNamesMap));
+    } else {
+    }
+    _this_.put_10(name, index);
+    Unit_getInstance();
+  }
+  function _no_name_provided__211($boundThis) {
+    this._$boundThis = $boundThis;
+  }
+  _no_name_provided__211.prototype.invoke_369 = function () {
+    return buildAlternativeNamesMap(this._$boundThis);
+  };
+  _no_name_provided__211.prototype._get_name__12 = function () {
+    return 'buildAlternativeNamesMap';
+  };
+  _no_name_provided__211.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided_$factory_173($boundThis) {
+    var i = new _no_name_provided__211($boundThis);
+    var l = function () {
+      return i.invoke_369();
+    };
+    l.callableName = i._get_name__12();
+    return l;
+  }
   function readObject($this) {
     var lastToken = $this._lexer.consumeNextToken(6);
     if ($this._lexer.peekNextToken() === 4) {
@@ -47000,7 +47054,7 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
       tmp = $this._lexer.consumeString();
     }
     var string = tmp;
-    if (string === 'null')
+    if (!isString_0 ? string === 'null' : false)
       return JsonNull_getInstance();
     return new JsonLiteral(string, isString_0);
   }
@@ -47267,26 +47321,6 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
     }
     return tmp;
   }
-  function getJsonElementIndex(_this_, $this, key) {
-    var index = _this_.getElementIndex_17(key);
-    Companion_getInstance_49();
-    if (!(index === -3))
-      return index;
-    else {
-    }
-    if (!$this._json_0._configuration._useAlternativeNames_0)
-      return index;
-    var alternativeNamesMap = $this._json_0._schemaCache.getOrPut(_this_, JsonAlternativeNamesKey, _no_name_provided_$factory_173(_this_));
-    var tmp0_elvis_lhs = alternativeNamesMap.get_65(key);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      Companion_getInstance_49();
-      tmp = -3;
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    return tmp;
-  }
   function coerceInputValue($this, descriptor, index) {
     var elementDescriptor = descriptor.getElementDescriptor_17(index);
     if (!elementDescriptor._get_isNullable__17() ? !$this._lexer_0.tryConsumeNotNull() : false)
@@ -47300,7 +47334,7 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
         tmp = tmp0_elvis_lhs;
       }
       var enumValue = tmp;
-      var enumIndex = elementDescriptor.getElementIndex_17(enumValue);
+      var enumIndex = getJsonNameIndex(elementDescriptor, $this._json_0, enumValue);
       Companion_getInstance_49();
       if (enumIndex === -3) {
         $this._lexer_0.consumeString();
@@ -47316,7 +47350,7 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
       hasComma = false;
       var key = decodeStringKey($this);
       $this._lexer_0.consumeNextToken_0(new Char(58));
-      var index = getJsonElementIndex(descriptor, $this, key);
+      var index = getJsonNameIndex(descriptor, $this._json_0, key);
       var tmp;
       Companion_getInstance_49();
       if (!(index === -3)) {
@@ -47376,19 +47410,6 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
     }
     return tmp;
   }
-  function _no_name_provided__211($boundThis) {
-    this._$boundThis = $boundThis;
-  }
-  _no_name_provided__211.prototype.invoke_369 = function () {
-    return buildAlternativeNamesMap(this._$boundThis);
-  };
-  _no_name_provided__211.prototype._get_name__12 = function () {
-    return 'buildAlternativeNamesMap';
-  };
-  _no_name_provided__211.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function StreamingJsonDecoder(json, mode, lexer) {
     AbstractDecoder.call(this);
     this._json_0 = json;
@@ -47667,14 +47688,6 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_173($boundThis) {
-    var i = new _no_name_provided__211($boundThis);
-    var l = function () {
-      return i.invoke_369();
-    };
-    l.callableName = i._get_name__12();
-    return l;
-  }
   var unsignedNumberDescriptors;
   function StreamingJsonEncoder_init_$Init$(output_0, json, mode, modeReuseCache, $this) {
     StreamingJsonEncoder.call($this, new Composer(output_0, json), json, mode, modeReuseCache);
@@ -47865,7 +47878,16 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
   var ESCAPE_STRINGS;
   function toHexChar(i) {
     var d = i & 15;
-    return d < 10 ? numberToChar(d + 48 | 0) : numberToChar((d - 10 | 0) + 97 | 0);
+    var tmp;
+    if (d < 10) {
+      var tmp0__get_code__0 = new Char(48);
+      tmp = numberToChar(d + tmp0__get_code__0.toInt_5() | 0);
+    } else {
+      var tmp_0 = d - 10 | 0;
+      var tmp1__get_code__0 = new Char(97);
+      tmp = numberToChar(tmp_0 + tmp1__get_code__0.toInt_5() | 0);
+    }
+    return tmp;
   }
   function printQuoted(_this_, value) {
     _this_.append_23(new Char(34));
@@ -47877,7 +47899,8 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var c = charSequenceGet(value, i).toInt_5();
+        var tmp0__get_code__0 = charSequenceGet(value, i);
+        var c = tmp0__get_code__0.toInt_5();
         if (c < ESCAPE_STRINGS.length ? !(ESCAPE_STRINGS[c] == null) : false) {
           _this_.append_21(value, lastPos, i);
           Unit_getInstance();
@@ -47914,12 +47937,18 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
         tmp1_apply_0[c_3] = '' + '\\u' + c1_4 + c2_5 + c3_6 + c4_7;
       }
        while (inductionVariable <= 31);
-    tmp1_apply_0[34] = '\\"';
-    tmp1_apply_0[92] = '\\\\';
-    tmp1_apply_0[9] = '\\t';
-    tmp1_apply_0[8] = '\\b';
-    tmp1_apply_0[10] = '\\n';
-    tmp1_apply_0[13] = '\\r';
+    var tmp0__get_code__0_8 = new Char(34);
+    tmp1_apply_0[tmp0__get_code__0_8.toInt_5()] = '\\"';
+    var tmp1__get_code__0_9 = new Char(92);
+    tmp1_apply_0[tmp1__get_code__0_9.toInt_5()] = '\\\\';
+    var tmp2__get_code__0_10 = new Char(9);
+    tmp1_apply_0[tmp2__get_code__0_10.toInt_5()] = '\\t';
+    var tmp3__get_code__0_11 = new Char(8);
+    tmp1_apply_0[tmp3__get_code__0_11.toInt_5()] = '\\b';
+    var tmp4__get_code__0_12 = new Char(10);
+    tmp1_apply_0[tmp4__get_code__0_12.toInt_5()] = '\\n';
+    var tmp5__get_code__0_13 = new Char(13);
+    tmp1_apply_0[tmp5__get_code__0_13.toInt_5()] = '\\r';
     tmp1_apply_0[12] = '\\f';
     return tmp1_apply_0;
   }
@@ -47984,7 +48013,7 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
     } else {
       if (equals_1(tmp0_subject, MAP_getInstance())) {
         var tmp0_selectMapMode_0 = this._get_json__6();
-        var keyDescriptor_1 = descriptor.getElementDescriptor_17(0);
+        var keyDescriptor_1 = _get_carrierDescriptor_(descriptor.getElementDescriptor_17(0));
         var keyKind_2 = keyDescriptor_1._get_kind__20();
         var tmp_2;
         var tmp_3;
@@ -48400,7 +48429,7 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
         tmp_2 = tmp1_elvis_lhs;
       }
       var enumValue = tmp_2;
-      var enumIndex = elementDescriptor.getElementIndex_17(enumValue);
+      var enumIndex = getJsonNameIndex(elementDescriptor, $this._get_json__6(), enumValue);
       Companion_getInstance_49();
       if (enumIndex === -3)
         return true;
@@ -48638,7 +48667,7 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
         tmp = WriteMode_LIST_getInstance();
       } else {
         if (equals_1(tmp0_subject, MAP_getInstance())) {
-          var keyDescriptor_1 = desc.getElementDescriptor_17(0);
+          var keyDescriptor_1 = _get_carrierDescriptor_(desc.getElementDescriptor_17(0));
           var keyKind_2 = keyDescriptor_1._get_kind__20();
           var tmp_0;
           var tmp_1;
@@ -48669,6 +48698,9 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
       }
     }
     return tmp;
+  }
+  function _get_carrierDescriptor_(_this_) {
+    return _this_._get_isInline__17() ? _this_.getElementDescriptor_17(0) : _this_;
   }
   function WriteMode_OBJ_getInstance() {
     WriteMode_initEntries();
@@ -57899,14 +57931,27 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.issue = exports.issueCommand = void 0;
 const os = __importStar(__nccwpck_require__(87));
 const utils_1 = __nccwpck_require__(989);
 /**
@@ -57985,6 +58030,25 @@ function escapeProperty(s) {
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -57994,14 +58058,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
 const command_1 = __nccwpck_require__(352);
 const file_command_1 = __nccwpck_require__(703);
 const utils_1 = __nccwpck_require__(989);
@@ -58068,7 +58126,9 @@ function addPath(inputPath) {
 }
 exports.addPath = addPath;
 /**
- * Gets the value of an input.  The value is also trimmed.
+ * Gets the value of an input.
+ * Unless trimWhitespace is set to false in InputOptions, the value is also trimmed.
+ * Returns an empty string if the value is not defined.
  *
  * @param     name     name of the input to get
  * @param     options  optional. See InputOptions.
@@ -58079,9 +58139,49 @@ function getInput(name, options) {
     if (options && options.required && !val) {
         throw new Error(`Input required and not supplied: ${name}`);
     }
+    if (options && options.trimWhitespace === false) {
+        return val;
+    }
     return val.trim();
 }
 exports.getInput = getInput;
+/**
+ * Gets the values of an multiline input.  Each value is also trimmed.
+ *
+ * @param     name     name of the input to get
+ * @param     options  optional. See InputOptions.
+ * @returns   string[]
+ *
+ */
+function getMultilineInput(name, options) {
+    const inputs = getInput(name, options)
+        .split('\n')
+        .filter(x => x !== '');
+    return inputs;
+}
+exports.getMultilineInput = getMultilineInput;
+/**
+ * Gets the input value of the boolean type in the YAML 1.2 "core schema" specification.
+ * Support boolean input list: `true | True | TRUE | false | False | FALSE` .
+ * The return value is also in boolean type.
+ * ref: https://yaml.org/spec/1.2/spec.html#id2804923
+ *
+ * @param     name     name of the input to get
+ * @param     options  optional. See InputOptions.
+ * @returns   boolean
+ */
+function getBooleanInput(name, options) {
+    const trueValue = ['true', 'True', 'TRUE'];
+    const falseValue = ['false', 'False', 'FALSE'];
+    const val = getInput(name, options);
+    if (trueValue.includes(val))
+        return true;
+    if (falseValue.includes(val))
+        return false;
+    throw new TypeError(`Input does not meet YAML 1.2 "Core Schema" specification: ${name}\n` +
+        `Support boolean input list: \`true | True | TRUE | false | False | FALSE\``);
+}
+exports.getBooleanInput = getBooleanInput;
 /**
  * Sets the value of an output.
  *
@@ -58232,14 +58332,27 @@ exports.getState = getState;
 "use strict";
 
 // For internal use, subject to change.
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.issueCommand = void 0;
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const fs = __importStar(__nccwpck_require__(747));
@@ -58270,6 +58383,7 @@ exports.issueCommand = issueCommand;
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.toCommandValue = void 0;
 /**
  * Sanitizes an input into a string so it can be passed into issueCommand safely
  * @param input input to sanitize into a string
